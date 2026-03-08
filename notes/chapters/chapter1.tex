@@ -1,0 +1,319 @@
+
+%============================= HEADER =================================
+\chapter{Cosmology}\label{ch:i}
+
+\section{The Cosmological Principle}
+
+Contemporary cosmological models are based on the idea the the Universe is pretty much the same everywhere, a stance sometimes known as the \emph{Copernican Principle} or \emph{Cosmological principle}. If we take it at face value, such a claim seems crazy, if at all logical: There's little resemblance, say, between the center of the Sun (which is kinda hot) and the desolate cold of the ISM\footnote{\emph{Interstellar Medium}.}. The Cosmological Principle starts to make a little more sense if we take it to apply only on the very largest scales, where local variations in density are averaged over and magically disappear.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.5\textwidth]{img/isotropyhomogeneity.png}
+    \caption{The Cosmological Prinicple automatically translates in two very specific requests: Homogeneity and Isotropy.}
+    \label{fgr:homoiso}
+\end{figure}
+\par The Cosmological principle is related to two more mathematically precise properties that we can request our space-time manifold to have: \emph{Isotropy} and \emph{Homogeneity}, which are given a pictorial representation in Fig.\ref{fgr:homoiso}.
+\par Isotropy essentially states that space looks exactly the same around a given point, no matter in what direction you're looking.
+\vspace{5pt}
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=Isotropy,
+  boxed title style={size=small,colframe=blue!50!black}]
+  A manifold $M$ is isotropic around a point $p$ if, for any two vectors $V$ and $W$ in the tangent space of $M$ to the point $p$ $T_{p}M$, there is an isometry (symmetry) of $M$ such that the \emph{pushforward} of $W$ under the isometry is parallel with $V$ (not pushed forward). See \cite{carroll}.
+\end{tcolorbox}
+\par On the other hand, Homogeneity is the statement that the metric is the same throughout the manifold.
+\vspace{5pt}
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=Homogeneity,
+  boxed title style={size=small,colframe=blue!50!black}]
+  Given any two points $p$ and $q$ in a manifold $M$, there is an isometry that takes $p$ into $q$. See \cite{carroll}.
+\end{tcolorbox}
+\par The validity of such principles on the largest scales is manifested in a number of different observations, such as number ounts of galaxies and observations of diffuse X-ray and $\gamma$-ray backgrounds, although it is most clear in the cosmic microwave background (CMB). We're going to spend quite some time with this last lad.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/nhradiosources.png}
+    \caption{Dots in the upper part of the figure show the positions of the brightest $4 \cdot 10^{4}$ radio sources visible from the northern hemisphere, and the lower figure shows a comparable number of fainter sources within 15° of the north pole. Their isotropic distribution on the sky confirms that the universe becomes spatially homogeneous on the largest scales.}
+    \label{fgr:nhradiosources}
+\end{figure}
+\par We opened our discussion with a provocative comparison (so to immediately set the unserious tone of these notes), but it's important nonetheless that we ask for ourselves: To what extent is our Universe homogeneous and isotropic?
+\par On scales of up to hundreds of Mpc it is not: We see structures in the form of galaxies, clusters of galaxies, filaments and voids.
+But on larger scales the Universe does seem to be roughly isotropic. For example, if we counted galaxies in two cubes $100\, \text{Mpc}$ on the side, in opposite directions on the celestial sphere, we would measure the same mean density of matter to within a few percent.
+\par As we mentioned, the greatest indicator of the great isotropy (and homogeneity) that reigns in the large-scale Universe is the CMB.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/cmb.jpg}
+    \caption{The anisotropies of the Cosmic microwave background (CMB) as observed by the Planck Surveyor satellite. The CMB is a snapshot of the oldest light in our Universe, imprinted on the sky when the Universe was just 380,000 years old. It shows tiny temperature fluctuations that correspond to regions of slightly different densities, representing the seeds of all future structure: the stars and galaxies of today.}
+    \label{fgr:planck_cmb}
+\end{figure}
+
+\section{The FLRW metric}
+
+In these note, I'll assume you have at least some basic knowledge of GR and/or you are willing to take a look at how the Friedmann, Lemaitre, Robertson, Walker metric is constructed from scratches. So I'm going to present the final result with no proof.
+\par If the universe is spatially homogeneous and isotropic at all times, and if distances are allowed to expand or contract as a function of time only\footnote{This is an inevitable consequence of the request of having a metric that is isotropic and homogeneous, for if all points didn't evolve at the same rate, it would be impossible for the Universe to be isotropic.}, the metric is called the FLRW metric:
+\begin{equation}
+    \text{d}s^{2} = -\text{d}t^{2}+a_{r}(t)^{2}\left(\frac{\text{d}r^{2}}{1-kr^{2}}+r^{2}\text{d}\Omega_{(2)}^{2}\right)
+    \label{eq:FRW}
+\end{equation}
+\par The coordinates used in (\ref{eq:FRW}), in which the metric is free of cross-terms $\text{d}t\text{d}x^{i}$ and the coefficient $\text{d}t^{2}$ is independent of $x^{i}$ are known as \emph{comoving coordinates} and are dimensionless. Xomoving coordinates \emph{do not change at any time}. We can use an alternative form of the metric, obtained by introducing a new radial coordinate $\chi$ defined by
+\begin{equation}
+    \text{d}\chi = \frac{\text{d}r}{\sqrt{1-kr^{2}}} \implies r = S_{k}(\chi)
+    \label{eq:sphere_coordinate}
+\end{equation}
+where
+\begin{equation}
+    S_{k}(\chi) = 
+    \left\{
+    \begin{array}{ll}
+        \sin(\chi), & k = +1\\
+        \chi, & k = 0\\
+        \sinh(\chi), & k = -1
+    \end{array}
+    \right.
+    \label{eq:sphere_radius}
+\end{equation}
+through which we can write the FLRW metric as
+\begin{equation}
+    \text{d}s^{2} = -\text{d}t^{2}+a(t)^{2}\left(\text{d}\chi^{2}+S_{k}(\chi)^{2}\text{d}\Omega_{(2)}^{2}\right)
+\end{equation}
+The spacelike section of the FLRW metric consists of the spatial metric for a uniformly curves space of radius $R_{0}$ (the present-day radius of curvature) scaled by the square of the scale factor $a(t)$.
+\par Note that we're flouting conventional wisdom and adopting a convention in which the scale factor is dimensionless, that requires setting
+\begin{equation}
+    \bar{r} = R_{0}r \quad \kappa \frac{k}{R_{0}^{2}} \quad a_{r}(t) = R_{0}a(t)\to a(t)
+\end{equation}
+thus obtaining a metric with the following form ($\bar{r}\to r$ for simplicity)
+\begin{equation}
+    \text{d}s^{2} = -\text{d}t^{2} + a^{2}(t)(\text{d}r^{2}+S_{k}^{2}(r)\text{d}\Omega_{(2)}^{2})
+    \label{eq:FRW_revisited}
+\end{equation}
+and the factor $S_{k}(r)$ is simply (\ref{eq:sphere_radius}) scaled with the present-day radius of curvature $R_{0}$. Sometimes it is useful to perform a slight manipulation of the FRW metric (\ref{eq:FRW}) and define a conformal time 
+\begin{equation*}
+    a(\eta)\text{d}\eta = \text{d}t
+\end{equation*}
+so that the metric is, guess what, conformal. The scale factor $a$ is therefore factorized and (\ref{eq:FRW_revisited}) becomes
+\begin{equation}
+    \text{d}s^{2} = a(\eta)^{2}\left(-\text{d}\eta^{2}+\frac{\text{d}r^{2}}{1-kr^{2}}+r^{2}\text{d}\Omega_{(2)}^{2}\right)
+    \label{eq:FRW_conf}
+\end{equation}
+the quantity within parentheses is independent of the conformal time. Since light travels along null geodesics, $\text{d}s^{2} = 0$, the propagation of light in FLRW is the same as in Minkowski space if we first transform to conformal time. Along the path, the change in conformal time equals the change in comoving distance
+\begin{equation*}
+    \text{d}r = (c)\text{d}\tau \quad \text{d}\Omega = 0
+\end{equation*}
+The Robertson-Walker metric is an approximation that holds good only on large scales; on smaller scales, the universe is lumpy, and hence does not expand uniformly..
+It’s only on scales larger than $\sim 100\,\text{Mpc}$ that the expansion of the Universe can be treated as the ideal, homogeneous, isotropic expansion described by the single scale factor $a(t)$.
+
+\subsection{A short detour on redshift}
+In our description of the Universe we'd like to observationally determine a number of quantities to try to infer which of the models proposed by the FRW metric\footnote{As per any GR subject in this notes, I'll follow \cite{carroll}. You can find this discussion at §8.5.}
+\begin{equation*}
+    \text{d}s^{2} = -\text{d}t^{2}+a(t)^{2}\left(\frac{\text{d}r^{2}}{1-kr^{2}}+r^{2}\text{d}\Omega_{(2)}^{2}\right)
+\end{equation*}
+corresponds to our Universe. \par We could try with a hand-waving approach and obtain (out of thin air) the expression for the cosmological redshift, but we'll take a somewhat more rigorous approach.
+\par Consider the four-velocity of comoving observers $U^{\mu} = (1,0,0,0)$, then the metric admits a Killing tensor of the form 
+\begin{equation*}
+    K_{\mu\nu} = a^{2}(g_{\mu\nu}+U_{\mu}U_{\nu})
+\end{equation*}
+that you can check that it satisfies $D_{(\sigma}K_{\mu\nu)} = 0$ where $D_{\sigma}$ is the covariant derivative. By definition of Killing vector (the generalization to a K. tensor is straightforward), the quantity 
+\begin{equation}
+    K^{2} = K_{\mu\nu}V^{\mu}V^{\nu} = a^{2}\left[V_{\mu}V^{\mu}+(U_{\mu}V^{\mu})^{2}\right]
+    \label{eq:conserved_killing}
+\end{equation}
+is conserved along the geodesics. Here $V^{\mu} = \text{d}x^{\mu}/\text{d}\lambda$. For massive particles, since $V_{\mu}V^{\mu} = -1$ (note the convention on the signature of the metric), we also have
+\begin{equation*}
+    (V^{0})^{2} = 1+|\vec{V}|^{2} \quad |\vec{V}|^{2} = g_{ij}V^{i}V^{j}
+\end{equation*}
+Recalling the formula for the four-velocity of the observer, we have $U_{\mu}V^{\mu} = -V^{0}$, so (\ref{eq:conserved_killing}) implies
+\begin{equation*}
+    |\vec{V}| = \frac{K}{a}
+\end{equation*}
+Notice how this means that the particle "slows down" with respect to the comoving coordinates as the Universe expands. If we instead consider null geodesics (that is what we're actually interested in)
+\begin{equation*}
+    V_{\mu}V^{\mu} = 0 \implies U_{\mu}V^{\mu} = \frac{K}{a}
+\end{equation*}
+but for null-like particles, like photons, we can write the four-velocity as $V^{\mu} = (\omega, \vec{k})$. So the frequency of the photon as measured by a comoving observer is $\omega = -U_{\mu}V^{\mu}$ (remember that $c=1$). The frequency emitted will still be given by the same functional expression but calculated in the local inertial frame of the emitter, so $\omega_{em} = -K/a_{em}$. We then find out that 
+\begin{equation*}
+    \frac{\omega_{obs}}{\omega_{em}} = \frac{a_{em}}{a_{obs}}
+\end{equation*}
+To make things easier we then define a quantity called \emph{redshift} defined as 
+\begin{equation}
+    z_{em} = \frac{\lambda_{obs}-\lambda_{em}}{\lambda_{em}}
+    \label{eq:redshift_def}
+\end{equation}
+so that, if the observation takes place today ($a_{obs} = a_{0} = 1$), we can just write 
+\begin{equation*}
+    a_{em} = \frac{1}{1+z_{em}}
+\end{equation*}
+and 
+\begin{equation}
+    \boxed{
+    \frac{\nu_{obs}}{\nu_{em}} = \frac{1}{1+z_{em}}
+    }
+    \label{eq:cosmological_redshift}
+\end{equation}
+\par Let's give an example. If we observe a galaxy with a redshift $z = 2$, we are observing it as it was when the universe had a scale factor $a(t_{e}) = 1/3$.
+\par The redshift we observe for a distant object thus depends only on the relative scale factors at the time of emission and the time of observation. It doesn't depend on how the transition between $a(t_{e})$ and $a(t_{0})$ was made: All that matters is the scale factors at the time of emission and the time of observation.
+\par It may be useful to know how to "compose" redshifts. Assume to measure the redshift $z_{1}$ of a distant object when you are yourself on a certain object with redshift $z_{2}$, the "total" redshift that you're going to measure is
+\begin{equation}
+    1+z_{f} = \frac{a(t_{1})}{a(t_{2})} = \frac{1+z_{2}}{1+z_{1}}
+    \label{eq:redshif_comp}
+\end{equation}
+\par So the redshift tells us two things: The scale factor of the universe when the photon was emitted and, in a sense, the distance of the emitter when the photon was emitted.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/10_1086_320638_fg4_hr.png}
+    \caption{A plot of velocity against distance made by \cite{2001ApJ...553...47F}. The different colours represent different ways of measuring distance. The gradient of this line is the \emph{Hubble constant} $H_{0}\sim 72 \,\text{km}\,\text{s}^{-1}\,\text{Mpc}^{-1}$ for these data, as shown by the solid red line.}
+\end{figure}
+\par Using Hubble's law (assuming we've somehow computed the Hubble constant at its present value) we can easily calculate the \emph{instantaneous physical distance}
+\begin{equation*}
+    v = cz = H_{0}d_{P}
+\end{equation*}
+\par Although it's a useful meter of comparison to understand what we're talking about, cosmological redshift has \emph{nothing to do} with a Doppler shift. In fact, even if the Universe was in an age in which $\dot{a} = 0$ and so that $H_{0} = 0$, you wouldn't be able to interpret the shift in frequency as the effect of a Doppler shift ($v = 0$ after all), yet you'd still observe the shift, since $a(t) \neq 0$.
+\par However, if we tried to measure $H_{0}$ by finding distances and velocities of galaxies in the direction of Virgo\footnote{The supercluster, not the interferometer.}, we would
+be underestimating the Hubble constant, because Virgo-centric inflow partially cancels out the cosmic expansion. Similarly, if we observe galaxies in the opposite direction, our value for $H_{0}$ would be too high. If we correct our observations for this phenomenon, we'd find what's shown in Fig.\ref{fgr:virgoinfall}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/LG_peculiarmotion.png}
+    \caption{Diamonds show average recession speed $V_{r}$, measured relative to the Local Group. The two largest white symbols are two clumps within the Virgo cluster; others decrease in size to show distance from Virgo. Left, velocity $V_{r}$ falls further below the linear trend the closer the group is to Virgo; right, after correction for Virgocentric infall. Credits: J. Tonry.}
+    \label{fgr:virgoinfall}
+\end{figure}
+
+\subsection{Proper distance}
+
+Ignoring the angular dependence, i.e. a point object for which $\text{d}\Omega = 0$, the proper distance between the observer at the origin $r = 0$ and a galaxy at $(r,\theta,\phi)$ can be found using the FLRW metric at a fixed time $t$
+\begin{equation*}
+    \text{d}s^{2} = a^{2}(t)\text{d}r^{2}
+\end{equation*}
+so that integrating over the radial comoving distance yields
+\begin{equation}
+    d_{p}(r) = a(t)\int_{0}^{r}\text{d}r = a(t)r
+    \label{eq:properdistance}
+\end{equation}
+The rate of change for the proper distance between us and a distant galaxy is 
+\begin{equation*}
+    \dot{d}_{p} = \dot{a}(t)r = \frac{\dot{a}(t)}{a(t)}d_{p} := H(t)d_{p}
+\end{equation*}
+and we've found the celebrated Hubble law.
+\par Let us now approximate $a(t)$ in a neighborhood of today
+\begin{equation*}
+    a(t) = a(t_{0}) + \left(\parder{a}{t}\right)_{t_{0}}(t-t_{0}) + \frac{1}{2}\left(\parparder{a}{t}\right)_{t_{0}}(t-t_{0})^{2} + \text{o}\left((t-t_{0})^{3}\right)
+\end{equation*}
+so that ($a(t_{0}) = 1$)
+\begin{equation}
+    a(t) = 1 + H_{0}(t-t_{0})-\frac{1}{2}q_{0}H_{0}^{2}(t-t_{0})^{2} + \text{o}\left((t-t_{0})^{3}\right)
+    \label{eq:a_expansion}
+\end{equation}
+where we've defined 
+\begin{equation}
+    H_{0} = \left(\frac{\dot{a}(t)}{a(t)}\right)_{t_{0}} \quad q_{0} = -\left(\frac{\ddot{a}(t)a(t)}{\dot{a}^{2}(t)}\right)_{t_{0}}
+    \label{eq:expansion_param}
+\end{equation}
+so that if $q_{0} > 0$, then $\ddot{a} < 0$ and the expansion of the Universe decelerate. Conversely, if $q_{0} < 0$, then $\ddot{a} > 0$ and the expansion of the Universe accelerate. Recent measurements of $q_{0}$ (Riess et al., 2021)\footnote{As soon as I find the article I'll link it.} have set
+\begin{equation}
+    q_{0} = -0.510 \pm 0.024
+    \label{eq:acceleration_param}
+\end{equation}
+\par To determine the value of $H_{0}$ without having to worry about Virgocentric flow and other peculiar velocities, we need to determine the luminosity distance (see below) to standard candles with $d_{l} > 100\,\text{Mpc}$,or $z > 0.02$. But we cannot go too far! At a redshift $z = 0.1$,for instance,the relation between $d_{l}$ (and $d_{p}$) and $z$ starts to deviate significantly from the linear relation that holds true at lower redshifts. To determine the acceleration of the Universe and other cosmological parameters beyond $H_{0}$ we'll have to go farther than that. Indeed, we ought to observe standard candles for which the relation between $d_{l}$ and $z$ deviates significantly from the linear relation that holds true at lower redshifts.
+\par Using (\ref{eq:a_expansion}) in the proper distance definition, we can now calculate
+\begin{equation}
+    d_{p}(t_{0}) = \int_{t_{e}}^{t_{0}} \frac{c\,\text{d}t}{a(t)} \approx c(t_{0}-t_{e}) + \frac{cH_{0}}{2}(t_{0}-t_{e})^{2}
+\end{equation}
+\par But we also know that
+\begin{equation*}
+    z = \frac{1}{a(t_{e})}-1
+\end{equation*}
+so we can find an approximate relation for the redshift
+\begin{equation*}
+    z \approx H_{0}(t_{0}-t_{e})+\left(1+\frac{q_{0}}{2}\right)H_{0}^{2}(t_{0}-t_{e})^{2}
+\end{equation*}
+which we can put into the equation for proper distance up to second order in redshift
+\begin{equation}
+    d_{p}(t_{0}) = \frac{c}{H_{0}}z\left[1-\frac{(1+q_{0})}{2}z\right]
+    \label{eq:properdistance_rs_second}
+\end{equation}
+This tells us something really important: $d_{p}(t_{0})$ is proportional to $z$ only if
+\begin{equation*}
+    z \ll \frac{2}{1+q_{0}}
+\end{equation*}
+In this case the proper distance to a galaxy of moderate redshift ($z \sim 0.1$, equivalent of $\sim 400 \,\text{Mpc}$) is less than would be predicted from the
+linear Hubble relation.
+
+\subsection{Luminosity Distance}
+
+In a static and flat Universe, if you know the intrisic luminosity of an object $L$ and can observe its flux $F$, you can infer its distance
+\begin{equation*}
+    d_{l} = \left(\frac{L}{4\pi F}\right)^{1/2}
+\end{equation*}
+How does this change in a curved and expanding Universe?
+\par We can set the comoving radial distance to $r_{e}$, so that photons emitted by and object at this distance will be spread (today) over a "spherical cap" of proper radius $R = a(t_{0})r_{e} = r_{e}$. We can thus integrate over solid angle $\text{d}\Omega$ to calculate the area of such sphere at fixed time
+\begin{equation*}
+    A(t_{0}) = 4\pi S_{k}^{2}(r_{e})
+\end{equation*}
+\par Because of the expansion the wavelength of these photons will change according to (\ref{eq:redshift_def}). Therefore, the energy of a photon will decrease
+\begin{equation*}
+    E_{0} \sim \frac{c}{\lambda_{0}} = \frac{c}{(1+z)\lambda_{e}} \sim \frac{E_{e}}{1+z}
+\end{equation*}
+\par On top of that, two wavefronts separated by $\delta t_{e}$ will arrive with a delay $\delta t_{0} = \delta t_{e}(1+z)$, so the arrival rate will decrease of another $1+z$
+\begin{equation*}
+    L_{e} \sim \frac{E_{e}}{\delta t_{e}} = \frac{(1+z)^{2}E_{0}}{\delta t_{0}} = (1+z)^{2}L_{0}
+\end{equation*}
+\par Since the flux is equal to energy per unit time per unit area, we can write
+\begin{equation*}
+    F = \frac{L_{e}}{4\pi S_{k}^{2}(r_{e})(1+z)^{2}}
+\end{equation*}
+so that by direct comparison with out initial equation, we find that the \emph{luminosity distance} is
+\begin{equation}
+    d_{l} = S_{k}(r_{e})(1+z)
+    \label{eq:luminositydistance}
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{img/lumdist.png}
+    \caption{Luminosity distance of a standard candle with observed redshift $z$, in units of the Hubble distance, $c/H_{0}$. The bold solid line gives the result for the Benchmark Model. For comparison, the dot-dash line indicates a flat, $\Lambda$-dominated Universe, and the dotted line a flat, matter-dominated Universe.}
+    \label{fgr:luminosity_dist}
+\end{figure}
+\par If the universe is roughly flat $S_{k}(r_{e}) \approx r_{e} \approx d_{p}(t_{0})$. Plugging in the second order expansion for the proper distance (\ref{eq:properdistance_rs_second}) we find
+\begin{equation}
+    d_{l}(t_{0}) = \frac{c}{H_{0}}z\left[1+\frac{(1-q_{0})}{2}z\right]
+    \label{eq:lumdistance_rs_second}
+\end{equation}
+\par This relation we could in principle express in terms of apparent and absolute magnitude
+\begin{equation*}
+    M-m = -5\log_{10}\left(\frac{d_{l}}{1\,\text{Mpc}}\right)-25
+\end{equation*}
+
+\subsection{Angular diameter distance}
+
+\par Let's consider a curved, expanding Universe described by the FLRW metric and choose your comoving coordinate system so that you are at the origin.
+\par Consider a yardstick of constant proper length $l$ perpendicular to the line of sight and at a comoving coordinate distance $r_{e}$. At a time $t_{e}$, the yardstick emitted the light that you observe at time $t_{0}$. The comoving coordinates of the two ends of the yardstick, at the time the light was emitted, were $(r_{e},\theta_{1},\phi)$ and
+$(r_{e},\theta_{2},\phi)$.
+\par The distance $\text{d}s$ between the two ends of the yardstick, measured at the time $t_{e}$ when the light was emitted, can be found from the FLRW metric:
+\begin{equation*}
+    \text{d}s = a(t_{e})S_{k}(r_{e})\delta\theta
+\end{equation*}
+with $\delta\theta$ the angular distance between the ends of the yardstick. We can set $\text{d}s = l$ and define
+\begin{equation}
+    d_{a} := \frac{l}{\delta\theta} = \frac{S_{k}(r_{e})}{1+z} = \frac{d_{L}}{(1+z)^{2}}
+    \label{eq:angulardistance}
+\end{equation}
+
+\subsection{Particle Horizon}
+
+Consider a photon emitted by a galaxy at time $t_{e}$, for a light path $\text{d}s = 0$. The comoving distance traveled at time $t_{x}$ is
+\begin{equation*}
+    \int_{t_{e}}^{t_{x}} \frac{c\text{d}t}{a(t)} = \int_{0}^{r}\text{d}r = r
+\end{equation*}
+so that if a photon was emitted at $t_{e} = 0$, the proper distance travelled by the photon is 
+\begin{equation}
+    d_{H}(t) = a(t)r = a(t)\int_{0}^{t}\frac{c\text{d}t'}{a(t')}
+    \label{eq:particle_horizon}
+\end{equation}
+This has a simple interpretation: The most distant object you can see today is one for which the light emitted at $t = 0$ is just now reaching us at $t = t_{0}$. The proper distance (at the time of observation) to such an object is called the \emph{particle horizon distance}. The particle horizon is a spherical surface centered on you, beyond which you cannot see because light from more distant objects has not had time to reach you.
+\par On a concluding note, let us define $r_{H} = c/H(t)$ as the \emph{Hubble radius}. It is the distance at which the expansion rate is faster than the speed of light. The Hubble radius is the distance over which particles can travel in the course of one expansion time.
+\par The Hubble radius is a kind of “instantaneous horizon”; it is not fixed in time and does not necessarily mean those points never have been or never will be in causal contact. The Hubble radius evolves as the universe expands or contracts (i.e., $H$ changes).
+\par If particles are separated by distances greater than particle horizon, they never could have communicated with one another; if they are separated by distances greater than the Hubble radius, they cannot talk to each other at the time $t$.
+
+\subsubsection{Olbers' paradox and its solution}
+
+Should I ever feel like it, I'll talk about it. At present day (\today), I'm not definitely feeling like it.
+
+\section{Friedmann's Equations}
+
+Coming soon.
