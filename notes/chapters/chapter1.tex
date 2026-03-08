@@ -80,7 +80,7 @@ The spacelike section of the FLRW metric consists of the spatial metric for a un
 \begin{equation}
     \bar{r} = R_{0}r \quad \kappa \frac{k}{R_{0}^{2}} \quad a_{r}(t) = R_{0}a(t)\to a(t)
 \end{equation}
-thus obtaining a metric with the following form ($\bar{r}\to r$ for simplicity)
+thus obtaining a metric with the following form ($\bar{r}\to r$, $\kappa \to k$ for simplicity)
 \begin{equation}
     \text{d}s^{2} = -\text{d}t^{2} + a^{2}(t)(\text{d}r^{2}+S_{k}^{2}(r)\text{d}\Omega_{(2)}^{2})
     \label{eq:FRW_revisited}
@@ -316,4 +316,160 @@ Should I ever feel like it, I'll talk about it. At present day (\today), I'm not
 
 \section{Friedmann's Equations}
 
-Coming soon.
+The FLRW metric (\ref{eq:FRW}) is defined for any behavior of the scale factor $a(t)$; the next step would be to plug it into Einstein's equation
+\begin{equation}
+    G_{\mu\nu} = R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu} = 8\pi G T_{\mu\nu}
+    \label{eq:einstein_eq}
+\end{equation}
+to derive the so called \emph{Friedmann's equations}. We will chose to model matter and energy by a perfect fluid. This means that is we consider a fluid at rest in the comoving coordinates, then $u^{\mu} = (1,0,0,0)$ and the energy momentum tensor associated to the fluid will be
+\begin{equation}
+    T_{\mu\nu} = (p+\rho)u_{\mu}u_{\nu} +pg_{\mu\nu} \quad T = -\rho +3p
+    \label{eq:perfectfluid}
+\end{equation}
+\par It is educational to consider the 0th component of the conservation of energy equation
+\begin{equation}
+    0 = \nabla_{\mu}T^{\mu}_{\; \;0} = -\partial_{0}\rho-3\frac{\ddot{a}}{a}(\rho+p)
+    \label{eq:fluidequation}
+\end{equation}
+which is sometimes known \emph{fluid equation}. Here $\rho$ is the energy density and $p$ is the pressure. Please note that we're working in units $c=1$.
+\par Making use of the expressions you can find in the appendix, we can solve explicitly (\ref{eq:einstein_eq}) and find
+\begin{equation}
+    \boxed{
+    \left(\frac{\dot{a}}{a}\right)^{2} = \frac{8\pi G}{3}\rho -\frac{k}{a^{2}}
+    }
+    \label{eq:friedmann1}
+\end{equation}
+and 
+\begin{equation}
+    \boxed{
+        \frac{\ddot{a}}{a} = -\frac{4\pi G}{3}(\rho + 3p)
+    }
+    \label{eq:friedmann2}
+\end{equation}
+\par If we know the dependence of $\rho$ on the scale factor $a$, the first one (\ref{eq:friedmann1}) is enough to solve for $a$.
+\par A useful quantity to introduce is the \emph{density parameter}
+\begin{equation}
+    \boxed{
+        \Omega = \frac{8\pi G}{3H^{2}}\rho = \frac{\rho}{\rho_{c}}
+    }
+    \label{eq:densityparam}
+\end{equation}
+where the \emph{critical density} is defined by
+\begin{equation}
+    \rho_{c} = \frac{3H^{2}}{8\pi G}
+\end{equation}
+\par Knowing the Hubble constant to within about 1\%, we can predict the current value of the critical density to within about 2\%. TOday, the critical energy density is
+\begin{equation}
+    \rho_{c}(t_{0}) = \frac{3H_{0}^{2}}{8\pi G} = 4900 \pm 300\,\text{MeV}\,\text{m}^{-3}
+\end{equation}
+\par This quantity, that will generally change with time, is called the critical density because the Friedmann equation (\ref{eq:friedmann1}) can be written as
+\begin{equation}
+    \Omega - 1 = \frac{k}{H^{2}a^{2}}
+    \label{eq:densityparam_eq}
+\end{equation}
+that univocally determinates the sign of $k$ depending on whether $\Omega$ is greater then, equal to, or less than, one.
+\begin{align*}
+    & \rho < \rho_{c} \iff \Omega < 1 \iff k < 0 \iff \text{open} \\
+    & \rho = \rho_{c} \iff \Omega = 1 \iff k = 0 \iff \text{flat} \\
+    & \rho > \rho_{c} \iff \Omega > 1 \iff k > 0 \iff \text{closed} 
+\end{align*}
+The density parameter, then, tells us which of the three FLRW geometries describes our Universe. Since the right-hand side of (\ref{eq:densityparam_eq}) cannot change sign as the Universe expands, neither can the left-hand side. So, $\Omega$ will have the same sign \emph{at all times}.
+\par The current value of the density parameter, determined from a combination of observational data, lies in the range $0.995<\Omega(t_{0})<1.005$ (2017), while the Planck collaboration along with observations of the BAO\footnote{\emph{Baryonic Acoustic Oscillations}.} set a narrower limit $\Omega(t_{0}) = 0.999 \pm 0.002$, suggesting that the Universe is, indeed, critical.
+\par Let us now dedicate a little of our time to find an expression able to predict the temporal evolution of $a(t)$. Note that only two among (\ref{eq:friedmann1}), (\ref{eq:friedmann2}) and (\ref{eq:fluidequation}) are independent. Since we have three independent variables and only two equations, we're in the need of introducing and equation of state (EoS) that relates the pressure to the energy density. Cosmology usually deals with dilute gases, for which the equation of state is simple. For substances of cosmological importance
+\begin{equation}
+    p = w\rho
+    \label{eq:eos}
+\end{equation}
+where $w$ is a dimensionless number. The behaviors of our favorite sources are summarized in the following table
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|c}
+        & $w_{i}$ \\
+        \hline
+        matter & 0\\
+        radiation & $\frac{1}{3}$\\
+        curvature & $-\frac{1}{3}$\\
+        vacuum & $-1$
+    \end{tabular}
+\end{table}
+\par In these variables, the Friedmann equation (\ref{eq:friedmann1}) can be written
+\begin{equation*}
+    H^{2} = \frac{8\pi G}{3}\sum_{i(c)}\rho_{i}
+\end{equation*}
+where the notation $\sum_{i(c)}$ indicates that we sum not only over all the actual components of energy density $\rho_{i}$, but also on the contribution of spatial curvature. Dividing both sides by $H^{2}$ yields a shockingly simple equation
+\begin{equation}
+    1 = \sum_{i(c)}\Omega_{i}
+\end{equation}
+\par Suppose that the universe contains $N$ different components, with the $i$-th component having an energy density $\rho_{i}$ and an EoS parameter $w_{i}$. As long as there is no interaction between the different components, the fluid equation (\ref{eq:fluidequation}) must hold for each component separately. So
+\begin{equation}
+    \frac{\dot{\rho}_{i}}{\rho} = -3(1+w_{i})\frac{\dot{a}(t)}{a(t)}
+\end{equation}
+which can be immediately integrated. Behold:
+\begin{equation}
+    \boxed{
+    \rho_{i}(a) = \rho_{i,0}\left(\frac{a(t)}{a(t_{0})}\right)^{-3(1+w_{i})}
+    }
+    \label{eq:density_scalefactor}
+\end{equation}
+Equation (\ref{eq:density_scalefactor}) implies that for (non-relativistic) matter $\rho \propto a^{-3}$, while for radiation (or relativistic matter) $\rho\propto a^{-4}$. This fact has a simple explaination: The energy density of non-relativistic matter decreases as $a$ increases because of the expanding volume of the Universe, while relativistic matter also gets redshifted. This has also another striking consequence: There had been times when different components were equivalent!
+\begin{align*}
+    & \frac{\rho_{\Lambda}(a)}{\rho_{m}(a)}=1=\frac{\rho_{\Lambda,0}}{\rho_{m,0}}a^{3} \implies a_{\Lambda,m} = \left(\frac{\rho_{m,0}}{\rho_{\Lambda,0}}\right)^{1/3} \approx 0.766 \implies z_{\Lambda,m}= 0.31\\
+    & \frac{\rho_{m}(a)}{\rho_{r}(a)}=1=\frac{\rho_{m,0}}{\rho_{r,0}}a \; \implies a_{r,m} = \frac{\rho_{r,0}}{\rho_{m,0}} \approx 2.9\cdot 10^{-4} \implies z_{r,m}= 3400
+\end{align*}
+If the Universe contains different components with different values of $w$, in the limit $a\to 0$, the component with the largest value of $w$ is dominant.
+\par Now that we have a relation between $\rho$ and $a$ we can set to solve the Friedmann equation (\ref{eq:friedmann1}) in special case of a spatially flat ($k = 0$) and single-component Universe. Plugging in (\ref{eq:density_scalefactor}) and setting, as customary, $a(t_{0})=1$, we find 
+\begin{equation}
+    \dot{a}^{2} = \frac{8\pi G \rho_{0}}{c^{2}}a^{-(1+3w)}
+\end{equation}
+which can be solved explicitly
+\begin{equation}
+    \boxed{
+        a(t) = \left(\frac{t}{t_{0}}\right)^{\frac{2}{3+3w}} \quad w \neq -1
+    }
+    \label{eq:scalefactor_ev}
+\end{equation}
+For $w = -1$, the equation is solved by
+\begin{equation}
+    \boxed{
+    a(t) = e^{H_{0}(t-t_{0})}
+    }
+    \label{eq:scalefactor_ev_cc}
+\end{equation}
+\par The Benchmark Model has $\Omega(t_{0}) = 1$, and hence the Universe is spatially flat. \par However, although a perfectly flat universe is consistent with the data, it is not \emph{demanded} by the data. Thus, we should keep in mind the possibility that the curvature term, $(1 - \Omega(t_{0}))/a^{2}(t)$ might be nonzero. Thus the cosmic time $t$ as a function of the scale factor $a$ can be found by performing the integral
+\begin{align*}
+    \dot{a}H_{0}^{-1} &= \left(\frac{\Omega_{r,0}}{a^{2}}+\frac{\Omega_{m,0}}{a}+a^{2}\Omega_{\Lambda,0}+(1-\Omega(t_{0}))\right)^{1/2}\\
+    t &= \frac{1}{H_{0}}\int_{0}^{a} \frac{\text{d}a}{\left[\Omega_{r,0}a^{-2}+\Omega_{m,0}a^{-1}+\Omega_{\Lambda,0}a^{2}+(1-\Omega(t_{0}))\right]}
+\end{align*}
+that, for given values of the present-day density parameters, it can be integrated numerically.
+\par In the limit that $a \ll a_{r,m} \approx 2.9\cdot 10^{-4}$, the Benchmark Model can be approximated as a flat, radiation-only universe. In the limit that $a \gg a_{m,\Lambda} \approx 0.77$, it can be approximated as a $\Lambda$-only Universe. At scale factors $a \sim a_{r,m} \approx 2.9\cdot 10^{-4}$, the Benchmark Model is approximated by a flat Universe containing only radiation and matter.
+\par If we approximate our own Universe as having $\Omega_{m,0} = 0.31$ and $\Omega_{\Lambda,0} = 0.69$ (and negligible radiation content), we find that its current age is
+\begin{equation}
+    H_{0} = 68 \pm 2 \,\text{km}\,\text{s}^{-1}\,\text{Mpc}^{-1} \implies t_{0} = 0.955H_{0}^{-1} = 13.74 \pm 0.40\,\text{Gyr}
+\end{equation}
+\par For a single component Universe ($a\to 1$ in the integral above) we obtain
+\begin{equation}
+    t_{0} = \frac{2}{3(1+w)}H_{0}^{-1}\quad w > -1
+    \label{eq:cosmictime}
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/benchmarkmodel.png}
+    \caption{Summary of the important quantities in the Benchmark Model.}
+    \label{fgr:benchmark_summary}
+\end{figure}
+\par From (\ref{eq:particle_horizon}), we can calculate the particle horizon distance for different $w$ at present time
+\begin{equation}
+    d_{H}(t_{0}) = \frac{c}{H_{0}}\frac{2}{1+3w}
+\end{equation}
+\par We can thus summarize the behavior of the particle horizon distances for our favourite sources in the following table
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|c|c}
+        & $ a(t) $ & $d_{H}$\\
+        \hline
+        matter & $\propto t^{2/3}$ & $3ct$\\
+        radiation & $\propto t^{1/2}$ & $2ct$\\
+        vacuum & $\propto e^{H(t-t_{0})}$ & $cH^{-1}(e^{Ht}-1)$
+    \end{tabular}
+\end{table}
+
