@@ -39,13 +39,8 @@ Contemporary cosmological models are based on the idea the the Universe is prett
 \par On scales of up to hundreds of Mpc it is not: We see structures in the form of galaxies, clusters of galaxies, filaments and voids.
 But on larger scales the Universe does seem to be roughly isotropic. For example, if we counted galaxies in two cubes $100\, \text{Mpc}$ on the side, in opposite directions on the celestial sphere, we would measure the same mean density of matter to within a few percent.
 \par As we mentioned, the greatest indicator of the great isotropy (and homogeneity) that reigns in the large-scale Universe is the CMB.
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\textwidth]{img/cmb.jpg}
-    \caption{The anisotropies of the Cosmic microwave background (CMB) as observed by the Planck Surveyor satellite. The CMB is a snapshot of the oldest light in our Universe, imprinted on the sky when the Universe was just 380,000 years old. It shows tiny temperature fluctuations that correspond to regions of slightly different densities, representing the seeds of all future structure: the stars and galaxies of today.}
-    \label{fgr:planck_cmb}
-\end{figure}
 
+\newpage
 \section{The FLRW metric}
 
 In these note, I'll assume you have at least some basic knowledge of GR and/or you are willing to take a look at how the Friedmann, Lemaitre, Robertson, Walker metric is constructed from scratches. So I'm going to present the final result with no proof.
@@ -473,3 +468,165 @@ that, for given values of the present-day density parameters, it can be integrat
     \end{tabular}
 \end{table}
 
+\section{Recombination and Decoupling of Photons}
+
+\par Once the Big Bang Nucleosynthesis is over, at time $t \sim 300\,\text{s}$ and temperature $T \sim 10^{8}\,\text{K}$, the Universe is a thermal bath of photons, protons, helium nuclei, traces of other light elements, and electrons, in addition to neutrinos and the unknown dark matter particle(s).
+\par In this primordial crucible of hot stuff, photons interacted primarily with electrons through Thomson scattering (i.e. the elastic scattering of electromagnetic radiation by a free charged particle)
+\begin{equation}
+    e^{-} + \gamma \longleftrightarrow e^{-} + \gamma
+    \label{eq:thomsonreaction}
+\end{equation}
+The cross-section for Thomson scattering isn't particularly large
+\begin{equation}
+    \sigma_{T} = \frac{8\pi}{3}\left(\frac{e^{2}}{m_{e}}\right)^{2} = 6.6\cdot 10^{-25}\,\text{cm}^{-2}
+    \label{eq:thomson_ct}
+\end{equation}
+Photons are also scattered by free protons, but the cross-section for proton scattering is smaller by a factor $(m_{e}/m_{p})^{2}$, so it can be neglected. It is the Coulomb interaction with the electrons that keeps the protons in thermal equilibrium with the electrons and photons.
+\par Let us then consider a simplified Universe with just Hydrogen. The degree to which the baryonic content of the universe is ionized can be expressed as the \emph{fractional ionization} $X$, defined as
+\begin{equation}
+    X = \frac{n_{p}}{n_{p}+n_{H}} = \frac{n_{p}}{n_{\text{Baryon}}}
+    \label{eq:fractionalionization}
+\end{equation}
+Electromagnetic reactions such as those forming/ionizing neutral hydrogen
+\begin{equation*}
+    e^{-} + p^{+} \longleftrightarrow H + \gamma
+\end{equation*}
+kept the baryons and photons in equilibrium.
+\par In the following we will distinguish between three closely related moments in the history of the Universe
+\begin{enumerate}
+    \item The \emph{epoch of recombination} is the time at which the baryonic component of the Universe goes from being ionized to being neutral. We define it as the \emph{instant in time when the number density of ions is equal to the number density of neutral atoms};
+    \item The \emph{epoch of photon decoupling} is the time \emph{when the rate at which photons scatter from electrons becomes smaller than the Hubble parameter}. When photons decouple, they cease to interact with electrons, and the Universe becomes transparent\footnote{\emph{Note from the Author}: i.e. optically thin.};
+    \item The \emph{epoch of last scattering} is the time at which a typical CMB photon underwent its last scattering from an electron.
+\end{enumerate}
+In statistical equilibrium at temperature $T$, the number density $n$ of particles with mass $m$; is given by the Maxwell-Boltzmann equation
+\begin{equation}
+	n_{i} = g_{i}\left(\frac{m_{i}kT}{2\pi\hbar^{2}}\right)^{2}\exp\left(-\frac{m_{i}c^{2}}{kT}\right)
+	\label{eq:maxwelldistrib}
+\end{equation}
+where $g_{i}$ is the statistical weight of particle $i$. This expression applies in the non-relativistic regime, i.e. when $m_{i}c^{2} \gg kT$, and thus had highly nonrelativistic thermal speeds.
+\par At recombination the temperature is about $T \sim 3000\,\text{K}$, so $kT \sim 0.26\,\text{eV}$, while $m_{e} = 511\,\text{keV}$ and $m_{p} = 938\,\text{MeV}$. So electrons, protons and Hydrogen atoms are in the non-relativistic regime.
+\par 
+If we recall Saha's equation
+\begin{equation}
+	\frac{N_{j+1}n_{e}}{N_{j}} = 2\frac{Z_{j+1}(T)}{Z_{j}(T)}\left(\frac{2\pi m k T}{h^{2}}\right)^{3/2}\exp\left(-\frac{\chi_{j,\,j+1}}{kT}\right)
+	\label{eq:saha}
+\end{equation}
+and set $m_{\text{H}}/m_{p} \sim 1$ and identify $\chi_{j,\,j+1}$ with the ionization potential for Hydrogen $\chi_{j,\,j+1} = Q \approx 13.6\,\text{eV}$, then Saha's equation can be written as
+\begin{equation*}
+    \frac{n_{\text{H}}}{n_{e}n_{p}} = \left(\frac{m_{e}kT}{2\pi\hbar^{2}}\right)^{2}\exp\left(\frac{Q}{kT}\right)
+\end{equation*}
+\par We can make the useful sostitution $Xn_{\text{H}} = (1-x)n_{p}$ and exploit the global neutrality of the Universe $n_{p} = n_{e}$
+\begin{equation*}
+    \frac{1-X}{X} = n_{p}\left(\frac{m_{e}kT}{2\pi\hbar^{2}}\right)^{2}\exp\left(\frac{Q}{kT}\right)
+\end{equation*}
+\par To eliminate $n_{p}$ from the equation above, we use the baryon-to-photon ratio $\eta = n_{\text{Baryon}}/n_{\gamma}$ which is experimentally proved to be constant.
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=Baryon to Photon Ratio,
+  boxed title style={size=small,colframe=blue!50!black}]
+  Provided that photons are not created or destroyed, but merely redshifted, $n_{\gamma} \propto a^{-3}$. Similarly, if baryons are not destroyed during the evolution of the Universe (that is, they are stable and do not annihilate), their number density merely gets diluted $n_{\text{Baryon}} \propto a^{-3}$. Therefore $\eta = n_{\text{Baryon}}/n_{\gamma}$ is constant and approximately equal to $\eta \approx 6.1 \cdot 10^{-10}$.
+\end{tcolorbox}
+\par In a Universe where Hydrogen is the only element, and a fraction $X = n_{p}/n_{\text{Baryon}}$ of the Hydrogen is in the form of free protons, we may write
+\begin{equation*}
+    \eta = \frac{n_{\text{Baryon}}}{n_{\gamma}} = \frac{n_{p}}{n_{\gamma}X}
+\end{equation*}
+We can thus substitute in the Saha's equation that we've written earlier
+\begin{equation*}
+    \frac{1-X}{X} = \eta n_{\gamma}X\left(\frac{m_{e}kT}{2\pi\hbar^{2}}\right)^{2}\exp\left(\frac{Q}{kT}\right)
+\end{equation*}
+\par Since the photons will follow the blackbody distribution, the photon number density will be given by (\ref{eq:blackbody_totnum}). Therefore we will be able to write
+\begin{equation}
+    n_{\gamma} = 0.2436\left(\frac{kT}{\hbar c}\right)^{3} \to \frac{1-X}{X^{2}} = 3.84\eta \left(\frac{kT}{m_{e}c^{2}}\right)^{3/2}\exp\left(\frac{Q}{kT}\right)
+    \label{eq:ionization_temp}
+\end{equation}
+If we define the moment of recombination as the instant when $X = 1/2$ then (assuming $\eta \approx 6.1 \cdot 10^{-10}$) the recombination temperature is
+\begin{equation}
+    kT_{\text{Rec}} = 0.324\,\text{eV} \approx 3760\,\text{K}
+    \label{eq:recombinationtemperature}
+\end{equation}
+\par The temperature of the Universe had a value $T = T_{\text{rec}} = 3760\,\text{K}$ at a redshift $z_{\text{Rec}} = 1380$, when the age of the Universe, in the Benchmark Model, was $t_{\text{Rec}} = 250,000\,\text{yr}$.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.8\textwidth]{img/ionizationfact.png}
+    \caption{Fractional ionization $X$ as a function of the redshift during the epoch of recombination.}
+    \label{fgr:ionization_redshift}
+\end{figure}
+As shown in Fig.\ref{fgr:ionization_redshift}, the fractional ionization went from $X = 0.9$ at a redshift $z = 1480$ to $X = 0.1$ at a redshift $z = 1260$. In the Benchmark Model, the time that elapses from $X = 0.9$ to $X = 0.1$ is $\Delta t \approx 70,000\,\text{yr}\approx 0.28t_{\text{Rec}}$.
+\par The photons remain coupled to the electrons as long as their scattering rate, $\Gamma$, is larger than $H$, the rate at which the Universe expands; when the photon scattering rate $\Gamma$ drops below $H$ ("\emph{freezeout}"), the electrons are being diluted by expansion more rapidly than the photons can interact with them.
+\par The rate of photon scattering, when Hhe hydrogen is partially ionized, is
+\begin{equation*}
+    \Gamma = n_{e}\sigma_{T}c
+\end{equation*}
+And $n_{e} = n_{p} = n_{\text{Baryon}}X(z)$, where $X(z)$ is retrieved from the curve plotted in Fig.\ref{fgr:ionization_redshift} or from expressing in terms of redshift (\ref{eq:ionization_temp}). Thus
+\begin{equation*}
+    \Gamma = n_{\text{Baryon}}X(z)\sigma_{T}c = n_{\text{B},0}a^{-3}X(z)\sigma_{T}c = (1+z)^{3}n_{\text{B},0}X(z)\sigma_{T}c
+\end{equation*}
+\par Substituting the present day density parameter for baryonic matter $\Omega_{\text{B},0} = 0.048$ we finally find
+\begin{equation*}
+    \Gamma \approx 5.0\cdot 10^{-21}(1+z)^{3}X(z)\,\text{s}^{-1}
+\end{equation*}
+If $\Gamma \ll H$, scatterings are rare, meaning that photons can undergo free-stream (decoupling). The decoupling condition is given equating $\Gamma(z) \sim H(z)$. If we neglect the recent contributions from the $\Lambda$, we can write
+\begin{equation*}
+    \frac{H^{2}}{H_{0}^{2}} = \frac{\Omega_{m,0}}{a^{3}} = \Omega_{m,0}(1+z)^{3}
+\end{equation*}
+Using $\Omega_{m,0} = 0.31$, the numerical value of the Hubble parameter during the epoch of recombination is
+\begin{equation*}
+    H(z) = 1.23 \cdot 10^{-18} (1+z)^{3/2}\,\text{s}^{-1}
+\end{equation*}
+The redshift at which we have decoupling will then be
+\begin{equation}
+    \Gamma = H \implies 1+z_{\text{dec}} = \frac{39.3}{X^{2/3}(z_{\text{dec}})}
+    \label{eq:decoupling}
+\end{equation}
+The redshift of photon decoupling is found to be $z_{\text{dec}} = 1120$. Truth be told, the exact redshift of photon decoupling is somewhat smaller than this value. The Saha equation assumes that the reaction
+\begin{equation*}
+    H + \gamma \to p^{+} + e^{-}    
+\end{equation*}
+is in equilibrium. However, when $\Gamma$ starts to drop below $H$, the
+photoionization reaction is no longer in equilibrium. As a consequence, the true value is $z_{\text{dec}} \sim 1090$, corresponding to a temperature $T_{\text{dec}} = 2970\,\text{K}$, when the age of the universe was $t_{\text{dec}} = 371,000\,\text{yr}$ in the Benchmark model.
+\par At last but not the least, let us consider the last scattering epoch. The optical depth at a given time can be expressed as
+\begin{equation*}
+    \tau(t) = \int_{t}^{t_{0}} \Gamma(t')\,\text{d}t' \implies \tau(a) = \int_{a}^{1} \frac{\Gamma(a')}{\dot{a}'}\,\text{d}a'
+\end{equation*}
+which can also be expressed in terms of the redshift $z$ as
+\begin{equation*}
+    \tau(z) = \int_{0}^{z} \frac{\Gamma(z')}{H(z')(1+z')}\,\text{d}z' = 0.0041\int_{0}^{z} X(z)(1+z)^{1/2}\,\text{d}z'
+\end{equation*}
+We define the last scattering as the moment when $\tau = 1$, meaning
+\begin{equation}
+    z_{\text{LS}} \approx z_{\text{dec}} \approx 1090
+    \label{eq:lastscattering}
+\end{equation}
+\par A summary of the relevant characteristics of our favorite epochs is presented in the following table.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/epochstable.png}
+    \label{fgr:epochstable}
+\end{figure}
+\newpage
+\section{The Cosmic Microwave Background}
+\par In this section we're going to make intensive use of the various blackbody properties. If you're not confident about those, you can take a brief detour to Appendix B and come back here when you've levelled up.
+\par Recall the blackbody energy distribution (\ref{eq:blackbody_endens}), and suppose you have such a black body spectrum at some time $t = t_{1}$. Then, if no photons get destroyed or produced, at the later time $t_{0}$, each photon will appear redshifted according to (\ref{eq:cosmological_redshift}): $\nu_{1} = (1+z)\nu_{0}$, and the distribution will be
+\begin{equation}
+    U_{\nu_{1}}\,\text{d}\nu_{1} = (1+z)^{4}\frac{8\pi h}{c^{3}}\frac{\nu_{0}^{3}}{\exp(h\nu_{0}/kT_{0})-1}\,\text{d}\nu_{0}
+    \label{eq:blackbody_redshift}
+\end{equation}
+with $T_{0} = T_{1}/(1+z)$. So, it is still a blackbody spectrum, but with temperature decreased by a factor $1 + z$, and the energy density decreased by a factor $(1 + z)^{4}$.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/cmb.jpg}
+    \caption{The anisotropies of the Cosmic microwave background (CMB) as observed by the Planck Surveyor satellite. The CMB is a snapshot of the oldest light in our Universe, imprinted on the sky when the Universe was just 380,000 years old. It shows tiny temperature fluctuations that correspond to regions of slightly different densities, representing the seeds of all future structure: the stars and galaxies of today.}
+    \label{fgr:planck_cmb}
+\end{figure}
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=CMB,
+  boxed title style={size=small,colframe=blue!50!black}]
+  Space-based experiments have revealed that the Cosmic Microwave Background is exquisitely well fitted by a blackbody spectrum with a temperature $T \approx 2.7255\,\text{K}$. The blackbody radiation that fills the universe today can be explained as a relic of the time when the Universe was sufficiently hot and dense to be opaque. However, at the time the universe became transparent, its temperature was $2970\,\text{K}$. The temperature of the CMB today is $2.7255\,\text{K}$, a factor of 1090 lower, because the scale factor a(t) has increased by a factor of 1090 since then.
+  $$ T \sim \frac{1}{a(t)} = 1+z $$
+\end{tcolorbox}
+
+\par What we now see as a Cosmic Microwave Background, at the time the Universe became transparent,  was a cosmic near-infrared background.
