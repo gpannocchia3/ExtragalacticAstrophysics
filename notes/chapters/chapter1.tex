@@ -68,17 +68,17 @@ where
 \end{equation}
 through which we can write the FLRW metric as
 \begin{equation}
-    \text{d}s^{2} = -\text{d}t^{2}+a(t)^{2}\left(\text{d}\chi^{2}+S_{k}(\chi)^{2}\text{d}\Omega_{(2)}^{2}\right)
+    \text{d}s^{2} = -\text{d}t^{2}+a(t)^{2}R_{0}^{2}\left(\text{d}\chi^{2}+S_{k}(\chi)^{2}\text{d}\Omega_{(2)}^{2}\right)
+    \label{eq:FRW_revisited}
 \end{equation}
 The spacelike section of the FLRW metric consists of the spatial metric for a uniformly curves space of radius $R_{0}$ (the present-day radius of curvature) scaled by the square of the scale factor $a(t)$.
 \par Note that we're flouting conventional wisdom and adopting a convention in which the scale factor is dimensionless, that requires setting
 \begin{equation}
-    \bar{r} = R_{0}r \quad \kappa \frac{k}{R_{0}^{2}} \quad a_{r}(t) = R_{0}a(t)\to a(t)
+    \bar{r} = R_{0}r \quad \kappa = \frac{k}{R_{0}^{2}} \quad a_{r}(t) = R_{0}a(t)\to a(t)
 \end{equation}
 thus obtaining a metric with the following form ($\bar{r}\to r$, $\kappa \to k$ for simplicity)
 \begin{equation}
     \text{d}s^{2} = -\text{d}t^{2} + a^{2}(t)(\text{d}r^{2}+S_{k}^{2}(r)\text{d}\Omega_{(2)}^{2})
-    \label{eq:FRW_revisited}
 \end{equation}
 and the factor $S_{k}(r)$ is simply (\ref{eq:sphere_radius}) scaled with the present-day radius of curvature $R_{0}$. Sometimes it is useful to perform a slight manipulation of the FRW metric (\ref{eq:FRW}) and define a conformal time 
 \begin{equation*}
@@ -133,9 +133,12 @@ To make things easier we then define a quantity called \emph{redshift} defined a
     \label{eq:redshift_def}
 \end{equation}
 so that, if the observation takes place today ($a_{obs} = a_{0} = 1$), we can just write 
-\begin{equation*}
+\begin{equation}
+    \boxed{
     a_{em} = \frac{1}{1+z_{em}}
-\end{equation*}
+    }
+    \label{eq:scalefactor_redshift}
+\end{equation}
 and 
 \begin{equation}
     \boxed{
@@ -232,14 +235,15 @@ linear Hubble relation.
 
 \subsection{Luminosity Distance}
 
-In a static and flat Universe, if you know the intrisic luminosity of an object $L$ and can observe its flux $F$, you can infer its distance
+If the redshift is not very small, we have to think more carefully about what we mean by "distance" in cosmology. The instantaneous physical distance (proper distance) is a convenient construct, but not itself observable, since observation always refer to our past light cone. In Euclidean space, there are a number of different ways to infer the distance of an object, for example comparing its apparent brightness to its intrinsic luminosity.
+\par Let us then define the \emph{luminosity distance} as
 \begin{equation*}
     d_{l} = \left(\frac{L}{4\pi F}\right)^{1/2}
 \end{equation*}
-How does this change in a curved and expanding Universe?
-\par We can set the comoving radial distance to $r_{e}$, so that photons emitted by and object at this distance will be spread (today) over a "spherical cap" of proper radius $R = a(t_{0})r_{e} = r_{e}$. We can thus integrate over solid angle $\text{d}\Omega$ to calculate the area of such sphere at fixed time
+with intrisic luminosity $L$ and $F$. How does this change in a curved and expanding Universe?
+\par We can set the comoving radial distance to $r_{e}$, so that photons emitted by and object at this distance will pass (today) through a spehre of proper radius $R = a(t_{0})r_{e} = r_{e}$. The area of such sphere at fixed time can be derived from the coefficient of $\text{d}\Omega$ in (\ref{eq:FRW_revisited}), yielding
 \begin{equation*}
-    A(t_{0}) = 4\pi S_{k}^{2}(r_{e})
+    A(t_{0}) = 4\pi R_{0}^{2}S_{k}^{2}(\chi) = 4\pi S_{k}^{2}(r_{e})
 \end{equation*}
 \par Because of the expansion the wavelength of these photons will change according to (\ref{eq:redshift_def}). Therefore, the energy of a photon will decrease
 \begin{equation*}
@@ -255,7 +259,7 @@ How does this change in a curved and expanding Universe?
 \end{equation*}
 so that by direct comparison with out initial equation, we find that the \emph{luminosity distance} is
 \begin{equation}
-    d_{l} = S_{k}(r_{e})(1+z)
+    d_{l} = S_{k}(r_{e})(1+z) = (1+z)R_{0}S_{k}(\chi)
     \label{eq:luminositydistance}
 \end{equation}
 \begin{figure}[h!]
@@ -264,7 +268,35 @@ so that by direct comparison with out initial equation, we find that the \emph{l
     \caption{Luminosity distance of a standard candle with observed redshift $z$, in units of the Hubble distance, $c/H_{0}$. The bold solid line gives the result for the Benchmark Model. For comparison, the dot-dash line indicates a flat, $\Lambda$-dominated Universe, and the dotted line a flat, matter-dominated Universe.}
     \label{fgr:luminosity_dist}
 \end{figure}
-\par If the universe is roughly flat $S_{k}(r_{e}) \approx r_{e} \approx d_{p}(t_{0})$. Plugging in the second order expansion for the proper distance (\ref{eq:properdistance_rs_second}) we find
+\par The luminosity distance is something we might hope to measure, sincere there are some astrophysical sources whose absolute luminosity are known (see Chapter \ref{ch:ii}), but $\chi$ (and for extension, the comoving distance $r_{e}$), is not observable, so we have to remove it from our equation. On a null radial geodesic (for convenience), we have
+\begin{equation*}
+    0 = \text{d}s^{2} = -\text{d}t^{2} + a^{2}R_{0}^{2}\text{d}\chi^{2}
+\end{equation*}
+or more simply 
+\begin{equation*}
+    \chi = R_{0}^{-1} \int \frac{\text{d}t}{a} = R_{0}^{-1} \int \frac{\text{d}a}{a^{2}H(a)}
+\end{equation*}
+\par It is conventional to convert the scale factor to redshift using (\ref{eq:scalefactor_redshift}) $a = (1+z)^{-1}$, so we have
+\begin{equation*}
+    \chi(z) = R_{0}^{-1}\int_{0}^{z}\frac{\text{d}z'}{H(z')}
+\end{equation*}
+\par In order to evaluate the Hubble parameter in this integral we can use, as we'll see, the Friedmann equation (\ref{eq:friedmann_alt}), thus finding 
+\begin{equation*}
+    d_{l}(z) = (1+z)R_{0}S_{k}\left[R_{0}^{-1}H_{0}^{-1}\int \frac{\text{d}z'}{E(z')}\right]
+\end{equation*}
+where we've defined $E(z) = H(z)/H_{0}$. Note that $R_{0}$ drops out when $k = 0$, which is good, because in that case (flat Universe) the radius of curvature is a completely arbitrary parameter. Still, it is more common to speak in terms of $\Omega_{c,0} = -k/R_{0}^{2}H_{0}^{2}$, which can be measured. In terms of this parameterm we have
+\begin{equation*}
+    R_{0} = \frac{H_{0}^{-1}}{\sqrt{|\Omega_{c,0}|}}
+\end{equation*}
+\par We can therefore write the luminosity in terms of measurable cosmological parameters as 
+\begin{equation}
+    \boxed{
+    d_{l}(z) = (1+z)\frac{H_{0}^{-1}}{\sqrt{|\Omega_{c,0}|}}S_{k}\left[\sqrt{|\Omega_{c,0}|}\int \frac{\text{d}z'}{E(z')}\right]
+    }
+    \label{eq:general_lumdist}
+\end{equation}
+\par Although it appears unwieldy (and it is), this equation is of central importance in cosmology. Given the observables $H_{0}$ and $\Omega_{i,0}$, we can straightforwardly calculate the luminosity distance to an object at any redshift $z$.
+\par Let us now consider a simple case for which we can find a solution right away. If the Universe is roughly flat $S_{k}(r_{e}) \approx r_{e} \approx d_{p}(t_{0})$. Plugging in the second order expansion for the proper distance (\ref{eq:properdistance_rs_second}) into (\ref{eq:luminositydistance}) we find
 \begin{equation}
     d_{l}(t_{0}) = \frac{c}{H_{0}}z\left[1+\frac{(1-q_{0})}{2}z\right]
     \label{eq:lumdistance_rs_second}
@@ -309,6 +341,7 @@ This has a simple interpretation: The most distant object you can see today is o
 
 Should I ever feel like it, I'll talk about it. At present day (\today), I'm not definitely feeling like it.
 
+\newpage
 \section{Friedmann's Equations}
 
 The FLRW metric (\ref{eq:FRW}) is defined for any behavior of the scale factor $a(t)$; the next step would be to plug it into Einstein's equation
@@ -388,9 +421,10 @@ where $w$ is a dimensionless number. The behaviors of our favorite sources are s
     \end{tabular}
 \end{table}
 \par In these variables, the Friedmann equation (\ref{eq:friedmann1}) can be written
-\begin{equation*}
+\begin{equation}
     H^{2} = \frac{8\pi G}{3}\sum_{i(c)}\rho_{i}
-\end{equation*}
+    \label{eq:friedmann_alt}
+\end{equation}
 where the notation $\sum_{i(c)}$ indicates that we sum not only over all the actual components of energy density $\rho_{i}$, but also on the contribution of spatial curvature. Dividing both sides by $H^{2}$ yields a shockingly simple equation
 \begin{equation}
     1 = \sum_{i(c)}\Omega_{i}
@@ -605,6 +639,210 @@ We define the last scattering as the moment when $\tau = 1$, meaning
     \label{fgr:epochstable}
 \end{figure}
 \newpage
+
+\section{Structure Formation}
+
+\par Until now we have assumed an homogeneous and isotropic Universe. The scale factor, the Friedmann equations, the energy densities they depend just on time. But this is just an approximation, the observed Universe is never perfectly homogeneous and isotropic!
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/galdistrib.png}
+    \caption{Galaxy distribution from the Sloan Digital Sky Survey: We see clusters, filaments, structure.}
+    \label{fgr:galdistib}
+\end{figure}
+\par Consider some component of the Universe whose density is a function of position as well as time. At a given time $t$, the spatially averaged energy density is
+\begin{equation}
+    \bar{\rho}(t) = \frac{1}{V}\int_{V}\rho(\vec{r},t)\,\text{d}^{3}r
+    \label{eq:av_dens}
+\end{equation}
+\par To ensure that we have found the true average, the volume $V$ over which we are averaging must be large compared to the size of the biggest structures in the universe ($V^{1/3} \gg 100\,\text{Mpc}$). We can introduce a dimensionless density fluctuation
+\begin{equation}
+    \Delta(\vec{r},t) = \frac{\rho(\vec{r},t)-\bar{\rho}(t)}{\bar{\rho}(t)}
+    \label{eq:contrast}
+\end{equation}
+The value of $\Delta$ is thus negative in underdense regions and positive in overdense regions, with a minimum possible value of $-1$, corresponding to $\rho = 0$. There is no upper limit, in principle, on $\Delta$, which can have a value much greater than 1.
+\par Let us now make the assumption of non-relativistic matter fluid for a single component Universe. The dynamical equations for a fluid in a gravitational field are the differential equations of the conservation of mass (the continuity equation), the equation of conservation of motion (Euler's equation), and Poisson's equation
+\begin{align}
+    & \parder{\rho}{t} + \nabla(\rho\vec{v}) = 0 \implies \frac{\text{D}\rho}{\text{D}t} = -\rho(\nabla\cdot\vec{v})\\
+    & \parder{\vec{v}}{t} + (\vec{v}\cdot\nabla)\vec{v} = \frac{\text{D}\vec{v}}{\text{D}t} = -\frac{\nabla p}{\rho} - \nabla\phi \\
+    & \nabla^{2}\phi = 4\pi G
+\end{align}
+where we've defined 
+\begin{equation*}
+    \frac{\text{D}}{\text{D}t} = \partial_{t} + (\vec{v}\cdot\nabla)
+\end{equation*}
+as the \emph{Lagrangian derivative}.
+\par Let us call $v_{0}$, $\rho_{0}$, $p_{0}$ and $\phi_{0}$ the solution of the unperturbed equation. These quantities obey, by definition, the previous equations. We now add small perturbations to these solutions, and write the full quantities as
+\begin{align*}
+    & \vec{v} = \vec{v}_{0}+\delta\vec{v}\\
+    & \rho = \rho_{0} + \delta\rho\\
+    & p = p_{0} + \delta p\\
+    & \phi = \phi_{0} + \delta\phi
+\end{align*}
+We assume the perturbations are so small that it is sufficient to expand the equations to first order. Furthermore, we assume that the unperturbed pressure $p$ is homogeneous, $\nabla p = 0$. With these assumptions, we can derive the equations for the perturbed quantities.
+\par Making the due substitutions we find
+\begin{align}
+    & \frac{\text{D}\Delta}{\text{D}t} = -\nabla\cdot(\delta\vec{v})\\
+    & \frac{\text{D}\delta\vec{v}}{\text{D}t} + (\delta\vec{v}\cdot\nabla)\vec{v}_{0} = -\frac{1}{\rho_{0}}\nabla\delta p -\nabla\delta\phi\\
+    & \nabla^{2}\delta\phi = 4\pi G\delta\rho
+\end{align}
+which are the linearized equations describing how the perturbations evolve with time.
+\par Since we consider a uniformly expanding background it will be convenient to switch from physical coordinates to comoving coordinates 
+\begin{equation*}
+    \vec{x} = a(t)\vec{r} \implies \vec{v} = \dot{a}(t)\vec{r} + a(t)\vec{u}
+\end{equation*}
+where we've defined $\vec{u} = \dot{\vec{r}}$ as the \emph{comoving speed}. The \emph{peculiar speed} $\vec{v}$ can be thus cast in a more familiar fashion
+\begin{equation}
+    \vec{v} = H(t)\vec{x} + a(t)\vec{u} = \vec{v}_{0} +\delta\vec{v}
+    \label{eq:peculiarspeed}
+\end{equation}
+in which is made manifest the free-fall contribution due to the expansion of the Universe. We can replace the $\nabla$ operator in physical coordinates with $\nabla_{c}$ in comoving coordinates
+\begin{equation}
+    \nabla = \frac{1}{a(t)}\nabla_{c}
+    \label{eq:comoving_gradient}
+\end{equation}
+throug which we can express the linearized Euler's equation in a more suggestive form
+\begin{equation}
+    2\frac{\dot{a}(t)}{a(t)}\vec{u}+\frac{\text{D}\vec{u}}{\text{D}t} = -\frac{1}{\rho_{0}}\frac{1}{a^{2}(t)}\nabla_{c}\delta p -\frac{1}{a^{2}(t)}\nabla_{c}\delta\phi
+    \label{eq:linearizedcomovingeuler}
+\end{equation}
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=Special case,
+  boxed title style={size=small,colframe=blue!50!black}]
+  If we neglect pressure gradients and the external potential
+  $$ 2\frac{\dot{a}(t)}{a(t)}\vec{u}+\frac{\text{D}\vec{u}}{\text{D}t} = 0$$
+  which is solved by $u \sim a^{-2}$. Since $u$ is a comoving velocity, the proper velocity will decay as $\delta v \sim a^{-1}$. Due to the expansion of the background FLRW Universe velocity perturbations get gradually damped.
+  \par \emph{The only way to sustain and increase velocity perturbations is therefore the righthand source term, that is, the external gravitational fields}.
+\end{tcolorbox}
+\par To solve (\ref{eq:linearizedcomovingeuler}) we are, as often happens, one equation short. We can find the equation we're lacking if we consider an adiabatic system where the pressure perturbations are related to the density by
+\begin{equation}
+    \delta p = c_{s}^{2}\delta\rho
+    \label{eq:adiabatic_eos}
+\end{equation}
+with $c_{s}$ the sound speed. Now we can take the comoving divergence of (\ref{eq:linearizedcomovingeuler}) and plug in Poisson's equation in comoving coordinates and the comoving continuity equation
+\begin{align*}
+    \frac{1}{a^{2}(t)}\nabla_{c}^{2}\delta\phi &= 4\pi G\delta\rho\\
+    \frac{\text{D}\Delta}{\text{D}t} = -\nabla_{c}\cdot\vec{u} &\implies \frac{\text{D}^{2}\Delta}{\text{D}t^{2}} = -\nabla_{c}\cdot\frac{\text{D}\vec{u}}{\text{D}t}
+\end{align*}
+so that we can finally write
+\begin{equation}
+    \boxed{
+    2\frac{\dot{a}(t)}{a(t)}\dot{\Delta}+\ddot{\Delta} = -\frac{1}{\rho_{0}}\frac{c_{s}^{2}}{a^{2}(t)}\nabla_{c}^{2}\delta\rho +4\pi G\delta\rho
+    }
+    \label{eq:comovingcontrast_eq}
+\end{equation}
+\par This one we can solve taking a plane-wave solution for $\Delta \propto e^{i(\vec{k}_{c}\cdot\vec{r}-\omega t)}$, where $\vec{k}_{c} = a(t)\vec{k}$. Recalling that $\delta\rho = \Delta\rho_{0}$ we find
+\begin{equation*}
+    \ddot{\Delta} + 2\frac{\dot{a}(t)}{a(t)}\dot{\Delta} = (4\pi G\rho_{0}-k^{2}c_{s}^{2})\Delta
+\end{equation*}
+\par For a static Universe $\dot{a} = 0$, so
+\begin{equation*}
+    \ddot{\Delta} = (4\pi G\rho_{0}-k^{2}c_{s}^{2})\Delta
+\end{equation*}
+We look for solutions with time dependence $\Delta(t)\propto e^{-i\omega t}$, so that $\dddot{\Delta} = -\omega^{2}\Delta$, hence the following dispersion relation
+\begin{equation}
+    \omega^{2} = 4\pi G\rho_{0}-k^{2}c_{s}^{2}
+    \label{eq:su_disprel}
+\end{equation}
+\par This dispersion relation describes either acoustic oscillations or instabilities, depending on the sign of the right-hand side. An important quantity is therefore the value of the wave number $k$ for which the right-hand side is equal to zero. For
+\begin{equation}
+    k > k_{J} = \frac{\sqrt{4\pi G \rho_{0}}}{c_{s}} \; \text{or}\; R < R_{J} = c_{s}\sqrt{\frac{\pi}{G\rho_{0}}}
+    \label{eq:jeanslength}
+\end{equation}
+the oscillation frequency $\omega$ is real, meaning that the solution to (\ref{eq:comovingcontrast_eq}) presents periodic variations in the local density, i.e., acoustic oscillations.
+\par Conversely, when the oscillation frequency $\omega$ is imaginary, the solution represents an exponentially decaying/growing solution. For the growing mode, the growth rate is
+$$ \Gamma = \sqrt{4\pi G \rho_{0} - c_{s}^{2}k^{2}} $$
+which for perturbations on scales $R > R_{J}$ is approximately given by $\Gamma \approx \sqrt{4\pi G \rho_{0}}$, and the typical collapse time is then $\tau \sim 1/\Gamma \sim (G\rho_{0})^{-1/2}$.
+\par What do we learn from this? Instabilities (if any) have \emph{exponential behavior}.
+\par Let us now consider a \emph{Einstein-De Sitter Universe}, that is a matter dominated, expanding Universe with only non-interacting matter
+(like Cold Dark Matter or baryonic matter after decoupling). Since interactions are negligible, we can drop the pressure term
+\begin{equation*}
+    2\frac{\dot{a}(t)}{a(t)}\dot{\Delta}+\ddot{\Delta} = +4\pi G\delta\rho
+\end{equation*}
+\par If you quickly recall (\ref{eq:density_scalefactor}) for $\rho_{0}$\footnote{Note that the "0" subscript means "unperturbed" (background), it doesn’t mean today.} and (\ref{eq:scalefactor_ev}) for $a(t)$, the previous equation takes the form
+\begin{equation*}
+    \ddot{\Delta} + \frac{4}{3t}\dot{\Delta} -\frac{2}{3t^{2}}\Delta = 0
+\end{equation*}
+which is solved by
+\begin{equation*}
+    \Delta = c_{1}t^{2/3} + c_{2}t^{-1}
+\end{equation*}
+When the growing mode is the only survivor, the density perturbations in a flat, matter-only universe grow at the rate 
+$$ \Delta \propto t^{2/3} \propto a(t) \propto (1+z)^{-1} \quad \text{as long as}\; \Delta \ll 1 $$
+We have then turned an exponential instability into a power law, meaning that the expansion of the Universe hinders the growth of structures.
+\subsection{Jeans Mass for Baryons}
+\par We may know ask ourselves what is it of baryons? CDM\footnote{Cold Dark Matter.} is non interacting matter. But baryons, before decoupling, are strongly coupled with radiation.
+\par Before decoupling, photons and baryons are, you guessed it, coupled. Moreover, in terms of energy density photons dominate over baryons (but not over matter as a whole); therefore the equation of state is that for photons. We can calculate the sound speed
+\begin{equation*}
+    c_{s} = c\left(\der{p}{\rho}\right)^{1/2} = \frac{1}{\sqrt{3}}c
+\end{equation*}
+so that the Jeans radius becomes
+\begin{equation*}
+    R_{J} = \sqrt{\frac{\pi}{3G\rho_{0}}}c
+\end{equation*}
+which at the epoch of decoupling was $R_{J}\approx 0.66\,\text{Mpc}$. The mass of baryons inside those $0.66\,\text{Mpc}$ at the epoch of decoupling will be 
+\begin{equation*}
+    M_{\text{Baryon}} = \frac{4\pi}{3}\rho_{\text{Baryon}}(t_{\text{dec}})R_{j}^{3}\approx 10^{19}M_{\odot}
+\end{equation*}
+which is unfathomably large. This also means that only baryon masses greater than $10^{19}M_{\odot}$ could collapse before decoupling. Since such masses couldn't possibly exist, baryons did not collapse before decoupling.
+\par As we've seen, this means baryons were oscillating!
+\par After decoupling, by definition, interactions between baryons and radiation became negligible, and the EoS changed from relativistic to severely non relativistic, with an EoS parameter
+\begin{equation*}
+    w \approx \frac{kT}{\mu c^{2}}
+\end{equation*}
+where $T$ is the temperature of the gas and $\mu$ is the mean mass per gas particle. Thus, the pressure of a ideal gas will never totally vanish, but will only approach zero in the limit that the temperature approaches absolute zero. The speed of sound will be now:
+\begin{equation*}
+    c_{s} = \sqrt{\frac{kT}{\mu c^{2}}}c
+\end{equation*}
+\par After decoupling, the thermal energy per particle was $kT_{\text{dec}} \approx 0.26\,\text{eV}$, and the mean rest energy of the atoms in the baryonic gas was $\mu c^{2} = 1.22 m_{p}c^{2} \approx 1140\,\text{MeV}$,taking into account the (primordial) Helium mass fraction of $Y_{p} = 0.24$, thus yielding a sound speed of order
+\begin{equation*}
+    c_{s} \approx 0.015c \implies M_{J}(t > t_{\text{dec}}) \approx 10^{5}M_{\odot}
+\end{equation*}
+This mass is very small even compared to the baryonic mass of our own galaxy ($\sim 10^{11}M_{\odot}$); it is even small when compared to a more modest galaxy like the Small Magellanic Cloud ($\sim 10^{9}M_{\odot}$). This means that after decoupling, baryonic structures can finally collapse.
+\par \emph{But} we have a problem. A huge problem called CMB. We've seen that prior to the epoch of decoupling, baryons’ overdensities can’t grow, and temperature fluctuations are related to density fluctuations. In the above we've seen that the contrast scales as $\Delta \propto a(t) \sim z^{-1}$. With a simple calculation you can verify that
+\begin{equation*}
+    \frac{\Delta(t_{1})}{\Delta(t_{2})} = \frac{1+z_{2}}{1+z_{1}}
+\end{equation*}
+which for $z_{1} = 0$ (now, so $t_{1} = t_{0}$) and $z_{2} = 1000$ (so roughly the decoupling epoch), if you started with fluctuations $\Delta(t_{2})\sim 10^{-5}$, now you should be observing $\Delta(t_{0})\sim 10^{-2}$, that means fluctuations are on average 1\% denser of the background!
+\par If that is the case, how can galaxies and structures even form?
+\par The solution comes in the form of \emph{Dark Matter} (DM). For overdensities in the cold DM the pressure term is always 0, even before the baryon decoupling, so we can drop it once more in (\ref{eq:comovingcontrast_eq}). Meaning that
+\begin{equation*}
+    \Delta_{\text{DM}} \propto \frac{1}{z+1}
+\end{equation*}
+and DM can start to collapse before baryon decoupling, since \emph{DM is not coupled with radiation}.
+\par When exactly did DM start to collapse? When radiation dominates even DM can’t collapse. Why? In the following we'll try to give an answer to these questions.
+\par Consider 
+\begin{equation}
+    \ddot{\Delta} + 2\frac{\dot{a}(t)}{a(t)}\dot{\Delta} \approx (4\pi G\rho_{m})\Delta
+    \label{eq:dm_evolution}
+\end{equation}
+In principle the Poisson source is $\nabla^{2}\phi \propto \delta\rho_{tot}= \delta\rho_{m}+\delta\rho_{r}$. So radiation contributes if $\delta\rho_{r}$ is significant. But for a mode inside the horizon, radiation has large pressure and supports acoustic oscillations. That means $\delta\rho_{r}$ and its potential contribution oscillate rapidly instead of growing.
+\par Result: radiation doesn’t provide a steady “well” that keeps deepening.
+\begin{equation*}
+    \delta\rho_{tot} \approx \delta\rho_{m}
+\end{equation*}
+Even if you drop $\delta\rho_{r}$ in the Poisson's equation, you still keep $\rho_{r}$ in the background expansion
+\begin{equation*}
+    H^{2} = \frac{8\pi G(\rho_{m}+\rho_{r})}{3}
+\end{equation*}
+Dividing both sides of (\ref{eq:dm_evolution}) by $H^{2}$, we find
+\begin{equation*}
+    \frac{\ddot{\Delta}_{m}}{H^{2}}+\frac{2\dot{\Delta}_{m}}{H}\approx \frac{3\Delta_{m}\rho_{m}}{2(\rho_{m}+\rho_{r})}
+\end{equation*}
+When radiation dominates $\rho_{r}\gg \rho_{m}$, the previous equation becomes
+\begin{equation*}
+    \ddot{\Delta}_{m}+2H\dot{\Delta}_{m} \approx 0 \to  \ddot{\Delta}_{m}+\frac{1}{t}\dot{\Delta}_{m}
+\end{equation*}
+which is solved by
+\begin{equation}
+    \Delta(t) = a_{1} + a_{2}\ln(t)
+    \label{eq:mezaroseffect}
+\end{equation}
+This is sometimes known as \emph{Mezaros effect}: At the radiation domination epoch, the small DM fluctuations grow at a logarithmic rate.
+\par On a concluding note, in order for a Universe to have gravitationally collapsed structures as we see today, it must have a non-relativistic
+component with $w \ll 1$ (CDM), that started to collapse much earlier than $t_{\text{dec}}$.
+
 \section{The Cosmic Microwave Background}
 \par In this section we're going to make intensive use of the various blackbody properties. If you're not confident about those, you can take a brief detour to Appendix B and come back here when you've levelled up.
 \par Recall the blackbody energy distribution (\ref{eq:blackbody_endens}), and suppose you have such a black body spectrum at some time $t = t_{1}$. Then, if no photons get destroyed or produced, at the later time $t_{0}$, each photon will appear redshifted according to (\ref{eq:cosmological_redshift}): $\nu_{1} = (1+z)\nu_{0}$, and the distribution will be
@@ -629,4 +867,61 @@ with $T_{0} = T_{1}/(1+z)$. So, it is still a blackbody spectrum, but with tempe
   $$ T \sim \frac{1}{a(t)} = 1+z $$
 \end{tcolorbox}
 
-\par What we now see as a Cosmic Microwave Background, at the time the Universe became transparent,  was a cosmic near-infrared background.
+\par What we now see as a Cosmic Microwave Background, at the time the Universe became transparent, was a cosmic near-infrared background.
+\par At any angular position $(\theta, \phi)$ on the sky, the spectrum of the CMB is very close to that of an ideal blackbody, yet the CMB has a \emph{dipole distortion in temperature}. That is, although each point on the sky follows the blackbody spectrum, in one half of the sky the spectrum is slightly blueshifted to higher temperatures, and in the other half the spectrum is slightly redshifted to lower temperatures.
+\par This dipole distortion is a simple Doppler shift, caused by the net motion relative to a frame of reference in which the CMB is isotropic.
+\par Not surprisingly, near to the Galactic plane, the CMB maps are highly contaminated by radiation from the Milky Way. In Fig.\ref{fgr:cmbimageprod} is briefly summarized how we managed to obtain a clean image of the CMB.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/cmbimageprod.png}
+    \caption{This dipole distorsion was the result of our Solar system moving at $369 \pm 3\,\text{km}/\text{s}$ with respect to the CMB radiation, and it is now known that this reflects the motion of the Local Group of galaxies towards the Great Attractor.}
+    \label{fgr:cmbimageprod}
+\end{figure}
+\par Even though all bias are removed in Fig.\ref{fgr:planck_cmb}, there are still anisotropies
+\begin{equation}
+    \langle T \rangle = \frac{1}{4\pi}\int T(\theta,\phi)\sin\theta\,\text{d}\theta\,\text{d}\phi = 2.7255\,\text{K} \quad \frac{\langle(T(\theta,\phi)-\langle T \rangle)^{2}\rangle^{1/2}}{\langle T \rangle} \sim 10^{-5}
+    \label{eq:cmb_param}
+\end{equation}
+\par However, we are \emph{not} interested in the exact pattern of hot spots and cold spots on the sky, but rather in their statistical properties.
+\par We see these temperature fluctuations projected in a 2D spherical surface sky, and so it has become common in the literature to expand the temperature field using spherical harmonics. The spherical harmonics form a complete orthonormal set on the unit sphere and are defined as
+\begin{equation}
+    Y_{lm} = \sqrt{\frac{(2l+1)}{4\pi}\frac{(l-m)!}{(l+m)!}}P_{l}^{m}(\cos\theta)e^{im\phi}
+    \label{eq:spherical_harmonics}
+\end{equation}
+where the indices $l = 0, ..., \infty$, $-l\leq m \leq l$ and $P_{l}^{m}$ are the Legendre polynomials. The index $l$ is called the multipole and represents a given angular scale in the sky $\alpha$, given approximately by $\alpha = 180//l$ (in degrees), $m$ is related to its orientation.
+\par We can thus expand the temperature contrast in spherical harmonics
+\begin{equation}
+    \frac{\delta T}{\langle T \rangle}(\theta, \phi) = \sum_{l,m} a_{lm}Y_{lm}(\theta,\phi) \quad a_{lm} = \int \frac{\delta T}{\langle T \rangle}(\theta, \phi) Y_{lm}^{*}(\theta,\phi)\,\text{d}\Omega
+    \label{eq:tempcont_exp}
+\end{equation}
+\par With the $z$-axis taken in the direction of the Earth’s motion, the dipole is dominated by $Y_{10}$. It arises as a result of the Sun’s motion relative to the CMB.
+\par The most important statistical property of the temperature contrast is the two point correlation $C(\theta)$. Consider two points on the last scattering surface. Relative to an observer, they are in the directions $\hat{n}$ and $\hat{n}'$, such that $\hat{n}\cdot\hat{n}' = \cos\theta$
+\begin{equation}
+    C(\theta) = \langle \frac{\delta T}{\langle T \rangle}(\hat{n})\frac{\delta T}{\langle T \rangle}(\hat{n}') \rangle_{\hat{n}\cdot\hat{n}' = \cos\theta}
+\end{equation}
+where the average is taken over the sky with a fixed angular separation $\theta$. The question the two point correlation answers is the following: "How correlated are two pixels that are separated by an angle $\theta$ on the sky?"
+\begin{enumerate}
+    \item If two pixels separated by an angle $\theta$ tend to have the same sign (hot-hot or cold-cold), then $C(\theta) > 0$. On small angular scales, the CMB temperature field is fairly smooth: nearby points often lie in the same hot or cold “patch”;
+    \item If they tend to have opposite signs (hot-cold), then $C(\theta) < 0$. This is a hallmark of the acoustic oscillations in the photon-baryon fluid before recombination: compressions/rarefactions produce an alternating pattern, so at certain separations you tend to land in the opposite phase;
+    \item If there’s no relationship between them at that separation, then $C(\theta) \approx 0$. At large angular separations (or at separations where different physical contributions cancel), the two directions are nearly independent on average.
+\end{enumerate}
+\par In terms of spherical harmonics, the correlation function can be written in the form
+\begin{equation}
+    C(\theta) = \frac{1}{4\pi}\sum_{l = 0}^{\infty} (2l+1)C_{l}P_{l}(\cos\theta)
+    \label{eq:correlationfunction}
+\end{equation}
+where we've introduced the \emph{power spectrum} $C_{l}$
+\begin{equation}
+    C_{l} = \frac{1}{2l+1}\sum_{m = -l}^{l}|a_{m}|^{2}
+    \label{eq:powerspectrum}
+\end{equation}
+which  is a measure of temperature fluctuations on an angular scale $\theta \sim 180\text{°}/l$. In presenting the results of CMB observations, it is customary to plot the function
+\begin{equation*}
+    \Delta_{T}^{2} = \left[\frac{l(l+1)C_{l}}{2\pi}\right]\langle T \rangle^{2}
+\end{equation*}
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width = 0.8\textwidth]{img/cmbtempcont.png}
+    \caption{Temperature fluctuations $\Delta_{T}$ of the CMB as observed by Planck, expressed as a function of the multipole $l$. The vertical dotted line shows $l_{\text{Hor}}$, the multipole corresponding to the horizon size at the epoch of last scattering.}
+    \label{fgr:cmbtempcont}
+\end{figure}
