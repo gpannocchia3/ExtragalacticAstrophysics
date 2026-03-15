@@ -562,9 +562,10 @@ and set $m_{\text{H}}/m_{p} \sim 1$ and identify $\chi_{j,\,j+1}$ with the ioniz
   Provided that photons are not created or destroyed, but merely redshifted, $n_{\gamma} \propto a^{-3}$. Similarly, if baryons are not destroyed during the evolution of the Universe (that is, they are stable and do not annihilate), their number density merely gets diluted $n_{\text{Baryon}} \propto a^{-3}$. Therefore $\eta = n_{\text{Baryon}}/n_{\gamma}$ is constant and approximately equal to $\eta \approx 6.1 \cdot 10^{-10}$.
 \end{tcolorbox}
 \par In a Universe where Hydrogen is the only element, and a fraction $X = n_{p}/n_{\text{Baryon}}$ of the Hydrogen is in the form of free protons, we may write
-\begin{equation*}
+\begin{equation}
     \eta = \frac{n_{\text{Baryon}}}{n_{\gamma}} = \frac{n_{p}}{n_{\gamma}X}
-\end{equation*}
+    \label{eq:pbr}
+\end{equation}
 We can thus substitute in the Saha's equation that we've written earlier
 \begin{equation*}
     \frac{1-X}{X} = \eta n_{\gamma}X\left(\frac{m_{e}kT}{2\pi\hbar^{2}}\right)^{2}\exp\left(\frac{Q}{kT}\right)
@@ -733,9 +734,10 @@ so that we can finally write
     \label{eq:comovingcontrast_eq}
 \end{equation}
 \par This one we can solve taking a plane-wave solution for $\Delta \propto e^{i(\vec{k}_{c}\cdot\vec{r}-\omega t)}$, where $\vec{k}_{c} = a(t)\vec{k}$. Recalling that $\delta\rho = \Delta\rho_{0}$ we find
-\begin{equation*}
+\begin{equation}
     \ddot{\Delta} + 2\frac{\dot{a}(t)}{a(t)}\dot{\Delta} = (4\pi G\rho_{0}-k^{2}c_{s}^{2})\Delta
-\end{equation*}
+    \label{eq:comovingcontrast_ft}
+\end{equation}
 \par For a static Universe $\dot{a} = 0$, so
 \begin{equation*}
     \ddot{\Delta} = (4\pi G\rho_{0}-k^{2}c_{s}^{2})\Delta
@@ -925,3 +927,264 @@ which  is a measure of temperature fluctuations on an angular scale $\theta \sim
     \caption{Temperature fluctuations $\Delta_{T}$ of the CMB as observed by Planck, expressed as a function of the multipole $l$. The vertical dotted line shows $l_{\text{Hor}}$, the multipole corresponding to the horizon size at the epoch of last scattering.}
     \label{fgr:cmbtempcont}
 \end{figure}
+\subsection{Domination at Last Scattering}
+At the time of the recombination, the gravitational potential is dominated by dark matter, thus
+\begin{equation*}
+    \epsilon_{DM}(t_{ls}) > \epsilon_{\gamma}(t_{ls}) > \epsilon_{\text{Baryon}}(t_{ls})
+\end{equation*}
+At the last scattering, the general equation for a single fluid was (\ref{eq:comovingcontrast_ft}), which is easy to generalize to the presence of two fluids (e.g., Baryons and Dark Matter)\footnote{Note that $\rho_{0}$ is not the present day density, but rather the unperturbed background density.}
+\begin{equation*}
+    \rho_{0}\Delta \to \delta\rho_{f_{1}}+\delta\rho_{f_{2}}
+\end{equation*}
+meaning that if we consider fluctuations in both baryons and DM, we have two coupled equations
+\begin{align*}
+    \ddot{\Delta}_{\text{Baryon}}+2\frac{\dot{a}(t)}{a(t)}\dot{\Delta}_{\text{Baryon}} &= 4\pi G\rho_{0,\text{Baryon}}\Delta_{\text{Baryon}}+4\pi G\rho_{0,\text{DM}}\Delta_{\text{DM}}-k^{2}c_{s}^{2}\Delta_{\text{Baryon}}\\
+    \ddot{\Delta}_{\text{DM}}+2\frac{\dot{a}(t)}{a(t)}\dot{\Delta}_{\text{DM}} &= 4\pi G\rho_{0,\text{Baryon}}\Delta_{\text{Baryon}}+4\pi G\rho_{0,\text{DM}}\Delta_{\text{DM}}
+\end{align*}
+since only Baryons have a pressure term \cite{1993sfu..book.....P}. Let's focus on the equation for the Baryons' density contrast.
+\par $\Delta_{\text{Baryon}}$ is a contrast in Baryons (matter), while in the CMB we measure a contrast in temperature. How do we switch from one to other?
+\par Recall the Baryons to photons ratio (\ref{eq:pbr}) and that 
+\begin{equation*}
+    \frac{\delta n_{\gamma}}{n_{\gamma}} = 3\frac{\delta T}{T}
+\end{equation*}
+as follows from the blackbody distribution (see Appendix B). For non relativistic Baryons we may write 
+$$\rho_{\text{Baryon}} \propto n_{\text{Baryon}} \to \frac{\delta\rho_{\text{Baryon}}}{\rho_{\text{Baryon}}} = \frac{\delta n_{\text{Baryon}}}{n_{\text{Baryon}}}$$
+and if we differentiate the Baryons to photon ratio under the approximation of adiabatic perturbations (i.e., no spatial fluctuations in $\eta$), we therefore find
+\begin{equation*}
+    \frac{\delta n_{\text{Baryon}}}{n_{\text{Baryon}}} = \frac{\delta n_{\gamma}}{n_{\gamma}}
+\end{equation*}
+which implies by simple substitution
+\begin{equation}
+    \boxed{
+    \frac{\delta n_{\text{Baryon}}}{n_{\text{Baryon}}} = 3\frac{\delta T}{T}
+    }
+    \label{eq:densitytotemperaturecontrast}
+\end{equation}
+If Dark Matter dominates at last scattering, we can approximate the equation for the evolution of the Baryons' contrast as
+\begin{equation*}
+     \ddot{\Delta}_{\text{Baryon}}+2\frac{\dot{a}(t)}{a(t)}\dot{\Delta}_{\text{Baryon}} \approx 4\pi G\rho_{0,\text{DM}}\Delta_{\text{DM}}-k^{2}c_{s}^{2}\Delta_{\text{Baryon}}
+\end{equation*}
+At the last scattering baryons and photons are coupled, and for adiabatic density perturbations 
+\begin{equation*}
+    \frac{\delta n_{\text{Baryon}}}{n_{\text{Baryon}}} = \Delta_{\text{Baryon}} = 3\frac{\delta T}{T} = 3\Delta_{T}
+\end{equation*}
+For the sake of simplicity, we're dropping the factor of 3, finding
+\begin{equation*}
+    \ddot{\Delta}_{T}+2\frac{\dot{a}(t)}{a(t)}\dot{\Delta}_{T} \approx 4\pi G\rho_{0,\text{DM}}\Delta_{\text{DM}}-k^{2}c_{s}^{2}\Delta_{T}
+\end{equation*}
+Note that if we neglect Hubble's friction term $\dot{a}/a$, the equation describes a driven oscillator for $\Delta_{T}$ (Fig.\ref{fgr:drivenharmonic})!
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/forcedharmonic.png}
+    \caption{Driven harmonic oscillator described by $\Delta_{T} = A\cos(\omega t) + F_{0}\omega^{2}$, where $F_{0}$ is a constant driving, here assumed to coincide with a constant gravity term $\rho_{0,\text{DM}}\Delta_{\text{DM}}$. The solid red line is a non-driven harmonic oscillator.}
+    \label{fgr:drivenharmonic}
+\end{figure}
+If we set the origin at the equilibrium point of the non-driven oscillator, we see that:
+\begin{enumerate}
+    \item Without forcing, solutions are symmetric with respect to this point;
+    \item With forcing, solutions are not symmetric about this point, so when the solution is squared, \emph{even peaks are lower than odd peaks}!
+    \item If the frequency is low, the force has a greater effect, producing the greater zero-point offset, and hence the greater odd/even disparity.
+\end{enumerate}
+\par Dark matter, which is most probably collisionless (i.e. does not interact with anything except through gravity), would not participate in the pressure and density disturbances that affect the baryon-photon fluid. So we may write
+\begin{equation*}
+    c_{s}^{2} = \left( \frac{\delta p}{\delta \rho}\right)_{S}
+\end{equation*}
+but 
+\begin{equation*}
+    p = p_{\text{Baryon}}+p_{\gamma} \approx p_{\gamma} = \frac{1}{3}\rho_{gamma}
+\end{equation*}
+with $\rho = \rho_{\text{Baryon}}+\rho_{\gamma}$, meaning that 
+\begin{equation*}
+    c_{s}^{2} = \frac{1}{3}c^{2}\frac{\delta\rho_{\gamma}}{\delta(\rho_{\text{Baryon}}+\rho_{\gamma})}
+\end{equation*}
+For adiabatic perturbations we know that 
+\begin{equation*}
+    \frac{\delta \rho^{(m)}_{\text{Baryon}}}{\rho^{(m)}_{\text{Baryon}}} = \frac{3}{4}\frac{\delta\rho_{\gamma}}{\rho_{\gamma}}
+\end{equation*}
+Thus the sound speed for Baryons is
+\begin{equation}
+    c_{s}^{2} = \frac{1}{3}c^{2}\frac{1}{1+\frac{3}{4}c^{2}\frac{\rho^{(m)}_{\text{Baryon}}}{\rho_{\gamma}}}
+    \label{eq:soundspeedbaryons}
+\end{equation}
+Then as we add more Baryons to the Universe, the sound speed goes down, and for a fixed scale $k$, the oscillation frequency $\omega = c_{s}k$ goes down as well.
+\par After decoupling, photons will propagate freely towards us, so we see the fluctuations today as they were at the time $t = t_{\text{dec}}$. Then, $L_{s} = c_{s}t_{\text{dec}}$ is the so-called \emph{sound horizon}, the distance a sound wave with speed $c_{s}$ has covered between 0 and $t_{\text{dec}}$.
+\par At fixed time ($t_{\text{dec}}$), we have oscillations in the $k$-space, which become oscillations in $l$ space after projection on the sky. The oscillation phase at decoupling is
+\begin{equation*}
+    \phi(k) = kr_{s}(t_{\text{dec}}) \approx kc_{s}t_{\text{dec}}
+\end{equation*}
+so different $k$-modes are frozen at different phases.
+\par As we add more Baryons, peaks in the temperature contrast:
+\begin{enumerate}
+    \item are shifted to larger $k$ ($t_{\text{dec}}$ is fixed, peaks are at t$t_{\text{dec}}kc_{s} = n\pi$);
+    \item the spacing between peaks gets correspondingly larger $(n_{1}-n_{2})\pi = t_{\text{dec}}(k_{1}-k_{2})c_{s}$;
+    \item as the frequency goes down, the disparity between the heights of the odd and even peaks gets larger.
+\end{enumerate}
+In short, what is happening?
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/horizonscales.png}
+    \caption{Pictorial representation of what happens when density (or temperature) fluctuations on a certain scale enter the Horizon. Credits: \cite{1997ASPC..126..185L}.}
+    \label{fgr:horizonscales}
+\end{figure}
+\begin{enumerate}
+    \item Once a given scale enters the horizon, fluctuations on this scale begin to oscillate like acoustic waves (sound). The first peak corresponds to fluctuations which have had time to make exactly 1 contraction since horizon entry until decoupling;
+    \item The second peak peak corresponds to fluctuations which have had time to make exactly 1 contraction and 1 expansion since horizon entry until decoupling (under density). These fluctuations entered the horizon earlier;
+    \item The third peak corresponds to fluctuations which have had time to make exactly 2 contractions (and 1 expansion) since horizon entry until decoupling. These fluctuations entered the horizon even earlier.
+\end{enumerate}
+\par If we turn into looking at fluctuations in the CMB on angular scales $\theta > 1.1\text{°}$, the source of intensity fluctuations is the Sachs-Wolfe effect, that is, the gravitational redshift associated with photons originating from within the density fluctuations at the last scattering surface \cite{1967ApJ...147...73S}.
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=Sachs-Wolfe Effect,
+  boxed title style={size=small,colframe=blue!50!black}]
+  Suppose that the density of the nonbaryonic dark matter at the time of last scattering was not perfectly homogeneous, but varied as a function of position. Then we could write the energy density of the dark matter as $\rho(\vec{r}) = \bar{\rho}+\delta\rho(\vec{r})$.
+  \par In the Newtonian approximation, the spatially varying component of the energy density, $\delta\rho$, gives rise to a spatially varying gravitational potential $\delta\phi$, so that
+  $$ \nabla^{2}\delta\phi = \frac{4\pi G\delta\rho}{c^{2}}$$
+  A detailed general relativistic calculation, first performed by Sachs and Wolfe in 1967, would tell us that
+  $$ \frac{\delta T}{T} = \frac{1}{3}\frac{\delta\phi}{c^{2}}$$
+\end{tcolorbox}
+
+\par On smaller scales, the photon-baryon fluid moves primarily under the gravitational influence of the dark matter, rather than under its own self-gravity.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/sachswolfe.png}
+    \caption{CMB power spectrum as a function of the "patch size" and the frequency $l$. The Sachs-Wolfe effect reflects in the plateau appearing at the larger patch size.}
+    \label{fgr:sachswolfeplateau}
+\end{figure}
+\par The inward and outward oscillations of the photon-baryon fluid are called \emph{acoustic oscillations}, since they represent a standing sound wave. This has two major effects:
+\begin{enumerate}
+    \item If the photon-baryon fluid within a potential well is at maximum compression at the time of photon decoupling, its density will be higher than average (the liberated photons will be slightly hotter than average, since $T\propto \rho_{\gamma}^{1/4}$). Conversely, if the photon-baryon fluid within a potential well is at maximum expansion at the time of decoupling, the liberated photons will be slightly cooler than average;
+    \item If the photon-baryon fluid is in the process of expanding or contracting at the time of decoupling, the Doppler effect will cause the liberated photons to be cooler or hotter than average.
+\end{enumerate}
+\subsection{Last Scattering Surface}
+\par The temperature distortions tell us that the universe was not perfectly homogeneous at the time of last scattering ($z\approx1090$). The angular size of the temperature fluctuations reflects in part the physical size of the density and velocity fluctuations at $z\approx1090$.
+\par The angular size $\delta\theta$ of a temperature fluctuation in the CMB is related to a physical size $l$ on the last scattering surface by the relationship
+\begin{equation*}
+    d_{A} = \frac{l}{\delta\theta} \; \text{if we assume a flat Universe} \implies d_{A}=\frac{d_{p}(t_{0})}{1+z}
+\end{equation*}
+where $d_{A}$ is the angular-diameter distance to the last scattering surface. The last scattering surface is at a redshift $z\approx1090 \gg 1$, so
+\begin{equation*}
+    d_{A} = \frac{d_{p}(t_{0}, z_{LS})}{1+z_{LS}} = \frac{1}{1+z_{LS}}\int_{t(z_{LS})}^{t_{0}}\frac{c\,\text{d}t}{a(t)} = \frac{1}{1+z_{LS}}\int_{0}^{z_{LS}}\frac{c\,\text{d}z}{H(z)}
+\end{equation*}
+which means that in the limit $z_{LS}\gg 1$
+\begin{equation*}
+    d_{A} \approx \frac{1}{z_{LS}}\int_{0}^{\infty}\frac{c\,\text{d}z}{H(z)} = \frac{d_{\text{Hor}}(t_{0})}{z_{LS}}
+\end{equation*}
+In the Benchmark Model, the current horizon distance is $d_{\text{Hor}}(t_{0}) = 14,000\,\text{Mpc}$, so the angular-diameter distance to the surface of last scattering is $d_{A} \approx 12.8\,\text{Mpc}$.
+\par Thus, fluctuations on the last scattering surface with an observed angular size $\delta\theta$ had a physical size at the time of last scattering
+\begin{equation*}
+    l = d_{A}\delta\theta \approx 3.7\,\text{kpc}\left(\frac{\delta\theta}{1\,\text{arcmin}}\right)
+\end{equation*}
+The smallest fluctuations resolved by the Planck satellite have an angular size $\delta\theta \approx 5\,\text{arcmin}$. This corresponds to a physical size of $l\approx 18\,\text{kpc}$ at the time of last scattering, or a comoving length $l(1+z_{LS})\approx 20\,\text{Mpc}$. A sphere with this radius has a baryon mass $M_{\text{Baryon}} \approx 5\cdot 10^{13}M_{\odot}$, about that of a cluster of galaxies.
+\par How big were the causally connected regions at the time of last scattering?
+\par If we consider a photon emitted by a galaxy at time $t_{e}$, for a light path $\text{d}s=0$. The comoving distance traveled at time $t$
+\begin{equation*}
+    r = \int_{t_{e}}^{t}\frac{c\,\text{d}t'}{a(t')}
+\end{equation*}
+If the photon was emitted at $t_{e} = 0$, the proper distance travelled will be 
+\begin{equation*}
+    d_{p}(t) = a(t)r = a(t)\int_{0}^{t}\frac{c\,\text{d}t'}{a(t')}
+\end{equation*}
+So, at the time of last scattering ($t_{LS}$), the maximum distance light could have traveled is
+\begin{equation*}
+    d_{\text{causal}}(t_{LS}) = a(t_{LS})\int_{0}^{t_{LS}}\frac{c\,\text{d}t}{a(t)}
+\end{equation*}
+Using the scale factor $a(t)$, appropriate for a universe containing just radiation and matter, this gives a value for the local causal scale (the horizon distance at the last scattering epoch)
+\begin{equation*}
+    d_{\text{causal}}(t_{LS}) = 2.24ct_{LS} = 0.251\,\text{Mpc}
+\end{equation*}
+At the time of last scattering, nothing could have been in causal contact if separated by more than $0.251\,\text{Mpc}$! A patch of the last scattering surface with physical size $0.251\,\text{Mpc}$ will have an angular size of
+\begin{equation*}
+    \theta_{H}(t_{\text{LS}}) = \frac{d_{\text{causal}}(t_{LS})}{d_{A}} \approx 0.020\,\text{rad} = 1.1\text{°}
+\end{equation*}
+and corresponds to a multipole $l_{\text{Hor}}\approx 160$. This means that only regions slightly before the major peak in Fig.\ref{fgr:cmbtempcont} are in causal connection.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/peakmismatch.png}
+    \caption{Temperature fluctuations $\Delta_{T}$ of the CMB as observed by Planck, expressed as a function of the multipole $l$. The vertical dotted line shows $l_{\text{Hor}}$. The dotted red line represents the multipole corresponding to the surface of last scattering. Note how there is a mismatch between the dotted line and the peak.}
+    \label{fgr:peakmismatch}
+\end{figure}
+\par What is the first peak? the first peak in the $\Delta_{T}$ curve (at $l\approx 220\;\text{or}\; \theta \approx 0.8\text{°}$) represents the potential wells within which the photon-baryon fluid had just reached maximum compression at the time of last scattering.
+\par These potential wells have a size comparable to the sound horizon distance for the photon-baryon fluid at the time of last scattering. The sound horizon distance $d_{\text{sound}}$ is the maximum proper distance that a sound wave in the photon-baryon fluid can have traveled since the Big Bang. By analogy with the usual horizon distance
+\begin{equation}
+    d_{\text{sound}}(t_{LS}) = a(t_{LS})\int_{0}^{t_{LS}}\frac{c_{s}\,\text{d}t}{a(t)}
+    \label{eq:sounddistance}
+\end{equation}
+\par For most of the time prior to last scattering, the baryons were an insignificant contaminant in the photon-baryon fluid. We can thus make the approximation that the sound speed in the photon-baryon fluid was
+\begin{equation*}
+    c_{s} \approx \frac{c}{\sqrt{3}}
+\end{equation*}
+With this approximation, the sound horizon distance at last scattering was $d_{\text{sound}}(t_{LS}) \approx 0.145\,\text{Mpc}$. This corresponds to angular patches $\theta_{S} \approx 0.7\text{°}$ and multipole $l\approx 200$, which is aligned with the prominent peak.
+\par The location and the height of the first peak provide very useful cosmological information
+\begin{enumerate}
+    \item The angular size $\theta_{\text{peak}}$ at which the peak occurs must be similar to the angle $\theta_{S}$ subtended by the sound horizon distance. However, the estimate for $\theta_{S}$ assumes a $d_{A}$ of a flat Universe. In a negatively curved Universe ($k = -1$), the angular size $\theta$ of an object of known physical size at a known redshift is smaller than it is in a positively curved Universe ($k = +1$). Present data suggests $k\approx 0$;
+    \item The relative height of the first and second peak tells us about the Baryon content of the Universe.
+\end{enumerate}
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.6\textwidth]{img/powerspectrumbary.png}
+    \caption{Power spectrum of the CMB with varying density parameter $\Omega_{m}$ for Baryons.}
+    \label{fgr:powerspectrumbary}
+\end{figure}
+What does Fig.\ref{fgr:powerspectrumbary} tell us?
+\begin{enumerate}
+    \item Increasing $\Omega_{m}$ shifts the matter-radiation equality to higher redshift;
+    \item In a radiation-dominated universe, radiation pressure prevents the dominant component (radiation) from clustering and building/maintaining overdensities; the gravitational well becomes shallower with time $\to |\phi|$ decreases. That is “potential decay”. This time variation provides gravitational driving that boosts the amplitude of photon-baryon acoustic oscillations;
+    \item If $\Omega_{m}$ is increased, the potentials are more nearly constant (less decay) $\implies$ weaker driving $\implies$ smaller temperature oscillations $\implies$ a lower power spectrum.
+\end{enumerate}
+\subsection*{Silk-Damping}
+\par In reality, the coupling between the baryons (electrons) and the photons is imperfect since the photons possess a mean free path. As the photons random walk through the baryons, hot and cold regions are mixed. In the course of a Hubble time, $H_{0}^{-1}$ a photon scatters of order $n_{e}\sigma_{T}cH^{-1}$ times (simply the product of the rate and the time). Each scatter contributes to the random walk of the photon. We know that the RMS distance travelled in the course of a random walk is the mean free path times the square root of the total number of steps
+\begin{equation*}
+    \lambda_{D} \sim \lambda_{RMS}\sqrt{N}\sim \frac{1}{n_{e}\sigma_{{T}}}\sqrt{n_{e}\sigma_{T}cH^{-1}}\sim\frac{c^{1/2}}{n_{e}\sigma_{T}H^{-1}}
+\end{equation*}
+\par Any perturbation on scales smaller than $\lambda_{D}$ can be expected to be washed out. Models with small baryon density have a larger $\lambda_{D}$ (since $n_{e}$ is proportional to $\Omega_{b}$ when
+the universe is ionized). Therefore, the damping sets in at larger scales.
+\par In short: less baryons $\to$ less electrons $\to$ longer mean free path $\to$ larger diffusion length $\to$ more damping, starting at larger scales. Thus finding the results summarized in the following table.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.5\textwidth]{img/tablesummary.png}
+\end{figure}
+\section{Baryonic Acoustic Oscillations (BAO)}
+\par The size of the first peak was comparable to the sound horizon distance at the time of last scattering. The sound horizon distance had a physical length
+\begin{equation*}
+    d_{\text{sound}}(t_{LS}) = a(t_{LS})\int_{0}^{t_{LS}}\frac{c_{s}\,\text{d}t}{a(t)} \approx 0.145\,\text{Mpc}
+\end{equation*}
+After the photons and baryons parted ways, the overdensity of the photons in these high density regions reveals itself as hot spots on the last scattering surface, with a characteristic angular size $\theta\approx 0.7\text{°}$.
+\par A physical size of $d_{s} = 0.145\,\text{Mpc}$ at a redshift $z = 1090$ corresponds to a comoving length
+\begin{equation*}
+    r_{S} = d_{\text{Sound}}(t_{LS})(1+z_{LS}) \approx 160\,\text{Mpc}
+\end{equation*}
+However, just as the overdense photons left an observable mark on the universe, the overdense baryons left their mark as well. The density fluctuations that are present on a comoving scale $r_{s} \approx 160\,\text{Mpc}$ are called \emph{baryon acoustic oscillations} since they are the baryonic manifestation of the acoustic oscillations that were present in the photon-baryon fluid just before decoupling.
+\par They settled immediately after the decoupling epoch, when the baryon overdensity on the scale $r_{s}$ was small in amplitude, but it grew to detectable levels at the present day.
+\par Early universe is permeated by many of the spherical acoustic waves. The final density distribution is a linear superposition of the small-amplitude sound waves.
+\par However, the acoustic signature is still detectable statistically through the two-point correlation function of the matter distribution, $\xi(r)$, making the BAO a statistical standard ruler. The BAO will appear as a peak in the correlation function and as oscillations in its power spectrum.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/baoscale.png}
+    \caption{CfA2 survey \cite{1989Sci...246..897G} (or so I hope). Formally, this could "measure" BAO with a $\sim 0.05\sigma$ detection.}
+    \label{fgr:baogreatwall}
+\end{figure}
+\par The best way to detect low-amplitude overdensities on a scale as large as $160\,\text{Mpc}$ is to look at the correlation function of galaxies in space $\xi$. Baryon acoustic oscillations provide a useful tool for computing cosmological parameters. Since the acoustic scale is a standard yardstick, whose length is determined by well-understood physical principles, it can be used, for instance, to probe the properties of dark energy.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/baobump.png}
+    \caption{The correlation function as a function of the comoving radius $r$. Points with error bars are the data for a large sample of luminous galaxies from the Sloan Digital Sky Surface. The solid line is a model including the effects of BAO. Data from: \cite{2014MNRAS.441...24A}}
+    \label{fgr:baobump}
+\end{figure}
+\subsection*{Tangential BAO}
+Using redshift surveys, we can observe the preferred clustering scale set by the BAO at different redshifts to constrain the angular diameter distance. The BAO peak at a redshift $z$ appears at an angular separation
+\begin{equation*}
+    d_{A}(z)\Delta\theta = \frac{r_{S}}{1+z} \sim \frac{160\,\text{Mpc}}{}1+z
+\end{equation*}
+So if you're able to measure the angular separation of the BAO bump (Fig.\ref{fgr:baobump}) using the two-point correlation function for galaxies of a given redshift $z$, upon using the equation above we can measure the angular diameter distance, that is a function of the cosmological model.
+\subsection*{Radial BAO}
+We know that $r_{S}/(1+z)$ is the proper length $d_{\text{Sound}}$ of the BAO also in the radial direction. The clustering along the line of sight is observed in the redshift-space. The proper length corresponds to a redshift difference $\Delta z$. Knowing $r_{S}$
+\begin{equation*}
+    c\text{d}t = a(t)\text{d}r_{S} \implies \frac{c\text{d}a}{H(a)a^{2}} = \text{d}r_{S}
+\end{equation*}
+\par If $H(z)$ is not strongly variable
+\begin{equation*}
+    r_{S} = c\frac{\Delta r_{S}}{H(z)}
+\end{equation*}
+meaning that we can measure $H(z)$ simply inverting the equation above. Thus, the possibility that by tracking the BAO feature from the present time to $z\sim 1$ may yield clues to the nature of dark energy, which takes over cosmic expansion during this epoch, has motivated huge galaxy surveys in the last decade.
+\par Two of the largest are the AAT WiggleZ survey and the SDSS BOSS project, each consisting of hundreds of thousands of galaxy redshifts out to $z\sim 1$.
