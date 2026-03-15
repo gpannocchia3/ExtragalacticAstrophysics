@@ -1174,7 +1174,7 @@ However, just as the overdense photons left an observable mark on the universe, 
 \subsection*{Tangential BAO}
 Using redshift surveys, we can observe the preferred clustering scale set by the BAO at different redshifts to constrain the angular diameter distance. The BAO peak at a redshift $z$ appears at an angular separation
 \begin{equation*}
-    d_{A}(z)\Delta\theta = \frac{r_{S}}{1+z} \sim \frac{160\,\text{Mpc}}{}1+z
+    d_{A}(z)\Delta\theta = \frac{r_{S}}{1+z} \sim \frac{160\,\text{Mpc}}{1+z}
 \end{equation*}
 So if you're able to measure the angular separation of the BAO bump (Fig.\ref{fgr:baobump}) using the two-point correlation function for galaxies of a given redshift $z$, upon using the equation above we can measure the angular diameter distance, that is a function of the cosmological model.
 \subsection*{Radial BAO}
@@ -1188,3 +1188,277 @@ We know that $r_{S}/(1+z)$ is the proper length $d_{\text{Sound}}$ of the BAO al
 \end{equation*}
 meaning that we can measure $H(z)$ simply inverting the equation above. Thus, the possibility that by tracking the BAO feature from the present time to $z\sim 1$ may yield clues to the nature of dark energy, which takes over cosmic expansion during this epoch, has motivated huge galaxy surveys in the last decade.
 \par Two of the largest are the AAT WiggleZ survey and the SDSS BOSS project, each consisting of hundreds of thousands of galaxy redshifts out to $z\sim 1$.
+\section{Inflation}
+Let's get a few pages back, when we were discussing about the solutions of the two Friedmann equations and the various Universe possible. For a flat, $\Lambda$-dominated universe, the Friedmann equation takes
+the form
+\begin{equation*}
+    \dot{a}^{2}(t) = \frac{8\pi G \rho_{\Lambda}}{3c^{2}}a^{2}
+\end{equation*}
+From (\ref{eq:fluidequation}) we know that if $p = -\rho$, then necessarily $\dot{\rho} = 0$ and thus both $\rho$ and $H$ must be constant.
+\par In terms of $H_{0}$
+\begin{equation*}
+    \frac{\dot{a}^{2}(t_{0})}{a^{2}(t_{0})} = H_{0}^{2} = \frac{8\pi G \rho_{\Lambda}}{3c^{2}}a^{2} \implies \dot{a}^{2}(t) = H_{0}^{2}a^{2}(t)
+\end{equation*}
+which is solved by 
+\begin{equation}
+    a(t) = e^{(\pm)H_{0}(t-t_{0})}
+\end{equation}
+Recall the equation for the density parameter (\ref{eq:densityparam_eq}), which we can express in terms of the present-day density parameter
+\begin{equation*}
+    1-\Omega(t) = \frac{H_{0}^{2}}{H^{2}(t)}\frac{1-\Omega_{0}}{a^{2}(t)}
+\end{equation*}
+When the Universe was dominated by radiation and matter
+\begin{equation*}
+    \frac{H_{0}^{2}}{H^{2}(t)} = \frac{\Omega_{r,0}}{a^{4}}+\frac{\Omega_{m,0}}{a^{3}}+\frac{1-\Omega_{0}}{a^{2}}
+\end{equation*}
+\par Replacing it in the density parameter equation
+\begin{equation*}
+     1-\Omega(t) = \frac{1-\Omega_{0}}{a^{2}(t)}\frac{1}{\frac{\Omega_{r,0}}{a^{4}}+\frac{\Omega_{m,0}}{a^{3}}+\frac{1-\Omega_{0}}{a^{2}}} = \frac{(1-\Omega_{0})a^{2}(t)}{a^{2}(t)(1-\Omega_{0})+a(t)\Omega_{m,0}+\Omega_{r,0}}
+\end{equation*}
+Going back toward the Big Bang (during radiation domination), we can approximate 
+\begin{equation*}
+    1-\Omega(t) \approx \frac{(1-\Omega_{0})a^{2}(t)}{\Omega_{r,0}}
+\end{equation*}
+then for $a(t)\to 0$ then $1-\Omega(t) \to 0$. Suppose, as the available evidence indicates, that the Universe is described by a model close to the Benchmark Model. If the total density parameter today falls within the limits
+\begin{equation*}
+    |1-\Omega_{0}|<0.005
+\end{equation*}
+then at the time of radiation-matter equality, $a_{rm}\approx 2.9\cdot 10^{-4}$, the density parameter $\Omega_{rm}$ was equal to one with an accuracy
+\begin{equation*}
+    |1-\Omega_{rm}|< 2\cdot 10^{-6}
+\end{equation*}
+Similalry, if we extrapolate backward to the time of Big Bang nucleosynthesis, at $a_{BBN} \approx 3.6\cdot 10^{-9}$
+\begin{equation*}
+    |1-\Omega_{BBN}|<7\cdot10^{-16}
+\end{equation*}
+and the distance from unity would only decrease if we went even further back in time. Setting then those orders of magnitude as initial conditions imply a \emph{huge fine-tuning problem}.
+\par There is no known reason for the density of the Universe to be so close to the critical density, and this appears to be an unacceptably strange coincidence in the view of most astronomers. This is the so called \emph{Flatness problem}.
+\par Here comes \emph{inflation} to the rescue.
+\begin{equation*}
+    1-\Omega(t) = -\frac{k}{a^{2}(t)H^{2}(t)}
+\end{equation*}
+If we take the modulus
+\begin{equation*}
+    | 1-\Omega(t)| = \frac{1}{a^{2}H^{2}}
+\end{equation*}
+During the exponential expansion of the inflationary epoch $a(t)\propto \exp(H_{i}t)$ and $H(t) = H_{i} = \text{const.}$, therefore
+\begin{equation*}
+     | 1-\Omega(t)| \propto e^{-2H_{i}t}
+\end{equation*}
+The difference between $\Omega$ and unity grows exponentially with time. For simplicity, suppose the exponential growth was switched on at a time $t_{i}$, and lasted until some later time $t_{f}$, when the exponential growth was switched off instantaneously, and the Universe reverted to its former state of radiation- dominated expansion. In this simple case, we can write the scale factor as
+\begin{equation*}
+    a(t) = 
+    \left\{
+    \begin{array}{ll}
+        a_{i}\left(\frac{t}{t_{i}}\right)^{1/2} & \iff t<t_{i}\\
+        a_{i}\exp(H_{i}(t-t_{i})) & \iff t_{i}<t<t_{f}\\
+        a_{i}\exp(H_{i}(t_{f}-t_{i}))\left(\frac{t}{t_{i}}\right)^{1/2} & \iff t>t_{f}
+    \end{array}
+    \right.
+\end{equation*}
+where $t_{i}$ and $t_{f}$ are respectively the beginning and end of the inflationary period. If we call $N$ the number of $e$-foldings of inflation $N = H_{i}(t_{f}-t_{i})$, then
+\begin{equation*}
+    \frac{a(t_{f})}{a(t_{i})} = e^{N}
+\end{equation*}
+If the duration of inflation was long compared to the Hubble time during inflation $H_{i}^{-1}$, then $N$ was large, and the growth in scale factor was astronomical (see what I did there?)
+\par If we compare the density parameter at the beginning of exponential inflation ($t = t_{i}$)with the density parameter at the end of inflation($t = t_{f}$), we find
+\begin{equation*}
+     | 1-\Omega(t_{f})| \propto e^{-2H_{i}t_{f}} \quad  | 1-\Omega(t_{i})| \propto e^{-2H_{i}t_{i}}
+\end{equation*}
+so that 
+\begin{equation*}
+    \frac{| 1-\Omega(t_{f})|}{| 1-\Omega(t_{i})|} \propto e^{-2N}
+\end{equation*}
+Suppose that prior to inflation, the universe was actually strongly curved, with
+\begin{equation*}
+     1-\Omega(t_{i})|\sim 1 \implies  |1-\Omega(t_{f})|\sim e^{-2N}
+\end{equation*}
+After inflation, during the following radiation-dominated and matter-dominated eras, the difference of $\Omega$ from unity would increase again. However, starting from the evidence $|1-\Omega_{0}|\leq 0.005$ today, we can use the Bechmark model
+\begin{equation*}
+    1-\Omega(t) = \frac{(1-\Omega_{0})a^{2}(t)}{a^{2}(t)(1-\Omega_{0})+a(t)\Omega_{m,0}+\Omega_{r,0}}
+\end{equation*}
+to extrapolate back to the time $t_{f}$ (the end of the hypothetical inflation)
+\begin{equation*}
+    N = H_{i}(t_{f}-t_{i})
+\end{equation*}
+If $t_{i}\sim H_{i}^{-1}$ then $N\sim t_{i}^{-1}(t_{f}-t_{i})$ and $t_{f} = t_{i}(N+1)$. Models of inflation predict $t_{i}\sim 10^{-36}\,\text{s}$ and then $t_{f} = 10^{-36}\,\text{s}\,(N+1)$.
+\par Using the Benchmark model, such model of inflation corresponds to a scale factor 
+\begin{equation*}
+    a(t_{f})\approx 2\cdot 10^{-28}\sqrt{N+1}
+\end{equation*}
+and plugging it into the density parameter equation (in the Benchmark model)
+\begin{equation*}
+    1-\Omega(t_{f})\leq \frac{(1-\Omega_{0})a^{2}(t_{f})}{\Omega_{r,0}}
+\end{equation*}
+Using the present day estimate of the density parameter we infer 
+\begin{equation*}
+    |1-\Omega(t_{f})| \leq 2\cdot 10^{-54}(N+1)
+\end{equation*}
+But since $|1-\Omega(t_{f})|\sim e^{-2N}$, we can equate the two conditions to find the minum number $N$ of $e$-foldings 
+\begin{equation*}
+    e^{-2N} \leq 2\cdot 10^{-54}(N+1) \implies N\approx 60
+\end{equation*}
+The minimum required increase in the scale factor during inflation is thus
+\begin{equation*}
+    \frac{a(t_{f})}{a(t_{i})} \approx e^{60} \approx 10^{26}
+\end{equation*}
+\subsection{Horizon Problem}
+If matter and radiation are the only components, the particle horizon distance at time $t$ is
+\begin{align*}
+    d_{\text{causal}}(t) &= a(t)\int_{0}^{t}\frac{c,\text{d}t'}{a(t')} = a(t)\int_{0}^{a}\frac{c\,\text{d}(\ln a)}{aH}\\
+    &\sim cH^{-1}
+\end{align*}
+with $H^{-1}\propto a^{3/2}$ for matter, and $H^{-1}\propto a^{2}$ for radiation. In this case, particle horizon is of the same order of Hubble radius. The problem in Big Bang cosmology (without inflation) is that the particle horizon $d_{\text{causal}}\sim H^{-1}$ increases faster than a $\lambda \propto a$.
+\par As a result, many regions on the last-scattering surface were not in causal contact. They could not equilibrate later either—even if the horizon eventually encompassed them—because after last scattering the CMB photons free-streamed and no longer scattered.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/inflation.png}
+\end{figure}
+\par Guess what? This problem too is mitigated by inflation. Let's compute
+\begin{equation*}
+    R(a) = \frac{d_{\text{causal}(a)}}{\lambda(a)} = \int_{0}^{a}\frac{c\,\text{d}(\ln a)}{aH}
+\end{equation*}
+During the RDU and MDU epochs $R(a)\to 0$ as $a\to 0$. Pick any physical region whose size scales with the expansion ($\lambda \sim a$). In RDU/MDU, as $a\to 0$, the particle horizon shrinks faster than that region, so $d_{\text{causual}}/\lambda \to 0$: the regions contains many causally disconnected parts.
+\par This problem can be solved if we postulate an early phase (Inflation) in which $R(a)$ increases as $a\to 0$. The only way to do this is to add a period with $1/aH$ that decreases (equivalently it grows toward the past as $a\to 0$).
+\begin{align*}
+    &\frac{\text{d}}{\text{d}t}(aH)^{-1}<0\\
+    &\frac{\text{d}}{\text{d}t}(\dot{a})^{-1} = -\frac{\ddot{a}}{(\dot{a})^{2}}<0 \implies \ddot{a} > 0 \quad (\text{that requires}\; w<-1/3)
+\end{align*}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/inflationscales.png}
+\end{figure}
+\par To solve the horizon problem we require that, at the start of inflation $a = a_{i}$, the causal horizon is larger than the physical size of the patch that will later evolve into our entire observable CMB last-scattering surface.
+\begin{equation*}
+    d_{\text{causal}}(a_{i}) \gtrsim \lambda_{LS}(a_{i})
+\end{equation*}
+Therefore $\lambda_{LS}(a_{LS}) = 2d_{A}(z_{LS})\sin(\theta/2)$. For antipodal points, $\theta = \pi$, so $\lambda_{LS}(a_{LS}) = 2d_{A}(z_{LS})$, and the corresponding comoving $\lambda_{LS, com}(a_{LS}) = 2(1+z_{LS})d_{A}(z_{LS})$. At the beginning of the inflationary epoch, this length becomes $2a_{i}(1+z_{LS})d_{A}(z_{LS})$. In short
+\begin{equation*}
+    d_{\text{causal}}(a_{i}) \gtrsim 2a_{i}(1+z_{LS})d_{A}(z_{LS})
+\end{equation*}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/hubbleradius.png}
+    \caption{Evolution of the comoving Hubble radius $(aH)^{-1}$. At early times, the horizon was large enough so that observable scales were in causal contact. As inflation took place, the horizon shrank and scales came out to disconnected regions. Inflation then finished and the horizon started to grow to the present size. Two casually-disconnected CMB points, $P$ and $Q$, were then in thermal equilibrium at some point in the past, thus resolving the horizon problem.}
+    \label{fgr:hubbleradius}
+\end{figure}
+\par With reference to Fig.\ref{fgr:hubbleradius}, today the two points $P$ and $Q$ on the CMB are far apart and not in causal contact now, but they share a common causal ancestor from the pre/early-inflation epoch when the patch was small enough to communicate.
+\par Inflation takes tiny quantum fluctuations, stretches them to cosmological sizes, pushes them outside the Hubble radius (freeze), and later the expanding Universe makes them re-enter and seed the structures we observe.
+\section{Statistical Properties of Density Perturbations}
+\par A commonly used measure of clustering is the \emph{two-point correlation} function (hereafter called just the correlation function) $\xi(\vec{r},t)$. It is defined by counting the number of galaxies with a given separation $\vec{r}$.
+\par If we consider the contribution to this from two small volumes $\text{d}V_{1}$ around position $\vec{x}$ and $\text{d}V_{2}$ around position $\vec{x}+\vec{r}$. For a uniform distribution of galaxies (average density $\bar{n}$), the probability to pick a galaxy in $\text{d}V_{1}$ and a galaxy in $\text{d}V_{1}$, is $\text{d}P = \bar{n}^{2}\text{d}V_{1}\text{d}V_{2}$.
+\par If thedistribution is \emph{not} uniform we take the spatial average over all points separated by $\vec{r}$
+\begin{equation*}
+    \langle n(\vec{x}+\vec{r},t)n(\vec{x},t)\rangle
+\end{equation*}
+which we can hastly cast in an equivalent form making use of the contrast $\Delta$
+\begin{equation*}
+    n(\vec{r},t) = \langle n(t)\Delta(\vec{r},t)\rangle + \langle n(t) \rangle = \langle n(t) \rangle(1+\Delta(\vec{r},t))
+\end{equation*}
+Skipping all the various intermediate algebric passages because they're a hussle, we're left with 
+\begin{equation*}
+    \langle n(\vec{x}+\vec{r},t)n(\vec{x},t)\rangle = \langle n(t) \rangle^{2}\langle (1+\Delta(\vec{x},t)\Delta(\vec{x}+\vec{r},t)) \rangle
+\end{equation*}
+thus 
+\begin{equation*}
+    dP = \bar{n}^{2}\left[1+\xi(\vec{r},t)\right]\text{d}V_{1}\text{d}V_{2}
+\end{equation*}
+where we've defined the \emph{2-points correlation function}
+\begin{equation}
+    \boxed{
+        \xi(\vec{r},t) = \Delta(\vec{x},t)\Delta(\vec{x}+\vec{r},t)
+    }
+    \label{eq:twopointcorrelation}
+\end{equation}
+\subsubsection*{Example: Calculation of $\xi(r)$ for a sample of galaxies}
+\par Assume we have therefore two sets of points. One is the sample one, designated by the letter “D” (data). It contains $N_{D}$ points. In addition there is the Poisson point set “R”, with $N_{R}$ points randomly generated. Position yourself on each data point and count the number of data points you find in a spherical shell with radius $[r, r + \Delta r]$. The total sum of points counted is designated as $DD(r)$. One may also count, for the same number of points, the number of Poisson points in the same shells, $DR(r)$.
+Hence
+\begin{equation*}
+    \xi(r) = \frac{N_{R}}{N_{D}}\frac{DD(r)}{DR(r)}-1
+\end{equation*}
+if $\xi(r) > 0$ at small $r$, then galaxies are clustered, whereas if $\xi(r)<0$, they tend to avoid each other. We generally compute $\xi(r)$ by estimating the distances of galaxies from their redshifts, making a correction for the distortion introduced by peculiar velocities. On scales $r \lesssim 10\,\text{Mpc}$, it takes roughly the form
+\begin{equation*}
+    \xi(r)\approx \left(\frac{r}{r_{0}}\right)^{-\gamma}
+\end{equation*}
+with $\gamma \sim 1.7-1.9$ and $r_{0}\sim 5h^{-1}\,\text{Mpc}$. When $r<r_{0}$, the correlation length, the probability of finding one galaxy within radius $r$ of another is significantly larger than for a strictly random distribution.
+\par Since $\xi(r)$ represents the deviation from an average density, it must at some point become negative as $r$ increases. For typical values ($h\approx 0.7$)
+\begin{align*}
+    &\xi(r = 1h^{-1}\,\text{Mpc}) \approx 18 \implies i+\xi = 19\\
+    &\xi(r = 10h^{-1}\,\text{Mpc}) \approx 0.29 \implies i+\xi = 1.29
+\end{align*}
+The former means that pairs at $h^{-1}\,\text{Mpc}$ are roughly 19 times the random points, whilst the latter tells us that pairs are only $29\%$ more probable than random points.
+\subsection{Power Spectrum}
+Because of the isotropy $\xi$ is only a function of the magnitude of the length vector, $r=|\vec{r}|$, $P(k,t)$ is similarly only a function of the magnitude of the wavenumber, $k=|\vec{k}|$. Using polar coordinates
+\begin{equation*}
+    \xi(r,t) = \frac{1}{2\pi^{2}}\int_{0}^{\infty}P(k,t)\frac{\sin(kr)}{kr}k^{2}\,\text{d}k
+\end{equation*}
+The correlation function is more closely connected to observations, whereas theoretical predictions come more naturally in terms of $P(k)$, especially at large distance scales, where the density perturbations are small and closer to their primordial state.
+\par Let us now evaluate the zero-lag correlation function $\xi(0)$, let’s omit time (choose a specific epoch or redshift)
+\begin{equation*}
+    \xi(0) = \frac{1}{2\pi^{2}}\int_{0}^{\infty}P(k,t)\lim_{r\to 0}\frac{\sin(kr)}{kr}k^{2}\,\text{d}k = \frac{1}{2\pi^{2}}\int_{0}^{\infty}P(k,t)k^{2}\,\text{d}k
+\end{equation*}
+which roughly translates into $\xi(0) = \Delta(\vec{x},t)\Delta(\vec{x}) := \sigma^{2}$. The correlation function evaluated at 0 is simply the variance of the field at a point (the mean-square fluctuation of $\Delta$).
+\par The product $P(k)/(2\pi)^{3}$ gives the power (i.e. the contribution to the variance of the field) per unit $k$-space volume due to the modes with wave vector $k$. In three-dimensional space, however, a thin spherical shell in $k$-space contains many different modes and has a $k$-space volume $4\pi k^{2}\text{d}k$.
+\par It is convenient to introduce a new quantity (which is often called the “dimensionless power spectrum”)
+\begin{equation}
+    DP(k) = \frac{k^{3}}{2\pi^{2}}P(k)
+    \label{eq:dimensionlesspowerspectrum}
+\end{equation}
+\par $DP(k)$ has the more obvious physical meaning: It gives the contribution of a logarithmic interval of scales. If $\Delta$ is a Gaussian field, then the value of $\Delta$ at a randomly selected point is drawn from the Gaussian probability distribution
+\begin{equation*}
+    P(\Delta) = \frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left(-\frac{\Delta^{2}}{2\sigma^{2}}\right)
+\end{equation*}
+where the standard deviation $\sigma$ can be computed from the power spectrum 
+\begin{equation*}
+    \sigma^{2} = \frac{1}{2\pi^{2}}\int_{0}^{\infty}P(k)k^{2}\,\text{d}k
+\end{equation*}
+A Gaussian random field is completely specified by either the two-point correlation function, or, equivalently, the power spectrum. The study of Gaussian density fields is of particular interest to cosmologists because most inflationary scenarios predict that the density fluctuations created by inflation constitute an isotropic, homogeneous Gaussian field.
+\par Observations suggest the fluctuations are very close to a Gaussian random field, meaning:
+\begin{enumerate}
+    \item At each point the distribution of $\Delta(x)$ is close to Gaussian (mean $\approx 0$);
+    \item Values at two positions are not independent; their covariance depends on the separation $r$. Across points the only “structure” you really need (to first approximation) is the 2-point correlation $\xi(r)$ or equivalently $P(k)$.
+\end{enumerate}
+\par Astronomical observations and $N$-body simulations sample the matter distribution with discrete tracers (galaxies or particles), while many theoretical calculations treat matter as a continuous fluid. For this reason we often smooth (average) the density contrast over a finite comoving scale $R$, turning the noisy, small-scale field into a well-defined, scale-dependent quantity that can be compared between data and theory.
+\par Crucially, smoothing also has a direct physical meaning: by averaging the overdensity inside a region of radius $R$, we measure the mean fractional mass excess of that patch. This allows us to define the typical fluctuation amplitude associated with a halo mass scale $M\sim \rho(4\pi R^{3}/3)$ through the variance $\sigma^{2}(R)$ (or equivalently $\sigma^{2}(M)$).
+\par Studying the statistical properties of the smoothed fluctuation field as a function of $R$ is therefore essential for connecting the initial density field to the abundance and collapse of halos of different masses.
+\par We thus replace the density field $\Delta(\vec{x})$ with a smoothed field $\Delta_{R}(\vec{x})$
+\begin{equation*}
+    \Delta_{R}(\vec{x}) = \int W_{R}(\vec{r})\Delta(\vec{x}+\vec{r})\,\text{d}^{3}r
+\end{equation*}
+where $W(\vec{r})$ is a window function. A common window function is the spherical top hat of radius $R$
+\begin{equation*}
+    W_{R}(r) = \left(\frac{4\pi R^{3}}{3}\right)^{-1}\Theta(R-r)
+\end{equation*}
+$\Delta_{R}(\vec{x})$ is the average fluctuation (centered on point $\vec{x}$) inside a comoving sphere of radius $R$.
+\par The power spectrum for the smoothed density field will be $P(k)|W(k)|^{2}$, and the variance of the fluctuations smoothed with a sphere of radius $R$ is thus
+\begin{equation*}
+    \sigma^{2}(R) = \frac{1}{2\pi^{2}}\int_{0}^{\infty} P(k)|W(k)|^{2}k^{2}\,\text{d}k
+\end{equation*}
+\par Note that filtering the density field by passing over it a box of some characteristic comoving size $R$ and averaging the density over the box corresponds to filter out waves with $k > 1/R$, so that only fluctuations with $k<R^{-1}$ contribute to the variance.
+\par Theoretically, the value of the power-law index for the power spectrum favored by inflation models is $n \approx 1$. A power spectrum with $n=1$ is often referred to as a \emph{Harrison-Zeldovich spectrum} \cite{PhysRevD.1.2726}, \cite{10.1093/mnras/160.1.1P}.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/matterpowerspectrum.pdf}
+    \caption{Matter power spectrum inferred from various cosmological probes.}
+    \label{fgr:matterpowerspectrum}
+\end{figure}
+\par Observationally, the value of the power-kaw index $n$ can be deduced from the temperature fluctuations of the CMB on large scales ($\theta > 1.1\text{°}$). The temperature correlation function measured by the Planck satellite is consistent wth $n = 0.97\pm 0.01$. Thus the observed inflationary power spectrum is only slightly tilted relative to a Harrison-Zeldovich spectrum. Hence
+\begin{equation*}
+    \sigma^{2}(R)\propto R^{-4} \implies \sigma^{2}_{M}\propto M^{-4/3}
+\end{equation*}
+This means that \emph{small masses collapse first}. Small masses corresponds to small radii, and a small radius $R$ filter removes the lower $k$-powers.
+\begin{itemize}
+    \item For small $R$: cutoff $k_{cut}\sim 1/R$ is large, so lots of modes survive, meaning $\Delta_{R}$ fluctuates a lot and thus $\sigma(M)$ is big;
+    \item For large $R$: cutoff $k_{cut}\sim 1/R$ is small, so most modes are removed, meaning $\Delta_{R}$ is smoother and thus $\sigma(M)$ is small.
+\end{itemize}
+Low mass halos have larger fluctuations, so they will collapse first, leading to \emph{Hierarchical Structure Foramtion}. If you scattered point masses randomly throughout the universe, so that they formed
+a Poisson distribution, you would expect mass fluctuations of amplitude
+\begin{equation*}
+    \sigma \sim \frac{\delta M}{M}\sim \frac{\sqrt{N}}{N}\sim N^{-1/2}
+\end{equation*}
+with $N$ number of point mass inside the sphere.
+\par Since the average mass within a sphere is $M\propto N$, a Poisson distribution has
+\begin{equation*}
+    \sigma \propto M^{-1/2}
+\end{equation*}
+The Harrison-Zeldovich spectrum, with $n=1$, will thus produce more poewr on small length scales than a Poisson distribution of points.
