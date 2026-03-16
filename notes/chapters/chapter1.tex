@@ -1436,12 +1436,6 @@ $\Delta_{R}(\vec{x})$ is the average fluctuation (centered on point $\vec{x}$) i
 \end{equation*}
 \par Note that filtering the density field by passing over it a box of some characteristic comoving size $R$ and averaging the density over the box corresponds to filter out waves with $k > 1/R$, so that only fluctuations with $k<R^{-1}$ contribute to the variance.
 \par Theoretically, the value of the power-law index for the power spectrum favored by inflation models is $n \approx 1$. A power spectrum with $n=1$ is often referred to as a \emph{Harrison-Zeldovich spectrum} \cite{PhysRevD.1.2726}, \cite{10.1093/mnras/160.1.1P}.
-\begin{figure}[h!]
-    \centering 
-    \includegraphics[width=0.8\textwidth]{img/matterpowerspectrum.pdf}
-    \caption{Matter power spectrum inferred from various cosmological probes.}
-    \label{fgr:matterpowerspectrum}
-\end{figure}
 \par Observationally, the value of the power-kaw index $n$ can be deduced from the temperature fluctuations of the CMB on large scales ($\theta > 1.1\text{°}$). The temperature correlation function measured by the Planck satellite is consistent wth $n = 0.97\pm 0.01$. Thus the observed inflationary power spectrum is only slightly tilted relative to a Harrison-Zeldovich spectrum. Hence
 \begin{equation*}
     \sigma^{2}(R)\propto R^{-4} \implies \sigma^{2}_{M}\propto M^{-4/3}
@@ -1462,3 +1456,207 @@ with $N$ number of point mass inside the sphere.
     \sigma \propto M^{-1/2}
 \end{equation*}
 The Harrison-Zeldovich spectrum, with $n=1$, will thus produce more poewr on small length scales than a Poisson distribution of points.
+\section{Hot\&Cold Dark Matter}
+The shape of the power spectrum at $t_{rm} \approx 50,000\,\text{yr}$\footnote{Note: this is the time of \emph{matter-radiation equality}.}, when density perturbations start to grow significantly in amplitude, depends on the properties of the dark matter. More specifically, it depends on whether the dark matter is predominantly \emph{cold} or \emph{hot}.
+\par In a RDU, the Hubble parameter is 
+\begin{equation*}
+    H(a) = H_{0}\frac{\sqrt{\Omega_{r,0}}}{a^{2}}
+\end{equation*}
+This means the mass (in the form of matter) within the horizon (Hubble radius), during the early, radiation dominated era, was
+\begin{equation*}
+    M_{H} = \frac{4\pi}{3}\left(\frac{c}{H(a)}\right)^{3}\rho^{(m)}_{m}(a)
+\end{equation*}
+where $c/H$ is the physical distance over which particle can communicate at a specific time.
+\par Since $\rho^{(m)}_{m} \propto a^{-3}$, the mass can be expressed as
+\begin{equation*}
+    M_{H} = \frac{4\pi}{3}\left(\frac{ca^{2}}{H_{0}\sqrt{\Omega_{r,0}}}\right)^{3}\frac{\rho^{(m)}_{m,0}}{a^{3}} = 1.6\cdot 10^{28}M_{\odot}a^{3}
+\end{equation*}
+If this is the case, what was the time when $M_{H}$ was comparable to the mass of a present galaxy? Turns out, it is when $a \approx 4\cdot 10^{-6}$ ($t\approx 12\,\text{yr}$). As the time goes, or as the factor a increases, the mass inside the Hubble radius increases as $M \propto a^{3}$.
+\par This presents a problem. Consider what would happen if DM were made of relativistic particles. If a DM particle is relativistic when it decouples, it moves freely in random directions with a speed close to that of light. This motion, called \emph{free streaming}, acts to wipe out any density fluctuations within the Hubble radius. The initially relativistic dark matter particles cool as the Universe expands. In fact, the temperature drops as $a^{-1}$, so particles may be relativistic at their decoupling, and become non relativistic at a later time.
+\par Suppose our Universe is filled with relativistic dark matter particles with mass $m_{h}$. The initially relativistic dark matter particles cool as the Universe expands, until their thermal velocities drop below $c$ when $3kT\approx m_{h}c^{2}$ ($3kT$ is the average energy of a relativistic particle).
+\par This happens at a temperature
+\begin{equation}
+    T_{h} \approx \frac{m_{h}c^{2}}{3k}\approx 12,000\,\text{K}\,\left(\frac{m_{h}c^{2}}{3\,\text{eV}}\right)
+    \label{eq:nonrelativistictemp}
+\end{equation}
+For a particle of mass $m_{h}>2.4\,\text{eV}$, the particles become non relativistic when the Universe is still radiation-dominated. In a RDU, the temperature (\ref{eq:nonrelativistictemp}) corresponds to a cosmic time
+\begin{equation*}
+    m_{h}c^{2}\sim T \sim \frac{1}{a}\sim t^{-1/2} \implies t\sim(m_{h}c^{2})^-2
+\end{equation*}
+or, more precisely
+\begin{equation}
+    t_{h}\approx 42,000\,\text{yr}\,\left(\frac{m_{h}c^{2}}{3\,\text{eV}}\right)^{-2}
+    \label{eq:nonrelativisticepoch}
+\end{equation}
+In short: The lighter is a particle, the longer it stays relativistic.
+\par Prior to the time $t_{h}$, the relativistic dark matter particles move freely in random directions with a speed close to that of light. The net effect of free streaming is to wipe out any density fluctuations whose wavelength is smaller than the Hubble radius ($\sim ct_{h}$) at $t_{h}$.
+\par When the dark matter particles become nonrelativistic, there will be no density fluctuations on scales smaller than the physical scale of order
+\begin{align}
+    d_{\text{min}} &\approx ct_{h}\approx 13\,\text{kpc}\left(\frac{m_{h}c^{2}}{3\,\text{eV}}\right)^{-2}\\
+    r_{\text{min}} &=\frac{d_{\text{min}}}{a(t_{h})}\approx 55\,\text{Mpc}\,\left(\frac{m_{h}c^{2}}{3\,\text{eV}}\right)
+    \label{eq:nrdimensions}
+\end{align}
+where the former is the scale in comoving units (i.e., the size of the region \emph{today}) below which fluctuations are erased.
+\par The total amount of matter within a sphere of said comoving radius $r_{\text{min}}$ is 
+\begin{equation}
+    M_{\text{min}} = \frac{4\pi}{3}r^{3}_{\text{min}}\rho^{(m)}_{m,0}\approx 2.7\cdot 10^{16}M_{\odot}\left(\frac{m_{h}c^{2}}{3\,\text{eV}}\right)^{-3}
+    \label{eq:erasedmass}
+\end{equation}
+We can sum up the effects DM would have depending on its mass:
+\begin{enumerate}
+    \item with $m_{h}c^{2}\sim 50\,\text{eV}$ DM would smear out fluctuations smaller than the Local Group;
+    \item with $m_{h}c^{2}\sim 8\,\text{eV}$ DM will rub out fluctuations smaller than the Coma cluster;
+    \item with $m_{h}c^{2}\sim 3\,\text{eV}$ DM will wipe away fluctuations smaller than superclusters.
+\end{enumerate}
+We may then give the following definition: We call \emph{Hot Dark Matter} the DM with a large free- streaming cutoff, meaning its particles move fast for long enough that they erase density fluctuations on galaxy scales (and often larger).
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=Hot DM: Neutrinos,
+  boxed title style={size=small,colframe=blue!50!black}]
+  A possible candidate for \emph{hot dark matter} are neutrinos. From experimental evidences of neutrinos oscillations, we have a lower limit on the total mass of neutrinos from the three flavors
+  $$ [m(\nu_{e})+m(\nu_{\mu})+m(\nu_{\tau})]c^{2} \geq 0.057\,\text{eV}$$
+  and we're also given an upper limit from large scale structures analysis
+  $$ [m(\nu_{e})+m(\nu_{\mu})+m(\nu_{\tau})]c^{2} \leq 0.3\,\text{eV}$$
+  Neutrinos decoupled at $t\sim 1\,\text{s}$, when the mean particle energy was approximately $3\,\text{MeV}$, so neutrinos were still relativistic when they decoupled.
+  \par If $m_{\nu}=0.05\,\text{eV}$, $z_{nr} \sim 95$ (becomes non-relativistic fairly late).
+  \par If $m_{\nu}=0.1\,\text{eV}$, $z_{nr} \sim 190$.
+  \par If $m_{\nu}=1\,\text{eV}$, $z_{nr} \sim 1900$ (around recombination-ish; still after equality).
+\end{tcolorbox}
+
+\par On the other hand, what if instead DM was \emph{cold}?
+\par Meet: WIMPs (Weakly interacting massive particle).
+\par WIMPs are predicted to have a mass $mc^{2}\sim 100\,\text{GeV}$ and to have decoupled between $10^-8-1\,\text{s}$ when the Universe had a mean particle energy of order $3\,\text{MeV}-10\,\text{GeV}$. With a thermal energy smaller than their rest energy at the time of decoupling, WIMPs were already nonrelativistic when they
+decoupled, and thus qualify as cold dark matter.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.6\textwidth]{img/hdmcdm.png}
+    \caption{The plot shows the matter power spectrum $P(k)$ at matter-radiation equality, as a function of the comoving wavenumber $k$.\\
+    The dashed line is the primordial spectrum produced by inflation (here approximated as $P(k)\propto k$). The solid curve labelled CDM shows the expected spectrum if dark matter particles are heavy and slow-moving early on: small-scale power is reduced relative to the primordial shape, but it is still present. The red dotted curve labelled HDM includes an additional, much stronger suppression at high $k$ because relativistic dark-matter particles free-stream, erasing fluctuations below a characteristic small-scale cutoff.}
+\end{figure}
+\par If we lived in a Universe filled with HDM:
+\begin{enumerate}
+    \item the first structures to collapse are regions of mass $M\sim M_{\text{min}}$ with nearly uniform overdensity. These regions collapse to form superclusters; smaller structures, such as clusters and galaxies, then form by fragmentation of the superclusters. This scenario, in which the largest observable structures form first, is called the top-down scenario.
+    \item If most of the dark matter in the Universe were hot dark matter with $m_{h}c^{2}\sim 3\,\text{eV}$, the oldest structures in the Universe would be superclusters, and galaxies would be relatively young. In fact, the opposite seems to be true in our Universe.
+\end{enumerate}
+Some observational facts: We're able to observe galaxies and QSOs (Quasi-Stellar Objects, a.k.a. Quasars) at $z>14$, so that small-scale structure is already present at times when the Universe had less than 2\% of its current age. On top of that Correlation function of galaxies, both in the local Universe and at higher redshift, suggests a lot of structure on small scale. Thus, most of the dark matter in the universe must be cold dark matter, for which free streaming has been negligible.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.6\textwidth]{img/dmstructureform.png}
+    \caption{Top row: Simulations of what structure in Hot (left), Warm (middle), and Cold (Right) dark matter universes would look like at high redshift (early times). Bottom row: same as top row, except now as they would look at the present time ($z=0$). Credits: ITC\@ University of Zurich.}
+\end{figure}
+\par Why is the CDM power spectrum so different from the original power spectrum $P(k)\sim k$?
+\par As we'll see in a moment, perturbations grow differently if they are larger or smaller than the size of the horizon (particle or Hubble radius)
+\begin{enumerate}
+    \item For matter and radiation dominated the particle horizon distance $d_{H}$ is $3ct$ and $2ct$, respectively. They both scale like $\sim t$;
+    \item A structure of comoving size $r$ is stretched to the physical length $a(t)r$ due to cosmic expansion ($\propto t^{1/2}$ in a RDU, $\propto t^{2/3}$ in a MDU);
+    \item If the size of the structure scales as $t^{1/2}$ (when radiation dominates) while the horizon grows as $t$, sooner or later the horizon will catch up to the structure and eventually overtake it!
+\end{enumerate}
+\section{Super-Horizon Evolution}
+\par To calculate the evolution of perturbations larger than horizon, we need GR. However, we can take a shortcut that gives the correct answer. Each region expands at a rate that depends on its density: Denser regions expand a bit more slowly, while sparser regions expand a bit more rapidly, almost as if the denser/sparser regions act like miniature closed/open universes, each with their own expansion history.
+\par As time passes, therefore, the denser regions "lag" further behind the sparser regions, and the density contrast steadily increases.
+\par If a fluctuation has a scale larger than the horizon at that time (i.e. it is outside the horizon), it does not care about microphysical process like fluid pressure, but it simply evolves only according to General Relativity (Friedman equations).
+\par Assuming $\Omega_{\text{tot}} = 1$
+\begin{equation*}
+    H^{2} = \frac{8\pi G}{3}\bar{\rho}
+\end{equation*}
+where $\bar{\rho}$ is the background density. An overdensity $\delta\rho$ will then induce a positive curvature in the local space 
+\begin{equation*}
+    H^{2} = \frac{8\pi G}{3}(\bar{\rho}+\delta\rho)-\frac{k}{a^{2}}
+\end{equation*}
+then 
+\begin{equation*}
+    \Delta = \frac{\rho -\bar{\rho}}{\bar{\rho}} = \frac{\frac{3k}{8\pi Ga^{2}}}{\bar{\rho}} \propto (a^{2}\bar{\rho})^{-1}
+\end{equation*}
+This implies that super-horizon fluctuations will be always growing 
+\begin{enumerate}
+    \item like $\Delta \propto a^{2}$ if RD ($\bar{\rho}\sim a^{-4}$);
+    \item like $\Delta \propto a$ if MD ($\bar{\rho}\sim a^{-3}$);
+\end{enumerate}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|c|c}
+        Growth rates & RD & MD \\
+        \hline
+        Super-horizon & $\Delta \propto a^{2}\propto t$ & $\Delta \propto a\propto t^{2/3}$\\
+        Sub-Horizon & $\Delta \propto \ln a$ (frozen) & $\Delta \propto a \propto t^{2/3}$\\
+    \end{tabular}
+\end{table}
+When the proper wavelength of a density perturbation $2\pi a(t)/k$ is large compared to the Hubble distance $c/H(t)$ (so, it is super-horizon), density fluctuations in the CDM will be able to grow, regardless of whether the Universe is RD or MD. When the proper wavelength of a density perturbation is sub-horizon, density fluctuations in the CDM only experience significant growth during a matter-dominated era.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/structuregrowth.png}
+    \caption{Pictorial representation of structures size's evolution.}
+    \label{fgr:structuregrowth}
+\end{figure}
+\par Essentially it's a race between the horizon and the size of the fluctuations!
+\par Fluctuations must remain super-horizon until matter-radiation equality to avoid being suppressed; once the Universe becomes matter-dominated, they can grow efficiently whether they are super- or sub-horizon. If a mode enters the horizon during radiation domination, its growth is strongly inhibited until equality.
+\par In fact, how the fluctuations grow once their wavelength is smaller than the Hubble distance depends on whether that transition happens before or after the time of radiation-matter equality $t_{rm} = 0.050\,\text{Myr}$, when the scale factor was $a_{rm} = 2.9\cdot 10^{-4}$. At the time of radiation– matter equality, the horizon was $1.8ct_{rm}\approx 0.027\,\text{Mpc}$, which corresponds to a comoving length scale $r_{rm}\sim 90\,\text{Mpc}$, which corresponds to a comoving wavenumber $k_{rm}\approx 0.07\,\text{Mpc}^{-1}$.
+\par Density fluctuations with a wavenumber $k<k_{rm}$ will remain larger than the Hubble distance during the entire radiation dominated era, and will grow steadily in amplitude during all that time. At these scales, the power spectrum for CDM retains the original power spectrum $P(k)\propto k$ that it had immediately after the inflationary epoch.
+\par Density perturbations with a wavenumber $k > k_{rm}$ will grow in amplitude only until their physical wavelength $a(t)r\propto t^{1/2}$ is smaller than the Hubble distance $c/H(t)\propto t$. At that time, their amplitude is frozen until the time $t_{rm}$, when matter dominates, and density perturbations smaller than the Hubble distance are free to grow again.
+\par In short: For wavenumbers $k>k_{rm}$, the power spectrum for CDM is suppressed in amplitude, with the suppression being greatest for the largest wavenumbers (corresponding to shorter wavelengths, which become smaller than the Hubble distance at an earlier time).
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/horizonvssize.png}
+    \caption{Larger scales (in Mega light years in the figure) start with they are bigger than the horizon at the equivalence matter-radiation, never stop growing. Scales start with larger fluctuations, but if they are smaller than the horizon at the equivalence matter-radiation, they stop growing when they are reached by the horizon. As a result of these two competing mechanisms, the DM power spectrum today peaks at scales comparable with the size of the horizon at the equivalence matter-radiation.}
+    \label{fgr:horizonvssize}
+\end{figure}
+Note that, with reference to Fig.\ref{fgr:horizonvssize}, $P(\vec{k},t)\sim |\Delta_{k}(t)|^{2}$, so that during RD, for superhorizon structures, $\Delta \propto a^{2}\propto t$ and therefore $P(\vec{k},t)\sim t^{2}$. Similarly, during MD, $\Delta \propto a \propto t^{2/3}$ and therefore $P(\vec{k},t)\sim t^{4/3}$.
+\par A convolution in real space $T(x)$ corresponds to calculating 
+\begin{equation*}
+    P(k) = P_{i}(k)|T(k)|^{2}
+\end{equation*}
+Let us consider a generic time $t_{i}$ before matter-radiation equality $t_{eq}$ and a generic time $t_{\text{after}}$ after the equality. Say $k_{eq}$ the comoving Hubble radius at equality.
+\par Structures with comoving wavenumber $k<k_{eq} = 0.07\,\text{Mpc}^{-1}$ are bigger than the horizon at the MR-equality: During the RD epoch, they grow as $a^{2}$. So, between $t_{i}$ and $t_{eq}$
+\begin{equation*}
+    \Delta(t_{eq}) = \frac{a^{2}(t_{eq})}{a^{2}(t_{i})}\Delta(t_{i})
+\end{equation*}
+Similarly, between $t_{eq}$ and $t_{\text{after}}$
+\begin{equation*}
+    \Delta(t_{\text{after}}) = \frac{a(t_{\text{after}})}{a(t_{eq})}\Delta(t_{eq})
+\end{equation*}
+After $t_{eq}$ matter dominates, so it’s irrelevant if structures are super or sub-horizon: Fluctuations will always grow as $a$.
+\par Combining the two expressions
+\begin{equation*}
+    \Delta(t_{\text{after}}) = \frac{a(t_{\text{after}})a^{2}(t_{eq})}{a(t_{eq})a^{2}(t_{i})}\Delta(t_{i})
+\end{equation*}
+Note that the pre-factor doesn't depend on $k$, because that factor is built only out of background expansion numbers.
+\par For structures with comoving $k > k_{eq}$ which are smaller than the horizon at MR-equality, we know that they entered the horizon a $t_{\text{enter}}<t_{eq}$. So, we can repeat the same steps of before, but between $t_{i}$ and $t_{\text{enter}}$, and between $t_{\text{enter}}$ and $t_{\text{after}}$. There's a crucial difference now: Between $t_{\text{enter}}$ and $t_{eq}$ these structures \emph{do not grow}.
+\par Repeating the same steps as before (and assuming the logarithmic growth as approximately constant), we can thus write 
+\begin{equation*}
+     \Delta(t_{\text{after}}) = \frac{a(t_{\text{after}})a^{2}(t_{eq})a^{2}(t_{\text{enter}})}{a^{3}(t_{eq})a^{2}(t_{i})}\Delta(t_{i})
+\end{equation*}
+where we recognize a similar pre-factor as per our previous expression, with the presence of a new factor $a^{2}(t_{\text{enter}})/a^{2}(t_{eq})$ for which 
+\begin{equation*}
+    \frac{a^{2}(t_{\text{enter}})}{a^{2}(t_{eq})} \sim \frac{t_{\text{enter}}}{t_{eq}} \sim \left(\frac{k_{eq}}{k_{\text{enter}}}\right)^{2}\sim \left(\frac{1}{k}\right)^{2}
+\end{equation*}
+so now there's a dependence on the structure's size (when radiation dominates)!
+\par Combining what we've just found, we now learn that the poewr spectrum is modified by 
+\begin{equation*}
+    T^{2}(k) = 
+    \left\{
+    \begin{array}{ll}
+        1 & \;\text{if}\; k<k_{eq}\\
+        k^{-4} & \;\text{if}\; k>k_{eq}
+    \end{array}
+    \right.
+\end{equation*}
+So if the initial power spectrum is $P_{i}(k) \sim k$
+\begin{equation}
+    P_{\text{after}}\sim P_{i}(k)|T(k)|^{2} \sim 
+    \left\{
+    \begin{array}{ll}
+        k & \;\text{if}\; k<k_{eq}\\
+        k^{-3} & \;\text{if}\; k>k_{eq}
+    \end{array}
+    \right.
+    \label{eq:powerspectrumafter}
+\end{equation}
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/matterpowerspectrum.pdf}
+    \caption{Linear (total) matter power spectrum $P(k)$ versus wavenumber extrapolated to $z=0$ from various measurements of cosmological structure. The best fit $\Lambda$CDM model is shown as a solid line.}
+    \label{fgr:matterpowerspectrum}
+\end{figure}
+\par The (total) matter power spectrum is significantly modified with respect to the original. The resulting $P(k)$ predicted by $\Lambda$CDM model is in very good agreement with observations.
+\par Note that in the linear regime and matter domination the shape of $P(k)$ is (approximately) fixed, only the normalization changes.
