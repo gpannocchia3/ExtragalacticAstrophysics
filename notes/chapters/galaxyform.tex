@@ -1,3 +1,512 @@
 \chapter{Galaxy Formation}
 
-Coming soon.
+\section*{Acthung!}
+Before we begin, let us point this out once and for all. With \emph{linear regime} we refer to a configuration for which $|\Delta|\ll 1$. The overdensity is a small perturbation on top of the Hubble flow. The region still expands along with the Universe, but its self-gravity slightly slows the expansion relative to the background (small peculiar infall), without stopping it.
+\par With \emph{non-linear regime} we refer to a configuration for which $|\Delta|\sim 1$ or larger. Self-gravity becomes comparable to the expansion on that scale. The overdense region can halt its local expansion, reach turnaround, and then collapse. After virialization, it becomes a bound structure whose physical size no longer scales with $a(t)$ (it effectively decouples from the background expansion).
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/pslinearnonlinear.png}
+    \caption{The matter power spectrum $P(k)$ at $z = 0$ in linear theory (solid) and with non-linear corrections (dashed). Non- gravitational clustering transfers power to smaller scales, enhancing $P(k)$ at high $k$.}
+    \label{fgr:pslinearnonlinear}
+\end{figure}
+
+\section{Galaxy Formation}
+
+The observed luminosity function for galaxies, $\Phi(L)$, is defined so that $\Phi(L)\text{d}L$ is the number density of galaxies in the luminosity range $L\to L+\text{d}K$. It is found that the luminosity function is well fitted by the function
+\begin{equation}
+    \Phi(L)\,\text{d}L = \Phi_{*}\left(\frac{L}{L_{*}}\right)^{\alpha}\exp\left(-\frac{L}{L_{*}}\right)\frac{\text{d}L}{L_{*}}
+    \label{eq:Schechterluminosityfunction}
+\end{equation}
+which is known as \emph{Schechter luminosity function}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/schechter.png}
+    \caption{Surveys in the V band find a power-law slope $\alpha \approx -1$, a normalization $\Phi_{*}\approx 0.005\,\text{Mpc}^{-3}$, and a characteristic luminosity $L_{*}$ comparable to the luminosity of our own galaxy.}
+    \label{fgr:schechter}
+\end{figure}
+\par Thanks to the exponential cutoff in the Schechter function, galaxies with $L>L_{*}$ are exponentially rare. Although a few galaxies with $L \approx 10 L_{*}$ exist, such as NGC 4889 and NGC 4874 in the Coma cluster, they are very uncommon. They exist only in rich clusters of galaxies, where they have grown to vast size by cannibalizing other galaxies.
+\par Our own galaxy, with $L \approx L_{*} = 2\cdot 10^{10}L_{\odot, V}$ has a baryonic mass $M_{\text{Baryon}}\approx 1.2\cdot 10^{11}M_{\odot}$, including all its interstellar and circumgalactic gas. Its total mass, provided mostly by the dark halo, is $M_{tot} = (1-2)\cdot 10^{12}M_{\odot}$, depending on how far the halo extends. The exponential cutoff in the luminosity function indicates that it is very difficult to make galaxies with a greater baryonic (or total) mass.
+\par Although It is definitely possible to make dark halos with a mass greater than $10^{12}M_{\odot}$; the dark halo of the Coma cluster, for
+instance, has $M \approx 10^{15}M_{\odot}$. However, highly massive dark halos embrace multiple smaller galaxies rather than a single monster galaxy.
+
+\subsection{Non-linear Evolution}
+
+Our previous discussion focused on the linear growth of fluctuations. The density of the Milky Way disk is several hundred times the mean density in the Universe, and so clearly linear growth is not sufficient to describe the formation of galaxies.
+\par Matter dominated universe, flat. Consider a spherical volume where the density is infitesimally higher than the cosmic mean; in Figure this has been achieved by "emptying out" a thin shell surrounding our spherical region and placing the material which was inside this shell within the region of radius $r$. Thus, the density inside the volume of radius $r$ is $\rho_{\text{crit}}+\delta\rho$, while the density of the background universe remains critical.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.4\textwidth]{img/bob.png}
+\end{figure}
+\par Consider a spherical region of uniform density $\rho$ and radius $R$. Newton’s theorem (or Birkhoff’s in general relativity) guarantees that the collapse of this object is independent of the mass-distribution around it, hence
+\begin{equation*}
+    \dder{R}{t} = -\frac{GM}{R^{2}} \quad \frac{1}{2}\left(\der{R}{t}\right)^{2} -\frac{GM}{R} = E
+\end{equation*}
+\par For $E=0$ the solution to the above equation is simple
+\begin{equation*}
+    R(t) = \left(\frac{9GM}{2}\right)^{1/3}t^{2/3}
+\end{equation*}
+and so the radius grows at the same rate as the Universe.
+\par For a bound region $E<0$, the solution can be written in a parametric form, which is that of a cycloid
+\begin{equation*}
+    \left\{
+    \begin{array}{ll}
+        R = A(1-\cos\theta) & \quad \theta\in[0,2\pi]\\
+        t = B(\theta - \sin\theta) &
+    \end{array}
+    \right.
+\end{equation*}
+We can find a relation between the two parameters $A^{3} = GMB^{2}$. This solution implies the following evolution for our object:
+\begin{enumerate}
+    \item The object expands from $R=0$ at $\theta = 0$;
+    \item The object reaches a maximum radius at $\theta = \pi$ ($t = t_{\text{max}} = \pi B$);
+    \item The object collapses back to $R = 0$ at $\theta = 2\pi$ ($t = t_{\text{coll}} = 2t_{\text{max}}$).
+\end{enumerate}
+The time of maximum size is often called the turnaround time, while the time of collapse is also called the virialization time.
+\par According to the analytical solution, the turnaround point is rached exactly when $\Delta = 4.44$ or $\rho = 5.44\bar{\rho}$. In terms of linear evolution, at the time of the turn-around point, the linear theory predicts $\Delta = 1.062$ (when linear theory fails, it is often adopted $\Delta = 1$).
+\par At the moment that the sphere starts to collapse, its density $\rho$ is 
+\begin{equation*}
+    \rho_{\text{turn}} = 5.44\rho_{\text{turn}} = 5.44\rho_{m,0}(1+z_{\text{turn}})^{3}
+\end{equation*}
+After the sphere collapses, the sphere doesn’t become a black hole! It oscillates in and out a few times before coming into an equilibrium state. In other words, it virializes (through a relaxation process known as \emph{violent relaxation}).
+\par Recall the virial theorem
+\begin{equation}
+    2T_{f} + U_{f} \approx 0 
+    \label{eq:virialtheorem}
+\end{equation}
+Thus when a system virializes
+\begin{equation*}
+    E_{f} = T_{f}+U_{f}\implies E_{f} = \frac{U_{f}}{2}
+\end{equation*}
+So if the system starts stationary (0 kinetic energy), its initial energy (spherical
+symmetry) is $U_{i} = -3GM^{2}/5R_{i}$. Applying the virial theorem (\ref{eq:virialtheorem}) thus leads us to
+\begin{equation*}
+    E_{f} = \frac{1}{2}\left(-\frac{3}{5}\frac{GM^{2}}{R_{f}}\right) \implies R_{i} = 2R_{f}
+\end{equation*}
+So if $R_{\text{turn}} = R_{i}$, then $R_{f} = R_{\text{turn}}/2 := R_{\text{vir}}$. This means that the density at the virial radius is 
+\begin{equation*}
+    \rho_{\text{vir}} = 8\rho_{\text{turn}} = 8\cdot 5.44\bar{\rho}_{\text{turn}}
+\end{equation*}
+However, $t_{\text{vir}} = 2t_{\text{turn}}$ since the spherical collapse is symmetric. Moreover, in a MDU
+\begin{equation*}
+    \bar{\rho}_{m} \propto t^{-2}
+\end{equation*}
+meaning $\bar{\rho}_{m}$ wil drop by a factor of 4 going from $t_{\text{turn}} \to t_{\text{vir}}$.
+\par In conclusion, the final density of the virialized halo is
+\begin{equation}
+    \boxed{
+        \rho_{\text{vir}} \approx 180\bar{\rho}(z_{\text{vir}})
+    }
+    \label{eq:virializedhalodensity}
+\end{equation}
+Were we willing to do so, we could use linear theory, matched to the spherical perturbation at early times, to predict the amplitude of the density perturbation at virialization \cite{1993MNRAS.262..627L}.
+\par The linear theory predicts this overdensity at $\Delta_{c}(t) \approx 1.68$. A simplistic interpretation of this result is as follows: if we work within linear perturbation theory, and the density contrast reaches 1.68, then we should interpret this as a complete collapse.
+\par In the linear regime, both super and sub-horizon scale perturbation grow as $t^{2/3}$ in the matter-dominated era. This means that after recombination, the linear power spectrum retains its shape while its amplitude grows as $t^{4/3}$ before the onset of cosmic acceleration.
+\par A while back ago, we introduced the dimensionless power spectrum 
+\begin{equation}
+    \text{DP}(k) = \frac{k^{3}P(k)}{2\pi^{2}}
+    \label{eq:dimensionlessps}
+\end{equation}
+which measures the contribution of perturbations per unit logarithmic interval at wavenumber $k$ to the variance in the matter. The $\Lambda$CDM power spectrum asymptotes to $P(k)\sim k$ for small $k$ and $P(k)\sim k^{-3}$ for large $k$. The dimensionless spectrum is thus asymptotically flat at high $k$, but drops off as $P(k)\sim k^{4}$ at small $k$.
+\par When mass-density fluctuations are considered, saying that $\text{DP}(k)= 1$ means that the Fourier modes in a unit logarithmic bin around wavenumber $k$ generate fluctuations in density of order unity.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/dimensionlessps.png}
+    \caption{The linear theory of the evolution of density fluctuations will break down when $\text{DP}(k) \sim 1$. The smallest mass scales become nonlinear first. This is the origin of hierarchical (“bottom-up”) structure formation.}
+    \label{fgr:dimensionlessps}
+\end{figure}
+
+\subsection{On the absence of too massive galaxies}
+We may have mentioned somewhere in the above that there is no observational evidence of galaxies with masses $M>10^{12}M_{\odot}$. Now we have the necessary elements to understand why is it so also from a theoretical point of view.
+\par It isheat dissipation which determines whether a collapsed object is described as a galaxy or a system of galaxies. A possible end state for the hot gas is a spherical distribution in hydrostatic equilibrium. We can compute how hot the gas must be to remain in hydrostatic equilibrium
+\begin{equation*}
+    \der{p_{\text{gas}}}{r} = -\frac{GM(r)\rho_{\text{gas}(r)}}{r^{2}}
+\end{equation*}
+with $M(r)$ the total mass (Baryons+DM). If the pressure is given by the perfect gas law 
+\begin{equation*}
+    p_{\text{gas}} = \frac{\rho_{\text{gas}kT_{\text{gas}}}}{\mu} \implies \der{\rho_{\text{gas}}}{r}\frac{kT_{\text{gas}}}{\mu}+\der{T_{\text{gas}}}{r}\frac{\rho_{\text{gas}}k}{\mu} = -\frac{GM(r)\rho_{\text{gas}}}{r^{2}}
+\end{equation*}
+which we can manipulate so to obtain 
+\begin{equation*}
+    \frac{kT_{\text{gas}}}{\mu}\left(\der{\ln \rho_{\text{gas}}}{r}+ \frac{1}{T_{\text{gas}}}\der{T_{\text{gas}}}{r}\right) = -\frac{GM(r)}{r^{2}}
+\end{equation*}
+and thus 
+\begin{equation}
+    M(r) = \frac{kT_{\text{gas}}r}{G\mu}\left[-\der{\ln\rho_{\text{gas}}}{\ln r}-\der{\ln T_{\text{gas}}}{\ln r}\right]
+    \label{eq:clustermass}
+\end{equation}
+Last equation expresses the (total) mass of the cluster as a function of its radius, and a large chunk of it will be due to the presence of DM. For example, for an ionized primordial mix of fully ionized Hydrogen and Helium, with $Y=Y_{p} = 0.24$, the mean mass is $\mu = 0.59m_{p}$. As a further simplification, let's assume a single temeprature $T_{\text{gas}}$ for all the gas in the halo, and a power law $\rho_{\text{gas}}\propto r^{-\beta}$ for the density profile. Evaluated at $r=R_{\text{Halo}}$, where $M(r)=M_{\text{Halo}}$, the equation of hydrostatic equilibrium yields
+\begin{equation*}
+    kT_{\text{gas}} = \frac{Gm_{\text{tot}}\mu}{\beta R_{\text{Halo}}}
+\end{equation*}
+and we call this temperature \emph{virial temperature}. For a virialized spherically symmetric galaxy, with uniform density
+\begin{equation*}
+    R_{\text{Halo}} = \left(\frac{3M_{\text{tot}}}{4\pi\rho_{\text{vir}}}\right)^{1/3} \approx \left(\frac{3M_{\text{tot}}}{4\pi \cdot 180\rho_{m,0}(1+z_{\text{vir}})^{3}}\right)
+\end{equation*}
+and plugging it in the hydrostatic equilibrium equation we find 
+\begin{equation}
+    T_{\text{gas, vir}} \sim 10^{4}\,\text{K}\,\left(\frac{M_{\text{tot}}}{10^{8}M_{\odot}}\right)^{2/3}\left(\frac{1+z_{\text{vir}}}{10}\right)
+    \label{eq:virialtemperaturesimple}
+\end{equation}
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=Example,
+  boxed title style={size=small,colframe=blue!50!black}]
+  Consider halos of mass $M_{\text{tot}}=10^{12}M_{\odot}$. At the epoch of matter-radiation equality, different regions of this mass have a distribution of overdensities. We call this overdensity $N\sigma(m)$
+  $$ \Delta(M,t_{\text{eq}}) = N\sigma(M,t_{\text{eq}})$$
+  After equality, in the linear regime during MD, fluctuations grow as 
+  $$ \Delta(M,t) \propto t^{2/3}N\sigma(M,t) $$
+  so higher overdensities grow to nonlinearity earlier. We define collapse/virialization by the spherical-collapse linear threshold
+  $$ \Delta(M,t_{\text{vir}}) \simeq 1.686$$
+  For a halo of mass $M_{\text{tot}}=10^{12}M_{\odot}$, a modestly unusual $2\sigma$ fluctuation at equality collapsed at a redshift $z\approx 2$, and reached a virial gas temperature $T_{\text{gas, vir}} \approx 10^{6}\,\text{K}$. If we change the mass of the halo 
+  \begin{enumerate}
+    \item For a small halo mass, $M_{\text{tot}}=10^{10}M_{\odot}$, a $2\sigma$ fluctuation at equality, collapsed at $z\approx 4$, and reached a virial gas temperature $T_{\text{gas, vir}} \approx 10^{5}\,\text{K}$;
+    \item For a halo mass, $M_{\text{tot}}=10^{12}M_{\odot}$, a $2\sigma$ fluctuation at equality, collapsed at $z\approx 2$, and reached a virial gas temperature $T_{\text{gas, vir}} \approx 10^{6}\,\text{K}$;
+    \item For a mucher larger halo mass, $M_{\text{tot}}=10^{14}M_{\odot}$, a $2\sigma$ fluctuation at equality, collapsed at $z\leq 1$, and reached a virial gas temperature $T_{\text{gas, vir}} \approx 10^{7}\,\text{K}$.
+  \end{enumerate}
+\end{tcolorbox}
+As made quite explicit by the previous example, the dependence of virial temperature on halo mass is the key to understanding why a low-mass halo can form a luminous, dense, star-filled galaxy and a high-mass halo cannot.
+\par To form a dense galaxy at the center of the dark halo, the baryonic gas must be able to cool by emitting light that escapes into intergalactic space. As it cools, the gas is no longer supported by pressure in a state of hydrostatic equilibrium, thus faling to the halo's center.
+\par The scarcity of galaxies with mass $M_{\text{tot}}>10^{12}M_{\odot}$ results from the fact that the hotter baryonic gas in higher mass halos is less efficient at radiating away its thermal energy.
+\par The first galaxies were essentially metal-free, meaning that metal lines cannot contribute to the cooling. Cooling could only happen via Hydrogen and Helium.
+\par Halos with $10^{4}\,\text{K}<T_{\text{gas}}<10^{6}\,\text{K}$ don’t have their Hydrogen and Helium completely ionized, most electrons are bound to their atoms, and the dominant cooling process is by collisional excitation followed by radiative de-excitation. 
+\par The peaks in the cooling function at $1.5\cdot 10^{4}\,\text{K}$ and $10^{5}\,\text{K}$ are due to collisionally excited electronic levels of $\text{H}$ and $\text{He}^{+}$, respectively. Since the first excited state of Hydrogen has a high energy (that of the Ly$\alpha$ transition, thus $E\sim 10.2\,\text{eV}$), this cooling is efficient only above $2\cdot 10^{4}\,\text{K}$.
+\par The key process is collisional excitation (mostly by electrons) of atomic levels, followed by radiative de-excitation, meaning photon can escape and energy is lost from the gas.
+\par What for halos with temperatures $T_{\text{gas}}<10^{4}\,\text{K}$? Molecular Hydrogen dominates the cooling rate of primordial gas at temperatures below $T \sim 10^{4}\,\text{K}$ where the precise value of this temperature depends on the abundance of $\text{H}_{2}$. For an enriched gas, collisions of neutral Hydrogen can excite the fine structure levels of ions, such as $\text{O}_{\text{I}}$, $\text{O}_{\text{II}}$, $\text{O}_{\text{III}}$ and $\text{C}_{\text{II}}$.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/coolingrate.png}
+    \caption{Dependence of the cooling rate $\Lambda$ on the temperature for different metallicity. The two blue arrows on the left indicate the sharp peaks in the cooling caused at low temperature by collisional excitation/de-excitation with Hydrogen and Helium. On the right, the characteristic $T^{1/2}$ dependence of Bremsstrahlung is dominant in the cooling rate.}
+    \label{fgr:coolingrate}
+\end{figure}
+\par Essentially, $\text{H}_{2}$ rotational-vibrational line cooling can bring gas down to $\sim 200-300\,\text{K}$ (often quoted as a “floor” for pure $\text{H}_{2}$ cooling in primordial minihalos).
+\par For an enriched gas, there is an even stronger peak at $T=10^{5}\,\text{K}$ due to the collisionally exicted levels of Oxygen, Carbon, Nitrogen and so on. In an enriched gas, the cooling function is also enhanced at $10^{6}\,\text{K}$ by other common elements, noticeably
+Neon, Iron and Silicon.
+\par Halos with $T_{\text{gas}}>10^{6}\,\text{K}$ have Hydrogen and Helium that is almost completely ionized. Here, the ionized gas cools primarily by Bremsstrahlung (free-free emission).
+\par The time it takes the ionized gas to cool by Bremsstrahlung is then 
+\begin{equation}
+    t_{\text{cool}} = 13\,\text{Gyr}\left(\frac{\rho_{\text{gas}}}{10^{-24}\,\text{kg}/\text{m}^{3}}\right)^{-1}\left(\frac{T}{10^{6}\,\text{K}}\right)^{1/2}
+    \label{eq:Bremsstrahlungcooling}
+\end{equation}
+Thus, if a gas at $T_{\text{gas}}>10^{6}\,\text{K}$ is to cool in times less than the age of the Universe, it must have a density $\rho_{\text{gas}} > 10^{-24}\,\text{kg}/\text{m}^{3}$. Is this a plausible density for gas in a virialized halo?
+\par The current Baryon fraction in the halo is the same as that of the universe as a whole, today this fraction is $f = 0.048$. The average mass density of the baryonic gas at $z_{\text{vir}}$ is
+\begin{equation*}
+    \rho_{\text{Baryon}} = f\rho_{\text{vir}} \approx 10^{-25} (1+z_{\text{vir}})^{3}\,\text{kg}\cdot\text{m}^{-3}
+\end{equation*}
+Thus, A virialized halo with $M_{\text{tot}} \sim 10^{12}M_{\odot}$ that collapses at redshift $z=2$ will be hot enough to cool by Bremsstrahlung, and will be dense enough to cool in a time shorter than the age of the Universe. It is statistically unlikely for a halo with mass much larger than $10^{12}M_{\odot}$ to collapse at a high enough redshift to be able to cool.
+\par The assumption that virialized objects form from smooth spherical collapse, while providing a useful framework for thinking about the formation histories of gravitationally bound dark matter halos, does not capture the real nature of structure formation in CDM theories.
+\par In these models galaxies are assembled hierarchically through the merging ofmany smaller subunits that formed in a similar manner at higher redshift. Galaxy halos experience multiple mergers during their lifetime, with those between comparable-mass systems (“major mergers”) expected to result in the formation of elliptical galaxies \cite{1988ApJ...331..699B}, \cite{1992ARA&A..30..705B}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/clustermerger.png}
+    \caption{An example of a merger tree obtained from an $N$-body simulation of a $9\cdot 10^{12}h^{-1}M_{\odot}$ halo at redshift $z = 0$. Each circle represents a dark matter halo identified in the simulation, the area of the circle being proportional to halo mass. The vertical position of each halo on the plot is determined by the redshift $z$ at which the halo is identified, the horizontal positioning is arbitrary. The solid lines connect halos to their progenitors. The solid line in the panel on the left-hand side shows the fraction of the final mass contained in resolved progenitors as a function of redshift. The dotted line shows the fraction of the final mass contained in the largest progenitor as a function of redshift. (From Helly et al. 2003.)}
+    \label{fgr:clustermerger}
+\end{figure}
+\par What changes conceptually once you include mergers? A $10^{12}M_{\odot}$ halo at $z = 0$ does not form from a single $10^{12}M_{\odot}$ region that collapses once. Once you include mergers, you must distinguish two concepts:
+\begin{enumerate}
+    \item \emph{Collapse on a mass scale} $M$: A region smoothed on scale $M$ is said to “collapse” when its linearly extrapolated overdensity crosses the spherical-collapse threshold $\Delta_{C}$. At that moment it forms a bound halo of mass $\sim M$: a \emph{progenitor};
+    \item \emph{Assembly of the final halo}: the final $z=0$ halo grows through time as its main progenitor gains mass via: major mergers (mass ratios $1-1$ or $1-3$), minor mergers ($\sim 1-10$, etc.), smooth accretion (diffuse infall + unresolved tiny halos).
+\end{enumerate}
+\par So, for a final halo $10^{12}M_{\odot}$ at $z = 0$: at high redshift, smaller mass scales (e.g. $10^{8}$, $10^{9}$, $10^{10}M_{\odot}$) typically become nonlinear and collapse first, because $\sigma(M)$ is larger on smaller scales in CDM; those early small halos then act as building blocks that later merge into the growing main halo.
+\par One of the key figures that conveys the most fundamental issues of galaxy formation compares the mass function of darkmatter (from numerical simulations of structure formation) with the observed stellar mass function of galaxies.
+\par Making the assumption that one can match the abundance of dark matter halos to galaxies (the former being hosts to the latter), it is possible to define the mass ratio between dark matter halos and stellar mass in galaxies.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/stellarmasstodmhalo.png}
+    \caption{The ratio between galaxy (stellar) mass and dark matter halo mass is shown as a function of galaxy mass, at two different redshifts. The top horizontal line is the cosmological limit ($\approx 1/6$) derived from the Planck 2015 cosmological parameters.}
+    \label{fgr:stellarmasstodmhalo}
+\end{figure}
+\par At the peak of the trend, corresponding to galaxies with stellar masses $\sim 3\cdot 10^{10}M_{\odot}$, the ratio is about $4\%$, lower than the "primordial" ratio between baryons and dark matter ($\sim 16\%$, top line).
+\par Moreover, galaxies at the peak of the ratio do not have a vast amount of gas (or dust) to compensate for this mismatch, suggesting that only a small fraction of the available baryons is found in galaxies, with the remainder either not forming part of the galaxy formation process or being ejected during the main formation phases.
+\par The peak $M_{*}/M_{h}$ of only a few percent implies a maximum baryon-to-star conversion efficiency of order
+\begin{equation}
+    \epsilon_{*} \sim \frac{M_{*}/M_{h}}{\Omega_{b}/\Omega_{m}} \sim 0.25
+    \label{eq:baryontostarconveff}
+\end{equation}
+meaning only $\sim 25\%$ of available baryons become stars even at the optimum mass scale.
+\par The “missing” baryons are increasingly understood to reside in the circumgalactic medium (CGM), gas that is gravitationally bound within the dark halo of a galaxy, but lying outside the main distribution of the galaxy’s stars.
+\par \emph{UV absorption-line surveys }(HST/COS): They use background quasars. If a foreground galaxy’s CGM lies along the line of sight, as we're going to see CGM ions ($\text{H}_{\text{I}}$, $\text{C}_{\text{IV}}$, $\text{O}_{\text{VI}}$, etc.) are able to imprint absorption lines in the quasar’s UV spectrum. The line strengths give column densities (how much gas is along that sightline). Repeating this for many quasars maps the CGM statistically and lets you estimate the gas mass in the cool/warm ionized phases ($10^{4.4}-10^{5.5}\,\text{K}$).
+\par \emph{X-ray emission/absorption constraints}: They target the hot CGM ($\sim 10^{6}\,\text{K}$), which is hard to see in UV. X-ray emission: detect the very faint diffuse X-ray glow (often via stacking many halos) from hot gas around galaxies/clusters. X-ray absorption: look for X-ray absorption lines (e.g., $\text{O}_{\text{VII}}$/$\text{O}_{\text{VIII}}$) in spectra of bright background AGN.
+\par From Fig.\ref{fgr:stellarmasstodmhalo} we can see that at both ends (massive galaxies on the right and dwarf galaxies on the left), the mass ratio decreases, suggesting that a mechanism must be present to reduce the efficiency of conversion from gas into stars.
+\par One explanation for the paucity of large and small galaxies involves looking at the depth of the potentials for halos of different size. This affects whether baryons can form stars and hence a galaxy.
+\par \emph{Star formation is suppressed at higher masses}: Gas falling into huge halos is too hot to cool. This becomes the intercluster medium in galaxy clusters. For this purpose AGN feedback is crucial: it injects energy and prevents the hot gas from cooling (“maintenance mode”), otherwise you’d get unrealistically large “cooling flows” and too many stars.
+\par \emph{Star formation is suppressed at lower masses}: Supernova feedback is very effective: a small amount of star formation produces enough SN energy and momentum to blow gas out of the halo.
+Reionization/UV background heats the intergalactic gas to $\sim 10^{4}\,\text{K}$, so in shallow potential wells the gas cannot accrete efficiently or can be photo-evaporated.
+\section{Reionization}
+As the name suggests, Hydrogen was mostly neutral just after recombination ($z\approx 1380$). So why is it mostly ionized today?
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/massdivision.png}
+    \caption{Approximate mass division of the baryonic mass density of the current Universe}
+    \label{fgr:massdivision}
+\end{figure}
+To understand it, let us first take a look at Fig.\ref{fgr:massdivision}. There we show the current Universe's division of baryonic mass density: ISM stands for \emph{Interstellar Medium}, that is the gas found between stars within a galaxy; CGM stands for \emph{circumgalactic medium}, which is gas that is gravitationally bound within the dark halo of a galaxy, but lying outside the main distribution of the galaxy’s stars; ICM stands for \emph{intracluster medium}, which is gas gravitationally bound to a galaxy cluster; finally DIM and WHIM stand, respectively for \emph{Diffuse} ($T<10^{5}\,\text{K}$) and \emph{Warm/Hot} ($10^{5}<T<10^{7}\,\text{K}$) \emph{intergalactic medium}, essentially intergalactic gas that is not gravitationally bound to a single galaxy halo. It mostly lives in the cosmic web (filaments, sheets, voids).
+\par Something clearly must have happened after the epoch of recombination that reionized the Hydrogen in the Universe. But how was it reionized? To answer that question, we have first to understand \emph{when} was Hydrogen reionized.
+\par In the following we're going to focus on the reionization of Hydrogen, and ignore the presence of Helium. We know that the rate at which a CMB photon scatters from free electruons in the reionizied gas is 
+\begin{equation*}
+    \Gamma = n_{e}\sigma_{T}c
+\end{equation*}
+If the baryonic matter is reionized starting at a time $t_{*}$, then the optical depth for scattering from the reionzed gas is 
+\begin{equation*}
+    \tau_{*} = \int_{t_{*}}^{t_{0}}\Gamma(t)\,\text{t} = \sigma_{T}c\int_{t_{*}}^{t_{0}}n_{e}(t)\,\text{d}t
+\end{equation*}
+Let $s$ be the distance along the line of sight (measured along the photon’s path, $s = 0$ is the emitter). Over an infinitesimal segment $\text{d}s$, the probability of at least one Thomson scattering is $\text{d}P_{\text{scatt}} = n_{e}(s)\sigma_{T}\text{m}s$.
+\par So the probability of \emph{no} scattering in that segment is $1-\diff{P_{\text{scatt}}}$.
+\par Let $P(s)$ be the probability that a photon has suffered no Thomson scattering between 0 and $s$. The probability of no scattering between 0 and $s+\diff{s}$ is
+\begin{equation*}
+    P(s+\diff{s}) = P(s)\left[1-n_{e}(s)\sigma_{T}\diff{s}\right]
+\end{equation*}
+which means 
+\begin{equation}
+    \der{P}{s} = -n_{e}(s)\sigma_{T}P(s)
+    \label{eq:thomsonprob}
+\end{equation}
+which has an exponential solution, function of the optical depth, which is the expected number of scatterings along the line of sight. The probability of zero scattering is thus 
+\begin{equation*}
+    P_{NS} = e^{-\tau}
+\end{equation*}
+which is also the fraction of CMB photons that reaches us without being rescattered after last scattering. Scattered photons are instead “replaced” by radiation that is nearly isotropic on small scales. So schematically
+\begin{equation*}
+    \left(\frac{\Delta T}{T}\right)_{\text{obs}}(\hat{n}) \approx e^{-\tau}\left(\frac{\Delta T}{T}\right)_{\text{prim}}(\hat{n}) + (1-e^{-\tau})\left(\frac{\Delta T}{T}\right)_{\text{new}}(\hat{n})
+\end{equation*}
+So, even if $\tau$ were large, you'd still receive plenty of photons, because scattered photons still arrive. But they arrive with directional memory erased. They contribute strongly to the mean brightness, but weakly to the contrast.
+\par This has two main effects:
+\begin{enumerate}
+    \item Temperature anisotropy amplitudes get suppressed by $e^{-\tau}$;
+    \item Power spectrum (variance) get suppressed by $e^{-2\tau}$.
+\end{enumerate}
+so that approximately we may write 
+\begin{equation*}
+    C_{l}^{\text{TT, OBS}} \approx e^{-2\tau} C_{l}^{\text{TT, PRIM}}\; (l\geq 20)
+\end{equation*}
+If the optical depth of the reionized gas were $\tau_{*} \gg 1$, then each CMB photon would be scattered many times in passing through the reionized gas, losing all information about its original direction of motion. This would cause a loss of power at \emph{all} of the CMB. So, from the CMB $P(k)$ we can determine $\tau_{*}$
+\begin{equation*}
+    \tau_{*} = 0.066 \pm 0.016
+\end{equation*}
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/opticaldepthps.png}
+\end{figure}
+\par We can plug this number into the definition of optical depth we've written above and find the corresponding $z_{*}$. Under the assumption of pure Hydrogen
+\begin{equation*}
+    n_{H}+n_{p} = n_{\text{Baryon}} = \frac{n_{\text{Baryon},0}}{a^{3}}
+\end{equation*}
+Let’s assume that the hydrogen undergoes complete, instantaneous reionization at the time $t_{*}$. In that case, the number density of free electrons before reionization is $n_{e}=0$ and the number density after reionization ($t > t_{*}$) is
+\begin{align*}
+    & n_{e} = n_{p} = \frac{n_{\text{Baryon},0}}{a^{3}}\\
+    & \tau_{*} = \sigma_{T}c\int_{t_{*}}^{t_{0}}\frac{n_{\text{Baryon},0}}{a^{3}}\,\diff{t}
+\end{align*}
+Considering that $\Gamma_{0} = \sigma_{T}cn_{\text{Baryon},0} \approx 0.0023H_{0}$, we can cange variables to the scale factor $a$ and then to the redshift
+\begin{equation*}
+    \tau_{*} = \int_{a(t_{*})}^{1}\frac{\Gamma_{0}}{H(a)a^{4}}\,\diff{a} = \int_{0}^{z_{*}}\frac{\Gamma_{0}(1+z)^{2}}{H(z)}\,\diff{z}
+\end{equation*}
+Plugging in the expression for the Hubble constant (neglecting radiation)
+\begin{equation*}
+    H(z) = H_{0}\left[\Omega_{m,0}(1+z)^{3}+\Omega_{\Lambda,0}\right]^{1/2}
+\end{equation*}
+We can then perform the integral and obtain 
+\begin{equation}
+    \tau_{*} = \frac{2}{3\Omega_{m,0}}\frac{\Gamma_{0}}{H_{0}}\left(\left[\Omega_{m,0}(1+z_{*})^{3}+\Omega_{\Lambda,0}\right]^{1/2}1\right)
+    \label{eq:redshiftreionization}
+\end{equation}
+Using the relevant parameters from the Benchmark Model, the optical depth for scattering in the reionized Universe, we find 
+\begin{equation*}
+    z_{*} = 7.8 \pm 1.3 \quad t_{*} \approx 650\,\text{Myr}
+\end{equation*}
+there are strong assumptions behind this result:
+\begin{enumerate}
+    \item Instantaneous reionization: the mapping $\tau \to z_{*}$ assumes reionization happens as a sharp step at a single redshift. In reality, reionization is extended in time, so $z_{*}$ should be interpreted as an effective redshift within a chosen parameterization;
+    \item Hydrogen-only approximation: we effectively treat the IGM as “Hydrogen only.” Helium is not negligible for $\tau$: it increases the free-electron density $n_{e}$. $\text{He}_{\text{II}}$ is ionized roughly alongside Hydrogen, and $\text{He}_{\text{II}}$ reionization at $z \approx 3$ adds additional electrons later. Depending on how Helium and the ionization history are modeled, $\tau$ can a shift up to $\sim 10\%$;
+    \item The conversion $\tau \to z_{*}$ assumes a spatially uniform ionization fraction. In reality, reionization is inhomogeneous and patchy: ionized “bubbles” grow around galaxies and quasars and later overlap.
+\end{enumerate}
+\section{Quasars absorption lines}
+Quasars are extremely luminous, blue sources, making them relatively easy to identify even at high redshift.
+\par Because they are so bright, intervening neutral gas along the line of sight can be studied in detail via absorption features imprinted on the quasar spectrum. Quasar absorption-line spectroscopy is a mature field with large samples and robust statistics, providing a unique, sensitive probe of the intergalactic medium (IGM).
+\par Lyman-$\alpha$ absorption: photons at $121.6\,\text{nm}$ excite neutral hydrogen ($\text{H}_{\text{I}}$) from the ground state ($n=1$) to the first excited state ($n=2$). This is the strongest $\text{H}_{\text{I}}$ transition, and since hydrogen is the most abundant element in the Universe, Lyman-$\alpha$ absorption dominates IGM spectroscopy.
+\par In the jargon, this phenomenon is called "Lyman Forest": As light from a quasar travels towards Earth, it passes through intergalactic Hydrogen clouds and galaxies. Each intervening cloud imprints an absorption line at a different redshift $z$ in the observed quasar spectrum. For a cloud at redshift $z_{1}$, absorption occurs when the photon frequency in the cloud’s rest frame matches a neutral-Hydrogen transition (e.g. Ly$\alpha$). If the quasar emits at frequency $\nu_{e}$ at redshift $z_{e}$, then the photon frequency at the absorber is
+\begin{equation*}
+    \nu(z_{1}) = \nu_{e}\frac{1+z_{1}}{1+z_{e}}
+\end{equation*}
+and absorption happens when $\nu(z_{1}) = \nu_{\text{H}_{\text{I}}}$.
+\par For example, consider the nearby quasar 3C273 ar redshift $z_{e}=0.158$; if it produces a Ly$\alpha$ photon with energy $10.2\unit{eV}$, by the time it reaches us, it will be redshifted to a lower energy $h\nu_{0} = 8.81\unit{eV}$.
+\par On the other hand, if the continuum of 3C273 contains a photon with energy $h\nu_{e} = 10.20\cdot1.158\unit{eV}$, by the time it reaches us, it will be redshifted to the lower energy $h\nu_{0}=10.2\unit{eV}$ and will be absorbed by neutral hydrogen in our galaxy.
+\par If a quasar is at redshift $z_{e}$, an absorber at redshift $z$ can absorb the Ly$\alpha$ transition when, in the absorber's rest frame, holds
+\begin{equation*}
+    \nu_{e} = \frac{1+z}{1+z_{e}} = \nu_{ul}(\text{Ly}\alpha) \implies 1+z = \frac{\nu_{ul}}{\nu_{e}}(1+z_{e})
+\end{equation*}
+For absorption to occur somewhere between us and the quasar, the absorber must lie along the line of sight
+\begin{equation*}
+    0 \leq z \leq z_{e}
+\end{equation*}
+These two conditions imply the inequalities
+\begin{align*}
+    &z \geq 0 \implies \nu_{e} \leq \nu_{ul}(1+z_{e})\\
+    &z \leq z_{e}\implies \nu_{ul}\leq \nu_{e}
+\end{align*}
+In general, if the continuum of 3C273 contains photons with initial energy $h\nu_{ul}<h\nu_{e}<h\nu_{ul}(1+z_{e})$ can be absorbed by a transition $h\nu_{ul}$ (equal to $10.20\unit{eV}$ in the case of the Ly$\alpha$) somewhere along the line of sight between us and the quasar.
+\par The Ly$\alpha$ optical depth along the line of sight will be
+\begin{equation*}
+    \tau_{\nu} = \int_{0}^{s}n_{\text{H}}\sigma_{lu}(\nu)\diff{s}
+\end{equation*}
+with $\nu$ the observed frequency at $z=0$ and $n_{\text{H}}$ is numerical density of hydrogen in the fundamental state and $\sigma_{lu}(\nu)$ is the cross section for Lyman-$\alpha$ absorption. In terms of redshift
+\begin{equation*}
+    \tau_{\nu} = \int_{0}^{z_{e}}n_{\text{H}}\sigma_{ul}(\nu)\der{s}{z}\diff{z} = \int_{0}^{z_{e}}n_{\text{H}}\sigma_{lu}(\nu)\left[\frac{c}{(1+z)H(z)}\right]\unit{z}
+\end{equation*}
+We will also assume that the Lyman-alpha cross section is very peaked, so that
+\begin{equation*}
+    \sigma_{ul}(\nu) \approx \sigma_{0}\delta\left(\nu_{e}\frac{1+z}{1+z_{e}}-\nu_{ul}\right) = \sigma_{0}\delta(\nu(1+z)-\nu_{ul})
+\end{equation*}
+where we've defined the observed frequency $\nu$
+\begin{equation*}
+    \nu = \nu_{e}\frac{1}{1+z_{e}}
+\end{equation*}
+Implementing the trasformation rules of the Dirac-$\delta$ and then performing the integral, all we're left is 
+\begin{equation*}
+    \tau_{\nu} = c\sigma_{0}\frac{n_\text{H}(z_{*})}{H(z_{*})}\frac{1}{\nu_{ul}}
+\end{equation*}
+which can be also expressed as 
+\begin{equation*}
+    \tau_{\nu}(z_{*}) \sim c\sigma_{0}\frac{1}{\nu_{ul}}\frac{X_{\text{H}_{\text{I}}}\cdot X_{\text{H}}\cdot n_{\text{Baryon},0}(1+z_{*})^{3}}{H(z_{*})}
+\end{equation*}
+where $X_{\text{H}} \approx 0.93$ is the numerical fraction of Hydrogen (protons) after nucleosynthesis. For Ly$\alpha$ absroption you need neutral Hydrogen in the ground state, so generally $X_{n}$ will be the numerical fraction of neutral Hydrogen in the fundamental state.
+\par Fixing the Ly$\alpha$ rest-frame frequency $\nu_{ul}$, each observed frequency $\nu$ selects an absorber redshift
+\begin{equation*}
+    z_{*} = \frac{\nu_{ul}}{\nu}-1
+\end{equation*}
+so scanning $\nu$ across the spectrum maps $\tau_{\nu}$ to $\tau$ at different redshifts along the line of sight.
+\par Using the approximation that the Universe is flat and matter dominated
+\begin{equation}
+    \tau_{\nu} \approx 25,000 X_{\text{H}_{\text{I}}}(z_{*})(1+z_{*})^{3/2}
+    \label{eq:approximatelyalphaod}
+\end{equation}
+For $z<5.5$, the observations suggest 
+\begin{equation*}
+    \tau_{\nu}\approx 2.6\left(\frac{1+z}{6.5}\right)^{4.3}
+\end{equation*}
+but since we found (\ref{eq:approximatelyalphaod}), we can explicit $X_{n}(z)$
+\begin{equation*}
+    X_{n}(z)\approx 6.2\cdot 10^{-6}\left(\frac{1+z}{6.5}\right)^{2.8}
+\end{equation*}
+On the other hand, for $z>5.5$, observations suggest
+\begin{equation*}
+    \tau_{\nu}\approx (1+z)^{11}
+\end{equation*}
+Inverting the equation to find $X_{\text{H}_{\text{I}}}$ is only an order of magnitude estimate, but because the Ly$\alpha$ saturates, meaning the line becomes so optically thick that the transmitted flux is essentially zero, so changing $X_{\text{H}_{\text{I}}}$ no longer changes what you observe in a measurable way.
+\par In fact, even from (\ref{eq:approximatelyalphaod}) we can see that already at $z\sim 6$ a tiny fraction of neutral Hydrogen (say, $10^{-4}$) can give $\tau \gg 1$, making the spectrum go "dark". So beyond that point, Ly$\alpha$ tells you that “the IGM is not extremely ionized anymore” but it cannot pin down the exact $X_{\text{H}_{\text{I}}}$ because the observable flux is saturated at $\sim 0$.
+\subsection{Gunn-Peterson effect}
+In 1965 Gunn and Peterson \cite{1965ApJ...142.1633G} pointed out that any generally distributed neutral hydrogen would produce a broad depression in the spectrum
+of high-redshift quasars at wavelengths shortward of $1216\unit{Å}$.
+\par They postulated a future test whereby the spectra of QSOs (Quas Stellar Objects, or just quasars) of successively higher redshift would be scrutinized to locate that epoch when the IGM was neutral.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/gunnpetersonspectrum.png}
+\end{figure}
+\par A uniformely dark Gunn-Peterson trough is only seen at redshifts $z>6$. However, at lower redshifts, there exists a “Lyman alpha forest” of absorption lines.
+\par A structure along the line of sight to the quasar can be described by its neutral Hydrogen column density $N_{\text{H}_{\text{I}}}$: How dense are the Lyman alpha forest systems (column densities)? About $10^{12}-10^{14}$ atoms per square centimeter.
+\par At higher densities becomes effective the photoionization continuum absorption (bound-free), which means the Lyman-limit is no longer valid. A visible "break" requires $\tau_{912}\gtrsim 1$, hence 
+\begin{equation*}
+    N_{\text{H}_{\text{I}}} \gtrsim \frac{1}{\sigma_{912}} \approx 1.6\cdot 10^{17}\unit{cm}^{-2}
+\end{equation*}
+This is the \emph{Lyman Limit Systems} (LLSs) threshold. They are called Lyman Limit Systems because at $\text{H}_{\text{I}}$ column densities $N_{\text{H}_{\text{I}}} \approx 1.6\cdot 10^{17}\unit{cm}^{-2}$ the gas becomes optically thick to hydrogen-ionizing radiation (the Lyman continuum, $\lambda < 912\unit{Å}$). As a result, LLSs are largely self-shielded from external ionizing photons.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/lls.png}
+    \caption{Continuum drop in a Lyman Limit System.}
+    \label{fgr:lls}
+\end{figure}
+An LLS produces a drop in the continuum at $\lambda_{LL,obs}=912\unit{nm}(1+z_{abs})$, as shown in Fig.\ref{fgr:lls}.
+\par The shape of an absorption Ly$\alpha$ line as a function of frequency is not a delta-function line. This produces a Lorentzian
+line profile with long tails
+\begin{equation*}
+    \phi_{L}(\nu) = \frac{\Gamma}{4\pi^{2}}\frac{1}{(\nu-\nu_{\alpha})^{2}+\left(\frac{\Gamma}{4\pi}\right)^{2}}
+\end{equation*}
+So even when the photon is not exactly at resonance, the cross section is non-zero and falls slowly in the wings. The optical depth in the wings
+\begin{equation*}
+    \tau_{\nu} \propto \frac{N(\text{H}_{\text{I}})}{(\Delta\nu)^{2}}
+\end{equation*}
+the wing opacity is small per atom, but with large $N(\text{H}_{\text{I}})$ it becomes significant. When the line core saturates, the Lorentzian wings dominate, producing a broad, smooth trough. Wings are approximately symmetric around the absorber Ly$\alpha$ center.
+\par \emph{Damped Lyman alpha systems} (DLAs) have column densities of neutral Hydrogen comparable to a large galaxy like our own. DLAs can be thought of as gravitationally bound protogalaxies, containing gas (and associated dark matter), but which haven’t yet been effective at converting gas into stars.
+\par High $\text{H}_{\text{I}}$ column-density absorbers (especially DLAs, and often LLSs) frequently show associated metal absorption lines (e.g., $\text{C}$, $\text{Si}$, $\text{O}$, $\text{Fe}$ in various ionization stages). This indicates that the gas has been chemically enriched by star formation, so these systems are likely closely connected to galaxies (or their circumgalactic medium), where metals are produced and dispersed.
+\par In a quasar spectrum, a DLA gives us:
+\begin{enumerate}
+    \item $\text{H}_{\text{I}}$ Ly$\alpha$ damping wings, so a very accurate $N(\text{H}_{\text{I}})$;
+    \item Narrow metal absorption lines at the same absorber redshift $z_{\text{abs}}$.
+\end{enumerate}
+The fact that metal lines line up at the same $z_{\text{abs}}$ the DLA is the smoking gun that the DLA gas contains heavy elements.
+\section{Who caused the Reionization?}
+We know that Reionization occured somewhere between $z = 11$ and $z = 6.5$. It is a complex process and different parts of the intergalactic gas may reionize at different times.
+\par Not much is known about how the Universe became reionized. There are two competing sources for the requisite ionizing photons,accretion onto black holes (Active Galactic Nucleus, AGN) and massive stars, but observations have not been able to determine the source of cosmic reionization.
+\par Concerning massive stars, we primarily mean O stars: very hot, massive stars that dominate the production of Hydrogen-ionizing (Lyman continuum) photons. O-stars typically have masses in the range $15-60M_{\odot}$ and are very short-lived, with main-sequence lifetimes of only a few Myr, which only get shorter when the mass increases.
+\par Because they form and die quickly, O-stars are found only in actively star-forming galaxies, so galaxies are the relevant sites of ionizing-photon production.
+\par Meanwhile, qn AGN is powered by gas accreting onto a supermassive black hole. The emission is not a single blackbody: it is a superposition of blackbodies from an accretion disk whose temperature varies with radius (hotter inside, cooler outside). This produces a broad thermal “big blue bump” peaking in the UV.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/agns.png}
+\end{figure}
+On top of the disk emission, AGN show non-thermal and reprocessed components:
+\begin{enumerate}
+    \item A hot corona ($\sim 10^{-5}-10^{-3}\unit{pc}$) Compton-up scatters UV photons, producing an X-ray power- law continuum;
+    \item Surrounding gas/dust can absorb and re-emit (e.g., IR from dusty torus $\sim 0.1-10\unit{pc}$);
+    \item Emission/absorption lines from broad ($\sim 10^{-3}-10^{-1}\unit{pc}$) and narrow ($\sim 10-10^{3}\unit{pc}$) line regions.
+\end{enumerate}
+Since AGN spectra extend strongly into the EUV/UV (and often X-rays), they can produce large numbers of Hydrogen-ionizing (Lyman-continuum) photons. A common scaling is
+\begin{equation*}
+    \dot{N}_{\gamma}\sim 3\cdot 10^{56}\unit{s}^{-1}\left(\frac{L_{\text{AGN}}}{10^{13}L_{\odot}}\right)
+\end{equation*}
+Cosmic reionization refers specifically to ionizing the intergalactic medium (IGM), the diffuse Hydrogen gas between galaxies, rather than the dense gas inside galaxies. The ionizing photons needed for this process ($h\nu > 13.6\unit{eV}$) are produced inside galaxies, either by massive, short-lived O/B stars in star-forming regions or by accreting black holes (AGN).
+\par However, these photons must first propagate through the galaxy’s interstellar medium (ISM) and surrounding circumgalactic medium (CGM), where neutral Hydrogen and dust efficiently absorb them. As a result, only a fraction of the produced ionizing radiation actually leaks into intergalactic space. This is quantified by the escape fraction
+\begin{equation*}
+    f_{\text{esc}} = \frac{\dot{N}_{\gamma, IGM}}{\dot{N}_{\gamma,\text{produced}}}
+\end{equation*}
+that is, the fraction of ionizing photons that reach the IGM and can contribute to maintaining it ionized. The required photon budget therefore scales roughly as $1/f_{\text{esc}}$: if $f_{\text{esc}}$ is small, galaxies must produce many more photons to reionize the IGM.
+\par The escape fraction is poorly constrained and likely depends on galaxy mass, geometry, and feedback (e.g. supernovae carving low-density “channels”), and it may differ between stellar populations and AGN. 
+\par As an optimistic fiducial value for back-of-the-envelope estimates, one can adopt is $f_{\text{esc}}\approx 20\%$ for both hot-star and AGN sources, with the caveat that the true value could be significantly lower or vary with redshift and environment.
+\par For example, if the ionizing photons are produced by the youngest stars, which are always embedded in dense molecular clouds, these photons cannot easily escape. Only after a few Myr can feedback clear sightlines to allow ionizing photons to escape.
+\par Let’s consider a comoving cubic megaparsec of space. The comoving number density of baryons in intergalactic space is
+\begin{equation*}
+    n_{\text{Baryon}} = 7.33\cdot 10^{66}\unit{Mpc}^{-3}
+\end{equation*}
+For pure Hydrogen and to ionize the density above, assuming an escape fraction of 0.2, the comoving number density of ionizing photons must be equal to
+\begin{equation*}
+    n_{\gamma} = \frac{n_{\text{Baryon}}}{f_{\text{esc}}} \approx 4\cdot 10^{67}\unit{Mpc}^{-3}
+\end{equation*}
+For example, an O-star with $M\approx 30M_{\odot}$ produces photons at a rate $\dot{N}_{\gamma}\sim 5\cdot 10^{48}\unit{s}^{-1}$. So, for cubic megaparsec, for one such star, the time to produce the needed phtons is $t\approx 250\unit{Gyr}$ (which is kinda a lot).
+\par However, if we had 400,000 O-stars per cubic megaparsec, it would take them about $0.6\unit{Mpc}$ to fully ionize it.
+\par For a single, luminous AGN, it would take only $4000\unit{yr}$ to complete the deed. \emph{But} bright AGNs are rare.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/agndistrib.png}
+    \caption{Evolution of the comoving number density of luminous quasars, based on data from the 2dF survey and the Sloan Digital Sky survey \cite{Fan_2012}.}
+\end{figure}
+\par The comoving number density of bright AGNs was greatest at redshift $z\approx 2.5$, corresponding to a cosmic time $t\approx 2.6\unit{Gyr}$, long after reionization was complete. Th comoving number density of quasars at $z\approx 8$ is even more uncertain. Even an optimistic extrapolation suggests that the number density of luminous quasars was as low as $10^{-10}$ per comoving cubit megaparsec.
+\par In these conditions, it would take them $40,000\unit{Gyr}$ to fully ionize the Universe, meaning that luminous AGNs (at the time of reionization) could have reionized only a small fration of the intergalactic Hydrogen.
+\par What about O-stars?
+\par At the present time, if we average over a large volume containing a representative sample of galaxies, we find that the star formation rate today is
+\begin{equation*}
+    \psi_{0} \approx 20,000M_{\odot}\unit{Myr}^{-1}\unit{Mpc}^{-3}
+\end{equation*}
+The rate at which stars form today (within a comoving volume) was peaking around $z = 2$, corresponding to cosmic times $t = 1.5-6\unit{Gyr}$ (measured from the BB).
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/madauplot.png}
+    \caption{The history of cosmic star formation (Madau plot). Redshift decreases, and thus time increases, from right to left..}
+\end{figure}
+\par At the time of reionization, the star formation rate per comoving volume was about the same as it is today. However, only 10\% of mass is in stars more massive than $30M\odot$, meaning that there were approximately
+\begin{equation*}
+    \dot{n}_{O}(z=8) = 67\unit{Myr}^{-1}\unit{Mpc}^{-3}
+\end{equation*}
+Since the lifetime of a $30M_{\odot}$ star is $\sim 6\unit{Myr}$, tis means there will be about 400 O-stars present per comoving cubit megaparsec at any given time (the O stars that are still present, alive, are those formed within the previous $\sim 6\unit{Myr}$).
+\par The total rate of ionizing photon production per comoving cubic megaparsec is
+\begin{equation*}
+    \dot{n}_{\gamma} \approx 6\cdot 10^{64}\unit{Myr}^{-1}\unit{Mpc}^{-3}
+\end{equation*}
+If we confront this with the required density of photons to fully reionize the Universe, we find out that the star formation must continue for
+\begin{equation*}
+    t \approx 670\unit{Myr}
+\end{equation*}
+Massive stars are capable of emitting most of the photons required to reionize the intergalactic gas.
+\subsubsection*{Recent Results}
+A strong piece of evidence comes from ultra-deep JWST+HST imaging of the lensing cluster Abell 2744 (Nature 2024): gravitational lensing reveals large numbers of extremely faint galaxies at $z 1\sim 6-10$.
+\par If that field is representative, their combined UV output implies an  budget of ionizing photons that can meet or exceed what is needed for reionization, even for a modest escape fraction $f_{\text{esc}}$ of only a few percent, supporting the idea that dwarf galaxies could drive reionization.
+\par The galaxies doing the heavy lifting in this argument are intrinsically faint (i.e., “dwarfs” in UV luminosity/stellar mass terms), but numerous. Lensing makes them visible; their abundance makes the integrated $\rho_{\text{UV}}$ large enough to power reionization.
+\par A 2025 study (also published as a Nature Astronomy paper) builds a highly complete sample at $7.15 \leq z \leq 7.75$ and decomposes JWST far-UV images into point-source + extended components, then makes the maximally conservative assumption that all point-source components are AGN. Even under that extreme assumption, they find AGN can provide at most $\sim1/3$ of the ionizing photon budget at $z \sim 7.5$.
