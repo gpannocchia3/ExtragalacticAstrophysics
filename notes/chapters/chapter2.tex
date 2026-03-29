@@ -1,2 +1,545 @@
 \chapter{Distance Scales}\label{ch:ii}
 
+Among the vast sea of physical properties that an astrophysicist hopes to be able to measure when observing some object in the Universe, measuring \emph{distances} has always proved to be a key hardship to overcome. Top notch astrophysicists from all over the world worked on this particular, difficult subject for decades and now, with present day instruments (like GAIA or JWST), we're finally seeing the results of those efforts.
+\par Since we do not have at our disposal a ruler of astronomical proportions, we have to settle with something a bit more convoluted to perform our distance measurements. In fact, the standard procedure currently in use, involves measurements of distances with geometric methods (say, parallax) that are later used to calibrate more refined methods that can stretch our figurative ruler further and further into the Universe.
+\par Commonly, three types of indicators can be identified
+\begin{itemize}
+    \item \emph{Primary Indicators}, mainly geometric methods working up to short distances, like parallax;
+    \item \emph{Secondary Indicators} involve the calibration of first level non-geometrical methods that work up to intermediate distances, such as the calibration of the lightcurve of Cepheids;
+    \item \emph{Advanced Secondary Indicator}\footnote{I just invented this name.} involve the calibration of second level non-geometrical methods that work up to longer distances, such as the calibration of the lightcurve of Supernovae type Ia.
+\end{itemize}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/distanceladder.png}
+    \caption{Artistical representation of the measuring procedure we've just introduced.}
+\end{figure}
+\par Before we begin, here are some concepts that you might want to refresh.
+
+\section*{A few reminders}
+
+\par The luminosity of an object somewhere in the Universe is generally defined as the power emitted by a given said object over time (potentially over a given wavelength) and its expression is given by the relation
+\begin{equation}
+    L = -\frac{\text{d}E}{\text{d}t} \quad \text{erg}\cdot\text{s}^{-1}
+    \label{eq:luminosity}
+\end{equation}
+\par As we'll see, plenty of stuff in the Universe tends to emit (almost) isotropically in space. It goes without saying, however, that an observer at distance $d$ from that object won't be able to collect all the light that is emitted. What we can measure is a flux, the fraction of energy that impinges on our detector. The flux is related to the luminosity through the following relation
+\begin{equation}
+    \phi = \frac{L}{4\pi r^{2}} \quad \text{erg}\cdot\text{s}^{-1}\cdot\text{cm}^{-2}
+    \label{eq:flux}
+\end{equation}
+The flux, however, doesn't tell us much about the characteristics of the object, differently from the luminosity. But since what we can measure are fluxes, it is then crucial that we find a way to accurately measure distances so to infer the luminosity of an object.
+\par Since ancient times, mankind has always tried to measure the brightness of stars (and things that were only later discovered not to be stars at all). The efforts of those that came before us are nowadays crystallized in a quantities that is still in use: The \emph{magnitude}.
+\par The concept of magnitude is strictly related to the way the human eye was believed to perceive the differences in intensities.
+\par Hypparchus, back in ancient Greece, classified all stars into six classes according to their apparent brightness. This classes went from class I, the brightest stars, to class VI, the less bright. According to Hypparchus, the brightest and faintest stars had an apparent brightness that is in the ratio of 100.
+\par Let us consider a star with flux $F_{*}$ and some reference flux $F_{0}$. We define the \emph{apparent magnitude} as 
+\begin{equation*}
+    m_{*} = x \log_{10}\left(\frac{F_{*}}{F_{0}}\right)
+\end{equation*}
+Calculating the difference in apparent magnitude between the brigthest and faintest stars and making use of the aforementioned characteristics, we can find the correct values for the constant $x$ and define the apparent magnitude as
+\begin{equation}
+    m_{*} = -2.5\log_{10}\left(\frac{F_{*}}{F_{0}}\right)
+    \label{eq:apparentmagnitude}
+\end{equation}
+Obviously, unless a bolometer is used, you can't perform a measurement covering all wavelengths. What you're going to measure is actually a convolution of the flux emitted by the star (as a function of the wavelength) and the transmission curve of the detector you're using
+\begin{equation*}
+    S_{det} = \int_{0}^{\infty} \text{d}\lambda\, F(\lambda)T(\lambda)
+\end{equation*}
+More often than not, it is customary to measure magnitudes in given wavelengths' ranges, from which a "bolometric" magnitude can be inferred by adding a \emph{bolometric correction} that is given from stellar atmosphere models.
+\par Similarly, we can define the \emph{absolute magnitude} as the magnitude a star would have if it was located $10\,\text{pc}$ away.
+\par Using the fact that $F \propto r^{-2}$, we find a relation for the absolute magnitude $M$
+\begin{equation}
+    m-M = 5\log_{10}\left(\frac{d}{10\,[\text{pc}]}\right)
+    \label{eq:absolutemagnitude}
+\end{equation}
+The difference $m-M$ is often called \emph{distance module} (DM) and is sometimes used as an indirect way to express a distance.
+\par For classifying stars according to their color it's often used the so-called UBV photometric system (from \emph{Ultraviolet}, \emph{Blue}, \emph{Visual}), also called the Johnson system (or Johnson-Morgan system), which makes use of filters so that the mean wavelengths of response functions (at which magnitudes are measured to mean precision) are $364\, \text{nm}$ for U, $442\, \text{nm}$ for B, $540\, \text{nm}$ for V.
+\par Given this setup, we can easily calculate the magnitudes, say, in the Blue and Visible light-bands, so that the relative magnitudes are
+\begin{equation*}
+    m_{B}-m_{V} = -2.5\log_{10}\left(\frac{F_{B}}{F_{V}}\right) := B-V
+\end{equation*}
+where $B-V$ is said \emph{color index}.
+\par When passing through interstellar dust\footnote{The interstellar dust, which is usually referred to as ISM, consists in small particles of silicates, graphite, amorphous carbon, ices and organical mixtures of size $10^{-2}-1\,\mu\text{m}$} the intensity of radiation gets modified. The dust that makes the ISM absorbs light in the V-UV bands to later re-emit it as InfraRed radiation or scatters the "short" wavelength, producing a net-effect that essentially "increases" the wavelength of the incoming radiation and decreases its intensity.
+\par These two phenomena are known as \emph{reddening} (do not confuse it with \emph{redshift}) and \emph{extinction}.
+\par The absolute magnitude in the, say, blue and visible bands, will thus be modified
+\begin{align*}
+    M_{V} &= M_{V}^{0}+A_{V}\\
+    M_{B} &= M_{B}^{0}+A_{B}
+\end{align*} 
+where the quantities with the "0" superscript are the un-reddened magnitudes. We can define the new color index
+\begin{equation*}
+    B-V = (B-V)^{0}+E[B-V]
+\end{equation*}
+where $E[B-V] = A_{B}-A_{V}$ is the extinction. Within our galaxy, the ratio of reddening to the extinction is a well-known quantity
+\begin{equation*}
+    R = \frac{A}{E[B-V]} \approx 3.0
+\end{equation*}
+
+\section{Geometric Methods (I): Parallax}
+
+\par Usually, it isn't particularly convenient to express distances with meters, centimeters, kilometers or, God forbids, miles and feet. For relatively "close" objects, it is often used the \emph{astronomical unit} (AU)
+\begin{equation}
+    1\, \text{AU} = 1.50 \cdot 10^{13}\,\text{cm}
+    \label{eq:astronomicalunit}
+\end{equation}
+which is the average distance of the Earth from the Sun. Although this is a rather useful quantity, we're not still up there. We have to kick it up a notch once more.
+As the Earth moves around the Sun, the "nearby" stars seem to change their position just slightly with respect to the faraway stars, which appear to be fixed in place.
+\par This phenomenon is called \emph{parallax}; it is not particularly different from what you experience when observing your own finger first with one eye and then with the other.
+\par Consider the construction shown in Fig.\ref{fgr:stellarparallax}. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.4\textwidth]{img/stellarparallax.svg.png}
+    \caption{Defintion of parsec. Credits: Wikipedia.}
+    \label{fgr:stellarparallax}
+\end{figure} 
+\par Let us consider a star on the polar axis of the Earth's orbit at a distance $d$ from the center of the orbit. The angle $p$ in the picture is half of the angle by which this star appears to shift with the annual motion of the Earth on the distant stars' plane.
+\par With simple geometrical considerations, if we assume Earth's orbit to be circular\footnote{Actually, it is not. Earth's orbital eccentricity is roughly $e = 0.017$, which is sufficiently small to let us approximate it as circular.}, then we can write the following relation
+\begin{equation*}
+    \tan(p) = \frac{1\,\text{AU}}{d} \approx p
+\end{equation*}
+if we assume $d$ to be much larger than an astronomic unit (which for all relevant scenarios is a condition that is well satisfied).
+\par We can then define the \emph{parsec} (pc) as the distance the star has to be so that its geometrical parallax turns out to be $1\,\text{arcsec}$. Hence
+\begin{equation}
+    d = \frac{3.09 \cdot 10^{18}\,\text{cm}}{p \,[\text{arcsec}]} \implies 1\,\text{pc} = 3.09 \cdot 10^{18}\,\text{cm}
+    \label{eq:parsec}
+\end{equation}
+Obviously, for even larger distances the standard units are the \emph{kiloparsec} (roughly the measure of galactic sizes), the \emph{megaparsec} (the typical measure of galactic distances) and the \emph{gigaparsec} (the typical measure of the observable Universe).
+\par Ground-based observations can only produce relative parallax measurements, since they implicitly depend on the distances to the background field stars. But space missions do not suffer of atomspheric turbulence, nor of the day/night cycle nor of the atmospheric distorsion, and, unlike you sitting behind your telescope, are able to provide us with \emph{all-sky coverage}.
+\par In short, they're just better.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/relativeparallax.png}
+    \caption{Schematic representation of how parallax is measured.}
+    \label{fgr:relativeparallax}
+\end{figure}
+\par In order to measure the motion of a star $S$ with respect to a background star $S_{0}$ (near to $S$) on the sky, which is itself in parallactic motion, consider the following expression with respect to Fig.\ref{fgr:relativeparallax}
+\begin{equation*}
+    \pi_{\text{rel}} = \pi_{\text{abs}}-\pi_{0} = \frac{\phi_{2}-\phi_{1}}{2}
+\end{equation*}
+which express the relative parallax of $S$ with respect to a generic background star $S_{0}$. The absolute parallax of $S$ $\pi_{\text{abs}}$ is then $\pi_{\text{abs}}=\pi_{\text{rel}}+\pi_{0}$, where $\pi_{0}$ is the absolute parallax of $S_{0}$. This is called \emph{narrow field astrometry}.
+\par In practice, one has to estimate the average absolute parallax of the background stars, and this estimation introduces an error that usually dominates the global error budget. This limitation presently does not allow to measure parallaxes with an accuracy better than about a few milliarcseconds.
+\par The measurement of large angular distances allows us to measure the absolute parallax $\pi_{\text{abs}} = (\phi_{2}-\phi_{1})/2$ of a star without the need to apply poorly determined correction factors, and the accuracy can thus be improved by orders of magnitude. This is now achieved with space telescopes adopting two viewing directions, separated by a large angle, like GAIA and (formerly) Hipparcos.
+\par Specifics about the two telescopes can be found in the course slides. Just know that for a star at $100\unit{pc}$ ($10\unit{marcsec}$) Hipparcos had a SNR$\sim 10$ and an error of about $10\%$ on the distance measure. GAIA completely destroyed all competition with an astounding SNR$\sim 1000$ and error of about $0.1\%$.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/stspecs.png}
+    \caption{Table of the specifics of the Hipparcos space telescope and of the GAIA space telescope.}
+    \label{fgr:stspecs}
+\end{figure}
+\par On farther away stars ($1\unit{kpc}$ or $1\unit{marcsec}$), Hipparcos had a SNR$\sim 1$ (GAIA's SNR$\sim100$) and the associated error was of the order of the measurement itself (GAIA's about 1\%).
+\par Combining pallax and proper motions (Gaia’s resolution is of the order of $\approx\,\mu\text{arcsec}/\text{yr}$), we can infer the tangential velocity. Studying the proper motion gives an angular speed $\mu$ which we can multiply by a distance $d$ to obtain a transverse speed 
+\begin{equation*}
+    v_{t} = 4.74\frac{\mu(\text{marcsec}/\text{yr})}{\pi(\text{marcsec})}\unit{km}\unit{s}^{-1}
+\end{equation*}
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.9\textwidth]{img/astrometricprecision.png}
+    \caption{GAIA's uncertainties distributions for both parallax measurements and proper motion measurements.}
+    \label{fgr:astrometricprecision}
+\end{figure}
+\par SMC and LMC galaxies\footnote{Respectively, \emph{Small Magellanic Cloud} and \emph{Large Magellanic Cloud}.} are too far for good single stars distances measurements: most of stars have $G\sim 19-20$, so that the uncertainty on the parallax measurement is in the worst case scenario $\sigma_{\pi}\sim 300\,\mu\text{arcsec}$. But with GAIA we were able to observe a large sample of stars (roughly $7\cdot10^{6}$ in the LMC and $2\cdot10^{6}$ in the SMC). All these measurements are independent, so the average parallax $\bar{\pi}$ will have an associated error or order $\sigma_{\bar{\pi}} \sim \sigma_{\pi}/\sqrt{N}$, resulting in a measure of parallax up to $0.5\%$ for the LMC and $1.5\%$ for the SMC.
+
+\section{Geometric Methods (II): Light Echoes}
+
+Consider a very bright source of light that turns on suddenly like a supernova. It has been observed, for example in SN1987a, that a bright ring "ignited" after some time around the star that had just exploded.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/lightecho.jpg}
+    \caption{Images showing the expansion of the light echo of V838 Monocerotis. Credit: NASA/ESA.}
+    \label{fgr:lightecho}
+\end{figure}
+\par Generally, the ring may look like more of an oval than a circle, probably because it's tilted with respect to our point of view. This is one of the few cases for which we're able to determine the angle of tilt from the shape of the object we're observing.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/lightechoconstr.png}
+    \caption{Schematic representation of the necessary geometry to perform our calculation.}
+    \label{fgr:lightechoconstr}
+\end{figure}
+\par Consider Fig.\ref{fgr:lightechoconstr}. The light from the supernova comes straight to us at the speed of light and takes a time $t_{S} = D/c$. From the ring, it takes longer: it must first go to the leading edge of the ring, then it must come from the leading edge to our eyes. This translates into 
+\begin{equation*}
+    t_{E} = \frac{R}{c}+\frac{D-R\sin\beta}{c}
+\end{equation*}
+and so we can measure the difference in time 
+\begin{equation}
+    \delta t = \frac{R}{c}(1-\sin\beta)
+    \label{eq:lightechotimediff}
+\end{equation}
+which we can invert to find the actual size of the object, or its angular size $R =\theta d$. For example, for the aforementioned SN1987a, the distance was measured with a precision of $2\%$ with this method. Consider this: SN1987A is in the LMC, and the LMC has a 3D structure (Fig.\ref{fgr:lmcsmc3d})
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/lmcsmc3d.png}
+    \caption{Polar projection of Galactic longitude coordiantes for the old (red dots) and young (blue dots) CC samples in the SMC. For comparison, the ab-type RR Lyrae stars in the SMC (cyan dots) and in the LMC (green dots) are shown. The black arrows show the directions of motion of the two galaxies, according to the proper motion measurements of van der Marel et Sahlmann (2016).}
+    \label{fgr:lmcsmc3d}
+\end{figure}
+\par Another light echo was measured. The Milky Way Cepheid RS Puppis is a rare, long period pulsator ($P=41.5\unit{d}$), and a good analog of the Cepheids observed in distant galaxies. It is the only known Cepheid to be embedded in a large ($\sim 0.5\unit{pc}$) dusty nebula, that scatters the light from the pulsating star.
+\par Due to the light travel time delay introduced by the scattering on the dust, the brightness and color variations of the Cepheid imprint spectacular light echoes on the nebula. These observations enabled us to determine the geometry of the nebula and the distance of RS Pup. The interested reader can refer to \cite{kervella2020distancelongperiodcepheid} for more details.
+\section{Geometric Methods (III): Eclipsing Binaries}
+Let us start from stating a fact: More than 50\% of all stars live in binary systems and some of them are eclipsing each other. For simplicity we assume circular orbits and no inclination.
+\par If we put ourselves in the center of mass of the system
+\begin{equation*}
+    a_{1}M_{1} = a_{2}M_{2} \quad a=a_{1}+1_{2}
+\end{equation*}
+where $a_{i}$ is the distance of star $M_{i}$ from the center of mass. From Kepler's law we know 
+\begin{equation*}
+    \frac{a^{3}}{P^{2}} = \frac{G}{4\pi^{2}}(M_{1}+M_{2})
+\end{equation*}
+then we measure the radial velocities
+\begin{equation*}
+    v_{1} = \frac{2\pi a_{1}}{P} \quad v_{2} = \frac{2\pi a_{2}}{P}
+\end{equation*}
+Combining the two equations 
+\begin{equation*}
+    \frac{a_{1}}{a_{2}} = \frac{M_{2}}{M_{1}} = \frac{v_{1}}{v_{2}}
+\end{equation*}
+Moreover
+\begin{equation*}
+    a = a_{1}+a_{2} = \frac{P}{2\pi}(v_{1}+v_{2})
+\end{equation*}
+which, using Kepler's equation, becomes 
+\begin{equation}
+    M_{1}+M_{2} = \frac{P}{2\pi}\frac{(v_{1}+v_{2})^{3}}{G}
+    \label{eq:eclipsingmasses}
+\end{equation} 
+This means that if we are, somehow, able to measure the rotational velocities of the two stars (and their orbital period), we can infer their masses!
+\par Let's see what we can deduce from analyzing the eclipse. We'll say $t_{a}$ the start of the secondary (less massive star) ingress, $t_{b}$ the end of the secondary ingress, $t_{c}$ the start of the secondary (less massive star) egress, $t_{d}$ the end of the secondary egress. On top of that, the smaller star is assumed to be hotter than the larger one.
+\par The radius of the secondary and the primary can be inferred with a simple kinematic consideration 
+\begin{align*}
+    R_{s} &= \frac{v_{1}+v_{2}}{2}(t_{b}-t_{a})\\
+    R_{p} &= \frac{v_{1}+v_{2}}{2}(t_{c}-t_{a})
+\end{align*}
+Recall now the definition we've given for the flux $F$ (\ref{eq:flux}), and for the surface brigtness $S$ (flux per unit angular area for a uniform disk)
+\begin{equation*}
+    F = \pi\left(\frac{R}{d}\right)^{2}S
+\end{equation*}
+During the first eclipse (the primary obscures the secondary)
+\begin{equation*}
+    F_{\text{first}} = \pi\left(\frac{R_{1}}{d}\right)^{2}S_{1}
+\end{equation*}
+while when both stars are fully showing 
+\begin{equation*}
+    F_{\text{tot}} = \frac{\pi}{d^{2}}(R_{1}^{2}S_{1}+R_{2}^{2}S_{2})
+\end{equation*}
+This way, when the secondary is eclipsing the primary (and it's not completely obscuring it, since it's smaller), we can write
+\begin{equation*}
+    F_{\text{second}} = \frac{\pi}{d^{2}}(R_{1}^{2}S_{1}+R_{2}^{2}(S_{2}-S_{1}))
+\end{equation*}
+If we can somehow find a model for $S_{1}$ (for example using atmosphere models or empirical surface brightness to color relationships), we can then calculate the ratio $S_{2}/S_{1}$ and the distance $d$, see, for example, \cite{2013Natur.495...76P}
+\begin{equation}
+    d^{2} = \frac{\pi}{F_{\text{tot}}}S_{1}\left(R_{1}^{2}+R_{2}^{2}\frac{S_{2}}{S_{1}}\right)
+    \label{eq:eclipsingdistance}
+\end{equation}
+\section{Geometric Methods (IV): Mega-Masers}
+Water megamasers are very luminous $22\unit{GHz}$ $\text{H}_{2}\text{O}$ spectral lines produced by compact clumps of dense, warm molecular gas. The emission is called “maser” because it is generated by microwave amplification by stimulated emission, the radio analogue of a laser.
+\par In some active galactic nuclei (AGN), these conditions are met in the central parsec of the galaxy, where molecular gas is concentrated in a thin circumnuclear disk around the supermassive black hole. The masing material is not a smooth continuous medium, but is thought to arise in small, discrete clumps or filaments embedded in the disk. These clumps move within the gravitational potential of the black hole, and in the best cases the disk is thin, warped, and close to Keplerian rotation.
+\par Because the emission originates in compact regions and the maser lines are typically bright, narrow, and spectrally well defined, the masing gas acts as a very clean tracer of the structure and kinematics of the nuclear molecular disk.
+\par For example, NGC4258 is a nearby AGN known to possess nuclear water masers. VLBI observations of the NGC4258 maser have provided the first direct images of an AGN accretion disk, revealing a thin, subparsec-scale, differentially rotating warped disk in the nucleus of this AGN. NGC4258 was observed at 4-8 months intervals between 1994 and 1997 with the VLBI of the NRAO in order to search for the expected motions.
+\par For a cricular orbit, the centripetal acceleration is $a_{c}=v^{2}/r$. Now fix the geometry of an edge-on disk. Let the motion lie in the $x-z$ plane, where $x$ is the apparent major axis of the disk on the sky and $z$ the line of sight.
+\par We parametrize the position of the maser cloud by the angle $\phi$, measured from the $x_{+}$ direction. The tangential velocity will be then $\vec{v} = v(-\sin\phi, \cos\phi)$, and the line of sight velocity is $v_{LOS} = v\cos\phi$. Hence
+\begin{equation*}
+    \der{v_{LOS}}{t} = -v\sin\phi\der{\phi}{t}
+\end{equation*}
+which, for uniform circular motion, we have $\text{d}\phi/\text{d}t = \omega$. Therefore
+\begin{equation*}
+    \der{v_{LOS}}{t} = -r\omega^{2}\sin\phi \to a_{LOS} = -a_{c}\sin\phi
+\end{equation*}
+\par For a masing cloud that lies near the front/back side of the disk, $\phi\approx 90\text{°}$ or 270°, so that $|\sin\phi|\approx 1$ and therefore $|a_{LOS}|\approx a_{c}$. We monitor the same maser feature (at the extreme sides of the orbit) over multiple observing epochs and measure its Doppler velocity $v_{LOS}$ at each time.
+\par These measurements are then plotted as a function of time, $v_{LOS}(t)$. Over the time span considered, the drift is usually well approximated as linear, so one fits
+\begin{equation*}
+    v_{LOS}(t) = v_{0}+a_{LOS}(t-t_{0})
+\end{equation*}
+Note that, for high velocity clouds, we have to account for the proper motion of the cloud
+\begin{equation*}
+    v_{0} \approx |v-v_{\text{sys}}|
+\end{equation*}
+Then, assuming we've done everything correctly, we can use the definition of centripetal acceleration and deduce the radius of the orbit $r$. If we're able to measure the angular distance of the cloud $\Delta\theta$ through interferometry, we can finally obtain its distance 
+\begin{equation}
+    D = \frac{r}{\Delta\theta} = \frac{v_{0}^{2}}{a\Delta\theta}
+    \label{eq:maserdistance}
+\end{equation}
+An immediate complication of our discussion comes if we try to take into account the possibility of the orbit being inclined with respect to the LOS.
+\par For example, the distance of NGC4258 was measured by \cite{2013ApJ...775...13H} from a $10\unit{yr}$ monitoring program of its $22\unit{GHz}$ maser emission, obtaining a result of $d = 7.60 \pm 0.17 \pm 0.15\unit{Mpc}$,  a 3\% uncertainty including formal fitting and systematic terms.
+\par For each maser galaxy, the megamaser disk model yields a geometric measurement of the angular-diameter distance $d_{A}$. Once the galaxy redshift $z$ is known, the observed pair $(z, d_{A})$ can be compared with the cosmological distance-redshift relation $d_{A}(z)$. Repeating this for several (which we don't have) maser galaxies would in principle allow us to constrain the value of the Hubble constant.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/maserhubble.png}
+    \caption{Measure of the Hubble constant as inferred from the estimation of the angular distance of mega-maser sources.}
+    \label{fgr:maserhubble}
+\end{figure}
+
+\section{Non-Geometric Methods (I): TRGB}
+
+Before launching ourselves into a detailed discussion of the distance estimation from the analysis of the \emph{Tip of the Red Giant Branch} (TRGB), it's worth mentioning another method, namely that of \emph{main sequence fitting}.
+\par Sampling quite a few stars in stellar clusters, and measuring their chemical composition (metallicity in particular), we can plot the apparent magnitude (or flux) versus the effective temperature. Then we can plot a model for the isochrone of the observed metallicity and compare the absolute magnitude of the result with the apparent magnitude of the actual cluster in a of the HR diagram where the age is not important. Result: you've found the distance\footnote{Note that this is essentially a direct application of the definition of \emph{distance module} (\ref{eq:absolutemagnitude}).}
+\begin{equation}
+    d = 10^{1+\frac{m-M}{5}}\unit{pc}
+    \label{eq:mainsequencefitting}
+\end{equation}
+\vspace{5pt}
+The method we're going to discuss now involves, as the name suggests, the usage of the tip of the Red Giant Branch, that is a particular stage of some stars.
+\par Because of electron degeneracy pressure, all red giant stars with masses $M<3M_{\odot}$ reach about same maximum magnitude (because they ignite Helium with the same core mass). So for old populations, the TRGB is independent of age. The maximum RGB magnitude also doesn’t depend on metal abundance (at least for abundances less than about half solar) Thus the RGB maximum magnitude is a standard candle.
+\par For our purposes, it may be useful to introduce the quantity $[\text{Fe}/\text{H}]$, the logarithmic iron abundance relative to hydrogen, compared to the Sun
+\begin{equation}
+    [\text{Fe}/\text{H}] = \log\left(\frac{N_{\text{Fe}}}{N_{\text{H}}}\right)_{*}-\log\left(\frac{N_{\text{Fe}}}{N_{\text{H}}}\right)_{\odot}
+\end{equation}
+\par Now, since the I-magnitude of the RGB Tip is constant with metallicity
+\begin{equation*}
+    -2.2 < [\text{Fe}/\text{H}] < -0.7
+\end{equation*}
+and age $7<t<14\unit{Gyr}$, we can perform a calibration of sort via a theoretical model providing the absolute luminosity of the RGB Tip or from the absolute magnitude of the RGB Tip of a stellar cluster at known distance (e.g. $\omega$Cen).
+\par The cons of this method are that we may only use old galaxies or galaxies with an old component and a well populated RGB only to reach maximum distances of $10-15\unit{Mpc}$\footnote{Don't get me wrong, it's already a lot. And there are several programs (like the Carnegie-Chicago Hubble Program) that are determining the Hubble parameter based on a calibration of the tip of the red giant branch applied to Type Ia Supernovae. Its main let-down is the scarcety of suitable candidates for this method.}
+
+\section{Non-Geometric Methods (II): Pulsating Stars}
+
+The radial pulsations of Cepheids or RR Lyrae are essentially acoustic vibrations (pressure waves), similar to those of a musical instrument, such as an organ pipe, the essential difference being that they are spherical rather than linear.
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=Musical Analogy,
+  boxed title style={size=small,colframe=blue!50!black}]
+  If the pipe is closed at one end, the velocity vanishes (node) and the pressure fluctuations are maximal (antinode). Similarly, at the center of a radially pulsating star, the radial velocity has a node and the pressure an antinode. At the open end of the organ pipe and at the surface of a star, the situation is reversed: the pressure fluctuations vanish and those of the velocity are maximal. Not all sinusoidal waves satisfy both boundary conditions simultaneously. Only those wavelengths are allowed for which the pipe length $L$ is an odd multiple of one quarter of the wavelength
+  \begin{equation*}
+    L = \frac{\lambda}{4},\;\frac{3\lambda}{4},\;\frac{5\lambda}{4},\;...\,L
+  \end{equation*}
+  Thus the lowest note-the fundamental-has period $\Pi = 4R/c_{s}$ (with $R$ radius of the star and $c_{s}$ is the sound speed).
+\end{tcolorbox}
+If we consider pulsating stars heat engines, then radial oscillations may be the result of sound waves resonating in the stellar interior with fundamental pulsation period $\Pi$
+\begin{equation*}
+    \Pi = \frac{4R}{c_{s}}
+\end{equation*}
+The sound speed can be determined from the pressure and density of the stellar interior (assuming a barotropic EoS)
+\begin{equation*}
+    c_{s}(r) = \sqrt{\frac{\gamma p(r)}{\rho}}
+\end{equation*}
+where $\gamma $ is ratio of specific heats for the
+stellar material. Assuming hydrostatic equilibrium
+\begin{equation*}
+    \der{p}{r} = -\frac{GM_{r}\rho}{r^{2}} = -\frac{G}{r^{2}}\frac{4\pi}{3}r^{3}\rho \rho = -\frac{4\pi}{3}Gr\rho^{2}
+\end{equation*}
+Integrating between $r$ and $R$ under the unrealistic assumption of constant density 
+\begin{equation*}
+    p(r) = \frac{2\pi}{3}G\rho^{2}(R^{2}-r^{2})
+\end{equation*}
+Hence the sound speed 
+\begin{equation}
+    c_{s}(r) = \sqrt{\frac{2\pi}{3}G\gamma\rho(R^{2}-r^{2})}
+    \label{eq:cepheidsroughsoundspeed}
+\end{equation}
+which we can intergrate to obtain the crossing time 
+\begin{equation}
+    \Pi = 4\int_{0}^{R}\frac{\diff{r}}{c_{s}} = 2\sqrt{\frac{3\pi}{2\gamma G \rho}}
+    \label{eq:periodmeandensityrelation}
+\end{equation}
+This equation, also called the \emph{period-mean density relation}, shows that the pulsation period of a star is inversely proportional to the square root of its mean density. Although its derivation is not rigorous, substituting typical values for a classical Cepheid into (\ref{eq:periodmeandensityrelation}) produces period estimates that are in good agreement with observation.
+\par We know that according to Stefan-Boltzmann's law
+\begin{equation*}
+    L = 4\pi R^{2}\sigma T_{\text{eff}}^{4}
+\end{equation*}
+meaning that the period is actually $\Pi = f(L, M, T_{\text{eff}})$. Moreover, Cepheids are intermediate mass stars burning Helium in their cores, so stellar evolution tells as that there is a mass-luminosity relation $M(L)$, so the dependency is further constrained to $Pi(L,T_{\text{eff}})$.
+\par If layers of a star are compressed, their density and temperature will increase. Kramer’s Law, however, tells us that opacity is more sensitive to temperature than pressure, so it is very likely that the opacity of stellar material will decrease upon compression. Evidently, for stellar pulsation to occur, special conditions are required.
+\par In most regions in a star, the opacity, $\kappa$, typically decreases with compression according to Kramer’s Law
+\begin{equation}
+    \kappa \propto \rho T^{-3.5}
+    \label{eq:kramerlaw}
+\end{equation}
+Now, Hydrogen partial ionization zone is a broad region with a characteristic temperature of $1-1.5\cdot 10^{4}\unit{K}$, in which the following cyclical ionizations occur
+\begin{align*}
+    \text{H} &\longleftrightarrow \text{H}^{+}+e^{-}\\
+    \text{He} &\longleftrightarrow \text{He}^{+}+e^{-}
+\end{align*}
+Helium II partial ionization zone is a region deeper in the stellar interior with a characteristic temperature of $4\cdot 10^{4}\unit{K}$, where further ionization of Helium takes place (this zone is mainly responsible for the observed radial pulsations)
+\begin{equation*}
+    \text{He}^{+} \longleftrightarrow \text{He}^{2+}+e^{-}
+\end{equation*}
+\par Upon compression, increased ionization in a partial ionization zone absorbs part of the input energy, so the temperature rises less than usual. The opacity increases and temporarily traps part of the outward radiative flux. This stored energy raises the pressure of the layer and helps drive its subsequent expansion\footnote{This is called the \emph{kappa mechanism} simply because kappa is the common symbol for opacity.}.
+\par During expansion, recombination returns part of the stored ionization energy, so the temperature decreases less than usual. The opacity drops, the layer becomes more transparent, and the remaining trapped radiation can escape more easily.
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=Opacity Valve,
+  boxed title style={size=small,colframe=blue!50!black}]
+  \begin{enumerate}
+    \item Gas is compressed, He or H ionization increases, opacity goes up, and the increased pressure pushes the star outward [closed valve];
+    \item Expanding layer cools, He or H ions recombine with electrons, opacity drops, and radiation escapes [open valve];
+    \item Gas pressure is now too low to support the envelope, the star contracts and then begins to heat, starting again the process.
+  \end{enumerate}
+\end{tcolorbox}
+The key aspect of this process is that \emph{pulsations are driven by the energy stolen from the star’s luminosity}.
+\par The main class of pulsating stars used for distance calibration are the \emph{Cepheids}, named after $\delta$-Cephei, the first recognized star of this class. 
+\begin{enumerate}
+    \item They are young ($<100\unit{Myr}$), massive ($3-8M_{\odot}$) and brigth ($M_{V}$ up to $-7$) radially pulsating variable stars;
+    \item They have periods for their pulsations from $\sim 1-3$ to $\sim100\unit{days}$;
+    \item They can be seen up to $\sim50\unit{Mpc}$, making them widely used as sources of distance calibrations to spiral galaxies hosted by SN Ia etc.
+\end{enumerate}
+Since Cepheids have approximately the same effective temperature, the pulsation period is effectively a function of their luminosity $\Pi(L)$. The calibration is pretty straightforward: first you reconstruct the P-L relation $\langle M \rangle = a +b\log P$ and then you use it to "anchor" Cepheids in farther away galaxies.
+\par Another type of pulsating stars are the RR Lyrae, an archetype of old halo population (horizontal branch) short-period variable stars, usable to up distances of a few megaparsecs. They usually have ages on the older side $t\geq10\unit{Gyr}$.
+
+\section{Non-Geometric Methods (III): SN Type Ia}
+
+As you probably know, Supernovae are the way some stars on the heavier side end their lives, a catastrophic explosion with a luminosity comparable to that of a whole galaxy ($M\sim -19.3$). Being such bright object, it's natural that astrophysicists have been trying to use them to push the distance ladder over the limit of Cepheids and other typical methods.
+\par Type Ia SNe stand out from the other types of SNe for the lack of Hydrogen and Helium in the spectra and the range of values of the peak luminosity and their correlation with the light curve width.
+\par The main spectroscopic difference between SNe II, Ib, and Ic derives from the fact that these massive stars are at different stages in mass loss when Si burning begins.
+\par Supernovae Type Ia are thought not to originate from the collapse of a core of a massive star (as the other types), but rather from degenerate white dwarf matter subject to runaway nuclear burning of $^{12}\text{C}$. The energy produced from the fusion is usually enough to unbind the star and utterly destroy it\footnote{Note that this isn't always the case. There may be times where the WD survives the explosion and keeps shining as if nothing has ever happened. These are called \emph{Novae} and sometimes may be periodic as well.}
+\par The peak luminosity of the SN is determined by the mass of the radioactive decay chain
+\begin{equation*}
+    ^{56}\text{Ni}\to^{56}\text{Co}^{56}\text{Fe}
+\end{equation*}
+with a decay time for $^{56}\text{Ni}$ of $\sim 6\unit{d}$, making SNIa the major source of Fe-peak elements. Gamma rays are absorbed and thermalized in expanding debris. Some uncertainty still remains on the ignition source, that may be \emph{single degenerate} (one white dwarf accreting from normal companion) or \emph{double degenerate} (merger or collision of two white dwarfs).
+\par For Type Ia supernovae we define the “decline rate” as the number of magnitudes the object gets dimmer in the first 15 days after maximum light in the blue. Fast decliners are fainter objects. The relationship between the peak luminosity of a Type Ia Supernova and the speed of luminosity evolution after maximum light is called \emph{Phillip's relation} \cite{1993ApJ...413L.105P}.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/philips.png}
+    \caption{The original definition drawn by Phillips around 1995.}
+\end{figure}
+\par Despite being a very powerful method, the calibration of Type Ia Supernovae still has some limitations
+\begin{itemize}
+    \item Intrinsic scatter remains: Even after standardization, the dispersion is typically $\sigma \approx 0.10-0.15\unit{mag}$, corresponding to a distance precision of about 5-7\%;
+    \item They are rare events: In a Milky Way-like galaxy, the SN Ia rate is roughly one event every 500 years. Large galaxy samples are therefore needed;
+    \item Systematic effects must be controlled: Dust extinction and reddening; possible evolution with redshift may reflect changes in the progenitor population, such as age, metallicity, and the relative importance of different explosion channels.
+\end{itemize}
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/metallicitysn.png}
+    \caption{Type Ia Supernovae in metal-poor host galaxies are, on average, intrinsically brighter than those in metal-rich hosts, although the effect is modest and potentially affected by extinction/systematics.}
+    \label{fgr:metallicitysn}
+\end{figure}
+\section*{The SHOES and DES Program}
+The SHOES program\footnote{In which, and I'm learning this as the moment I'm writing this section, the "O" is actually a zero.} sets to measure the local value of the Hubble Constant from the calibration of Type Ia Supernovae and Cepheid variables so to later determine the Equation of State for Dark Energy (i.e., the cosmological constant).
+\par In a famous paper of 2022, with the very telling name of "\emph{A Comprehensive Measurement of the Local Value of the Hubble Constant with $1\unit{km}\unit{s}^{-1}\unit{Mpc}^{-1}$ Uncertainty from the Hubble Space Telescope and the SH0ES Team}" \cite{Riess_2022}, the SHOES team managed to do what they promised.
+\begin{quote}
+    We report observations from the Hubble Space Telescope (HST) of Cepheid variables in the host galaxies of 42 Type Ia supernovae used to calibrate the Hubble constant. These include the complete sample of all suitable SNe Ia discovered in the last four decades at redshift $z\leq 0.01$, collected and calibrated from $\geq 1000$ HST orbits, more than doubling the sample whose size limits the precision of the direct determination of $H_{0}$. The Cepheids are calibrated geometrically from Gaia EDR3 parallaxes, masers in NGC 4258 (here tripling that sample of Cepheids), and detached eclipsing binaries in the Large Magellanic Cloud. All Cepheids in these anchors and SN Ia hosts were measured with the same instrument (WFC3) and filters (F555W, F814W, F160W) to negate zeropoint errors.
+\end{quote}
+\par The main findings of the SH0ES collaboration is summarized in Fig.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/shoesspecs.png}
+    \caption{Best estimates of $H_{0}$ including systematics.}
+    \label{fgr:shoesspecs}
+\end{figure}
+\par Unlike SHOES, the DES collaboration\footnote{Us physicists apparently have a thing with cool names. DES stands for \emph{Dark Energy Supernova} (program).} did not rely mainly on spectroscopically confirmed SNe Ia. Instead, the 5-year analysis \cite{descollaboration2025darkenergysurveycosmology} used:
+\begin{enumerate}
+    \item photometric classification of supernovae with a machine-learning classifier applied to 4-band DES light curves;
+    \item spectroscopic redshifts of the host galaxies from dedicated follow-up, rather than requiring SN spectra for every event;
+    \item a final sample of 1635 DES SNe Ia in the range $0.10 < z < 1.13$, combined with an external low-$z$ sample of 194 SNe Ia spanning $0.025 < z < 0.10$.
+\end{enumerate}
+\par DES standardizes SN Ia light curves using light-curve fitting and bias corrections, but it does not anchor their absolute magnitude with Cepheids. Instead, it uses SNe Ia as relative distance indicators to constrain cosmological parameters such as $\Omega_{m}$ and $w$, while the absolute magnitude remains degenerate with $H_{0}$. Some of their findings:
+\begin{enumerate}
+    \item SN-only, flat $\Lambda$CDM: $\Omega_{m} = 0.352\pm0.017$
+    \item SN-only, flat $w$CDM: $(\Omega_{m}, w) = (0.264^{+0.074}_{-0.096}, -0.80^{+0.14}_{-0.16})$
+    \item Combined Planck + BAO + DES: $(\Omega_{m},w) = (0.321\pm 0.007, -0.941\pm 0.026)$
+\end{enumerate}
+all consistent with $w=-1$.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/hubblesndiagram.png}
+    \caption{Best estimates of parameters of Cosmological interest based on the findings of the DES collaboration.}
+    \label{fgr:hubblesndiagram}
+\end{figure}
+\subsection*{Honorable Mention (I)}
+There are, of course, a whole lot of other independent approaches, such as the H0LiCOW\footnote{\emph{$H_{0}$ Lenses in COSMOGRAIL's Wellspring}. See \href{https://shsuyu.github.io/H0LiCOW/site/}{here} for more details.}, which makes use of the gravitational lensing effect.
+\par The light from a background source (QSO) lensed by foreground galaxy G create multiple images. If the background source is variable with an observable lightcurve, the fictitious images created by lensing will also present the same lightcurve, although the photons have different light paths from the source, reflecting in delays between the lightcurves of the images.
+\par If the source is variable on short timescales, it is possible to monitor the fluxes of the images and measure the time delay, $\Delta t_{ij}$, between them.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/gravlensing.png}
+\end{figure}
+\par The relative arrival time between two images $\theta_{A}$ and $\theta_{B}$, $\Delta t_{AB}$ originated from the same source at an angle $\beta$ can be proved to be
+\begin{equation*}
+    \Delta t_{AB} = (1+z_{L})\frac{D_{L}D_{S}}{D_{LS}}\left[\tau(\theta_{A},\beta)-\tau(\theta_{B},\beta)\right]
+\end{equation*}
+where 
+\begin{equation*}
+    \tau(\theta,\beta) = \left[\frac{(\theta-\beta)^{2}}{2}-\phi(\theta)\right]
+\end{equation*}
+and $\phi(\theta)$ is the lens potential evaluated at the images.
+\par The procedure to then infer parameters of cosmological relevance is the following
+\begin{enumerate}
+    \item \emph{Measure the redshifts}: from spectroscopy we can determine the redshift $z_{L}$ of the lens and that of the background quasar $z_{S}$;
+    \item \emph{Assume a cosmological model}: this way we can predict angular-diameter distances $D_{L}=D_{A}(0,z_{L})$, $D_{S}=D_{A}(0,z_{S})$, $D_{LS}=D_{A}(z_{L},z_{S})$;
+    \item \emph{Model the lens potential} $\psi$;
+    \item \emph{Measure the time difference} $\Delta t_{AB}$
+\end{enumerate}
+and the cool thing that all this apparently convoluted machination actually works.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/holicow.png}
+    \caption{Probability density distribution for the value of $H_{0}$ as measured by the efforts of the H0LiCOW collaboration.}
+    \label{fgr:holicow}
+\end{figure}
+\subsection*{Honorable Mention (II)}
+Another possible method makes use of \emph{surface brightness fluctuations}. As you may imagine, a galaxy's surface brightness is independent of distance, but its variance is not.
+\par We take an image of the target population at distance $D$, with $N$ the number of stars per unit area. Assuming that all stars have luminosity $L$, the flux from a single star will be $f = L/4\pi D^{2}$.
+\par If the image has an angular resolution $\delta\phi$, the average number of stars in a resolution element is $\bar{N}=N(D\cdot\delta\phi)^{2}$, whil the average flux from a resolution element is
+\begin{equation*}
+    \bar{F} = \bar{N}\cdot f = N(D\cdot\delta\phi)^{2}\cdot\frac{L}{4\pi D^{2}} = N\delta\phi^{2}\frac{L}{4\pi}
+\end{equation*}
+This tells us that the average flux of a resolution element is independent of distance
+\begin{equation*}
+    \frac{\bar{F}}{\delta\phi^{2}} = N\frac{L}{4\pi}
+\end{equation*}B
+ecause of Poisson fluctuations in the number of objects populating a given resolution element, $\bar{F}$ will not be constant, but will fluctuate from one element to another, with standard deviation
+\begin{equation*}
+    \sigma_{F} = (\bar{N})^{1/2}f = \sqrt{N}\delta\phi\frac{L}{4\pi D}
+\end{equation*}
+This fluctuation of the surface brightness scales as the inverse of the distance, meaning that
+\begin{equation*}
+    \frac{\sigma_{\bar{F}}^{2}}{\bar{F}} = \frac{L}{4\pi D^{2}}
+\end{equation*}
+The method clearly works best when observing the external parts of galaxies, where the number of stars is low and Poisson fluctuations are larger.
+\par To do a SBF measurement\footnote{We're imagining to perform aperture photometry on an image of a galaxy acquired with a CCD.}, first you have to find a decent model $M(x,y)$ for your galaxy, which you're going to split into $i$ regions, annuli, perhaps. Then you subtract the model of the galaxy light distribution from the original galaxy image, such that only the fluctuations remain and mask all internal (GCs, dust) and external sources of non-stellar fluctuations.
+\par Finally you can divide the variance by the mean surface brightness of that same region and calculate your $\sigma_{i}^{2}/\langle M_{i}\rangle$.
+\par This works decently. The interested reader can refer to the works of, for example, \cite{Blakeslee_2021}.
+\subsection*{Honorable Mention (III)}
+Electrons in the hot gas of the intracluster medium can scatter photons of the CMB. The optical depth and thus the scattering probability for this Compton scattering is relatively low, but the effect is nevertheless observable and, in addition, is of great importance for the analysis of clusters.
+\par A photon moving through a cluster of galaxies towards us will have a different direction after scattering and thus will not reach us. But since the cosmic background radiation is isotropic, for any CMB photon that is scattered out of the line-of-sight, there will be, statistically, another photon scattering into it, so that the total number of photons reaching us is preserved.
+\par However, the energy of the photons changes slightly through the scattering by the hot electrons, in a way that they have, on average, a higher frequency after scattering. Hence, by Compton scattering, energy is, still on average, transferred from electrons to photons. This is the so called \emph{Sunyaev-Zeldovich effect}.
+\par The CMB spectrum, measured in the direction of a galaxy cluster, deviates from a Planck spectrum; the degree of this deviation depends on the temperature of the cluster gas and on its density. In particular, the scattering reduces the specific intensity for low photon frequencies and increases it for high photons frequencies.
+\par In the Rayleigh-Jeans domain of the CMB spectrum, thus at wavelengths longer than about $1\unit{mm}$, photons are effectively upscattered to higher frequencies by the SZ effect. For the change in surface brightness in the RJ part, we obtain
+\begin{equation*}
+    \frac{\Delta I_{\nu}^{RJ}}{I_{\nu}^{RJ}} \approx -2y \quad y = \int \left(\frac{kT_{\text{gas}}}{m_{e}c^{2}}\sigma_{T}n_{e}\diff{l}\right)
+\end{equation*}
+since for non-relativistic thermal electrons, the mean fractional photon energy change per scattering is $\Delta\nu/\nu \sim kT_{\text{gas}}/m_{e}c^{2}$, while
+\begin{equation*}
+    \int \sigma_{T}n_{e}\diff{l}
+\end{equation*}
+is the number of scattering along the line of sight.
+\par On average then 
+\begin{equation*}
+     \frac{|\Delta I_{\nu}^{RJ}|}{I_{\nu}^{RJ}} \propto n_{e}LT_{\text{gas}}
+\end{equation*}
+where $L$  is the extent of the cluster along the line of sight.
+\par On the other hand, the surface brightness of the X-ray radiation from the hot ICM behaves can be approximated as
+\begin{equation*}
+    I_{X} \propto Ln_{i}n_{e}\sqrt{T_{\text{gas}}}\propto Ln_{e}^{2}\sqrt{T_{\text{gas}}}
+\end{equation*}
+under the assumption of complete ionization. Combining these two relations, we are now able to eliminate $n_{e}$. Since $T_{\text{gas}}$
+is measurable by means of the X-ray spectrum, we find
+\begin{equation*}
+    \frac{|\Delta I_{\nu}^{RJ}|}{I_{\nu}^{RJ}} \propto \sqrt{LI_{X}}T_{\text{gas}}^{3/4}
+\end{equation*}
+Now assuming that the cluster is spherical, its extent $L$ along the line of sight equals its transverse extent $R=\theta d_{A}$, where $\theta$ denotes its angular extent and $d_{A}$ the angular-diameter distance to the cluster
+\begin{equation*}
+    d_{A}=\frac{R}{\theta}\propto\frac{L}{\theta}\propto\left(\frac{|\Delta I_{\nu}^{RJ}|}{I_{\nu}^{RJ}}\right)^{2}\frac{1}{I_{X}}\frac{1}{T_{\text{gas}}^{3/2}}
+\end{equation*}
+Hence, the angular-diameter distance can be determined from the measured SZ effect, the X-ray temperature of the ICM and the surface brightness in the X-ray range.
+\par Of course, this method is more complicated in practice than demonstrated here, but it is applied to the distance determination of clusters. In particular, the assumption of the same extent of the cluster along the line of sight as its transverse size is not well justified for any individual cluster, but one expects this assumption to be valid on average for a sample of clusters.
+\par Hence, the SZ effect is another method of distance determination, independent of the redshift of the cluster, and therefore suitable for determining the Hubble constant.
+
+\section{Tully-Fisher Relation}
+In spirals, we're observing a typical luminosity $L\sim v_{\text{max}^{\alpha}}$ with $\alpha\sim 4$. The observed $21\unit{cm}$ line profile is the sum of emission from both the approaching and receding sides of the galaxy. This profile is broadened by the Doppler shifts caused by the galaxy’s rotation. The maximum rotation velocity $v_{\text{max}}$ is estimated by the line broadening $W$: $v_{\text{max}} = W/2\sin i$ where $i$ is the tilt angle of the galaxy.
+\par Each spiral galaxy has its own characteristic rotation curve, each with a characteristic $v_{\text{max}}$ at large distances from the GC.
+\par An heuristic explanation of the Tully-Fisher relation follows below.
+\par We start by deriving the scaling observed between the maximum rotation velocity of the disks of spiral galaxies, $v_{\text{max}}$, and their luminosity $L$. Observations of rotation curves $v_{\text{rot}}(r)$ of spiral galaxies reveal that they rise sharply from $r = 0$, reach a maximum value $v_{\text{max}}$ and remain roughly flat in their outer parts.
+\par Assuming that a star at the outer edge of the spiral is on a stable circular orbit around the centre of the galaxy, we can say that
+\begin{equation*}
+\frac{v_{\text{max}}}{R} = \frac{GM_{R}}{R^{2}}
+\end{equation*}
+which we can rearrange to find an expression for the mass $M_{R} = v_{\text{max}}^{2}R/G$.
+\par Please note that the mass $M_{R}$ is not only the luminous baryonic mass in stars and gas, but also the dark matter enclosed within the sphere of radius $R$.
+\par Let us now assume that spiral galaxies of one type (e.g. Sa, b, c, more on this later on) all have the same mass to light ratio $M/L:=1/c_{ML}$.
+\par This of course is a huge simplification. Replacing the mass $M_{R}$ by the luminosity $L$ using the mass to light ratio leads to
+\begin{equation*}
+    L = \frac{c_{ML}v_{\text{max}}^{2}R}{G}
+\end{equation*}
+Finally, if spiral galaxies have a constant surface brightness $L/R^{2}:=c_{SB}$ (so called Freeman’s law), we can take the square of the right and left hand side terms and rewrite it as
+\begin{equation}
+    L = \frac{c_{ML}^{2}}{c_{SB}}\frac{v_{\text{max}}^{4}}{G^{2}} \propto v_{\text{max}}^{4}
+    \label{eq:tullyfisher}
+\end{equation}
+The first and most notable implication of this relation is that $c_{ML}^{2}/c_{SB}\approx\unit{const.}$.
