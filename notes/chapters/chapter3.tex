@@ -1,2 +1,344 @@
 \chapter{Stellar Populations in Galaxies}\label{ch:iii}
 
+Galaxies were first classified in the 1920s depending on their appearance through optical telescopes. Some galaxies appear to have spiral structures, earning them the name of \emph{Spiral galaxies}. On the other hand, many galaxies seem to have featureless elliptical shapes, and so are called \emph{elliptical galaxies}. Apart from these two main categories, there are some galaxies with irregular shapes which do not fit into either of the two, thus they got names \emph{irregular galaxies}.
+\par Since all spiral galaxies are believed to be intrinsically shaped like circular disks, the apparent shape of a spiral galaxy in the sky gives an indication of its inclination with respect to the line of sight. The same cannot be said for, say, elliptical galaxies, whose intrinsic eccentricity cannot be inferred from their apparent shape.
+\par Although the apparent shapes of elliptical galaxies may not be indicative of their real shapes, they are still customarily classified according to their apparent shapes. The circular-looking elliptical galaxies are classified as E0; then we go through a sequence E1, E2... in order of increasing eccentricity, ultimately ending with E7, which are fairly flattened elliptical galaxies.
+\par This classification is attributed to Hubble\footnote{The interested reader can refer to his original article/book: \cite{1926CMWCI.324....1H}, \cite{1936rene.book.....H}.}, in which E7 elliptical galaxies are taken to be similar to spiral galaxies with very closely wound spirals. Hubble then divided spiral galaxies into ordinary spirals and barred spirals; ordinary and barred spirals with very closely wound spirals are classified as S0 and SB0. Spiral galaxies with increasingly looser spiral structures are classified in the sequence Sa, Sb, Sc. Similarly, barred spirals are classified in the sequence SBa, SBb, SBc. The whole classification Hubble gave can be summarized in the famous \emph{tuning fork} shown in Fig.\ref{fgr:hubblefork}.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.6\textwidth]{img/Hubble_Tuning_Fork_diagram.svg.png}
+    \caption{Morphological classification of galaxies as given from Edwin Hubble. For ellipticals, the eccentricity is defined as $e=1-b/a$, so, for example, E0 galaxies have $b/a\approx 1$ (nearly round), while E7 galaxies have $b/a\approx 0.3$ (very elongated). For spirals from Sa to Sc: The pitch angle, the angle between the tangent to a spiral arm and a circle centered on the galaxy, increases; For spirals from Sa to Sc: the bulge-to-disk ratio decreases.}
+    \label{fgr:hubblefork}
+\end{figure}
+\par Also, all massive galaxies have a sort of "dwarf" version. Hence we define \emph{dwarf galaxy} every glaaxy with absolute total magnitude in the V-band $M_{V}>-18$. The lowest dwarfs known so far have absolute total magnitude in V-band $M_{V}\sim-2$ (or fainter). They are thus called \emph{ultra-faint dwarfs galaxies}.
+\par Before we move on, we can make a further distinction in the wide zoo that is that of galaxies: Given a galaxy, can we spatially resolve its stars?
+\par If the answer is yes, we have a \emph{resolved population} (for which we can make a HR or CM diagram); if the answer is no, we have an \emph{un-resolved population}, which we'll have to deal with through integrated spectroscopy and/or photometry.
+\section{Resolved Populations}
+Before even getting involved knee-deep with resolved populations and understand formation and evolution of galaxies through investigation of properties of constituent, luminous parts, we'll have to briefly consider what is a stellar population\footnote{However, for those particularly interested in the subject of resolved stellar populations, a possible reference may be \cite{2010AdAst2010E...3C}.}.
+\par Assume that galaxies can be broken down into \emph{populations}, i.e. groups of stars, clusters, gas, with shared, or definable distributions of, properties. A basic unit of stellar population studies is the \emph{simple stellar population} (SSP), which we can assume to be \emph{coeval} (born at the same time), chemically homogeneous (at least at birth) and with similar orbits/kinematics.
+\par In principle we could decompose a galaxy as such 
+\begin{equation*}
+    \text{Galaxy} = \sum_{i=1}^{n}\text{Populations}_{i}
+\end{equation*}
+where here populations refers to what we'll call a \emph{principal component population}. A galaxy here is a composite population, but so too may be the principal component populations, which ultimately are likely a superposition of SSPs
+\begin{equation*}
+    \text{Populations}_{i} = \sum_{j=1}^{m_{i}}\text{SSP}_{j}
+\end{equation*}
+For example, our Milky Way might be dissected in at least four principal component populations:
+\begin{enumerate}
+    \item Halo;
+    \item Disk;
+    \item Thick disk;
+    \item Buldge.
+\end{enumerate}
+Each of the above represent complex groupings of stars and matter, but with distinct global properties/distributions of chemistry/age/kinematics from one another. These differences presumably relate to dffering mixtures of SSPs. The smaller the basis set ($n,m_{i}$), the easier is the composite population to unravel.
+\par The presence of different populations within a given ensemble can be ascertained by taking a look at, for example, CM diagrams: Simple populations will only show a single tip, whether composite populations will show multiple tips, as caused by the presence of more recent populations and older ones. 
+\par Please note that star clusters and galaxies are completely different things. For once, galaxies can be made of several star clusters of different age and composition. On top of that, at fixed absolute magnitude, galaxies generally have lower central surface brightness than star clusters, meaning that their stellar light is less centrally concentrated and distributed over larger spatial scales.
+All these information are usually represented into a Kormendi-Binggeli plot, which makes manifest correlations between the surface brightness (so how light is distributed and, for extension, how baryons are distributed) and the absolute magnitude (which is related to the baryonic mass).
+\par Another striking difference between the two is in the content of dark matter: Galaxies have \emph{a lot} of dark matter (to the point it is influencing the rotation curve of the galaxy), while globular clusters have little to no dark matter!
+\par Please note that although star clusters are good example of SSPs, they are \emph{not} the “building blocks” of galaxies. Galaxies are not the result of a secular accretion of star clusters. Star clusters are just those parts of a galaxy with higher star formation rate, but they do not contain a significant fraction of dark matter (like galaxies). Massive DM halos are made by accreting smaller DM halos, and galaxies are the result of baryons cooling within these halos.
+\subsection{Stellar Evolution}
+The life of a star can be divided in very distinguishable phases
+\begin{enumerate}
+    \item Main Sequence (MS): the star burns Hydrogen in its core. It is the longes phase of star evolution;
+    \item Turn-off: The point in the HR diagram where we can infer that Hydrogen has been exhausted in the core. It is of great importance for dating purposes;
+    \item Red-Giant Branch (RGB): Hydrogen is burned in shells around an inert Helium core. The internal He core continues to grow. RGB TIP: End of RGB phase;
+    \item Helium Burning: details on this phase depend on the particular metallicity of the star and on mass-loss during the RGB phase;
+    \item Asymptotic Giant Branch (AGB): Helium is burned in shells around an inert Carbon/Oxygen core. The evolution from here on is complicated and mass-dependent;
+    \item White Dwarf Sequence (WD): Low-mass stars eject their envelope and leave inert C/O core which cools as a WD;
+    \item Supernovae (SNe): Massive stars ($M>8M_{\odot}$) explode as Type II SNe.
+\end{enumerate}
+\par As you may or may not know, the lifespan of a star depends strongly on its mass, which influences the duration of each evolutionary phase. For example, the MS is the longest phase: $1M_{\odot}$ stars spen about $10\unit{Gyr}$ in this phase, whilst $10M_{\odot}$ stars spend only about $20\unit{Myr}$. Below $0.9M_{\odot}$ the MS lifetime is longer than the age of the Universe. Later phases are always much shorter.
+\par From now on, we'll focus on main sequence stars. For these, we can find adimensional structure equations. To this end, we will neglect convection, radiation pressure, and degeneracy pressure, use a constant opacity, and use a power law approximation for the rate of nuclear burning. The goal is to show that we can roughly reproduce what is observed, not get every detail right. With these assumptions, the complete set of stellar structure equations is
+\begin{align*}
+    \der{p}{m} &= -\frac{Gm}{4\pi r^{4}}\\
+    \der{r}{m} &= \frac{1}{4\pi\rho r^{2}}\\
+    \der{T}{m} &= -\frac{3}{4ac}\frac{\kappa}{T^{3}}\frac{L}{(4\pi r^{2})^{2}}\\
+    \der{L}{m} &= q_{0}\rho T^{\nu}\\
+    p &= \frac{R\rho T}{\mu}
+\end{align*}
+All quantities will be interpreted as \emph{averaged} quantities.
+\par Let us start with density and temperature. If we know $M$ and $R$, then
+\begin{equation*}
+	\Omega = -q\frac{GM^{2}}{R}
+\end{equation*}
+with $q$ a constant given by the profile density. We can now use the virial theorem and invert the relation between mass, density and radius
+\begin{equation*}
+	E_{th} \sim \frac{3kT}{2}\frac{M}{\mu m_{\text{H}}} \quad \rho = \frac{M}{\frac{4\pi}{3}R^{3}}
+\end{equation*}
+finding 
+\begin{equation}
+	\boxed{
+		T \propto M^{2/3}\rho^{1/3}
+	}
+	\label{eq:temperature_density}
+\end{equation}
+This means that two stars with different masses must have different densities to achieve the same temperature! This will then reflect onto smaller stars having the higher densities.
+\par Upon a first approximation, the luminosity $L$ does not depend on the energy production rate $\epsilon$. If we butcher the equation of hydrostatic equilibrium a plug in the proportionalities of the density
+\begin{equation*}
+	p_{C} = \frac{M^{2}}{R^{4}}
+\end{equation*}
+where $p_{C}$ is the central pressure. We can make the further assumption of a perfect gas and negligible radiation pressure, so that
+\begin{equation}
+	\boxed{
+	T_{C} \propto \frac{p_{C}\mu}{\rho} \propto \mu \frac{M}{R}
+	}
+	\label{eq:temperature_massradius}
+\end{equation}
+If we make the assumption of exclusively radiative transport, we find that 
+\begin{equation*}
+	\der{T}{r} \propto -\mu M R^{-2} \to L \propto -\frac{T^{3}}{\bar{\kappa}\rho}\der{T}{r}R^{2}
+\end{equation*}
+We then make the (very wrong, both conceptually and experimentally) approximation of constant opacity, thus finding
+\begin{equation}
+	\boxed{
+		L \propto \mu^{4}M^{3}
+	}
+	\label{eq:luminosity_mass}
+\end{equation}
+We thus have a mass-luminosity relation! As a consequence, stars spend the majority of their lives burning Hydrogen, and the length of time the fuel can be spent is equal to the amount of fuel divided by the consumption rate. Hence 
+\begin{equation*}
+    \text{Age} \sim \frac{\epsilon Mc^{2}}{L}\sim \frac{M}{M^{x}}=M^{1-x}
+\end{equation*}
+where the constant $\epsilon$ is to address the fact that only part of the star is available as nuclear fuel. Since $x$ will be reasonably $x \geq 1$, we thus find that the more massive stars are also those which live the shortest.
+\par On a concluding note: 
+\begin{enumerate}
+    \item The main-sequence phase acts as a natural clock for stellar evolution, because the main-sequence lifetime is primarily set by stellar mass: lower mass stars live much longer, while higher mass stars evolve much faster;
+    \item By estimating the star’s mass (and, more precisely, also its chemical composition) from its observed luminosity and temperature, and then applying a stellar model, it is possible to infer the star’s age;
+    \item Counting how many stars there are at different ages, we can estimate the mass produced by a galaxy as a function of time.
+\end{enumerate}
+Of course, there are plenty of complications to our naive model, first and foremost the contribution coming from having different chemical compositions.
+\par We know that the equation of transport for stellar structures is 
+\begin{equation*}
+    \der{T}{r} = -\frac{3}{16\pi a c r^{2}}\frac{\kappa\rho}{T^{3}}L
+\end{equation*}
+from which we also know that if metallicity increases, the opacity of the star increases and the temperature gradient increases, thus resulting in cooler stars (since the central temperature is blocked by fusion).
+\par This is the classic problem in understanding "old-ish" populations like elliptical galaxies. Because both age and M,2 metallicity cause the population ot redden, a given measured colour
+doesn't distinguish an old-but-metal-poor vs young-but-metal-rich stellar population.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/metallicpop.png}
+    \caption{CM diagram as a function of the metallicity. Note that the $[\text{Fe}|\text{H}]$ is used as a proxy for the metallicity.}
+    \label{fgr:metallicpop}
+\end{figure}
+\section{Galactic Archeology}
+Unlike stellar clusters, galaxies are usually the complex result of mixing different stellar populations. To disentangle a complex stellar population we need to answer the following questions:
+\begin{enumerate}
+    \item How many stars are formed in different mass ranges (initial mass function, IMF);
+    \item How much mass in stars is converted as a function of time (star formation rate, $\text{SFR}(t)$);
+    \item What is the chemical composition of stars at different epochs?
+\end{enumerate}
+\par Stellar evolution theory provides us with the functions $T_{\text{eff}}(m,Z,t)$ and $L(m,Z,t)$ which describes the behavior of effective temperature and luminosity for given $m$ and $Z$. They describe parametrically in the HR diagram the evolutionary tracks for stars of this mass and metallicity. The \emph{initial mass function} (IMF) $\phi(m)$ describes the number of stars of mass $m$ born per unit mass when a stellar population is formed, while the \emph{star formation rate} $\text{SFR}(t)$ gives the amount of gas converted into stars per unit time.
+\par For the IMF, astronomers have been using for a long while Salpeter's IMF \cite{1955ApJ...121..161S}, which is still very good at predicting the distribution above $1M_{\odot}$
+\begin{equation}
+    \phi(m) = \der{N}{m}\propto m^{-2.35}
+    \label{eq:salpeter}
+\end{equation}
+The current view is that proposed by Kroupa \cite{2013pss5.book..115K}, which is essentially that of Salpeter corrected for the observed flattening at low masses.
+\par For convenience we sometimes just ignore the flattening below $1M_{\odot}$, and assume that the Salpeter slope holds over a range from $M_{\text{min}} = 0.1M_{\odot}$ to $M_{\text{max}}=120M_{\odot}$
+\begin{align*}
+    1 &= \int_{M_{\text{min}}}^{M_{\text{max}}}\phi(m)\diff{m} = \int_{M_{\text{min}}}^{M_{\text{max}}} A m^{-2.35}\diff{m}\\
+    &= -\frac{A}{1.35}(M_{\text{max}}^{-1.35}-M_{\text{min}}^{-1.35}) \implies A = 0.060
+\end{align*}
+Another possible normalization is given 
+\begin{align*}
+     1M_{\odot} &= \int_{M_{\text{min}}}^{M_{\text{max}}}m\phi(m)\diff{m} = \int_{M_{\text{min}}}^{M_{\text{max}}} A m^{-1.35}\diff{m}\\
+     &= -\frac{A}{0.35}(M_{\text{max}}^{-0.35}-M_{\text{min}}^{-0.35}) \implies A = 0.170
+\end{align*}
+As an example, suppose we wanted to compute what fraction of stars (by number) is more massive than the Sun in a newborn population 
+\begin{equation*}
+    f_{N}(>1M_{\odot}) = \int_{1}^{120}0.06m^{-2.35}\diff{m} \approx 5\%
+\end{equation*}
+Similarly, the fraction of the mass in stars above $1M_{\odot}$ is 
+\begin{equation*}
+    f_{M}(>1M_{\odot}) = \int_{1}^{120}0.17m^{-1.35}\diff{m} \approx 40\%
+\end{equation*}
+which means that only a small fraction of stars have masses above $1M_{\odot}$, but they account for a substantial fraction of the total stellar mass.
+\par The star formation rate is defined as 
+\begin{equation}
+    \text{SFR}(t) = \der{M_{*}}{t} = -\der{M_{\text{gas}}}{t}
+    \label{eq:generalsfr}
+\end{equation}
+where the last equation is valid only if the galaxy is isolated.
+\par Given the IMF and the SFR we can define a \emph{creation function}
+\begin{equation}
+    \frac{\text{d}N_{*}}{\text{d}m\text{d}t} = C(m,t) = \text{SFR}(t)\phi(m)
+    \label{eq:creationfunction}
+\end{equation}
+From this we can also define the \emph{present day mass function} as
+\begin{equation}
+    \text{PDMF} = \left\{
+        \begin{array}{ll}
+            \int_{0}^{t_{0}} C(m,t)\diff{t} & m\leq m_{0}\\
+            \int_{t_{0}-\tau(m)}^{t_{0}} C(m,t)\diff{t} & m\geq m_{0}
+        \end{array}
+        \right.
+    \label{eq:pdmf}
+\end{equation}
+where $t_{0}$ is the age of the Universe (present time), $m_{0}$ is the mass of stars that live longer than the age of the Universe and $\tau(m)$ is the lifetime along the MS.
+\par Let's call 
+\begin{equation*}
+    M_{*}(t) = \int_{0}^{t}\text{SFR}(t)\diff{t}
+\end{equation*}
+the mass of stars produced in a time $t$. If the IMF is as time independent as it looks
+\begin{equation*}
+    \text{PDMF} = \left\{
+        \begin{array}{ll}
+            M_{*}(t_{0})\phi(m) & m\leq m_{0}\\
+            \left[M_{*}(t_{0})-M_{*}(t_{0}-\tau(m))\right]\phi(m) & m\geq m_{0}
+        \end{array}
+        \right.
+\end{equation*}
+so that for low mass stars the PDMF is essentially the count of all stars to have ever formed, while for more massive stars it is the count of the stars that have formed in the last $\tau(m)$.
+\par Since for stars more massive than $3-4M_{\odot}$ $\tau(m)\ll t_{0}$, we can approximate the PDMF as 
+\begin{equation*}
+    \text{PDMF}(m)\approx \text{SFR}(t_{0})\phi(m)\tau(m)
+\end{equation*}
+This tells us two things about massive stars:
+\begin{enumerate}
+    \item They are intrinsically rare at birth, because the IMF is a power law peaking at low masses;
+    \item Their evolutionary times are short: massive stars are witnesses of the last $1-100\unit{Myr}$.
+\end{enumerate}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/sfhfromcm.png}
+    \caption{Masses in different ranges can inform us about the star formation history (SFH) of a galaxy, thus allowing us to put constrains of the various star formation epochs. Credits: M. Cignoni et Unknown (the plot).}
+    \label{fgr:sfhfromcm}
+\end{figure}
+In order to constrain the SFH over the entire Hubble time is sufficient to study a statistically significant sample of stars around $0.8-0.9M_{\odot}$. However, using the entire main sequence down to stars whose lifetimes exceed a Hubble time (roughly $0.8-0.9M_{\odot}$) provides many more stars sampling the same underlying SFH and therefore greatly strengthens the statistical constraints.
+\par The smaller the main-sequence mass we can resolve in a galaxy, the farther back in time we can probe its past. But what does this tell us about time resolution?
+\par The ideal conditions to recover the $\text{SFR}(t)$ over an entire Hubble time ($\sim 14\unit{Gyr}$) with a resolution of $1\unit{Gyr}$ at $13\unit{Gyr}$ are
+\begin{enumerate}
+    \item $M_{V} = 4-5$ which corresponds to $0.9-1.0M_{\odot}$ $\to$ Oldest MS turn-off;
+    \item Photometric error at $M_{V} = 4-5$ is about $0.1\unit{mag}$.
+\end{enumerate}
+If condition (1) is not satisfied, the “look-back time” is given by the MS evolutionary time of the minimum mass resolved in MS.
+\subsubsection*{Synthetic CMD}
+\par Another possible approach is that of the \emph{synthetic CMD approach}: We build a library of partial CMDs\footnote{Color-Magnitude Diagrams.}, where each each partial CMD is a Monte Carlo extraction from a step star formation and fixed metallicity and repeat this for a grid of (reasonable) metallicities. After that we add observational errors and compute 
+\begin{equation*}
+    N_{S} = \sum_{j}a_{j}\cdot N_{j,S}
+\end{equation*}
+where $N_{S}$ is the number of stars in bin S for the combined model CMD, $a_{j}$ are the coefficients that indicate the relative star formation rate and $N_{j,S}$ is the same number corresponding to partial model $j$ (stepwise SFR).
+\par The comparison between the observed CMD and the model CMDs is done through a maximum likelihood (Poisson distributed) minimization of the differences in the number of stars in the chosen grid
+\begin{equation*}
+    \chi_{p} = 2\sum_{i}\left[e_{i} - o_{i}+o_{i}\ln\left(\frac{o_{i}}{e_{i}}\right)\right]
+\end{equation*}
+where $e_{i}$ are the expected events in the $i$-th bin and $o_{i}$ are the observed events. In short:
+\begin{enumerate}
+    \item The observed CMD is divided onto a 2D grid;
+    \item A number of synthetic CMDs are produced, with a uniform distribution of ages and metallicities within intervals $\Delta t$ and $\Delta Z$ centred around discrete $Z$ and $t$ values (quasi- simple populations);
+    \item Model stars in each cell as described above;
+    \item Given the observed $o_{i}$ counts in each cell, the coefficients $a_{j}$ are obtained after minimization of some merit function like $\chi^{2}$;
+    \item Extinction, distance modulus, binary fraction estimates can also be included in the minimization procedure.
+\end{enumerate}
+\par This procedure can give a lot of interesting results, see for example \cite{dolphin2005}.
+\subsection{Star Formation History of Dwarf Galaxies}
+In contrast with massive galaxies, whose SFH seems to fall in two broad types, continuous and about constant for disk galaxies, peaked at early times for ellipticals, the SFH of dwarf galaxies seems to be extremely complicated with no universal pattern.
+\par The SFH of dwarf galaxies seems to depend on (at least) the following mechanisms:
+\begin{enumerate}
+    \item  Interaction with major galaxies (gas stripping by ram pressure, repeated tidal shocks, more about these in later chapters\footnote{As a brief anticipation: Ram pressure: A galaxy passing through the ICM feels an external pressure. This pressure depends on the ICM density and the relative velocity of the galaxy and the ICM. Tidal shocks: A tidal shock happens when a satellite galaxy passes by a large mass, resulting in gravitational perturbation on a time scale that is much shorter than the mean time for a star to complete an orbit within the satellite. This causes the satellite to expand and shed some of the outer stars});
+    \item Internal events (e.g., SNe);
+    \item UV radiation from reionization (as may be the case for UFDG).
+\end{enumerate}
+There seems to be a relation between the dwarf galaxy's distance from the primary galaxy and the mass of neutral Hydrogen it contains: In fact, Dwarf galaxies far away from M31 or the MW (for example) tend to be gas rich.
+\par Of course each relation worthy of its name must have some outliers, in this case are the dSphs galaxies Cetus and Tucana, which are both fairly far from the MW or M31, but both seem to be pretty old. Why is that so? Probably it was all caused by internal explosions (i.e. Type II SNe).
+\par At last, let us consider briefly UFDGs. They are the oldest, most dark matter-dominated, most metal poor galaxies known at present day. Since they stopped forming stars about $\sim 10\unit{Gyr}$ ago, all they've left are ancient stellar populations.
+\par Models assume that reionization heated the gas in small DM halos to $\sim 10^{4}\unit{K}$, and the resulting thermal pressure boiled the gas out of the halos and into the intergalactic medium (IGM). Gravity is too weak in these sub-halos to retain the gas or reacquire it from the reionized IGM. The stellar populations of the UFDGs, which are extremely similar to each other and dominated by ancient metal-poor stars, support the premise of an early synchronizing event in their SFHs.
+\par Brown et al. 2014 \cite{2014MmSAI..85..493B} found that within the uncertainties, all six of the UFD galaxies (Bootes I, Canes Venatici II, Coma Berenices, Hercules, Leo IV, and Ursa Major I) formed at least 80\% of their stars by $z\sim 6$, although this fraction might be as low as 40\% for UMa I and 60\% for Hercules and Leo IV. A two-burst model reproduces the data well, but we cannot rule out a single ancient burst of star formation in each galaxy.
+\par Beyond $20\unit{Mpc}$, wit the present instruments, we can’t resolve single stars. So, as we wait for really giant telescopes, we have to forget about using HR diagrams for our studies.
+\section{Unresolved Stellar Populations}
+Absorption lines are mainly formed in the outer layers of a star’s atmosphere, where atoms, ions, and molecules absorb radiation at specific wavelengths. Absorption lines can also be produced by cool interstellar gas lying along the line of sight, which absorbs photons at specific wavelengths from the background source. Young, massive stars ionize the surrounding gas, which then emits recombination lines as electrons recombine with ions.
+\par Studying these lines can be of pivotal importance to analyze and characterize unresolved stellar populations\footnote{See also \cite{Conroy2013}.}.
+\par The combination of many blackbody spectra spanning a range in temperatures produces a flairly flat overall spectrum, whose main feature is the 4000Å break. This "break" (essentially a sharp drop in the observed spectrum) is caused by metal absorption lines in the atmosphere of cooler stars\footnote{This is because there are many overlapping lines with $\lambda < 4000\unit{Å}$.} and from the lack of hot blue stars (O and B types). Hence we're expecting elliptical galaxies, which are old and metal rich, to have a sharper 4000Å break; conversely, spiral galaxies, which have mixed stellar populations spanning a range of ages and metallicities, we expect to have a weaker break. Lastly, we expect irregular galaxies to have little to no break, because they gather stellar populations of all ages, some of which are also very active and have a metallicity lower than spiral galaxies.
+\par Please note that the 4000Å break and the Balmer break have a different origin. The 4000 Angstrom break arises because of an accumulation of absorption lines of mainly ionized metals. As the opacity increases with decreasing stellar temperature, the 4000 Angstrom break gets larger with older ages, and it is largest for old and metal-rich stellar populations.
+\par The Balmer break at 3646 Angstrom (electrons being completely ionized directly from the second energy level of a Hydrogen atom) marks the termination of the Hydrogen Balmer series and is strongest in A-type stars ($7000-10000\unit{K}$, MS mass of $1.4-2.1M_{\odot}$). The break strength does not monotonically increase with age, but reaches a maximum in stellar populations of intermediate ages ($0.3 - 1\unit{Gyr}$).
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/galbreaks.png}
+    \caption{Examples of spectrum for different types of galaxies. In counterclockwise order: Elliptical, Spiral and Irregular galaxies.}
+    \label{fgr:galbreaks}
+\end{figure}
+\par From the ingredients we have available (IMF, isochrones and stellar spectra) we can generate the spectra of SSPs over range of age and metallicities, so that we can later combine SSPs to generate composite stellar populations and/or introduce effects of dust if necessary. The spectrum of a simple stellar population we will thus be describing as
+\begin{equation}
+    f_{\text{SSP}}(t,Z) = \int_{m_{\text{low}}}^{m_{\text{up}}}f_{*}[T_{\text{eff}}(M), \log g(M)|t, Z]\cdot \text{IMF}(M)\diff{M}
+    \label{eq:sspspectrum}
+\end{equation}
+from which we can also create a synthetic spectrum for composite stellar populations
+\begin{equation}
+    f_{\text{CSP}}(t,Z) = \int_{0}^{t}\int_{0}^{Z_{\text{max}}}\left[\text{SFR}(t-t')P(Z, t-t'))f_{\text{SSP}}(t', Z)\right]\diff{t'}\diff{Z}
+    \label{eq:cspspectrum}
+\end{equation}
+where SFR$(t-t')$ is the SFH of the composite population and $P(Z, t-t')$ represents the chemical evolution of the population. Some typical examples to study the spectral evolution of a composite population are assuming SFH$(t) = \delta(t-t_{0})$, so an instantaneous burst in stellar formation, a constant SFH or an exponential SFH. 
+\par Whatever the star formation history we're looking at, there always are some spectral features that will be more or less emphasized by the different metallicity content of the population.
+\begin{enumerate}
+    \item \emph{Lyman break}: It represents the end of the Lyman series at $912\unit{Å}$. Can only be observed in the presence of neutral Hydrogen ($T_{\text{eff}}\lesssim 3\cdot 10^{4}\unit{K}$). It is primarily sensitive to recent star formation, i.e. ages $\lesssim 100\unit{Myr}$;
+    \item \emph{4000Å break}: It is caused vy several features of absorption of metals in the stellar atmosphere. It increases with age and metallicity (age indicator, but trends mostly with metallicity);
+    \item \emph{Balmer break}: It represents the end of the Balmer series at $3646\unit{Å}$, which is associated to the energy needed for an electron to escape from level $n=2$. It is maximum at age $0.3-1\unit{Gyr}$.
+\end{enumerate}
+\par Up until now, we have been focusing on the spectral and photometric side: blue galaxies tend to be actively forming stars, while red galaxies are usually more quiescent. But morphology is a different observable. A galaxy can be smooth or disk-dominated, spiral or elliptical, barred or unbarred, independently of how we first describe its colors.
+\par This is exactly where Galaxy Zoo becomes important: it provides a large-scale, visually based morphological classification, allowing us to connect galaxy shape with color, star formation history, and quenching.
+\par Recall Fig.\ref{fgr:hubblefork}. If we were to produce an average color to galaxy morphology plot, we'd find what's shown in Fig.\ref{fgr:colormorphology}.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/colormorphology.png}
+    \caption{Average color index B-V as a function of the galaxy morphology.}
+    \label{fgr:colormorphology}
+\end{figure}
+\par From Fig.\ref{fgr:colormorphology} it would appear that early types (ellipticals) are red and late types (spirals) are blue, thus suggesting a possible distinction between (respectively) "dead" and "alive" galaxies (speaking from the point of view of star formation). Is it actually the case? Nope.
+\par To properly classify galaxies, we shall only make morphologic distinctions ignoring (for the moment) colors. This was what the Galaxy Zoo project has started doing back in 2007. About a million galaxies were sorted, classified and examined on the basis of morphology only.
+\par When the morphologic distinction was made (early type vs late type), colors were reintroduced. To be considered was the u-r color index, which is an optical color sensitive to recent star formation (up to $1\unit{Gyr}$).
+\par What was found by \cite{Schawinski2014} is that there are not just blue and red galaxies, there are also intermediate color galaxies which we call \emph{green valley galaxies}.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/greenvalley.png}
+    \caption{The reddening-corrected u-r color-mass diagram for the considered sample. Very few green or red late-type galaxies actually belong in the blue cloud. The slope of the disk galaxy contours becomes more horizontal, making clear that late types evolve more slowly than early-type galaxies. Moreover, there is clearly a tail of galaxies rising above the blue cloud at high masses, whereas the blue tail of the early types is toward low masses. While some red late types are indeed dust-reddened, intrinsically blue galaxies, many are not, and the overall sense remains that the colours of late-type galaxies change slowly. Credits: \cite{Schawinski2014}.}
+    \label{fgr:greenvalley}
+\end{figure}
+\par What kind of galaxies live in the green valley?
+\begin{enumerate}
+    \item They look like an intermediate type spiral (generally S0 to Sb in Hubble type) showing disks and bulges as well as dust lanes, rings and disturbed outer parts, but poor or not well-distinguished spiral arms;
+    \item No single Hubble type is found only in the green valley, while both "early" and late Hubble types have some members in the grean valley.
+\end{enumerate}
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.5\textwidth]{img/galaxymorphtable.png}
+    \caption{Demographics of galaxies in the blue cloud, green valley and red sequence by morphology. Credits: \cite{Schawinski2014}.}
+    \label{fgr:galaxymorphtable}
+\end{figure}
+\par Using synthetic populations we can quantify the timescale on which star formation declines. We construct an illustrative SFH as follows: A constant SFR for $9\unit{Gyr}$ followed by a transition to an exponentially declining SFR with variable timescale, $\tau$ , representing he quenching timescale\footnote{In Italian, it would sound something like "Tempo di Spegnimento/De-attivazione".}
+\par Then we produce the color-color plot NUV-u vs u-r: The NUV-u color is very sensitive to the current star formation (up to $100\unit{Myr}$), while the u-r color is sensitive to "recent" star formation (up to $1\unit{Gyr}$).
+\par Then why are galaxies in the green valley?
+\begin{enumerate}
+    \item Green valley late and early types have the same u-r, so the same population up to $1\unit{Gyr}$;
+    \item Green valley late and early types have very different NUV-u (late type are still star forming in the green valley)
+\end{enumerate}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/galaxyquenching.png}
+    \caption{UV-optical color-color diagrams (corrected for dust) used to diagnose the recent star formation histories of galaxies. Unlike the sSFR diagrams, these color-color diagrams constrain the rate of change in the sSFR, i.e., how rapidly star formation quenches in these galaxies. In each panel, the grey contours represent the underlying galaxy population, while the coloured contours represent galaxies with (optical) green valley colors. In the top-left panel, we show the entire galaxy population and the early- and late-type galaxies in the green valley (orange and blue, respectively). Note that early-type galaxies in the (optical) green valley are significantly redder in NUV-u than late types with the same green valley (optical) colors, indicating they harbor far fewer very young stars. On top of the right-hand panels, we plot a series of evolutionary tracks. Each track follows the same star formation history. Credits: \cite{Schawinski2014}.}
+\end{figure}
+\par The late type galaxies in the green valley are inconsistent with most of the observed quenching tracks. Quenches $\tau = 1\unit{Gyr}$ barely go through the late type blue cloud locus. Only quenches $\tau= 2.5 \unit{Gyr}$ track pass through the bulk of the population. This indicates that long quenching timescales (several Gyr) are required to explain the evolution of late types.
+\par The early-type galaxies in the green valley are well matched by tracks with very short $\tau$. Both the instantaneous truncation track and the track with $\tau = 250\unit{Myr}$ pass straight through the early type green valley locus before reaching the red sequence.
+\par At present time, it seems that the AGNs identifies via emission lines seem not to be responsible for the quenching, as they appear several hundreds Myr along the quenching tracks.
+\par The bimodality we observe in, say, Fig.\ref{fgr:greenvalley}  is not just a phenomenon at the current epoch, but persists to higher redshifts (i.e., earlier in the age of the Universe).
+\par We see that while fainter red-sequence galaxies can come from the fading of blue, later type galaxies, there are very few blue galaxies that are bright enough to fade into the most luminous red sequence galaxies (at all redshifts). Something other than passive evolution of star forming galaxies has to be contributing to luminous red galaxies (e.g. merging, perhaps).
+\par Note, however, that this is clear evidence against, e.g., an ELS "early collapse" picture for forming early type galaxies, and suggests that the more modern picture where hierarchical mergers take place and ellipticals form from the mergers of spirals is still active to the current epoch, leading to the continued growth of the red sequence.
+\par It has also been found that for many galaxies there is a strong correlation between their stellar mass and their star formation rate
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/whentheycutyourgasfurniture.png}
+    \caption{Pictorial representation of what happens when a galaxy is cut away from her gas supply.}
+    \label{fgr:whentheycutyourgasfurniture}
+\end{figure}
+\begin{enumerate}
+    \item This correlation suggests that there is a self-regulating feedback operating in many galaxies that puts them in an equilibrium state that keeps them on this same locus for much of their lives. This correlation where the SFR is determined by (total galaxy mass in stars) followed by "normal" galaxies is often called the "galaxy main sequence" (e.g., Noeske et al. 2007, Rodighiero et al. 2011), suggesting a similarity to the color-magnitude diagram of stars (and where a star's mass determines where it spends most of it's life in the CMD);
+    \item Galaxies not following the normal star forming main sequence have gotten out of equilibrium and are either excited into extraordinary star formation rates (starbursts) or have gone quiescent, creating "red and dead" galaxies.
+\end{enumerate}
+This latter possibility might be cast in an equation form
+\begin{equation*}
+    \dot{M}_{\text{gas}} = \dot{M}_{\text{in}}-\text{SFR}-\dot{M}_{\text{out}}
+\end{equation*}
+If along the galaxy MS the system is in quasi-equilibrium, $\dot{M}_{\text{gas}}\approx 0$ and thus
+\begin{equation*}
+    \text{SFR}\approx \dot{M}_{\text{in}} -\dot{M}_{\text{out}}
+\end{equation*}
