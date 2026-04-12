@@ -1,1 +1,629 @@
 \chapter{Dust and ISM}\label{ch:iv}
+
+When we think of the Interstellar medium (ISM) we usually don't imagine it as a simple blob of gas filling the otherwise empty space between stars, but rather as a fluid constituted of several phases\footnote{Although how well-separated these phases are is a completely different question.}:
+\begin{enumerate}
+    \item \emph{Hot ionized medium} (HIM): Highly ionized phase with high temperature ($T>10^{6}\unit{K}$) and fairly low density ($n<0.01\unit{cm}^{-3}$);
+    \item \emph{Warm ionized medium} (WIM): Primarily found in H$_{\text{II}}$ regions around massive stars. Its density depends on the particular environment, but has a temperature of about $T\sim 10^{4}\unit{K}$;
+    \item \emph{Warm neutral medium} (WNM): It has a temperature of $T\sim 6000\unit{K}$ and a density $n\sim 0.3\unit{cm}^{-3}$;
+    \item \emph{Cold neutral medium} (CNM): It has a temperature of $T\sim 60\unit{K}$ and a density $n\sim 30\unit{cm}^{-3}$;
+    \item \emph{Molecular gas}: It has a temperature of $T\sim 10-20\unit{K}$ and a density $n > 100\unit{cm}^{-3}$;
+\end{enumerate}
+Note that, however, the phases are not rigidly fixed, but there's rather a constant cycling of matter from one to another.
+\section{Cold interstellar medium}
+For low density interstellar gas $n_{\text{H}}\approx 1\unit{cm}^{-3}$ and $T\approx 100\unit{K}$ ($\approx 0.008\unit{eV}$), meaning that the energy available for excitation from collisions is of the order $E\lesssim 10^{-2}\unit{eV}$, hence most atoms will be in their ground state (e.g., H and He need 10\,eV and 21\,eV, respectively, for excitation).
+\par However, transition between hyperfine levels in the ground state can still be excited by collisions. The most important of these transitions is the Hydrogen hyperfine transition, associated with the energy of the photon that is emitted when the system transitions from a state of total spin $F=1$ to the ground state with $F=0$. The radiation resulting from the spin flip will have a wavelength 
+\begin{equation}
+    \lambda_{hf} = \frac{3\pi\hbar^{5}m_{p}c^{3}}{g_{e}g_{p}m_{e}^{2}e^{8}}\approx 21.106114054160(30)\,\text{cm}
+    \label{eq:21cm}
+\end{equation}
+and thus an associated energy of about $\Delta E \approx 6\power{10}{-6}\unit{eV}$.
+\par Because the density of the ISM is very low, the particles have a large mean free path. As the typical cross section and meen free path of an atom for collisions is of the order
+\begin{equation*}
+    \sigma_{c} \approx 10^{-15}\unit{cm}^{-2} \implies l_{c} = (n_{\text{H}}\sigma_{c})^{-1}\approx \frac{10^{15}}{n_{\text{H}}}\unit{cm}
+\end{equation*}
+The typical velocity can be estimated from the equipartition theorem, thus leading to a half-life timescale for collisions of 
+\begin{equation}
+    \tau_{c}^{-1} = \frac{v}{l_{c}} = \left(\frac{3kT}{m_{\text{H}}}\right)^{1/2}n_{\text{H}}\sigma_{c} = 7\power{10}{-12}n_{\text{H}}T^{1/2}\unit{s}^{-1}
+    \label{eq:collisiontimescale}
+\end{equation}
+For a low density interstellar gas $n_{\text{H}}\approx 1\unit{cm}^{-3}$ and $T\approx 100\unit{K}$, we obtain $\tau_{c}\approx 500\unit{yr}$.
+\par On the other hand, the hyperfine transition is highly forbidden with a life-time of 11 millions years! During that time, most of the atomic Hydrogen should be in the ground state, so why do we still observe the emission line? Because collisions keep the level populated.
+\subsubsection*{H$_{\text{I}}$ clouds}
+\par The typical size of an H$_{\text{I}}$ cloud is $R\approx 5\unit{pc}$, with a typical mass of $M\approx 500M_{\odot}$ and temperature $T\approx 100\unit{K}$. We can easily evaluate its internal energy
+\begin{equation*}
+    U\approx \frac{3MkT}{2m_{\text{H}}}\approx 10^{46}\unit{erg}
+\end{equation*}
+which turns out to be larger than the average gravitational energy\footnote{Note that including turbulence (which further increases internal energy) only strengthens the argument that most H$_{\text{I}}$ clouds in the Milky Way are not gravitationally bound.}
+\begin{equation*}
+    E_{g} \approx \frac{GM^{2}}{R}\approx 3\power{10}{45}\unit{erg}
+\end{equation*}
+which implies that most diffuse Galactic H$_{\text{I}}$ clouds are not gravitationally bound. This means that the clouds can only be stable if they are in pressure equilibrium with their environment.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.6\textwidth]{img/clouddiameter.png}
+    \caption{The diameters of H$_{\text{I}}$ clouds as a function of their distance. The inclined lines show the limitations of cloud survey. Credits: Gosachinskij et al. 1999.}
+\end{figure}
+\subsubsection*{Molecular gas}
+High density molecular clouds were first detected as dark globules which absorb the light of stars in the Milky Way.
+\par The main content of the molecular clouds, namely $\text{H}_{2}$ molecules, can not be detected easily in the radio and, so, these clouds were first surveyed based on radio emission of the CO molecule (rotational transition from $J=1$ to $J=0$ corresponding to $2.6\unit{mm}$ wavelength).
+\par CO is the next most abundant molecule and has bright lines at microwave frequencies. It can be used to trace cold gas, but relies on a conversion factor from CO to $\text{H}_{2}$ mass, and has been detected in host galaxies of some of the most distant QSOs.
+\par There are several problems regarding the direct detection of $\text{H}_{2}$ lines
+\begin{enumerate}
+    \item For $\text{H}_{2}$, the first thing to notice is that the first excited state, the $J = 1$ rotational state, is $175\unit{K}$ above the ground state. Since the dense ISM where molecules form is often also cold, $T\sim 10\unit{K}$, almost no molecules will be in this excited state. However, it gets even worse: $\text{H}_{2}$ is a homonuclear molecule, and for reasons of symmetry $\Delta J = 1$ radiative transitions are forbidden;
+    \item Instead, the $J=2$ state is $510\unit{K}$ above the ground state. This means that for a population in equilibrium at a temperature of $10\unit{K}$, the fraction of molecules in that particular state is $\sim 10^{-22}$, as quickly follows from Boltzmann's law for occupation numbers. Indeed, in a molecular cloud there are simply no $\text{H}_{2}$ molecules in states capable of emitting.
+\end{enumerate}
+\par So how do we breach over this bottleneck? We can study the emission lines of Carbon monoxyde. It has some notable advantages over $\text{H}_{2}$:
+\begin{enumerate}
+    \item It has a small but finite permanent dipole moment so that its transitions are relatively strong (compared to $\text{H}_{2}$);
+    \item Its strong binding means that it is widely distributed with a roughly constant abundance, at least where most Hydrogen is molecular (dissociation energy $D_{\text{CO}} = 11.09\unit{eV}$ against $D_{\text{H}_{2}}=4.48\unit{eV}$);
+    \item It has useful isotopic variants.
+\end{enumerate}
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/hydrogendistrib.png}
+    \caption{Distribution of H$_{\text{I}}$ and $\text{H}_{2}$ in the MW.}
+    \label{fgr:hydrogendistrib}
+\end{figure}
+\par As shown in Fig.\ref{fgr:hydrogendistrib}, atomic and molecular gas have very different radial distributions in the Milky Way: H$_{\text{I}}$ extends to large galactocentric radii, while $\text{H}_{2}$ is much more centrally concentrated and peaks in the molecular ring around $4-5\unit{kpc}$. This reflects the fact that molecular gas requires denser, better shielded environments and is much more closely linked to star formation.
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=Giant Molecular Clouds (GMCs),
+  boxed title style={size=small,colframe=blue!50!black}]
+  Giant Molecular Clouds have a typical mass of $10^{4}-10^{6}M_{\odot}$, distributed over a typical size of $5-100\unit{pc}$. In the coldest regions they can reach temperatures of $10-30\unit{K}$, with a typical density of $10^{2}-10^{6}\unit{cm}^{-3}$.
+  \par GMCs have a hierarchical structure highly not uniform:
+  \begin{enumerate}
+    \item Clouds ($\geq 10\unit{pc}$);
+    \item Clumps ($\sim 1\unit{pc}$) which are precursors of stellar clusters;
+    \item Cores ($\sim 0.1\unit{pc}$) which are high density regions that can form individual stars or binaries.
+  \end{enumerate}
+\end{tcolorbox}
+\section{The Warm Ionized Medium}
+The Orion Nebula is a typical H$_{\text{II}}$ region. It is associated with a nearby molecular cloud. H$_{\text{II}}$ regions are dominated by the warm interstellar medium but also have cool and hot components. Part of the dense gas of the molecular has collapsed and formed stars. The most massive stars (O stars) can ionize Hydrogen and heavier elements like Oxygen, Nitrogen, Sulfur etc.
+\par What is the energy source that makes possible such large ionized clouds? Most likely, it is the energy delivered by supernovae. After about 200 years the ISM temperature drops to $10^{6}-10^{7}\unit{K}$. At these temperatures, cooling is mostly achieved through thermal Bremsstrahlung, a rather inefficient process. A typical example of a supernova remnant is the Crab nebula. It is about a 1000 years old and still expands with a velocity of about $1100\unit{km}\unit{s}^{-1}$.
+\par The existence of a multi-phase medium is only possible if energy flows in and out of the system: An isolated system in equilibrium will develop into a one-phase medium. So, in order to characterize our ISM we'll have to consider the complex and delicate interplay between heating and cooling mechanisms.
+\par For example, some heating processes might be
+\begin{enumerate}
+    \item Photoionization: It is caused from UV photons emitted by, for example, massive stars;
+    \item Cosmic rays: Usually produced as the after effect of shocks and particles acceleration, perhaps induced by SNe;
+    \item Shock heating: As the name suggests, it is the heating induced by the passing of a shockwave, produced, for example, from SNe or the collision of two clouds;
+    \item X-ray (from hot ISM) photons go through photoelectric  effect on PAHs (Polycyclic aromatic Hydrocarbon, essentially large molecules made of carbon and hydrogen) and dust.
+\end{enumerate}
+\subsection{Photoionization: H$_{\text{II}}$ regions}
+Massive stars produce large numbers of ionizing photons (energy above $13.6\unit{eV}$) which ionize Hydrogen in the vicinity.
+Detailed nebular structure depends on density distribution of surrounding gas, so for the moment we'll consider an ideal configuration, that of a star in a uniform medium of pure Hydrogen.
+\par We'll assume that
+\begin{enumerate}
+    \item The central star is turned on instantly;
+    \item The ionization cross section is $\sigma_{\text{H}}\sim 6.3\power{10}{-18}\unit{cm}^{2}$ for neutral Hydrogen;
+    \item If the gas density is about $10^{3}\unit{cm}^{-3}$ (dense GMC), then mean free path is about $10\unit{AU}$ before ionizing an atom. Ionizing photons cannot, in principle, escape the GMC;
+    \item For the ionized gas, the much smaller Thomson cross section applies $\sigma_{T}\sim 6.7\power{10}{-25}\unit{cm}^{2}$, which has an associated mean free path of about $500\unit{pc}$. Stellar photons travel freely through ionized gas to the edge of the neutral material;
+    \item The ionized H$_{\text{II}}$ region around the star is called a Strömgren sphere;
+    \item The H$_{\text{II}}$ region is separated from the surrounding H$_{\text{I}}$ region by a thin layer of thickness $\delta \sim 10\unit{AU}$.
+\end{enumerate}
+The H$_{\text{II}}$ region develops thanks to the photons emitted by the central star, which must be energetic enough to photoionize the gas in a given time. These photons serve two purposes: To expand the H$_{\text{II}}$ region and to compensate for radiative recombinations in the already ionized gas close to the star (i.e. to reionize atoms that have fallen back to the ground state).
+\par To expand the H$_{\text{II}}$ region by $\text{d}R$, the star must ionize $4\pi R^{2}n_{\text{H}}\text{d}R$ atoms. In the interior of the region, with $n_{i}$ and $n_{e}$ are the number densities of ions and electrons, $\alpha(T)$ the recombination rate coefficient (weakly dependent on temperature ) we have
+\begin{equation*}
+    N_{\text{rec}} = \frac{4\pi}{3}R^{3}n_{i}n_{e}\alpha(T)
+\end{equation*}
+so that the equation for the time development of the region is then
+\begin{equation}
+    \text{d}N_{\gamma} = 4\pi R^{2}n_{\text{H}}\text{d}R + \frac{4\pi}{3}R^{3}n_{i}n_{e}\alpha(T)\text{d}t
+    \label{eq:photoionizationbalance}
+\end{equation}
+Rearranging the terms, if we call $Q = \dot{N}_{\gamma}$, the number of ionizing photons emitted per second is constant
+\begin{equation*}
+    \dot{R} = \frac{Q}{4\pi R^{2}n_{\text{H}}}-\frac{n_{i}n_{e}\alpha(T)R}{3n_{\text{H}}}
+\end{equation*}
+which we can solve to find 
+\begin{equation}
+    R(t) = R_{s}\left(1-e^{-t/\tau_{r}}\right)^{1/3} \quad R_{s} = \left[\frac{3Q}{4\pi n_{i}n_{e}\alpha(T)}\right]^{1/3} \quad \tau_{r} = \frac{1}{n_{\text{H}}\alpha}
+    \label{eq:stromgrenradius}
+\end{equation}
+where we can introduce the further simplification for pure Hydrogen $n_{i} = n_{e} = n_{\text{H}}$. The volume of the H$_{\text{II}}$ region is small at first, and most photons will ionize the gas at its edge, which will be then expanding rapidly. Note that in principle the expansion speed of the region might be rather larger than the sound speed in the gas, which has no time to react to the passing ionization front.
+\par As region grows, need more photons to balance recombinations. When all photons are needed, get size of region by setting $\dot{R} = 0$, and thus
+\begin{equation*}
+    R_{s} = \left[\frac{3Q}{4\pi n_{i}n_{e}\alpha(T)}\right]^{1/3}
+\end{equation*}
+which for a typical O star can get as large as $0.6\unit{pc}$\footnote{The interested reader can refer to \cite{2006agna.book.....O}.}.
+\par We have also other additional effects that it might be worth taking into account:
+\begin{enumerate}
+    \item Photons produced by recombinations into highly excited states will have energies low enough to escape the H$_{\text{II}}$ region;
+    \item Recombinations to $n = 1$ produce new ionizing photons. A diffuse radiation field produced by recombinations. The diffuse field is more important for denser regions. Typically, it increases the radius by 10-30\%;
+    \item Pressure is proportional to $nT$. Ionized gas has twice as many particles per unit volume as the neutral gas, plus it has $T\sim 7000\unit{K}$ as compared to $T<100\unit{K}$ in the H$_{\text{I}}$. So H$_{\text{II}}$ region is over-pressured compared to the H$_{\text{I}}$, and will expand because of this alone.
+\end{enumerate}
+Still, the observed temperatures for electrones in H$_{\text{II}}$ regions are always around $\sim 10^{4}\unit{K}$. But why? Since the central source of the region is (typically) an O-type star, we might as well be expecting much higher temperatures for the nebula. What we have to consider to reconcile observed and computed temperatures are additional cooling processes aside from just recombination emission, namely Free-Free radiation (Bremsstrahlung) and the collisional excitation of heavier ions.
+\subsection{Shock Heating}
+A shock wave is a pressure-driven compressive disturbance propagating faster than signal speed. Shocks are ubiquitous in the interstellar medium: Expanding H$_{\text{II}}$ regions, SN explosions, stellar winds, accretion processes, cloud-cloud collisions etc etc.
+\par For this part I'll be following \cite{Frank_King_Raine_2002}. Relevant paragraphs for this section are §2.4 and §3.8.
+\par Let's write Euler's equation and the continuity equation in a conservative form 
+\begin{align*}
+    \partial_{t}(\rho\vec{v}\,) + (\vec{v}\cdot\nabla)(\rho\vec{v}\,) &= -\nabla\, p\\
+    \partial_{t}\rho +\nabla(\rho\vec{v}\,) &= 0
+\end{align*}
+and look for perturbations around the equilibrium solution.
+\begin{align*}
+    \vec{v} &= \vec{v}_{0} + \vec{v}_{1}\\
+    p &= p_{0}+p_{1}\\
+    \rho &= \rho_{0}+\rho_{1}
+\end{align*}
+Since Euler's equation (and by extension, Navier-Stokes' equation) is invariant under Galileian transformations, we can set $\vec{v}_{0} = 0$. We shall also assume a one dimensional motion and a barotropic equation of state, allowing us to linearize our equations.
+\par Quantities with the "0" subscript are assumed to be uniform and stationary. Keeping only first order quantities, we find
+\begin{align*}
+    \partial_{t}\rho_{1}+\rho_{0}\partial_{x}v_{1} &= 0\\
+    \rho_{0}\partial_{t}v_{1} +\left(\frac{\partial p}{\partial \rho}\right)_{0}\frac{\partial\rho_{1}}{\partial x} &=0
+\end{align*}
+Cross derivating the two equations and plugging one equation into the other, we end up with 
+\begin{equation}
+    \partial^{2}_{t}\rho_{1}-\left(\frac{\partial p}{\partial \rho}\right)_{0}\partial^{2}_{x}\rho_{1} = 0
+    \label{eq:soundwaves}
+\end{equation}
+which is a hyperbolic equation describing propagating density waves!
+\par We can identify
+\begin{equation*}
+    c_{s}^{2} = \left(\frac{\partial p}{\partial \rho}\right)_{0}
+\end{equation*}
+as the \emph{speed of sound} in the fluid. Sometimes $c_{s}$ is also said to be the compressibility of the fluid. For example, if we consider an adiabatic EoS $p = k\rho^{\gamma}$, the speed of sound will be 
+\begin{equation*}
+    c_{s} = \sqrt{\frac{\gamma p}{\rho}} \propto \rho^{(\gamma-1)/2}
+\end{equation*}
+meaning that the sound speed is higher in denser gas. In the cold ISM the typical sound speed is $c_{s}\lesssim 1\unit{km}\unit{s}^{-1}$.
+\par Since $c_{s}$ is the speed at which pressure (or density) perturbations travel through the gas, it limits the rapidity with which the fluid can react to such changes. For example, if the pressure in one part of a region of the fluid of characteristic size $L$ is suddenly changed, the other parts of the region cannot respond to this change until a time of order $L/c_{s}$, the sound crossing time, has elapsed.
+\par In a sense, $c_{s}$ is also the velocity at which causality travels in the fluid. Thus, if we were to consider a \emph{supersonic flow}, then the fluid wouldn't be able to respond on the flow time $L/\left|\vec{v}\right|$, so pressure gradients have little effect on the flow. At the other extreme, for subsonic flows the fluid can adjust in less than the flow time, so to a first approximation the fluid behaves as if in hydrostatic equilibrium.
+\par The density dependence of the sound speed implies that regions of higher than average density have higher than average sound speeds, a fact which gives rise to the possibility of \emph{shock waves}.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/shockformation.png}
+    \caption{The formation of a shock wave. Credits: Frank, King and Raine.}
+    \label{fig:shock_dev}
+\end{figure}
+\par In a shock, relevant fluid quantities change on lengthscales of the order of the mean free path and this is represented as a discontinuity in the fluid.
+\subsubsection{Rankine-Hugoniot junction conditions}
+\par Since discontinuities are introduced into the picture, we can no longer use differential quantities to describe conservations. The solution to this problem is easily found looking into \emph{integral quantities}.
+\par To do so, it is convenient to choose a reference frame in which the shock is at rest. Since the shock thickness is small, we can regard it as locally plane; moreover, since the fluid flows through the shock so quickly, changes in the fluid conditions cannot affect the details of the transition across the shock, so we can regard the flow into and out of the shock as steady.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.5\textwidth]{img/junctionconditions.png}
+    \caption{Calculation of the Rankine-Hugoniot junction conditions. \\Credits: Frank, King and Raine.}
+    \label{fig:RH_JC}
+\end{figure}
+\par All we have to do is apply the various conservation laws in their integral form 
+\begin{align}
+    \rho_{1}v_{1} &= \rho_{2}v_{2}\\
+    p_{1}+\rho_{1}v_{1}^{2} &= p_{2}+\rho_{2}v_{2}^{2}\\
+    (\varepsilon_{1}+p_{1})u_{1} &= (\varepsilon_{2}+p_{2})u_{2}
+    \label{eq:RH_JC}
+\end{align}
+which are respectively mass flux, momentum flux and energy flux conservation. Especially in the latter, we've assumed radiative losses, thermal conduction, etc., across the shock front to be negligible.
+\par This is the adiabatic assumption, and the resulting junction conditions are known as the adiabatic shock conditions or \emph{Rankine-Hugoniot junction conditions}.
+\par Keeping Fig.\ref{fig:RH_JC} in mind, we can proceed to find a unique relation connecting the ratio of the downstream density (or velocity) $\rho_{2}$ and upstream density to the pressure
+\begin{equation*}
+    \frac{\rho_{2}}{\rho_{1}} = \frac{v_{1}}{v_{2}} = \frac{(\gamma +1)p_{1}+(\gamma-1)p_{2}}{(\gamma-1)p_{1}+(\gamma+1)p_{2}}
+\end{equation*}
+Note that it is not assured for the adiabatic coefficient $\gamma$ to come out unscathed from the shock, even more so if it is energetic enough to ionize the fluid.
+\par Usually, RH junction conditions are expressed in terms of the \emph{Mach number} $\mathcal{M}_{i} = v_{i}/c_{s,i}^{\text{ad}}$. For a monoatomic gas $\gamma = 5/3$, the RH junction conditions yield
+\begin{equation*}
+    1+\frac{v_{2}}{v_{1}} = \frac{5}{4}\left[\frac{3}{5\mathcal{M}_{1}^{2}}+1\right]
+\end{equation*}
+In the limit of a strong shock, condition often met in astrophysical shocks, $\mathcal{M}_{1} \gg 1$\footnote{Here $\mathcal{M}$ is the upstream Mach number.}, we find out that 
+\begin{equation*}
+    \frac{v_{2}}{v_{1}} = \frac{\rho_{1}}{\rho_{2}} = \frac{1}{4}
+\end{equation*}
+i.e. the velocity drops to one-quarter of its upstream value across the shock while the gas is compressed by a factor 4 in a strong shock.
+\par For more general gases, assuming adiabatic compression, the limit compression rate is 
+\begin{equation*}
+    \frac{v_{2}}{v_{1}} = \frac{\rho_{1}}{\rho_{2}} = \frac{\gamma -1}{\gamma +1}
+\end{equation*}
+while in general is possible to show that 
+\begin{equation*}
+    \frac{\rho_{2}}{\rho_{1}} = \frac{(\gamma+1)\mathcal{M}_{1}^{2}}{(\gamma+1)+(\gamma-1)(\mathcal{M}_{1}^{2}-1)}
+\end{equation*}
+It is also possible to show that the downstream temperature $T_{2}$ scales as 
+\begin{equation*}
+    T_{2} \to \frac{3}{16}m\frac{v_{1}^{2}}{k} = \frac{3}{16}m\frac{v_{\text{shock}}^{2}}{k}
+\end{equation*}
+where we've used the fact that, in the system of the shock, the unperturbated ISM moves at $v_{1}$, so $v_{1}$ is also the shock speed. This is why SNe produce a hot ISM
+\begin{equation*}
+    v_{\text{shock}} \sim 1000\unit{km}\unit{s}^{-1}\implies T_{2}\approx 10^{7}\unit{K}
+\end{equation*}
+\par To derive the junction conditions, we have made the useful assumption that the shock is at rest, this is handy mathematically but clearly impractical. In most astrophysical situations, it is convenient to consider an external frame of reference at rest with the unperturbed fluid with respect to which the shock moves at velocity $v_{\text{shock}} = v_{s}$. External velocities are indicated here with a prime superscript.
+\par In other words, the perturbed medium follows the shock but it cannot fully keep up with it, lagging behind as the shock proceeds into the unperturbed fluid. The consequence of this is that the size of the perturbed region will tend to increase with time.
+\par Let us now calculate the sound speed in the perturbed medium
+\begin{equation*}
+    c_{s,2} = \sqrt{\gamma\frac{p_{2}}{\rho_{2}}} = \sqrt{\gamma\frac{3}{16}v_{s}^{2}}
+\end{equation*}
+which for a monoatomic ideal gas is $c_{s,2} = 0.56v_{s}$. The passage of the shock has instead left behind a fluid in which the sound speed is of the order of the shock speed, much greater than before. The shock converts part of the ordered bulk kinetic energy of the incoming flow into thermal random motion of the particles in the shocked gas.
+\par We've seen that a shock wave propagating at a speed $v_{s}=1000\unit{km}\unit{s}^{-1}$ will bring the perturbed medium to a temperature exceeding $10^{7}\unit{K}$. Under these conditions, the medium is almost completely ionised (all atoms have lost their electrons) and the emission is dominated by the Bremsstrahlung, thus leading to a cooling rate
+\begin{equation*}
+    \tau_{\text{cool}} \approx 10^{7} \left(\frac{n_{e}}{1\unit{cm}^{-3}}\right)^{-1}\unit{yr}
+\end{equation*}
+This is a long time compared to typical processes of the galactic ISM, longer for instance than the lifetime of a supernova.
+\par If instead the shock were moving at $v_{s} = 100\unit{km}\unit{s}^{-1}$ the temperature would be $1.6\power{10}{5}\unit{K}$. For line cooling (collisional cooling), the cooling time would be of order 
+\begin{equation*}
+    \tau_{\text{cool}} \approx 10^{3} \left(\frac{n_{e}}{1\unit{cm}^{-3}}\right)^{-1}\unit{yr}
+\end{equation*}
+four orders of magnitude lower despite only two orders of magnitude in temperature (and only one in velocity). When the cooling time is short, radiative cooling cannot be neglected in most astrophysical phenomena\footnote{Nor can it, actually, in the calculation we've done for the RH junction conditions.}. Thus, the gas perturbed by shocks with velocities of the order of $100\unit{km}\unit{s}^{-1}$ will likely have important energy losses.
+\par If the shock is \emph{isothermal}\footnote{Sometimes called "radiative shock".} rather than adiabatic, there's no limit to compressibility. In fact, we'd find
+\begin{equation*}
+    \frac{\rho_{2}}{\rho_{1}} = \mathcal{M}_{1}^{2} = \frac{v_{1}}{v_{2}}
+\end{equation*}
+Moreover $v_{2}' \approx v_{s}$, meaning the shocked medium "sticks" to the shock front and moves at nearly the same velocity. As a consequence there's little or no expansion of the post-shock medium. The compressed fluid “piles up” immediately behind the shock, forming a dense region that follows the front almost instantly. This can lead to high-density, low-temperature structures (if the cooling is very efficient).
+\par The sources of astrophysical shocks are numerous:
+\begin{itemize}
+    \item \textbf{Cloud-cloud collision}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.7\textwidth]{img/cccollision.png}
+            \caption{Colliding clouds can compress the gas enough to generate a shock front.}
+        \end{figure}
+   \item \textbf{Expansion of H$_{\text{II}}$ region}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.6\textwidth]{img/h2shock.png}
+            \caption{The H$_{\text{II}}$ region might expand at supersonic speed, inducing a compression of the neutral Hydrogen.}
+        \end{figure}
+    \item \textbf{Supernova blast wave}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.6\textwidth]{img/snblastwave.png}
+            \caption{A SN explosion might be energetic enough to shock the surrounding ISM.}
+        \end{figure}
+    \item \textbf{Spiral shocks in galactic disks}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.6\textwidth]{img/spiralshock.png}
+            \caption{In this case, it is the rotation proper of the galaxy to induce shock fronts in the spirals, which are, effectively, simple overdensities.}
+        \end{figure}
+\end{itemize}
+\subsection{Cooling Processes in the ISM}
+The most efficient way to deplete and radiate away energy is through collisions with heavy ions (like Carbon and Oxygen), because
+\begin{enumerate}
+    \item The Hydrogen $21\unit{cm}$ line is rare (very low probability to decay) and not particularly energetic;
+    \item The first electronic level for neutral Hydrogen is reached at very high energy, $10.2\unit{eV}$, and only excited at very high temperatures.
+\end{enumerate}
+In fact, C$_{\text{II}}$ has fine structure lines at $158\,\mu\text{m}$, so they can readily and frequently be excited by collisions, while Hydrogen recombination lines only become important at higher temperatures.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/orionspectrum.png}
+    \caption{Optical spectrum of the Orion Nebula H$_{\text{II}}$ region (M42). The most common emission lines are depicted in orange.}
+    \label{fgr:orionspectrum}
+\end{figure}
+\par Consider for example Fig.\ref{fgr:orionspectrum}: It is made of a continuum emission (starlight and Bremsstrahlung emission from gas at $T\sim 10^{4}\unit{K}$) and spectral lines of two types: Hydrogen recombination lines (Balmer and Lyman) and collisionally excited forbidden lines from metals. The latter in particular appear to be really strong, despite the (relatively) low abundance of metals.
+\par That is because metals have many low-energy excited states, unlike Hydrogen or Helium, so they are efficiently excited by electron collisions at nebular temperatures. Their radiative decay then produces strong emission lines.
+\par An electron may change levels for a number of reasons:
+\begin{itemize}
+    \item Photo-excitation from a lower level;
+    \item Collisional excitation;
+    \item Collisional de-excitation from higher level;
+    \item Cascade from a higher level;
+    \item Recombination to an excited state.
+\end{itemize}
+All these changes in levels are usually addressed and handled through Einstein's $A$ and $B$ coefficients and the collisional excitation coefficients.
+\par Let's therefore examine how an ion is excited to a higher level by electron collisions with ions in a lower level under the assumption of statistical equilibrium. The cross section for this reaction\footnote{We'll assume a simple configuration in which an electron bumps against a ion of which we'll consider only two levels, 1 and 2. We'll assume that upward transitions can occur only through collisional excitations, while downward transitions can occur through spontaneous decay (determined by the $A_{21}$ coefficient) and collisional de-excitation.} is 
+\begin{equation*}
+    \sigma_{12}(u) = \frac{\pi\hbar^{2}}{m^{2}u^{2}}\frac{\Omega(1,2)}{\omega_{1}} \;\text{for}\;\frac{1}{2}mu^{2} > \chi
+\end{equation*}
+where $\Omega(1,2)$ is the energy-specific collision strength and $\omega_{1}$ is the statistical weight of the electron. Note that the cross section for excitation is zero below the threshold $\chi = h\nu_{21}$.
+\par There is a relation between the cross section for de-excitation and the cross section for excitation coming from the principle of detailed balance
+\begin{equation*}
+    \omega_{1}u_{1}^{2}\sigma_{12}(u_{1}) = \omega_{2}u_{2}^{2}\sigma_{21}(u_{2})
+\end{equation*}
+where $u_{1}$ and $u_{2}$ are related by the conservation of energy
+\begin{equation*}
+    \frac{1}{2}mu_{1}^{2} = \frac{1}{2}mu_{2}^{2}+\chi
+\end{equation*}
+The collisional de-excitation cross section has, not surprisingly, the same functional form as that of the excitation cross section (apart from a permutation $1\leftrightarrow 2$). The total collisional de-excitation rate per unit volume per unit time is then 
+\begin{align}
+    n_{e}n_{2}q_{21} &= n_{e}n_{2}\int_{0}^{\infty} u\sigma_{21}f(u)\,\text{d}u \\
+    &= n_{e}n_{2}\left(\frac{2\pi}{kT}\right)^{1/2}\frac{\hbar^{2}}{m^{3/2}}\frac{\Gamma(1,2)}{\omega_{2}}\\
+    &= n_{e}n_{2}\frac{8.629\cdot 10^{-6}}{T^{1/2}}\frac{\Gamma(1,2)}{\omega_{2}}
+    \label{eq:total_de-ex}
+\end{align}
+where $\Gamma(1,2)$ is the velocity-averaged collision strength
+\begin{equation*}
+    \Gamma(1,2) = \int_{0}^{\infty} \Omega(1,2; E)\exp(-E/kT)\, \text{d}\left(\frac{E}{kT}\right)
+\end{equation*}
+with $E = mu_{2}^{2}/2$. These coefficients must be calculated quantum-mechanically. Similarly, the collisional excitation rate is $n_{e}n_{2}q_{12}$, where 
+\begin{equation*}
+    q_{12} = \frac{8.629\cdot 10^{-6}\Gamma(1,2)}{T^{1/2}\omega_{1}}\exp(-\chi/kT)
+\end{equation*}
+\par For general electron densities we can write 
+\begin{align*}
+    n_{e}n_{1}q_{12} &= n_{e}n_{2}q_{21}+n_{2}A_{21}\\
+    \implies \frac{n_{2}}{n_{1}} &= \frac{n_{e}q_{12}}{A_{21}}\left[1+\frac{n_{e}q_{21}}{A_{21}}\right]^{-1}
+\end{align*}
+If you recall that the collisional coefficients are relatex throught the Boltzmann factor
+\begin{equation*}
+    q_{12}(T) = q_{21}(T)\left(\frac{g_{2}}{g_{1}}\right)\exp\left(-\frac{E_{21}}{kT}\right)
+\end{equation*}
+where $g_{2}$ and $g_{1}$ are the statistical weights of the two levels. Thus we can write 
+\begin{equation*}
+    n_{2} = \frac{n_{1}n_{e}q_{21}(T)}{A_{21}+n_{e}q_{21}(T)}\left(\frac{g_{2}}{g_{1}}\right)\exp\left(-\frac{E_{21}}{kT}\right)
+\end{equation*}
+where we can define a critical density for the transition 
+\begin{equation}
+    n_{e,c} = \frac{A_{21}}{q_{21}(T)}
+    \label{eq:criticaldensity}
+\end{equation}
+At densities above the critical density, transitions from the upper to lower level are more likely to occur through collisions rather than spontaneous decay.
+\par How do we use this information? Simple, we can calculate the luminosity of a line caused by a downward transition\footnote{Note that we consider only spontaneous emission of a photon because collisional de-excitation \emph{do not} produce photons.}
+\begin{equation*}
+    L_{21} = A_{21}n_{2}h\nu
+\end{equation*}
+so that the total cooling rate becomes 
+\begin{equation}
+    L_{C} = n_{2}A_{21}h\nu_{21} = n_{e}n_{1}q_{12}h\nu_{21}\left[1+\frac{n_{e}q_{21}}{A_{21}}\right]^{-1}
+    \label{eq:total_collision_luminosity}
+\end{equation}
+We can define two different regimes:
+\begin{equation*}
+    L_{21} = A_{21}n_{1}\left(\frac{g_{2}}{g_{1}}\right)\exp\left(-\frac{E_{21}}{kT}\right)h\nu \quad n_{e} \gg n_{e,c}
+\end{equation*}
+Above the critical density, the level populations approach LTE, so the line emissivity scales with the number of emitting ions and with $A_{21}$.
+\begin{equation*}
+    L_{21} = n_{1}n_{e}q_{21}(T)\left(\frac{g_{2}}{g_{1}}\right)\exp\left(-\frac{E_{21}}{kT}\right)h\nu
+\end{equation*}
+Below the critical density, the line emissivity is independent of $A_{21}$ and is proportional to the collisional excitation rate.
+\par The transition between these two regimes occurs at the critical density $n_{e,c}$. For permitted transitions (electric dipole radiation), the transitions rates occur at $A\sim 10^{8}\unit{s}^{-1}$ (then an electron will take, on average, $10^{-8}\unit{s}$ to decay) and corresponding critical densities of $10^{15}\unit{cm}^{-3}$ far above typical nebular densities.
+\par For forbidden lines, the $A$ coefficients are much smaller ($A \ll 1$ per second) so the critical densities are much lower, comparable to densities in typical nebulae.
+\par For example, the typical density of Earth's atomsphere is $3\power{10}{19}\unit{cm}^{-3}$, dropping to $10^{9}\unit{cm}^{-3}$ in specialized vacuum laboratories. On the other hand, the average value in the ISM within the MW is of $1 \unit{cm}^{-3}$, dropping to an astoundingly low $10^{-2}\unit{cm}^{-3}$ in hot and less dense regions.
+\par In Earth’s atmosphere, both are far above critical density, so the emissivity depends on $A$, and permitted lines dominate because their $A$-values are much larger. In the ISM, many lines are at or below their critical density, so the line emissivity is
+independent of $A_{21}$ and is proportional to the collisional excitation rate. Many metal ions have low-energy excited states so forbidden lines can be competing with permitted lines.
+\par Either way, the "bullet" is always the dominant species: electrons in H$_{\text{II}}$ regions and H$_{2}$ is molecular Hydrogen regions.
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=Important Cooling Species,
+  boxed title style={size=small,colframe=blue!50!black}]
+  Zero Metals:
+  \begin{itemize}
+    \item \textbf{H$_{2}$}: The first accessible rotational transition is the $J=2 \to 0$ transition, which has an associated energy separation of around $510\unit{K}$. At low temperatures, it becomes extremely hard to excite this transition, and therefore H$_{2}$ cooling becomes extremely ineffective;
+    \item \textbf{HD} (Hydrogen deuteride): HD does not have distinct ortho and para forms, and hence for HD molecules in the $J = 0$ ground state, the first accessible excited level is the $J = 1$ rotational level. In addition, HD is 50\% heavier than H$_{2}$, and hence has a smaller rotational constant and more narrowly spaced energy levels. The energy separation of its $J = 0$ and $J = 1$ rotational levels is $128\unit{K}$, around a factor of four smaller than the separation of the $J = 0$ and $J = 2$ levels of H$_{2}$. We would therefore expect HD cooling to remain effective down to much lower temperatures than H$_{2}$.
+  \end{itemize}
+  With Metals:
+  \begin{itemize}
+    \item \textbf{CO} (Carbon monoxide): The second most abundant molecular species in the local ISM, can play an important role in regulating the temperature within GMCs. CO is a particularly important coolant at very low gas temperatures, $T<20\unit{K}$, owing to the very small energy separations between its excited rotational levels.
+  \end{itemize}
+\end{tcolorbox}
+\section{Dust Extinction}
+Let's start our discussion about dust from a summary of the main evidence in favor of interstellar dust
+\begin{enumerate}
+    \item Extinction, reddening and polarization of starlight $\to$ dark clouds;
+    \item Scattered light $\to$ reflection nebulae and diffuse galactic light;
+    \item Continuum IR emission $to$ diffuse galactic emission correlated with H$_{\text{I}}$ and CO, young and old stars with large infrared excesses;
+    \item Depletion of refractory elements from the interstellar gas (e.g., Ca, Al, Fe, Si)
+\end{enumerate}
+\begin{figure}
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/barnard68_vlt.jpg}
+    \caption{Example of extinction due to the presence of interstellar dust.}
+    \label{fgr:barnard68}
+\end{figure}
+\subsection{Extinction}
+For simplicity, we consider homogeneous spherical dust particles of radius $a$ and introduce the cross section for extinction
+\begin{equation*}
+    \sigma_{\text{ext}}(\lambda) = \pi a^{2}Q_{\text{ext}}(\lambda)
+\end{equation*}
+where $Q_{\text{ext}}(\lambda)$ is the efficiency factor for extinction. The optical depth along a line sight with volumetric dust density $n_{d}$ is then
+\begin{equation*}
+    \tau_{\lambda} = \int n_{d} \sigma_{\text{ext}}\diff{s} = \sigma_{\text{ext}}\int n_{d}\diff{s} := \sigma_{\text{ext}}N_{d} 
+\end{equation*}
+where $N_{d}$ is the \emph{column density}.
+\par Assuming that the ISM is optically thin (no light is scattered more than one time), extinction in magnitudes $A_{\lambda}$ is defined in terms of the reduction in the intensity caused by the presence of the dust
+\begin{equation*}
+    I(\lambda) = I_{0}(\lambda)\exp\left(-\tau_{\lambda}\right)
+\end{equation*}
+hence 
+\begin{equation*}
+    A_{\lambda} = -2.5\log_{10}\left(\frac{I(\lambda)}{I_{0}(\lambda)}\right) = 1.086\tau_{\lambda}
+\end{equation*}
+In the MW we observe a characteristic $\lambda^{-1}$ behavior in the optical/NIR range, a steep rise towards shorter wavelengths in the UV/far-UV and a bump at about $\lambda = 220\unit{nm}$ with a $\Delta\lambda = 47\unit{nm}$.
+\par The extinction efficiency can be thought as the sum of scattering and absorption $Q_{\text{ext}}=Q_{\text{abs}}+Q_{\text{sca}}$, and we can express the amount and character of the scattering through the albedo
+\begin{equation*}
+    \epsilon = \frac{\sigma_{\text{sca}}}{\sigma_{\text{ext}}} = \frac{Q_{\text{sca}}}{Q_{\text{ext}}}
+\end{equation*}
+The matter of scattering and absorption can be solved exactly from Maxwell's equations under the assumption of a plane wave impinging on homogeneous spherical particles. Gustav Mie \cite{1908AnP...330..377M} solved this exact problem in 1908 assuming spherical particles of radius $a$ and a general refraction index $m = n-ik$ with $m=m(\lambda)$. Note that the imaginary part will handle the absorption, while the real part will account for the scattering.
+\par The mathematical basis is a multipole expansion of the scattered wave in terms of (vector) spherical harmonics, each multiplied by a radial Bessel function, plus the application of appropriate boundary conditions at the surface of the sphere. The basic parameter, measuring radius in terms of wavelength is $x = 2\pi a/\lambda$, thus defining three regimes
+\begin{enumerate}
+    \item $x \ll 1$: Rayleigh regime (long-wavelength limit);
+    \item $x \sim 1$: Mie regime, need many terms (oscillating);
+    \item $x \gg 1$: Geometric regime (short wavelengths limit).
+\end{enumerate}
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
+  title=Limits,
+  boxed title style={size=small,colframe=blue!50!black}]
+  We'll be mostly interested in considering the diffraction limit and the geometric limit. For the \emph{diffraction limit} $x \ll 1$
+  \begin{align*}
+        Q_{\text{abs}} &= -4x\Im\left(\frac{m^{2}-1}{m^{2}+2}\right)\propto \lambda^{-1}\\
+        Q_{\text{sca}} &= \frac{8}{3}x^{4}\Re\left[\left(\frac{m^{2}-1}{m^{2}+2}\right)^{2}\right]\propto \lambda^{-4}
+  \end{align*}
+  Note that in the expression for $Q_{\text{sca}}$ lays the answer for why the sky is blue. For the geometric limit $x \gg 1$
+  \begin{equation*}
+    Q_{\text{sca}} = Q_{\text{abs}} \to 1
+  \end{equation*}
+\end{tcolorbox}
+If we compared the extinction curves of the MW with that of a single grain of dust, we'd shortly find out that the two doesn't look very much alike. That is because the overall smoothness implies many components, while the breadth implies a distribution in sizes, with small grains more abundant than big ones\footnote{The typical toy model assumed water/ice grains of $50\unit{nm}$ and $250\unit{nm}$ in size, where the small grains are about the 90\% of the total.}.
+\par Let $m_{0}$ be the apparent magnitude the star would have in the absence of extinction. If along the line of sight there is extinction $A(r)$, we would observe $m_{\text{obs}} = m_{0} + A(r)$, so that
+\begin{align*}
+    m_{0} &= M+5\log r_{\text{true}} - 5\\
+    m_{\text{obs}} &= M+5\log r_{\text{true}} - 5 + A(r)
+\end{align*}
+If we ignore extinction 
+\begin{align*}
+    &m_{\text{obs}} = M+5\log r_{\text{inf}} - 5\\
+    &5\log r_{\text{true}} + A(r) = 5\log r_{\text{inf}}
+\end{align*}
+from which 
+\begin{equation*}
+    r_{\text{inf}} = 10^{0.2A(r)}r_{\text{true}}
+\end{equation*}
+reflecting into an average dimming of $1.5\unit{mag}$. This would lead to an overestimate of distances of about a factor of 2 and a consequent underestimate of space stellar density by a factor of 8, hence the problem that was issued by Kapteyn, who observed that the star density seemed to fall as the distance increased.
+\par Note that the extinction is minimal at the galactic poles $b = \pm 90\text{°}$ ($b$ is the galactic latitude), while on the galactic plane $b\approx 0\text{°}$ it can get as large as $\sim 1\unit{mag}\unit{kpc}^{-1}$
+\par The extinction depends on the dust properties and the column
+density in that particular direction. So a useful alternative is a ratio like $A_{\lambda}/A_{V}$ that is proportional to $\sigma(\lambda)/\sigma(V)$ and is a function of the dust properties only. Sometimes it is also used the ratio $\text{E}(\lambda - V)/\text{E}(B - V)$ where we've defined the \emph{reddening}
+\begin{equation}
+    \text{E}(\lambda_{1} - \lambda_{2}) = A(\lambda_{1})-A_{\lambda{2}}
+    \label{eq:reddending}
+\end{equation}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/reddening.png}
+\end{figure}
+\par Is it possible, observationally, to determine the extinction curves? Yup. One possible technique is the "pairing" of stars.
+\par The most reliable and widely used technique involves the ‘pairing’ of stars of identical spectral type (about the same temperature) and luminosity class (about the same surface gravity) but unequal reddening
+\begin{align*}
+    m_{1}(\lambda) &= M_{1}(\lambda)+5\log d_{1} -5 +A_{1}(\lambda)\\
+    m_{2}(\lambda) &= M_{2}(\lambda)+5\log d_{2} -5 +A_{2}(\lambda)
+\end{align*}
+The absolute magnitude $M(\lambda)$ is expected to be closely similar or identical for stars of the same spectral classification, thus we may assume  $M_{1} = M_{2}$. If $A(\lambda) = A_{1} \gg A_{2}$ (the extinction towards the star 2 is negligible compared to that towards star 1), then the magnitude difference reduces to
+\begin{equation}
+    \Delta m(\lambda) = 5\log\left(\frac{d_{1}}{d_{2}}\right) + A(\lambda)
+    \label{eq:stellarpairing}
+\end{equation}
+Let’s repeat the observations of the 2 stars in two filters $\lambda$ and $\lambda_{2}$, with extinction at $\lambda_{2}$ almost negligible, for example the k-band. This way we can calculate
+\begin{equation*}
+    \Delta m(\lambda) - \Delta m(\lambda_{1}) = A(\lambda)-A(\lambda(1)) \approx A(\lambda)
+\end{equation*}
+Thus, by simply calculating magnitude differences, we're able to produce an extinction curve. Now all that remains to be seen is how to paramertrize that curve. A widely used parameter is 
+\begin{equation}
+    R_{V} = \frac{A(V)}{\text{E}(B-V)} = \frac{\tau_{V}}{\tau_{B}-\tau_{V}} = \frac{\sigma_{V}}{\sigma_{B}-\sigma_{V}}
+\end{equation}
+which depends only on the grain type and is essentially a measure of the slope of the extinction law near $V$ band. For small grains it is approximately equal to $R_{V}\approx 1.2$, while for larger grains $R_{V}\to \infty$.
+\par In the galactic (MW) diffuse ISM and in the Large Magellanic Cloud: $R_{V}\approx 3.1$ varying along line sight from 2.1 to 5.8, where the latter is generally found in cores of dense clouds. In the Small Magellanic Cloud $R_{V}\approx 3.2$.
+\par The huge variability isn't exactly exciting news, but fortunately it has been shown \cite{1989ApJ...345..245C} that there is a universal mean extinction law that does indeed only scale with a single parameter, that is indeed $R_{V}$
+\begin{equation}
+    \frac{A_{\lambda}}{A_{V}} = a(\lambda)+\frac{b(\lambda)}{R_{V}}
+    \label{eq:extinctionlaw}
+\end{equation} 
+\subsubsection*{Dust-to-Gas ratio}
+In our Galaxy $\text{E}(B-V)$ is found to be directly proportional to the column density of Hydrogen in all its forms. Recall that
+\begin{equation*}
+    text{E}(B-V) \propto A_{V} \propto \sigma_{V}N(X)
+\end{equation*}
+this claim implies that 
+\begin{equation}
+    \frac{N(X)}{N(\text{H}_{\text{tot}})} \sim \text{const.}
+    \label{eq:dustgasratio}
+\end{equation}
+\par Extinction measurements of local diffuse clouds yield
+\begin{equation*}
+    \text{E}(B-V) \approx \frac{N_{\text{H}}}{5.8\power{10}{21}\unit{mag}^{-1}\unit{cm}^{-2}} \quad \text{or} \quad A(V) \approx \frac{N_{\text{H}}}{1.9\power{10}{21}}\unit{mag}\unit{cm}^{2}
+\end{equation*}
+where we've used $R_{V}\approx 3.1$. But, if we use the dependence of the extinction on the optical depth to calculate
+\begin{equation*}
+    \tau_{\lambda} = \int n_{d}\sigma_{\lambda}\diff{s} = \int \frac{\rho_{d}}{m_{d}}\sigma_{\lambda}\diff{s} = \int n_{\text{H}}\frac{m_{\text{gas}}}{m_{d}}\frac{\rho_{d}}{\rho_{\text{gas}}}\sigma_{\lambda}\diff{s}
+\end{equation*}
+where $\rho_{d}/\rho_{\text{gas}}$ is the dust to gas mass ratio, $m_{d}$ is the mass of a dust grain and $m_{\text{gas}}$ is the mean gas particle mass $\sim 1.4m_{\text{H}}$. Extracting the mean values from the integral
+\begin{equation*}
+    \tau_{\lambda} = \langle \frac{\rho_{d}}{\rho_{\text{gas}}}\rangle \langle \frac{m_{d}}{m_{\text{gas}}}\rangle Q_{\lambda}\pi a^{2}N_{\text{H}}
+\end{equation*}
+Introducing the average internal grain mass density $\rho_{\text{grain}}\sim 2.5\unit{g}\unit{cm}^{-3}$ and assuming spherical grains 
+\begin{equation*}
+    A_{\lambda} = 1.086\langle \frac{\rho_{d}}{\rho_{\text{gas}}}\rangle \langle \frac{m_{\text{gas}}}{\frac{4\pi}{3}\rho_{\text{grain}}a^{3}}\rangle Q_{\lambda}\pi a^{2}N_{\text{H}}
+\end{equation*}
+Numerically comparing with the empirical value $A(V)$ on the previous slides gives an estimate of the dust-to-gas ratio
+\begin{equation*}
+    \langle \frac{\rho_{d}}{\rho_{\text{gas}}}\rangle \approx 0.01
+\end{equation*}
+This means that only 1\% of the ISM in our Galaxy is dust.
+\section{Dust Emission}
+Studying emission maps of dust, we find out that it glows particularly bright in the FIR, so it will be our goal to correlate the reddening to the FIR flux. The most commonly used dust maps today are those created by \cite{1998ApJ...500..525S} from the COBE FIR maps.
+\par Assume equilibrium, so that starlight heating balances radiative cooling, and that all grains absorb and emit as black bodies modified by efficiencies $Q_{\text{abs}}(\lambda)$ and $Q_{\text{em}}(\lambda)$. It is convenient to define a spectrum averaged cross section 
+\begin{equation*}
+    \langle Q \rangle = \frac{\int u_{\lambda}Q(\lambda)\diff{\lambda}}{u_{*}} \quad \text{with} \quad u_{*} = \int u_{\lambda}\diff{\lambda}
+\end{equation*}
+where $u_{\lambda}$ is the energy density.
+\par Consider dust in the general interstellar radiation field (far from stars). For isotropic starlight flux $J_{s}$ we have 
+\begin{equation*}
+    4\pi J_{s}\pi a^{2}\langle Q_{\text{abs}} \rangle \approx 4\pi a^{2} \langle Q_{\text{em}} \rangle\sigma T_{d}^{4}
+\end{equation*}
+from which 
+\begin{equation*}
+    T_{d} \approx \left(\frac{\pi J_{s}}{\sigma}\right)^{1/4}\left(\frac{\langle Q_{\text{abs}} \rangle}{\langle Q_{\text{em}} \rangle}\right)^{1/4}
+\end{equation*}
+Assuming $J_{s}\sim 0.002 \unit{erg}\unit{s}^{-1}\unit{cm}^{-2}\unit{str}^{-1}$ and assuming $\langle Q_{\text{abs}} \rangle = \langle Q_{\text{em}} \rangle = 1$, we'd get 
+\begin{equation*}
+    T_{d} \approx 3.2\unit{K}
+\end{equation*}
+This result was first obtained by Eddington in 1926. This value is too low by a factor of 5. The reason is that dust does not behave like a black body. Hence $\langle Q_{\text{abs}} \rangle \neq \langle Q_{\text{em}} \rangle$ (but that's not the only reason). Let's change approach.
+\par The dust embedded in a H$_{\text{II}}$ region is exposed to intense radiation field. For grains at a distance $d$ from a point source of luminosity $L$ we have 
+\begin{equation*}
+    \frac{L}{4\pi d^{2}}\pi a^{2}\langle Q_{\text{abs}} \rangle \approx 4\pi a^{2} \langle Q_{\text{em}} \rangle\sigma T_{d}^{4}
+\end{equation*}
+meaning 
+\begin{equation*}
+    T_{d} \approx \left(\frac{L}{16\pi\sigma d^{2}}\right)^{1/4}\left(\frac{\langle Q_{\text{abs}} \rangle}{\langle Q_{\text{em}} \rangle}\right)^{1/4}
+\end{equation*}
+hence dust temperature depends on the distance $d$ from the star. For typical values 
+\begin{equation*}
+    T_{d} \approx 0.62\cdot\left[\left(\frac{L_{*}}{L_{\odot}}\frac{1}{d_{\text{pc}}^{2}}\right)\right]^{1/4}\left(\frac{\langle Q_{\text{abs}} \rangle}{\langle Q_{\text{em}} \rangle}\right)^{1/4}\unit{K}
+\end{equation*}
+Again, assuming $\langle Q_{\text{abs}} \rangle = \langle Q_{\text{em}} \rangle = 1$, we'd get $T\sim 10\unit{K}$, and again this is a factor of a few too low, but still illustrates just how cold dust usually is.
+\par So what are we missing?
+\par Dust never achieves high enough temperature to emit outside the IR because:
+\begin{enumerate}
+    \item it has no internal energy source (its only energy input is starlight);
+    \item for temperatures above $\sim 1500\unit{K}$ dust evaporates so it never contributes at frequencies beyond the NIR.
+\end{enumerate}
+In a typical galaxy $M_{ISM}\sim 0.05M_{*}$ and $M_{d} \sim 0.01M_{ISM}$ giving $M_{d}\sim 0.0005M_{*}$. However, within factors of order unity, $L_{IR}\sim L_{opt}$ and we find out that $L_{\text{dust}}\sim L_{*}$. How can such a tiny mass of very cold dust compete with nuclear furnaces ten thousand times more massive?
+\par Dust has a huge surface area to mass ratio! For typical dust properties and for a Sun-like star, dust has a surface area about $10^{15}A_{\odot}$ and a temperature about $10^{3}$ times smaller. Through a simple comparison, we discover that dust should emit $10^{4}$ times what a star emits. But we see that they should have about the same luminosity. Are we back to square one?
+\par Not quite. This time the answer is simpler: Dust must have a much lower radiative efficiency
+\begin{equation*}
+    \langle Q_{\text{em}} \rangle \sim 10^{-4}\langle Q_{\text{abs}} \rangle
+\end{equation*}
+After integrating over populations of both dust and stars we'd find out that dust is a more efficient radiator than stars, per unit mass.
+\par Let's make a more rigorous calculation. Mie's calculation predicts a certain efficiency for absorption, but what about the emission efficiency?
+\par They are the same, for the Kirchoff's law: Good (bad) absorbers are good (bad) emitters\footnote{For a more rigurous definition you can see either \cite{choudhuri} or \cite{1986rpa..book.....R}.}. The rate of heating of the grain by absorption of radiation can be written
+\begin{equation*}
+    \left(\der{E}{t}\right)_{\text{abs}} = \int \frac{u_{\nu}}{h\nu}\diff{\nu} \cdot c \cdot h\nu \cdot Q_{\text{abs}}(\nu)\pi a^{2}
+\end{equation*}
+Let’s calculate again a spectrum-averaged absorption cross section we've defined somewhere in the above. Hence the radiative heating rate is simply 
+\begin{equation*}
+    \left(\der{E}{t}\right)_{\text{abs}} = \langle Q_{\text{abs}} \rangle_{*}\pi a^{2}u_{*}c
+\end{equation*}
+We use the subscript "*" because starlight is often the dominant source of radiation heating the dust.
+\par Grains lose energy by infrared emission, at a rate
+\begin{equation*}
+    \left(\der{E}{t}\right)_{\text{em}} = 4\pi a^{2}\langle Q_{\text{em}} \rangle_{T_{d}}\sigma T_{d}^{4}
+\end{equation*}
+with $\langle Q_{\text{em}} \rangle_{T_{d}}$ the Planck-averaged emission efficiency. At equilibrium the two rates are equal and thus 
+\begin{equation*}
+    T_{d}\sim \left(\frac{\langle Q_{\text{abs}} \rangle_{*}}{\langle Q_{\text{em}} \rangle_{T_{d}}}\right)^{1/4}u_{*}^{1/4}
+\end{equation*}
+Using Kirchoff's law
+\begin{equation*}
+    \frac{\langle Q_{\text{abs}} \rangle_{*}}{\langle Q_{\text{em}} \rangle_{T_{d}}} = \frac{\langle Q_{\text{abs}} \rangle_{*}}{\langle Q_{\text{abs}} \rangle_{T_{d}}}
+\end{equation*}
+and so
+\begin{equation*}
+    T_{d}\sim \left(\frac{\langle Q_{\text{abs}} \rangle_{*}}{\langle Q_{\text{abs}} \rangle_{T_{d}}}\right)^{1/4}u_{*}^{1/4}
+\end{equation*}
+\par Dust grains are good absorbers in the UV, so we can approximate $\langle Q_{\text{abs}} \rangle_{*} \approx \langle Q_{\text{abs}}(UV) \rangle_{*}$. Moreover, dust can't emit at $\nu >$ NIR, so we can approximate $\langle Q_{\text{abs}} \rangle_{T_{d}}\approx \langle Q_{\text{abs}}(IR) \rangle_{T_{d}}$. So we can approximate
+\begin{equation*}
+    \frac{\langle Q_{\text{abs}} \rangle_{*}}{\langle Q_{\text{em}} \rangle_{T_{d}}} = \frac{\langle Q_{\text{abs}} \rangle_{*}}{\langle Q_{\text{abs}} \rangle_{T_{d}}} \approx \frac{\langle Q_{\text{abs}}(UV) \rangle_{*}}{\langle Q_{\text{abs}}(IR) \rangle_{T_{d}}}
+\end{equation*}
+which is sometimes called \emph{green-house factor}. From Mie's theory, the green-house factor turns out to be $100-2000$, hence the correction factor to $T_{d}$ is 
+\begin{equation*}
+    \left[\frac{\langle Q_{\text{abs}}(UV) \rangle_{*}}{\langle Q_{\text{abs}}(IR) \rangle_{T_{d}}}\right]^{1/4} \sim 3-7
+\end{equation*}
+\par We expect $\sim 3$ for shorter wavelengths, warmer regions or larger grains. We expect $\sim 7$ for larger wavelengths, colder regions and smaller grains. The resulting "green-house effect" pushes $T_{d}$ above the Eddington value. Fortunately, uncertainties in the correction term are muted by the $1/4$ power.
+\par Please note that we have used the absorption component $Q_{\text{abs}}$, not the scattered one (not heating the grain). Using the modified equilibrium, interstellar dust is warmed:
+\begin{itemize}
+    \item By a weak isotropic radiation field;
+    \item In H$_{\text{II}}$ regions;
+    \item Deep inside GMCs;
+    \item In AGNs
+\end{itemize}
+and just as there are several sites of dust formation:
+\begin{itemize}
+    \item Winds from evolved RG and AGB stars;
+    \item Winds from young massive stars (e.g. Carina);
+    \item Nova ejects;
+    \item Supernova ejects;
+    \item Directly from gas phase condensdation.
+\end{itemize}
+there are many environments that are hostile to the formation of grains:
+\begin{itemize}
+    \item Near stars, photon heating can sublimate icy mantles;
+    \item More extreme radiation environments can sublimate the entire grain;
+    \item Shocks from SNRs and stellar winds can destroy grains completely.
+\end{itemize}
