@@ -1,1 +1,773 @@
 \chapter{Disk Galaxies and Dark Matter}\label{ch:vi}
+
+\section{Light Distribution}
+
+A few chapters ago we introduced hte Hubble fork for the morphological classification of galaxies (see Fig.\ref{fgr:hubblefork}). In the present chapter we're going to focus on the fork part of the fork, and so on the so-caled \emph{disk galaxies}. They come in two types:
+\begin{itemize}
+    \item \emph{Spiral galaxies}: They have a disk and spiral arms. They host ongoing star formation and gas. They have a central Bulge;
+    \item \emph{Lenticular galaxies} (S0): They have a disk but unlike spiral galaxies, they lack the spiral arms. There's no ongoing star formation, and no gas. They have a central Bulge, which dominates over the disk in terms of luminosity (mass)
+\end{itemize}
+In order to analyze and study the light distribution of disk galaxies, a pivotal procedure is \emph{surface photometry}, which we can apply to two (three) distinct regions: The bulge, the disk and the stellar halo which, however, is a minor component.
+
+\subsection*{Radial Luminosity Profiles}
+
+For the bulge is customary to use a de-Vaucouleurs $R^{1/4}$ law
+\begin{equation}
+    I(r) = I(0)\exp\left[-7.67\left(\frac{R}{R_{e}}\right)^{1/4}\right]=I(R_{e})\exp\left[-7.67\left(\left(\frac{R}{R_{e}}\right)^{1/4}-1\right)\right]
+    \label{eq:devaucouleurs}
+\end{equation}
+which can be also expressed in terms of magnitude per square arcsecond
+\begin{equation}
+    \mu(r) = \mu(0) +0.325\left(\frac{R}{R_{e}}\right)^{1/4} = \mu(R_{e})+8.3235\left[\left(\frac{R}{R_{e}}\right)^{1/4}-1\right] 
+\end{equation}
+where we've defined an effective radius $R_{e}$ whitin which is contained half the object's light. The effective radius usually sit in the range $0-5-4\unit{kpc}$.
+\par Meanwhile, for the disk is customary to use an exponential model
+\begin{equation}
+    I(r) = I(0)\exp\left(-\frac{R}{R_{d}}\right)
+\end{equation}
+which can be converted to magnitude per square arcsecond 
+\begin{equation*}
+    \mu(r) = \mu(0)+1.086\frac{R}{R_{d}}
+\end{equation*}
+where $R_{d}$ is defined as the disk scale length, that is the distance for which intensity is reduced of a factor $e$ with respect to its original value
+\begin{equation*}
+    I(R_{d}) = \frac{I(0)}{e}
+\end{equation*}
+Typically, it is in the range of $2-5\unit{kpc}$ and as a rule of thumb you might want to remember $R_{d} \approx 1.678R_{e}$.
+
+\subsection*{Vertical Line Profiles}
+
+The disk is still rather well-fitted by an exponential distribution of light
+\begin{equation}
+    I(r) = I_{0}\exp\left(-\frac{|z|}{z_{0}}\right)
+\end{equation}
+where $z_{0}$ is defined as the disk scale height, that is the distance for which intensity is reduced of a factor $e$ with respect to its original value
+\begin{equation*}
+    I(z_{0}) = \frac{I(0)}{e}
+\end{equation*}
+At large $z$, excess light sometimes reveals a second \emph{thick disk} of larger $z_{0}$. Different components will have different scale heights
+\begin{itemize}
+    \item For gas and dust $z_{0}\sim 50-100\unit{pc}$;
+    \item For the young thin disk $z_{0}\sim 200 \unit{pc}$,
+    \item For the old thick disk $z_{0}\sim 1\unit{kpc}$.
+\end{itemize}
+For examples of bulge-disk decomposition see Fig.\ref{fgr:galaxydecomp}.
+
+\subsection*{Stellar Halo}
+
+MW and M31 have resolved halos with metal poor stars, and globular clusters. Both of these systems contain significant substructure, which is generally ascribed to tidally stripped dwarf galaxies and globular clusters. That said, M33, for example, does not have a significant stellar halo.
+\par Usually, stellar halos are extremely difficult to see as integrated light in other galaxies. Even stacking $\sim 1000$ SDSS\footnote{Sloan Digital Sky Survey} edge on galaxies only shows extended red light out to $\mu_{i}\sim 29\unit{mag}\unit{arcsec}^{-2}$. The implied density for these structures is 
+\begin{equation}
+    \rho(r) \propto r^{-\alpha}
+\end{equation}
+with $\alpha \sim 3$, which is consistent with the model of a moderately flattened spheroid $c/a \sim 0.6$
+
+\newpage
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=1\textwidth]{img/galaxydecomp.png}
+    \caption{Two-dimensional bulge-disk decomposition using \texttt{GALFIT} of 16 of the 18 high-confidence sources in the sample. The left column shows the surface brightness profile of the data (open circles with error bars), Sérsic bulge component (red), exponential disk component (blue), and total (bulge + disk) model (purple). The $\chi^{2}_{\nu}$ from \texttt{GALFIT} is shown in the lower-left corner. The lower panel gives the residuals between the data and the model. The right three columns show the original data, best-fit total model, and residuals, respectively. All images are displayed on a log stretch. Credits: \cite{Wu_2022}.}
+    \label{fgr:galaxydecomp}
+\end{figure}
+\newpage
+
+\section{2D Velocity Fields}
+
+One customary and well-rehearsed way to measure rotational velocities in spiral galaxies is through the good old Doppler shift of the most evident spectral lines.
+\par Imagine seeing a galaxy whose galactic plane is perfectly orthogonal to the line of sight. That galaxy would appear to you as some kind of blurred line. Now assume that the galaxy is rotating counterclock-wise around an axis orthogonal to its galactic plane: The matter on the left side of the galaxy will be moving towards you and the matter on the right will be moving away from you.
+\par Under these circumstances, we expect light coming from the left side to be blueshifted with respect to the original wavelength and light from the right to be redshifted.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/doppler.png}
+    \caption{Pictorial representation of the system described so far.}
+    \label{fgr:doppler}
+\end{figure}
+\par Let us assume, for the sake of simplicity, the galaxy to be perfectly circular. Because of its possible tilt with respect to the observation direction, it might appear to us like an ellipses in the sky. If $i$ is the tilt angle with respect to our line of sight, an element of the galaxy at distance $R$ from the center and an angle $\theta$ away from some reference axis will now appear at an angle $\phi$ identified by
+\begin{equation*}
+    \tan\theta = \frac{\tan\phi}{\cos i}
+\end{equation*}
+assuming to leave unchanged the reference axis when transposing the galaxy in the sky.
+\par Said $\hat{R}$ the radial unit vector of the galaxy, $\hat{n}$ the unit vector orthogonal to the galactic plane, which is tilted of an angle $i$ with respect to the observation direction $\hat{r}$, the observed velocity for an element of the galaxy at distance $R$ from the center will be 
+\begin{equation*}
+    \vec{V} = -V_{c}(R) \hat{R}\wedge\hat{n}
+\end{equation*}
+This is assuming orbits to be perfectly circular and to have subtracted the systemic velocity $v_{\text{sys}}$ due to proper motion of the galaxy itself.
+\par The observed velocity along the line of sight will be, you guessed it, the projection of $\vec{V}$ on the line of sight 
+\begin{equation*}
+    v_{\text{LOS}} = \hat{r}\cdot \vec{V}
+\end{equation*}
+which, using some basic results of combinations of scalar and cross products, turns into
+\begin{align*}
+    v_{\text{LOS}} &= V_{c}(R)\hat{R}\cdot(\hat{r}\wedge\hat{n}) = V_{c}(R)\hat{R}\cdot\hat{K}\sin(\pi-i)\\
+    & = V_{c}(R)\hat{R}\cdot\hat{K}\sin i
+\end{align*}
+where we've introduced the unit vector $\hat{K}$, which lies on the galactic plane. For the sake of simplicity, let's set $\hat{K} = (1,0)$ and $\hat{R} = (\cos\theta, \sin\theta)$, so that $\hat{R}\cdot\hat{K} = \cos\theta$. The velocity along the line of sight will be then written as 
+\begin{equation*}
+    v_{\text{LOS}} = V_{c}(R)\sin i \cos\theta
+\end{equation*}
+With our definitions, observing the galaxy along its major axis means $\theta = 0$ or $\theta = \pi$, where 
+\begin{equation*}
+    v_{\text{LOS}(x,0)} = \pm V_{c}(R)\sin i
+\end{equation*}
+To get rotation curve from the observed velocity field, we need to:
+\begin{enumerate}
+    \item Measure the observed $v$ along the major axis;
+    \item Subtract $v_{\text{sys}}$, the systemic velocity of the galaxy;
+    \item Convert angular scale to spatial scale (for this we need to know the distance from the galaxy);
+    \item Correct for the galaxy's inclination (which we'll have to measure somehow). 
+\end{enumerate}
+To measure the systemic velocity of a rotating galaxy, we can simply observe the galaxy along its projected minor axis. Under the assumption of an ideal rotating disk, in fact, the rotational contribution to $v_{\text{LOS}}$ vanished along that direction, meaning that $V = v_{\text{sys}}$.
+
+\subsection{Rotation curves}
+
+So far we've given a prescription as for how we can determine the rotational velocity along the line of sight given some assumptions. All that remains (ignoring the problem of the tilt) is to understand if we can make some predictions on $V_{c}(R)$ and create some model to compare with the observations. Let us start with an easy one.
+\par Consider \emph{solid body rotation} $\Omega = \text{const.}$, so that $V_{c} = \Omega R$. The velocity along the line of sight will be
+\begin{equation*}
+    v_{\text{LOS}}(x,y) = \Omega R \cos\theta \sin i :=\Omega X \sin i
+\end{equation*}
+so that points with fixed $v_{\text{LOS}}$ will have constant $X$, as shown in Fig.\ref{fgr:solidbodyspider}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{img/solidbodyspider.png}
+    \caption{Spider diagram for the solid body rotation scenario. Note that at fixed $X$ the velocity along the line of sight is constant, and since there's no dependence on $Y$, the rotation curve appears like a continuum of parallel lines.}
+    \label{fgr:solidbodyspider}
+\end{figure}
+\par Consider now a \emph{flat rotation curve} $V_{c}(R) = \text{const.}$. With some simple algebraic manipulations it is possible to show that 
+\begin{equation*}
+    v_{\text{LOS}} = V_{c}(R)\frac{\cos i \sin i}{\sqrt{\cos^{2}i+\left(\frac{Y}{X}\right)^{2}}}
+\end{equation*}
+Since $V_{c}(R) = \text{const.}$, points with $v_{\text{LOS}} = \text{const.}$ are points with $Y/X = \text{const.}$, and so the spider diagram associated to the rotation curve will appear as a family of straight lines, as shown in Fig.\ref{fgr:flatspider}.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.4\textwidth]{img/flatspider.png}
+    \caption{Spider diagram for the flat rotation curve scenario. Note that at fixed $v_{\text{LOS}}$ are associated points with $Y/X = \text{const}$, hence the rotation curve appears like a family of straight lines.}
+    \label{fgr:flatspider}
+\end{figure}
+\par Finally, consider a rotation curve with a peak. Calculations for this are rather tedius, so I'll skip them. Know, however, that velocities near the peak are attained for two values of $X$ and for values of $Y \neq 0$ the contour lines are closing on themselves.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.4\textwidth]{img/peakedspider.png}
+    \caption{Spider diagram for the peaked rotation curve scenario. Note that contour lines are kinda like hyperbolae that close on themselves for specific values of $X$.}
+    \label{fgr:peakedspider}
+\end{figure}
+\par Clearly, reality isn't usually as simple as the toy models we've presented. However, up to a good approximation, it can be considered as a mixture of the three scenarios we've shortly introduced. Consider for example Fig.\ref{fgr:galvel}.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/galvel.png}
+    \caption{NGC 3198. Top left: integrated H$_{\text{I}}$ map (moment 0). Grayscale range from $0-421 \unit{Jy}\unit{km}\unit{s}^{-1}$. Top right: optical image from the digitized sky survey (DSS). Bottom left: velocity field (moment 1). Black contours (lighter grayscale) indicate approaching emission, white contours (darker grayscale) receding emission. The thick black contour is the systemic velocity ($v_{\text{sys}} = 661.2\unit{km}\unit{s}^{-1}$), the iso-velocity contours are spaced by $\Delta v = 25\unit{km}\unit{s}^{-1}$. Bottom right: velocity dispersion map (moment 2). Contours are plotted at 5, 10, and $20\unit{km}\unit{s}^{-1}$. Credits: \cite{Walter_2008}}
+    \label{fgr:galvel}
+\end{figure}
+\par The spider diagram displays the projected velocity field (isovelocity contours) on the sky, but it does not uniquely determine the three-dimensional orientation of the galaxy. A good way to determine the near and far sides of a galaxy is achieved by taking into consideration dust extinction, for it is usually greater on the nearer side. Since dust lays mostly on the GP, on the farther away side dust will be behind most of the stars, thus producing little extinction. On the other hand, on the nearer side, dust is in front of most stars.
+\par Combining spider diagrams with extinction considerations we're able to infer the rotation direction of the galaxy. Passing from observed velocity fields to rotation curves can be done in two ways
+\begin{enumerate}
+    \item Taking the spectra along the major axis $V_{c}(R) = V(X,0)/\sin i$;
+    \item 2D velocity fields: Tilted ring models.
+\end{enumerate}
+The tilted ring model assums the observed velocity to be decomposable into three different contributions
+\begin{equation*}
+    V(X,Y) = V_{0}+V_{c}(R)\cos\theta\sin i + V_{r}(R)\sin\theta\sin i
+\end{equation*}
+where the latter terms is to account for any deviations from circular rotation, including a term $v_{r}$ to model radial motions in the plane.
+
+\subsection{Maximum Disk Fit}
+\par Once we have the rotation curve, how do we transform this into a mass distribution?
+\begin{itemize}
+    \item Measure the surface-brightness profile $\mu(R)$ and decompose it into a bulge $\mu_{b}(R)$ and a disk $\mu_{d}(R)$ component;
+    \item Each component is allowed to have a different constant mass- to-light ratio $(M/L)_{b}$ and $(M/L)_{d}$ respectively.
+    \item Measure the surface density of gas.
+\end{itemize}
+As you should know by now, the surface brightness is just
+\begin{equation*}
+    I = \der{F}{\Omega}
+\end{equation*}
+and the associated magnitude is 
+\begin{equation*}
+    \mu = -2.5\log_{10}I + C
+\end{equation*}
+The total surface mass density $\Sigma$ is then $\Sigma_{\text{tot}} = \Sigma_{b}+\Sigma_{d}+\Sigma_{\text{gas}}$, which roughly translates to\footnote{Note that you can't really multiply $\mu\cdot(M/L)$ right away. You should first convert $\mu$ to a surface brightness and then multiply the mass-to-light ratio.}
+\begin{equation*}
+    \Sigma_{\text{tot}} = \left(\frac{M}{L}\right)_{b}\mu_{b}(R)+\left(\frac{M}{L}\right)_{d}\mu_{d}(R)+\Sigma_{\text{gas}}
+\end{equation*}
+Hence this surface density $\Sigma$ can be translated into a rotation curve passing through a gravitational potential. For a component at spherical symmetry
+\begin{equation*}
+    \Sigma(R) \to \rho(R) \to M(<R) \to \Phi(<R)
+\end{equation*}
+Note that, in spherical symmetry, the gravitational field at radius $r$ depends only on the mass enclosed within said $r$. For an axisymmetric component (disk)
+\begin{equation*}
+    \Sigma(R) \to \Phi(R,z)
+\end{equation*}
+In a disk, in fact, the mass outside the radius $R$ generally contributes to the gravitational field and circular velocity at $R$, even for a perfectly flat, circular, axisymmetric disk.
+\par The circular velocity $v_{c}(R)$ is the velocity that a star in a galaxy must have to maintain a circular orbit at a specified distance from the centre, on the assumption that the gravitational potential is axisymmetric
+\begin{equation*}
+    v_{c}^{2}(R) = R \der{\Phi}{r}\Big|_{z=0}
+\end{equation*}
+Expliciting all the various contributions to the total circular velocity
+\begin{equation*}
+    v_{c,\,\text{tot}}^{2} = v_{c,\,b}^{2}+v_{c,\,d}^{2}+v_{c,\,\text{halo}}^{2}+v_{c,\,\text{gas}}^{2}
+\end{equation*}
+which we can invert so to explicit the needed circular velocity of the halo to match the observations
+\begin{equation*}
+    v_{c,\,\text{halo}}^{2} = v_{c,\,\text{obs}}^{2}-(v_{c,\,b}^{2}+v_{c,\,d}^{2}+v_{c,\,\text{gas}}^{2})
+\end{equation*}
+by manipulating the maximum $M/L$ for the bulge and the disk, keeping it compatible with the inner rotation curve and without making the stellar contribution exceed the observed one.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/rotationcurveex.png}
+    \caption{Rotation curve of galaxy NGC7331. The various components' velocity curves are marked as solid lines, while the dashed line represents the dark halo's rotation curve that would be needed to match the observations. Note that the best-fit rotation curve is obtained as the square root of the sum in quadrature of the individual components, not as their simple sum.}
+    \label{fgr:rotationcurveex}
+\end{figure}
+\par Where the rotation curve is flat, assuming spherical symmetry for the the dark halo
+\begin{align*}
+    & v_{c,\,\text{halo}} = V_{0} = \text{const.}\\
+    & v_{c,\,\text{halo}}^{2}(r) = \frac{GM(<r)}{r}
+\end{align*}
+meaning 
+\begin{equation*}
+    V_{0}^{2} = \frac{GM(<r)}{r} \implies M(<r) = \frac{V_{0}^{2}}{G}r
+\end{equation*}
+If we invoke the mass continuity equation for spherical symmetry
+\begin{equation*}
+    \der{M}{r} = 4\pi r^{2}\rho(r)
+\end{equation*}
+then 
+\begin{equation}
+    \rho(r) = \frac{V_{0}^{2}}{4\pi G r^{2}}
+    \label{eq:singularisothermalsphere}
+\end{equation}
+which is the classic singular isothermal sphere result. Note that this result is only valid under spherical symmetry conditions. For a disk, a flat rotation curve does not imply the same local density law.
+\par Curiously enough, some spiral galaxies are more DM dominated than others, thus leading to very different decompositions. The interested reader can refer to \cite{1991MNRAS.249..523B} for more about this.
+
+\section*{Modified Newtonian Dynamics: MOND}
+
+Some time ago, an alternative formulation of Newtonian dynamics was proposed, which assumed a modified Newton law
+\begin{equation*}
+    F_{N} = mf\left(\frac{a}{a_{0}}\right)a
+\end{equation*}
+where $a$ is the "true" acceleration and $a_{0}\approx 10^{-10}\unit{m}\unit{s}^{-2}$. The corrective function $f$ would be such that 
+\begin{align*}
+    f\to 1 \quad &\text{for} \; a \gg a_{0}\\
+    f \to \frac{a}{a_{0}} \quad &\text{for} \; a \ll a_{0} \;\text{(deep MOND regime)}
+\end{align*}
+In the deep MOND regime then
+\begin{equation*}
+    F_{N} = m\left(\frac{a^{2}}{a_{0}}\right)
+\end{equation*}
+Applying this to an object of mass $m$ in circular orbit around a point mass $M$ yields
+\begin{equation*}
+    m\left(\frac{a^{2}}{a_{0}}\right) = \frac{GMm}{r^{2}}
+\end{equation*}
+In the deeep MOND regime, the true acceleration of a test particle on a circular orbit is still the centripetal accelerationl so
+\begin{equation*}
+    \left(\frac{v_{c}^{2}}{r}\right)^{2} = \frac{GMa_{0}}{r^{2}}
+\end{equation*}
+which is none other than the Baryonic Tully-Fisher relation
+\begin{equation}
+    v_{c}^{4} = GMa_{0}
+    \label{eq:MOND_TF}
+\end{equation}
+In the deep MOND regime, the acceleration would be $a = \sqrt{a_{0}a_{N}}$, where $a_{N}$ is the standard Newtonian acceleration. In other words, in the MOND regime (low accelerations), MOND postulates an acceleration higher than the Newtonian one. Far from the center, where Newton would predict too weak a gravitational pull, MOND would effectively boost the acceleration, so a higher orbital velocity is required to maintain the orbit.
+\par Since MOND is a force law based on a modification at a particular acceleration scale, the strongest tests of MOND are provided by systems with the lowest accelerations:
+\begin{itemize}
+    \item The stars in HSB (High Surface Brightness) galaxies experience centripetal accelerations of order $a_{0}$;
+    \item Low surface brightness galaxies have very low mean accelerations, typically $\langle a \rangle \approx a_{0}/10$. As a consequence, LSB galaxies should provide strong tests of MOND.
+\end{itemize}
+Actually, LSB galaxies are not that strong of an evidence for MOND:
+\begin{itemize}
+    \item The slope of the Tully-Fisher relation may not be exactly 4 as predicted by MOND;
+    \item Many rotation curves are not perfectly flat, but rather increase or decrease a bit at outermost measured points;
+    \item Other evidence for dark matter.
+\end{itemize}
+Consider for example two galaxies passing one through the other. As a first scenario, let us consider collisionless DM.
+\par When galaxy clusters collide, their respective hot gas clouds (which make up most of the ordinary, baryonic matter in the clusters) slam into each other. Since gas is relatively dense and interacts electromagnetically, it experiences significant friction and can slow down or be displaced.
+\par On the other hand, galaxies themselves do not bother interacting with other galaxies: The individual galaxies are mostly empty space, so they rarely collide directly; they tend to pass through each other without much interaction.
+\par Lastly, DM doesn’t collide with gas the way normal matter does. To be fair, DM doesn’t collide much with itself either, meaning it is, to a good approximation, “collisionless.”
+\par In short, what would happen is that the two clusters are stripped of their gas and then wander away, as shown in Fig.\ref{fgr:collisionlessdm}
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.4\textwidth]{img/collisionlessdm.png}
+    \caption{Pictorial representation of the collisionless DM scenario.}
+    \label{fgr:collisionlessdm}
+\end{figure}
+\par In MOND, the effective gravitational acceleration does not decrease as rapidly as the Newtonian one $a_{N} = GM/r^{2}$.In the deep-MOND regime,this becomes $a_{N} = a^{2}/a_{0}$, so $a^{2} = a_{0}a_{N} \sim r^{-2}$ rather than $\sim r^{-4}$ as predicted by the Newtonian theory. Hence, The gravitational potential should remain aligned with the gas.
+\par Since MOND attributes the total gravitational field to the existing baryons (and not to DM), and in clusters the dominant baryonic component is the intracluster gas, you would predict that gravitational lensing (which depends on the cluster’s total mass distribution) should peak where the gas is.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.4\textwidth]{img/monddm.png}
+    \caption{Pictorial representation of the MOND scenario.}
+    \label{fgr:monddm}
+\end{figure}
+\par Unfortunately for MOND, what's shown in Fig.\ref{fgr:monddm} was never observed, but we've rather found evidence supporting the collisionless DM scenario in the observation of the so-called "Bullet cluster," which displayed strong lensing on the gas-stripped clusters rather than on the abandoned hot gas. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/collisionlessevidence.png}
+    \caption{Three colliding galaxy clusters and one colliding group (at the lower-left), showing the separation between X-rays (pink) and gravitation (blue), indicative of dark matter.}
+    \label{fgr:collisionlessevidence}
+\end{figure}
+
+\section{DM Candidates: MACHOS}
+
+We've seen in earlier chapters that the most likely candidate for DM (as of right now) are the WIMPS. But what if DM is instead made of brown dwarfs, planetary bodies, white dwarfs, black holes, neutron stars?
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.9\textwidth]{img/dmcandidates.png}
+\end{figure}
+\par Given their nature, MACHOS cannot be observed through RM radiation, but rather by \emph{gravitational micro-lensing}: As a MACHO crosses a background star, the star appears to brighten, then dim. This description, however, could in principle apply to variable stars as well. But there are a few key differences
+\begin{itemize}
+    \item A MACHO event should not repeat (they are too rare);
+    \item The light curve for MACHOs should be symmetric;
+    \item The magnitude of the light amplification should be the same in the blue and red wavebands
+\end{itemize}
+
+\subsection{Weak Encounters}
+
+Because the angle of deflection is small, can approximate situation by assuming that the star follows the unperturbed trajectory, as shown in Fig.\ref{fgr:weakencounters}.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/weakencounters.png}
+    \caption{Schematical description of the weak encounter configuration.}
+    \label{fgr:weakencounters}
+\end{figure}
+\par We define $b$ the distance of closest approach at a time we set to be $t=0$. The gravitational force is 
+\begin{equation*}
+    \vec{F} = -\frac{Gm^{2}}{r^{3}}\vec{r} = \vec{F}_{\parallel}+\vec{F}_{\perp}
+\end{equation*}
+where the orthogonal component is
+\begin{equation*}
+    F_{\perp} = -\frac{Gm^{2}}{r^{2}}\frac{b}{r} = -G\frac{m^{2}}{b^{2}}\left[1+\left(\frac{vt}{b}\right)^{2}\right]^{-3/2} = -m\dot{v}_{\perp}
+\end{equation*}
+since $r^{2} = b^{2}+(vt)^{2}$. The change in velocity integrated over one entire encounter is 
+\begin{equation*}
+    \delta v_{\perp} = \int_{-\infty}^{\infty}\dot{v}_{\perp}\,\text{d}t = \frac{Gm}{b^{2}}\int_{-\infty}^{\infty}\left[1+\left(\frac{vt}{b}\right)^{2}\right]^{-3/2}\,\text{d}t
+\end{equation*}
+Note that for symmetry reasons it must be $\delta v_{\parallel} = 0$. The integral above is trivial and evaluates to\footnote{Before you slander me: Set $vt/b = \sinh(y)$, then unpack the hyperbolic cosine that pops out and set $z = e^{2y}$. The integral is indeed trivial and evaluates to $2b/v$.}
+\begin{equation*}
+     \delta v_{\perp} = \frac{2Gm}{bv}
+\end{equation*}
+The resulting deflection angle, under the approximation of small perpendicular velocity variation, is
+\begin{equation*}
+    \alpha \approx \tan\alpha = \frac{\delta v_{\perp}}{v} = \frac{2Gm}{bv^{2}}
+\end{equation*}
+
+\subsection{Microlensing}
+
+General relativity predicts that for photons, the bending is exactly twice the Newtonian value, so 
+\begin{equation*}
+    \alpha = \frac{4Gm}{bc^{2}} = \frac{2R_{s}}{b}
+\end{equation*}
+where $R_{s}$ is the Schwarzschild radius of a body of mass $m$.
+\par Consider sources at distance $d_{s}$ from the observer O, while a point mass lens L is at distance $d_{L}$ from the observer. The observer sees the image I of the source S’ at an angle $\theta$ from the line of sight with respect to the lens. In the absence of deflection, would have measured an angle $\beta$.
+\par If all angles are small enough, then we may write 
+\begin{equation*}
+    \theta = \frac{b}{d_{L}} = \frac{x}{d_{S}} \quad \beta = \frac{y}{d_{s}} \quad \alpha = \frac{x-y}{d_{LS}}
+\end{equation*}
+where $x$ and $y$ are respectively the "heights" over the plane of the lens for the ficitious image and the original source. If we plug all these in the expression for the deflection angle
+\begin{equation}
+    \alpha = \frac{4Gm}{bc^{2}} \to x-y = \frac{4Gm}{bc^{2}}d_{LS}
+\end{equation}
+Expliciting $x = \theta d_{S}$, $y = \beta d_{S}$ and $b = d_{L}\theta$, the last equation yields 
+\begin{equation}
+    \theta - \beta = \frac{1}{\theta}\frac{4Gm}{c^{2}}\frac{d_{LS}}{d_{L}d_{S}}
+    \label{eq:deflectionangle}
+\end{equation}
+which is a quadratic equation for the apparent position of the image, $\theta$, given the true position $\beta$, the mass of the lens and the various distances.
+\par We can also define the \emph{Einstein lens' radius}
+\begin{equation}
+    \theta_{E} = \frac{2}{c}\sqrt{\frac{Gmd_{LS}}{d_{L}d_{S}}}
+    \label{eq:einsteinradius}
+\end{equation}
+thus the equation for the apparent position then becomes
+\begin{equation*}
+    \theta^{2}-\beta\theta -\theta_{E}^{2} = 0 \implies \theta_{\pm} = \frac{\beta \pm \sqrt{\beta^{2}+4\theta_{E}^{2}}}{2}
+\end{equation*}
+For a source exactly behind the lens, $\beta = 0$. Therefore the source appears as an Einstein ring in the sky, with radius $\theta$. For $\beta > 0$, two images are created, one inside and one outside the Einstein ring radius.
+\par In some cases the lensing is of an image that is so small or faint that one doesn't see the multiple images: The additional light bent towards the observer just means that the source appears brighter.
+\par This lensing can have tangible effects in many measurements, as sources which would have otherwise been too dim become visible. This can be helpful, as when one wants to observe objects that would otherwise be too far away.
+\par It can also be a problem, for example when we're trying to measure all objects brighter than a certain threshold in a certain region and lensing introduces objects by magnifying objects enough to bring them into the sample.
+\par The chance of seeing a microlensing event is usually expressed in terms of the optical depth, which is the probability that at any instant of time a given star is within an angle $\theta_{E}$ of a lens. The optical depth $\tau$ is the integral over the number density $n(d_{L})$ of lenses times the area enclosed by the Einstein ring of each lens, i.e.
+\begin{equation*}
+    \tau = \frac{1}{\Omega}\int n(d_{L})\pi\theta_{E}^{2}\diff{V}
+\end{equation*}
+where $\text{d}V = \Omega d_{L}^{2}\text{d}(d_{L})$ is the volume of an infinitesimal spherical shell with radius $\text{d}A$ which covers a solid angle $\Omega$. The integral gives the solid angle covered by the Einstein circles of the lenses, and the probability is obtained upon dividing this quantity by the solid angle $\Omega$ which is observed. Inserting the equation for the Einstein angle, we obtain
+\begin{align*}
+    \tau &= \int_{0}^{d_{S}} \frac{4\pi Gm}{c^{2}}n(d_{L})\frac{d_{LS}}{d_{S}d_{L}}d_{L}^{2}\diff{d_{L}}\\
+    & = \frac{2}{3}\frac{\pi G \rho}{c^{2}}d_{S}^{2}
+\end{align*}
+where we've used $\rho = n(d_{L})m$ (we've also assumed the density to be constant along the line of sight) and $d_{s} = d_{LS}+d_{L}$.
+\par For a uniform spherical halo of radius $R$ whose stars rotate with velocity $v$ we know that $v^{2}\sim GM_{\text{Gal}}/R$ and thus $\rho = 3v^{2}/4G\pi R^{2}$. Putting this all together
+\begin{equation}
+    \tau =  \frac{2}{3}\frac{\pi G \rho}{c^{2}}d_{S}^{2} = \frac{1}{2}\left(\frac{v}{c}\right)^{2}\left(\frac{d_{S}}{R}\right)^{2}
+\end{equation}
+if all of its matter is composed of microlenses and the sources are at the boundaries of the galaxy ($d_{S}\sim R$)
+\begin{equation*}
+    \tau \approx \frac{1}{2}\left(\frac{v}{c}\right)^{2}
+\end{equation*}
+Thus, the optical depth for a galaxy like the Milky way ($v \sim 200\unit{km}\unit{s}^{-1}$) is of the order of $10^{-6}$. Usually, the optical depth $\tau$ is expressed as 
+\begin{equation*}
+    \tau \sim \frac{\text{number of events}\cdot\text{typical event duration}}{\text{number of monitored stars}\cdot\text{total observing time}}
+\end{equation*}
+Optical depths defined as such agree well with the predictions based on the galactic model of the Galaxy (number of faint stars, brown dawrves, white dawrves, NS/BH and so on). Hence, DM is \emph{not} made by "dark" stars or remnants. So no MACHOS.
+
+\subsubsection*{Timescale for Microlensing Events}
+
+There's no way to determine from a single image whether a given star is being magnified by lensing. We need a series of images to see the star brighten then fade as the alignment changes. It is customary to define a \emph{lensing time scale} which is equal to the physical distance across rhe Einstein ring divided by the relative velocity of the lens
+\begin{equation}
+    T_{\text{Lensing}} = \frac{2d_{L}\theta_{E}}{v_{L}} = \frac{4}{v_{L}c}\sqrt{\frac{GMd_{L}d_{LS}}{d_{s}}}
+    \label{eq:lensing_ts}
+\end{equation}
+so the timescale is proportional to the square root of the individual lens masses. For your typical disk stars in the Galactic bulge you'd get
+\begin{equation*}
+    \tau_{\text{Lensing}} \approx 40\sqrt{\frac{M}{0.3M_{\odot}}}\unit{d}
+\end{equation*}
+and the weak dependence on the mass is very convenient from an observational point of view. The interested reader can perhaps look at \cite{green2026stellarmicrolensingsurveysprobe} for the most recent results/analysis on the subject.
+
+\newpage
+\section{Milky Way Rotation Curve}
+
+Consider the geometrical construction displayed in Fig.\ref{fgr:galgeom}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/GalGeometry.jpg}
+    \caption{Geometrical construction needed to evaluate the velocity along the line of sight for emitting clouds in the first quadrant of the Galactic Plane. Credits: \cite{SantoUddin}.}
+    \label{fgr:galgeom}
+\end{figure}
+\par The velocity of the Sun (projected) on the line of sight towards a star/gas cloud (the red dotted line) at galactic longitude $l$ is
+\begin{equation*}
+    v_{0}\cos\left(\frac{\pi}{2}-l\right) = v_{0}\sin l
+\end{equation*}
+The velocity of the star on the same line is $v(R)\cos\alpha$, so, relatively to the Sun, the LOS velocity of the star will be 
+\begin{equation*}
+    v_{\text{LOS}} = v(R)\cos\alpha - v_{0}\sin l
+\end{equation*}
+This equation can be manipulated by using the sine rule on the triangle (Sun,GC,Star), thus finding $\cos\alpha = R_{0}\sin l / R$. Hence
+\begin{equation*}
+    v_{\text{LOS}} = R_{0}\sin l\left(\frac{v}{R}-\frac{v_{0}}{R_{0}}\right)
+\end{equation*}
+If we substitute the definition of angular velocity $\Omega = v/r$, we obtain 
+\begin{equation}
+    v_{\text{LOS}} = R_{0}\sin l (\Omega(r)-\Omega_{0})
+    \label{eq:galactic_rotcurve}
+\end{equation}
+It remains to be seen, however, how to measure the LOS velocity. An easy way to do that, is to consider the Doppler effect caused by galactic rotation on the H$_{\text{I}}$ $21\unit{cm}$ emission line.
+\par In fact, at different longitudes $l$ the emission spectrum changes systematically, and the main features are shown in Fig.\ref{fgr:galrot}.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.5\textwidth]{img/galrot.png}
+    \caption{Schematical representation of the changes in the emission spectrum for different values of galactic longitude. An interesting study of the matter was performed by \cite{sofue2025innerrotationcurvemilky}.}
+    \label{fgr:galrot}
+\end{figure}
+\par As long as we perform our observations within the Solar circle (Ist and IInd quadrants, but technically only the first one can be used), we can build the rotation curve of the MW through the \emph{tangent point method}:
+\begin{enumerate}
+    \item We measure the emitted spectrum at fixed longitude $l$;
+    \item We measure the velocity of the most redshifted part of the spectrum (since the line of sight is tangent to the circular orbit of radius $R$, the most redshifted gas is on that orbit);
+    \item We know the distance of the Sun from the Galactic center, which is $R_{0}$;
+    \item We know the orbiting distance of the cloud, which is $R_{0}\sin l$;
+    \item We repeat the process for different longitudes and build our rotation curve.
+\end{enumerate}
+On the other hand, when considering objects outside the Solar circle, we must use objects of known distance, such as, for example, Cepheid variables. For a tracer at heliocentric distance\footnote{As in the distance of the tracer from the Sun.} $d$ the Galactocentric radius is given by the cosine theorem
+\begin{equation*}
+    R^{2} = R_{0}^{2}+d^{2}-2R_{0}d\cos l
+\end{equation*}
+The observed LOS velocity for the tracer will satisfy (\ref{eq:galactic_rotcurve}); this way the Galactic RC can be traced out to $\sim 20\unit{kpc}$.
+
+\subsection{Oort Constants}
+
+Let's focus, for the time being, on the stars in the solar neighborhood, about $100\unit{pc}$ all around us. Within this range we have access to both LOS and transverse velocities as well as to distances.
+\par As noted by Oort, when the distance $d$ to the star is much smaller than the distance to the galactic center, $d/R_{0} \ll 1$, you can perform a Taylor expansion on the angular velocity term $\Omega(R)$
+\begin{align*}
+    & \Omega(R) = \Omega_{0} + \left(\der{\Omega}{R}\right)_{R_{0}}(R-R_{0})+\text{o}(R-R_{0})^{2}\\
+    &  \Omega(R) - \Omega_{0} = \left(\frac{V}{R}-\frac{V_{0}}{R_{0}} \right)\approx \left[\frac{\text{d}}{\text{d}R}\left(\frac{V(R)}{R}\right)_{R_{0}}\right](R-R_{0})+\text{o}(R-R_{0})^{2}
+\end{align*}
+We can thus rewrite (\ref{eq:galactic_rotcurve}) as 
+\begin{equation*}
+    v_{\text{LOS}} = R_{0}\sin l\left[\frac{\text{d}}{\text{d}R}\left(\frac{V(R)}{R}\right)_{R_{0}}\right](R-R_{0})
+\end{equation*}
+Applying the cosine theorem under the assumption of $d/R_{0}\ll 1$ yields
+\begin{equation*}
+    R-R_{0} \approx -d\cos l
+\end{equation*}
+We can expand the derivate in the equation for $v_{\text{LOS}}$ and substitute what we've found
+\begin{align*}
+    & v_{\text{LOS}} = \frac{d}{R_{0}}\sin(l)\cos(l)\left[\frac{V_{0}}{R_{0}}-\left(\der{V}{R}\right)_{R_{0}}\right]\\
+    & v_{\text{LOS}} = \frac{1}{2}d\sin(2l)\left[\frac{V_{0}}{R_{0}}-\left(\der{V}{R}\right)_{R_{0}}\right] = Ad\sin(2l)
+\end{align*}
+where we've defined the \emph{first Oort Constant}
+\begin{equation}
+    A = \frac{1}{2}\left[\frac{V_{0}}{R_{0}}-\left(\der{V}{R}\right)_{R_{0}}\right] = \frac{1}{2}\left[-R_{0}\left(\der{\Omega}{R}\right)_{R_{0}}\right]
+    \label{eq:oort_first}
+\end{equation}
+which essentially describes shearing motion. Let's now turn to putting to use the transverse velocity, which can be expressed as 
+\begin{equation*}
+    V_{t} = V(R)\sin\alpha - V_{0}\cos l
+\end{equation*}
+With some geometrical consideration we can write last equation as 
+\begin{equation*}
+    V_{t} = \frac{V(R)R_{0}\cos l}{R} - \frac{V(r)d}{R} - V_{0}\cos l
+\end{equation*}
+We can Taylor expand once more under the assumption of $d/R_{0}\ll 1$, so that neglecting second order terms (or higher) we obtain 
+\begin{equation*}
+    V_{t} \approx \frac{d\cos(2l)}{2}\left[\frac{V_{0}}{R_{0}}-\left(\der{V}{R}\right)_{R_{0}}\right]+\frac{d}{2}\left[\frac{V_{0}}{R_{0}}-\left(\der{V}{R}\right)_{R_{0}}\right]-\frac{V_{0}d}{R_{0}} = d\left[A\cos(2l)+B\right]
+\end{equation*}
+where we've introduced the first Oort constant (\ref{eq:oort_first}) and defined 
+\begin{align}
+    B &= -\frac{1}{2}\left[\frac{V_{0}}{R_{0}}+\left(\der{V}{R}\right)_{R_{0}}\right] = -\frac{1}{2}\left[\frac{1}{R_{0}}\left(\der{(RV)}{R}\right)_{R_{0}}\right]\\
+    & = -\frac{1}{2}\left[\frac{1}{R_{0}}\left(\der{L}{R}\right)_{R_{0}}\right]
+    \label{eq:oort_second}
+\end{align}
+The constant $B$ thus describes the vorticity of the Galaxy near the Sun, and is directly connected to the radial gradient of the angular momentum.
+\par Given their definitions, the two constants can be determined plotting 
+\begin{align*}
+    & \frac{v_{\text{LOS}}}{d} = A\sin(2l)\\
+    & \frac{V_{t}}{d} = A\cos(2l)+B
+\end{align*}
+therefore finding
+\begin{align*}
+    A &= 14.8 \pm 0.8 \unit{km}\unit{s}^{-1}\unit{kpc}^{-1}\\
+    B &= -12.4 \pm 0.6 \unit{km}\unit{s}^{-1}\unit{kpc}^{-1}
+\end{align*}
+This incidentally allows us to determine if the Galaxy \emph{near the Sun}\footnote{The specification is due, because it turns out that near the GC the Galaxy kinda behaves like a rigid body.} is a rigid body rotator. If it was one, then $\Omega = \text{const.}$ and 
+\begin{equation*}
+    A = \frac{1}{2}\left[\frac{V_{0}}{R_{0}}-\left(\der{V}{R}\right)_{R_{0}}\right] = \frac{1}{2}\left[\Omega_{0}-\left(\der{(\Omega R)}{R}\right)\right] = 0
+\end{equation*}
+but we've just said that $A \neq 0$, so the Galaxy isn't a rigid body rotator near the Sun. Is the Galaxy moving as predicted by the Keplerian theory, then?
+\begin{equation*}
+    \der{V}{R} = -\frac{1}{2}\frac{V}{R}
+\end{equation*}
+hence 
+\begin{align*}
+    A_{K} &= \frac{3}{4}\frac{V_{0}}{R_{0}} \approx 19.4\unit{km}\unit{s}^{-1}\unit{kpc}^{-1}\\
+    B_{K} &= -\frac{1}{4}\frac{V_{0}}{R_{0}} \approx 6.5\unit{km}\unit{s}^{-1}\unit{kpc}^{-1}
+\end{align*}
+Our expected values for $A$ and $B$ are clearly inconsistent with the values measured by Oort. In particular, let’s compare the values of expected and measured gradient
+\begin{align*}
+    \der{V}{R} &= -(A+B)\\
+    \left(\der{V}{R}\right)_{\text{measured}} &= -2.4\pm 1\unit{km}\unit{s}^{-1}\unit{kpc}^{-1}\\
+    \left(\der{V}{R}\right)_{\text{Kep}} &= -13.75\unit{s}^{-1}\unit{kpc}^{-1}
+\end{align*}
+As expected, the Keplerian circular velocity drops $\propto R^{-1/2}$ and therefore the gradient is negative. However, the measured value is much closer to zero: the Milky Way’s rotation curve is flat, i.e. $V(R)\approx \text{const.}$
+
+\section{Spiral Arms}
+
+Let's look once more at Hubble's morphological classification such as that in Fig.\ref{fgr:hubblefork}. Three sub-classes ar usually defined in the Elmegreen classification scheme: \emph{Grand Design} (two well distinguishable spiral arms), \emph{Multiarm} (intermediate, two less prominent large spiral arms and a whole lot of smaller ones) and \emph{Flocculent} (a whole lot of smaller spiral arms).
+\par We shall define a \emph{trailing arm} the one whose outer tip points in the direction opposite to galactic rotation, while the outer tip of a \emph{} points in the direction of rotation; in almost all cases the spiral arms are trailing.
+\par We also define the \emph{pitch angle} $\psi$ as the angle formed by a spiral arm with the tangent to the galactic disk where spiral and disk intersect. It is simpler understood looking at the equation
+\begin{equation}
+    \cot\psi = \frac{1}{\tan\psi} = R\der{\phi}{R}
+\end{equation}
+where $\phi$ is the angle at which the intersection happens. In a sense, the pitch angle describes how much closely wound are the spiral arms.
+\par First ingredient for producing spiral arms is differential rotation. Again, assuming a flat rotation curve
+\begin{equation*}
+    \Omega(R) = \frac{V}{R} \implies \parder{\Omega}{R} = -\frac{V}{R^{2}}
+\end{equation*}
+From the definition of pitch angle and using $\phi(R,t) = \phi_{0}+\Omega(R)t$
+\begin{equation*}
+    \cot\psi = \Big|\parder{\phi}{R}\Big| = R\Big|\parder{\Omega}{R}\Big|t = \frac{V}{R}t
+\end{equation*}
+Using values appropriate for the MW at the Sun position, we'd get
+\begin{equation*}
+    \psi \approx 2\text{°}\left(\frac{1\unit{Gyr}}{t}\right)
+\end{equation*}
+Spiral arms structure would be too tightly wound after $\sim 1\unit{Gyr}$ due to differential rotation. Eventually spiral structure would be “smeared out.”
+\par This results is much tighter than those observed in Sc galaxies, like the MW, or Sa galaxies: $\psi \sim 5\text{°}$ (Sa) and $10\text{°}\lesssim \psi \lesssim 30\text{°}$ (Sa). The most likely implication is that spiral arms are NOT material features of the galaxy.
+\par The winding dilemma arises from thinking of spiral arms as material alignments in a differentially rotating disk. Way out of this dilemma is that the spiral structure is a (density) wave phenomenon, maintained by the self-gravity of the distribution of matter in the disk, so that at different times, the density enhancement seen at a given place is made up of different stars/clouds.
+
+\subsection{Orbits and Epicycles}
+
+Let us analyze the orbit of a star in some axisymmetric potential. We also assume that the potential does not depend on time. The star has angular momentum $L_{z} = R^{2}\dot{\phi} = \text{const.}$ and the energy of a star in such potential can be expressed as 
+\begin{equation*}
+    E = \frac{1}{2}\left[\dot{R}^{2}+(R\dot{\phi})^{2}+\dot{z}^{2}\right]+\Phi = \frac{1}{2}\left[\dot{R}^{2}+\dot{z}^{2}\right]+\Phi_{\text{eff}}
+\end{equation*}
+where we've introduced the well known effective potential, which has a minimum at some radius $R_{G}$: Stars orbiting around a galaxy at this radius will be on a circular orbit. We define such radius (\emph{guiding center}) as
+\begin{equation}
+    \exists R_{g}\;\text{so that} \; \parder{\Phi_{\text{eff}}(R,z)}{R}\Big|_{(R_{G},0)} = 0
+    \label{eq:guidingcenter}
+\end{equation}
+Let's then expand the potential around the guiding center and on the galactic plane $z=0$
+\begin{equation*}
+    \Phi_{\text{eff}}(R,z) = \Phi_{\text{eff}}(R_{G},0)+\frac{1}{2}\parparder{\Phi_{\text{eff}}}{R}\Big|_{(R_{G},0)}(R-R_{G})^{2}+\frac{1}{2}\parparder{\Phi_{\text{eff}}}{z}\Big|_{(R_{G},0)}z^{2}
+\end{equation*}
+For future convenience, let's just call $x = R-R_{G}$. Why are we choosing $z=0$? If the "top" and "bottom" halves of the disk are mirror images of each other, then $\Phi(R,z) = \Phi(R,-z)$, and the vertical force is zero in the plane $z=0$ is 
+\begin{equation*}
+    \parder{\Phi_{\text{eff}}}{z}\Big|_{(R_{G},0)} = 0
+\end{equation*}
+If we call the second derivatives of the effective potential with respect to $R$ and $z$ respectively $\kappa$ and $\nu$, then the time evolution of $z$ is as follows
+\begin{equation*}
+    \ddot{z} = -\nu^{2}z
+\end{equation*}
+while the time evolution of the radial coordinate is essentially identical (mutatis mutandis)
+\begin{equation*}
+    \ddot{x} = -\kappa^{2}x
+\end{equation*}
+Let's calculate $\kappa^{2}$
+\begin{equation*}
+    \kappa^{2} = \parparder{\Phi_{\text{eff}}}{R} = \frac{\partial}{\partial R}\left(\parder{\Phi}{R}-\frac{L_{z}^{2}}{R^{3}}\right) = \parparder{\Phi}{R} + \frac{3L_{z}^{2}}{R^{4}}
+\end{equation*}
+calculated at the guiding center
+\begin{equation*}
+    \kappa^{2}(R_{G},0) = \parparder{\Phi}{R}\Big|_{(R_{G},0)} + \frac{3L_{z}^{2}}{R_{G}^{4}}
+\end{equation*}
+On a circular orbit
+\begin{equation*}
+    \parder{\Phi_{\text{eff}}(R,z)}{R} = 0 \;\text{at}\; R = R_{G}
+\end{equation*}
+and
+\begin{equation*}
+    \ddot{R} = R(\dot{\phi})^{2}-\parder{\Phi(R)}{R} = \frac{L_{z}^{2}}{R^{3}}-\parder{\Phi}{R}
+\end{equation*}
+Hence 
+\begin{equation}
+    \parder{\Phi}{R}\Big|_{R_{G}} = \frac{L_{z}^{2}}{R_{G}^{3}}
+    \label{eq:masked_centaccel}
+\end{equation}
+which we can use right away to eliminate the angular momentum in the definition of $\kappa^{2}(R_{G},0)$, thus finding
+\begin{equation*}
+    \kappa^{2}(R_{G}) = \parparder{\Phi}{R}\Big|_{(R_{G},0)}+\frac{3}{R_{G}}\parder{\Phi}{R}\Big|_{(R_{G},0)}
+\end{equation*}
+Using the circular frequency $\Omega(R_{G})$ as follows
+\begin{equation*}
+    \Omega^{2}(R_{G}) = \frac{1}{R}\parder{\Phi}{R}\Big|_{(R_{G},0)}
+\end{equation*}
+we can then rewrite $\kappa$
+\begin{equation}
+    \kappa^{2}(R_{G}) = \left(\parder{(R\Omega^{2}(R))}{R}+3\Omega^{2}\right)_{(R_{G},0)} = \left(R\parder{\Omega^{2}}{R}+4\Omega^{2}\right)_{(R_{G},')}
+\end{equation}
+Evaluating $\kappa^{2}$ in a whole lot of scenarios, we find that in general $\Omega < \kappa < 2\Omega$. Rewriting $\kappa^{2}$ at Sun's position using Oort's constants
+\begin{equation*}
+    \kappa^{2}_{0} = -4B(A-B) = -4B\Omega_{0} \implies \kappa_{0} \approx 36 \unit{km}\unit{s}^{-1}\unit{kpc}^{-1}
+\end{equation*}
+and 
+\begin{equation*}
+    \frac{\kappa_{0}}{\Omega_{0}}  = 2\sqrt{-\frac{B}{A-B}} \approx 1.3
+\end{equation*}
+hence the orbits does not close on itself in an inertial frame (the ratio should have been a rational number) but rather forms a rosette.
+\par The equation for radial motion as an oscillatory solution
+\begin{equation*}
+    \ddot{x} = \kappa^{2}x \implies x = X\cos(\kappa t + \theta)
+\end{equation*}
+Moreover, the star’s azimuthal speed $\phi$ must vary so that the angular momentum $L_{z}$ remains constant
+\begin{equation*}
+    \dot{\phi} = \frac{L_{z}}{R^{2}} = \frac{L_{z}}{R_{G}^{2}}\left(1+\frac{x}{R_{G}}\right)^{-2}\sim \frac{L_{z}}{R_{G}^{2}}\left(1-\frac{2x}{R_{G}}\right)
+\end{equation*}
+Near the Sun 
+\begin{equation*}
+    \dot{\phi} = \Omega_{0}\left(1-\frac{2x}{R_{G}}\right) = \Omega_{0}-\frac{2\Omega_{0}}{R_{0}}X\cos(\kappa_{0} t + \theta)
+\end{equation*}
+which we can integrate right away to find 
+\begin{equation}
+    \phi = \phi_{0}+\Omega_{0}t -\frac{2\Omega_{0}X}{\kappa_{0}R_{0}}\sin(\kappa_{0}t+\theta)
+    \label{eq:azimuthal_osc}
+\end{equation}
+This means that in a reference system at $(R_{0},0)$ rotating at $\Omega_{0}$ with $y$ coordinate pointing along $\hat{\phi}$
+\begin{equation*}
+    y = -Y\sin(\kappa_{0}t+\theta)
+\end{equation*}
+and thus we find azimuthal oscillations (epicycles) about the guiding center
+\begin{equation*}
+    \frac{X}{Y} = \frac{\kappa_{0}}{2\Omega_{0}} = \left\{
+        \begin{array}{ll}
+            0.7 & \text{in solar neighborhood}\\
+            1 & \text{for homogeneous sphere (rigid body rotation)}\\
+            \frac{1}{2} & \text{for a Keplerian potential}
+        \end{array}
+        \right.
+\end{equation*}
+\par The epicyclic motion is retrograde, namely in the opposite sense to the guiding center's motions: It speeds the star up closer to the center and slows it down when it is further out.
+\par We've seen that $\kappa$ is the radial oscillation frequency, then why does it appear in azimuthal oscillations as well? In order to conserve $L_{z}$, the angular speed $\phi$ must oscillate as well and that can't be done with another frequency.
+\par In the neighborhood of the Sun are defined the following oscillation periods
+\begin{align*}
+    T_{r} &= \frac{2\pi}{\kappa_{0}} \approx 170\unit{Myr} \quad \text{epicyclic frequency}\\
+    T_{\phi} &= \frac{2\pi}{\Omega_{0}} \approx 240\unit{Myr} \quad \text{angular frequency}\\
+    T_{z} &= \frac{2\pi}{\nu_{0}} \approx 87\unit{Myr} \quad \text{vertical frequency}
+\end{align*}
+For the sake of future discussions, it might be useful to define the \emph{Local Standard of Rest} (LSR), that is a circular orbit at the Sun’s radius $R_{0}$. In 1985 the International Astronomical Union (IAU) recommended the values $R_{0} = 8.5\unit{kpc}$ for the Sun’s distance from the Galactic center, and $v_{0} = 220\unit{km}\unit{s}^{-1}$ for its speed in that circular orbit.
+\par If we define the magnitude of any random motion (dispersion) along direction $i$ as 
+\begin{equation*}
+    \sigma_{i}^{2} := \langle (v_{i}-\langle v_{i} \rangle)^{2}\rangle
+\end{equation*}
+we might notice that the dispersion in velocities near the Sun increases with age. Random motions are clearly driven by processes that take time: scattering by GMCs, spiral arms, graininess in MW potential, and so on.
+\par Moreover, we'd also observe that the velocity dispersion along two different directions are different. Suppose to measure the velocities of stars close to us, at $R\approx R_{0}$. Some of these will have guiding centers further out than the Sun, and so are on the
+inner parts of their epicycles, while others have their guiding centers at smaller radii. Their speed relative to the Sun will be
+\begin{equation*}
+    v_{y} = R_{0}(\dot{\phi}-\Omega(R_{0}))
+\end{equation*}
+for which we can use the Taylor expansion for $\Omega(r)$ assuming little radial displacements
+\begin{equation*}
+    \Omega_{0} \approx \Omega_{G} +\der{\Omega}{R}\Big|_{R_{g}}(R-R_{G})
+\end{equation*}
+We can also use the azimuthal speed we've found before
+\begin{equation*}
+    \dot{\phi} = \Omega_{G}\left(1-\frac{2(R-R_{G})}{R_{G}}\right)
+\end{equation*}
+Plugging everything back into the expression for $v_{y}$
+\begin{equation*}
+    v_{y} = -R_{0}(R-R_{G})\left(\frac{2\Omega_{G}}{R_{G}}\der{\Omega}{R}\Big|_{R_{G}}\right)
+\end{equation*}
+so that, if we assume $R_{G}\approx R_{0}$ and $\Omega_{G}\approx \Omega_{0}$, the expression magically turns into 
+\begin{equation*}
+    v_{y} = -\frac{\kappa_{0}^{2}(R-R_{0})}{2\Omega(R_{0})}
+\end{equation*}
+where we've plugged the definition of $\kappa^{2}$. Now, substituting the oscillatory behavior we've found for $R-R_{G}=X\cos(\kappa t +\theta)$, we can calculate the velocity dispersion performing an average over time
+\begin{align*}
+    \langle v_{y}^{2}\rangle &= \frac{\kappa_{0}^{4}\langle X^{2}\rangle}{4\Omega^{2}(R_{0})}\\
+    \langle v_{x}^{2}\rangle &= \kappa_{0}^{2}\langle X^{2}\rangle
+\end{align*}
+hence 
+\begin{equation*}
+    \frac{ \langle v_{y}^{2}\rangle}{ \langle v_{x}^{2}\rangle} = \frac{\kappa_{0}^{2}}{4\Omega^{2}(R_{0})}\approx \frac{2}{3}
+\end{equation*}
+On top of all of this, it is possible to observe an asymmetric drift in the average $y$ velocity, which appears to be systematically negative.
+\par We've seen that 
+\begin{equation*}
+     v_{y} = -\frac{\kappa_{0}^{2}(R-R_{0})}{2\Omega(R_{0})}
+\end{equation*}
+so that if $R-R_{0}>0$, then $v_{y}<0$ and viceversa, meaning that a star observed outside its guiding radius has an azimuthal velocity lower than the LSR, while a star observed inside its guiding radius has an azimuthal velocity higher than the LSR.
+\par The stellar density is higher in the inner Galaxy, so that near the Sun we see more stars with guiding centers at smaller radii than stars that visit us from the outer Galaxy.
+\par The majority of stars will be on the outer parts of their epicycles (so $x > 0$), so, the average tangential motion of stars near the Sun should fall behind the circular velocity, an effect known as asymmetric drift.
+
+\subsection{Density Waves}
+
+We still haven't really found a sensible and satisying solution to the problem of the formation of the spiral arms. One possible explanation (which is almost the correct one) was given by Lindblad (Kinematic Density Waves).
+\par The radial period $T_{r}$ corresponds to a radial frequency $\kappa = 2\pi/T_{r}$. In general, during the time $T_{r}$ the azimuthal angle increases by an amount $\Delta\phi$, and since $\Delta\phi/2\pi$ is irrational, the orbit forms a rosette.
+\par Now suppose that we observe the orbit from a frame that rotates at angular speed $\Omega_{p}$. To close the orbit, the angular displacement in the rotating frame after one full radial oscillation must be an exact rational multiple of $2\pi$. More in general, we need
+\begin{equation*}
+    (\Omega-\Omega_{p})T_{r} = \frac{2\pi}{m}
+\end{equation*}
+with $m$ are integers. We can then choose a proper $\Omega_{o}$ so that the orbit is closed after $m$ radial oscillations: After a time $mT_{r}$, the star makes a $2\pi$ angle in the rotating frame. We can for example set $m=2$ and take 
+\begin{equation*}
+    \Omega_{p} = \Omega -\frac{k}{2} \quad k = \frac{2\pi}{T_{r}}
+\end{equation*}
+So, in the rotating frame at frequency $\Omega_{p}$ orbits are “closed” (ovals). Well, not exactly closed since $\Omega(R)$ and $k(R)$ depend on the radial distance $R$. However, observations suggest that $\Omega - k/2$ is approximately constant. So, there is a frequency $\Omega_{p}$ where all orbits are almost closed.
+\par This means we can, in some sense, arrange the orbits to produce a pattern. Then, moving back to the lab reference frame, this pattern will rotate with an angular velocity equal to $\Omega_{p}$.
+\par However, it shall be noticed that $\Omega_{p}$ is only approximately constant: Since the patter rotational velocity changes as a function of radius (which, in turn, depends on rotation curve), the kinematic density waves also wind up, just more slowly. More importantly this approach isn't exaclty fully self-consistent: The gravity due to the non-axisymmetric nature of the patterns in the disk has to be taken into account, which is usually done by calculating perturbations over an axisymmetric potential\footnote{The interested reader can refer to \cite{1964ApJ...140..646L} for more informations.}.
+
+\subsubsection*{Resonances}
+Density waves rotate with angular speed (pattern) $\Omega_{p}$. Consider a star rotating at $\Omega_{*}$. Depending on the galactocentric distance $R$ of the star, it can be faster or slower than the density wave. The angular frequency of the star with respect to the pattern is $\Omega_{p}-\Omega_{*}$.
+\par There are two cases, then: $\Omega_{p}<\Omega_{*}$ the star moves past the arms; $\Omega_{p}>\Omega_{*}$ the arms move past the stars. Stars respond so as to strengthen the spiral only if the perturbing frequency $m|\Omega_{p}-\Omega_{*}|$ is slower than the epicyclic frequency $\kappa(R)$ at that radius.
+\par The angular frequency of encountering each arm in a two-armed spiral is $2(\Omega_{p}-\Omega_{*})$, so if 
+\begin{equation*}
+    2|\Omega_{p}-\Omega_{*}| < \kappa 
+\end{equation*}
+the star has enough time to respond coherently to the spiral forcing, and its orbit can stay approximately in phase with the arm. Two classes of resonance are identified
+\begin{enumerate}
+    \item $\Omega_{p}-\Omega_{*} = -\kappa/2$: Inner Lindblad Resonance (ILR, stars move past pattern);
+    \item $\Omega_{p}-\Omega_{*} = +\kappa/2$: Outer Lindblad Resonance (OLR, pattern moves past stars).
+\end{enumerate}
+Moreover, density waves can only survive in between the ILR and OLR (where we find spiral arms). Stars beyond the outer resonance, or inside the radius of the inner resonance, find that the periodic pull of the spiral is faster than their epicyclic frequency $\kappa$, hence they cannot respond to reinforce the spiral, and the wave dies out. Only a narrow range of pattern speeds give a broad range between ILR and OLR, and only two-armed spirals can have a large range.
+\par Note that spiral arms are caused by the compression of gas as it orbits the GC and encounters density waves that are essentially stationary. The compression of gas causes stars to form, which we now see as spiral arms:
+\begin{itemize}
+    \item Cloud approaches arm at a relative speed of $\sim 100\unit{km}\unit{s}^{-1}$;
+    \item Arms act as gravitational well, slowing down the cloud;
+    \item Arm will alter orbits of gas/stars, causing them to move along arm briefly;
+    \item Compresses H$_\text{I}$ gas and gathers small MCs to form GMCs;
+    \item GMCs produce O and B stars whose radiation then distrupts the clouds.
+\end{itemize}
+It is then realistic to expect to be observing young O, B stars forming on the spirals, while older stars will tipically be found out of the spiral arms.
+
+\subsubsection*{Alternatives?}
+It is unclear how often the Lin-Shu’s quasi stationary density wave theory is applicable. There are two other obvious sources of density waves, which both are $m = 2$.
+\begin{itemize}
+    \item \emph{Tides from companions}: Tidal field of passing neighbor creates a strong $m = 2$ perturbation. This drives a strong kinematic density wave. Self gravity enhances this perturbation. However, these spirals are transient;
+    \item \emph{Bars}: Bars are another source of $m = 2$ perturbations. Sanders and Huntley (1976) find even weak bars can generate strong spiral arms.
+\end{itemize}
+Note, however, that bars \emph{are not} density waves, but material structures rotating as rigid bodies. Like spirals, the figure of the bar is not static, but rotates with some pattern speed $\Omega_{p}$. But, unlike spiral arms, bars are not density waves; most of their stars always remain within the bar. Inside a rotating bar, stars and gas no longer follow near-circular paths, but stay close to orbits that close on themselves as seen by an observer moving with the bar’s rotation.
+\par Then what about Flocculent spirals? A flocculent spiral galaxy is one where the spiral arms aren't easily discernible. This involves the tendency of stars and gas within a disk to clump up gravitationally and form stars. These clumps then get pulled into spiral arm fragments by differential rotation.
+\par A possible explanation for this is a \emph{stochastic self-propagative star formation}: Ongoing star formation triggers star formation in areas adjacent to it. As the galaxy rotates, differential rotation leads to the appearance of a spiral pattern, and hence spiral arms are \emph{here} made of short-lived massive blue stars.
