@@ -1,1 +1,284 @@
-\chapter{Chemical Evolution in Galaxies} \ref{ch:viii}
+\chapter{Chemical Evolution in Galaxies} \label{ch:ix}
+
+\section{Master Equations of GCE}
+
+In this last chapter we'll try to cover the basics of GCE, that is \emph{Galactic Chemical Evolution}. Let us start from laying the necessary background, that is the \emph{master equations}
+\begin{align}
+    \der{M_{t}}{t} &= f\\
+    \der{M_{*}}{t} &= \Psi - E\\
+    \der{(ZM_{g})}{t} &= -Z\Psi + E_{Z}+Z_{f}f\\
+    \der{M_{g}}{t} &= -\Psi + E +f
+\end{align}
+The meaning of each variable is briefly summarized in Table \ref{tbl:lottavariables}.
+\begin{table}[h!]
+    \centering 
+    \begin{tabular}{c|c}
+        $M_{g}$ & Gas Mass \\
+        $M_{*}$ & Stellar Mass\\
+        $M_{t}$ & $M_{t} = M_{g}+M_{*}$\\
+        $f$ & Infall and/or outfall rate\\
+        $E$ & Mass ejection rate from all stars\\
+        $E_{Z}$ & Ejection rate of metals from all stars\\
+        $Z_{f}$ & Metallicity of the infall/outfall gas\\
+        $Z$ & Metallicity of gas/young stars\\
+        $\Psi$ & Star formation rate\\
+    \end{tabular}
+    \vspace{5pt}
+    \caption{Resumptive table of all the variable introduced in the master equations.}
+    \label{tbl:lottavariables}
+\end{table}
+\par Let's call $\Phi$ the normalized IMF
+\begin{equation}
+    \Phi = \frac{\der{N}{m}}{\int m\der{N}{m}\diff{m}} = \frac{\text{IMF}}{M}
+    \label{eq:normalized_IMF}
+\end{equation}
+with $M$ the total mass.
+\par We defined the \emph{mass ejection rate} of all stars at time $t$
+\begin{equation}
+    E(t) = \int_{m(t=\tau_{\text{TO}})}^{m_{\text{up}}} (m-w)\Psi(t-\tau(m))\Phi(m, t-\tau(m))\diff{m}
+    \label{eq:massejectionrate}
+\end{equation}
+where we're assuming each star to undergo its entire mass loss istantaneously at te end of a well-defined lifetime, usually the main sequence. In (\ref{eq:massejectionrate}) we've defined $m_{\text{TO}} = m_{t=\tau_{TO}}$ as the mass at turn-off, $m_{\text{UP}}$ as the IMF upper mass cut-off, $m$ the stellar mass and $w$ the mass of the remnant.
+\par At a time $t$ the ejected mass is due to the stars born at $t-\tau(m)$, that died at time $t$. At the epoch $t-\tau(m)$ the star formation rate was $\Psi(t-\tau(m))$ and the IMF $\Phi(m,t-\tau(m))$.
+\par Once a star reaches its endpoint (after a time $\tau(m)$), we assume that a remnant is left behind: A white dwarf for low and intermediate mass stars ($m \lesssim 8-10M_{\odot}$) and a neutron star or black hole for more massive stars. This can be quantified by defining a remnant mass ($w$) that remains locked away at later times. The remnants production rate is then defined as
+\begin{equation}
+    W(t) = \int_{m_{\text{TO}}}^{m_{\text{UP}}}w\Psi(t-\tau(m))\Phi(m, t-\tau(m))\diff{m}
+    \label{eq:remnantsrate}
+\end{equation}
+For future purposes, we define the \emph{stellar yield} $q_{z}$ as the fraction of the initial mass of a star ejected in the form of newly produced elements. Let's then calculate the mass of the ejected metals $E_{z}$ (made of two terms, new metals and old metals)
+\begin{align*}
+    E_{z}(t) &= \int_{m_{\text{TO}}}^{m_{\text{UP}}} mq_{Z}\Psi(t-\tau(m))\Phi(m,t-\tau(m))\diff{m} +\\
+    &+ \int_{m_{\text{TO}}}^{m_{\text{UP}}} (m-w-mq_{Z})Z(t-\tau(m))\Psi(t-\tau(m))\Phi(m,t-\tau(m))\diff{m}
+\end{align*}
+It is useful to define the \emph{returned fraction} $R$, that is is the fraction of mass that, after forming stars at time $t$, is returned to the ISM
+\begin{equation}
+    R(t) = \int_{m_{\text{TO}}}^{m_{\text{UP}}} (m-w)\Phi(m,t-\tau(m))\diff{m}
+    \label{eq:returnedfraction}
+\end{equation}
+But we are often more interested in the \emph{lock-up fraction}, that is the fraction of mass locked up in very low mass stars and remnants
+\begin{equation}
+    \alpha = 1-R
+    \label{eq:lockup_fraction}
+\end{equation}
+An important quantity is the \emph{net yield}, that is the mass of new metals ejected (eventually), divided by the fraction of mass locked up in very low mass stars and remnants
+\begin{equation}
+    p(t) = \alpha^{-1}\int_{m_{\text{TO}}}^{m_{\text{UP}}} mq_{Z}(m)\Phi(m,t-\tau(m))\diff{m}
+    \label{eq:netyield}
+\end{equation}
+Let us make some simplifying assumptions:
+\begin{enumerate}
+    \item The IMF is independent of time (it isn't really true, but it's a good approximation nonetheless);
+    \item \emph{Instantaneous Recyling Approximation} (IRA\footnote{It has nothing to do with one of the darkest pages of the UK's history.}): All processes involving stellar evolution, nucleosynthesis, and recycling of material take place on timescales much shorter than galactic evolution; there's no time delay between formation of a generation of stars and ejection of heavy metals into the ISM by that generation of massive stars.
+\end{enumerate}
+This allows us to make a further distinction between two classes: The one of stars that live forever ($m < m_{1}$) and those that die instantly ($m > m_{1}$). Generally, we assume $m_{1}\approx 1M_{\odot}$, so that the lower mass limits on each of the previous integrals is taken to be the time-independent $m_{1}$ and $t-\tau(m)\sim t$.
+\par The IRA is generally ok when the major contributor is Type II SNe from massive stars. On the other hand, it is not a good assumption when you're interested in the products of Type Ia SNe or AGB stars, for example\footnote{But, in this case, corrections for the neglected time delay can be added to the overall theory.}.
+\par With our two assumptions, tehe mass ejection rate (\ref{eq:massejectionrate}) becomes
+\begin{equation}
+    E(t) = \int_{m(t=\tau_{\text{TO}})}^{m_{\text{up}}} (m-w)\Psi(t-\tau(m))\Phi(m, t-\tau(m))\diff{m} = R\Psi(t)
+    \label{eq:mer_ira}
+\end{equation}
+while the mass of ejected metals $E_{Z}$ is 
+\begin{equation*}
+    E_{Z}(t) = ... = RZ(t)\Psi(t)+p\alpha\left[1-Z(t)\right]\Psi(t)
+\end{equation*}
+but since $Z\ll 1$ in all situatins of interest, we can write 
+\begin{equation}
+    E_{Z}(t) = \Psi(t)\left[RZ(t)+p\alpha\right]
+    \label{eq:metals_mer_ira}
+\end{equation}
+We can expand master equation number 3, plug in master equation number 4 and apply IRA, thus finding
+\begin{align*}
+    \der{(ZM_{g})}{t} &= Z\der{M_{g}}{t}+M_{g}\der{Z}{t}\\
+    &=Z\left(-\Psi + E +f\right)+M_{g}\der{Z}{t} \\
+    &=-\Psi(1-R)+f+M_{g}\der{Z}{t}
+\end{align*}
+which has to be equal to $-Z\Psi + E_{Z}+Z_{f}f$. Hence, after cross-eliminating some terms and replacing $E_{Z}$ with its value (\ref{eq:metals_mer_ira}), the equation becomes
+\begin{equation}
+    M_{g}\der{Z}{t} = (Z_{f}-Z)f + \Psi(t)p\alpha
+    \label{eq:metallicity_eq}
+\end{equation}
+
+\subsection{On the Closed Box Model and its Problems}
+
+Consider an isolated system for which, by virtue of its own definition, $f=0$. Then (\ref{eq:metallicity_eq}) becomes
+\begin{equation*}
+    M_{g}\der{Z}{t} = \Psi(t)p\alpha
+\end{equation*}
+and under the IRA
+\begin{equation*}
+    \der{M_{g}}{t} = \Psi(R-1)
+\end{equation*}
+Taking the ratio between the two you'd obtain 
+\begin{equation*}
+    \diff{Z} = -\frac{p}{M_{g}}\diff{M_{g}}
+\end{equation*}
+where we've substituted the definition of $\alpha$ (\ref{eq:lockup_fraction}). The equation can be integrated right away to find 
+\begin{equation}
+    Z = -p\ln\left(\frac{M_{g}(Z)}{M_{Z}(0)}\right)
+\end{equation}
+If we define $\mu = M_{g}/M_{\text{tot}}$ as the gas fraction, we have no stars at the beginning $M_{g}(0) = M_{\text{tot}}$
+\begin{equation*}
+    Z = -p\ln\mu
+\end{equation*}
+where $Z$ is the abundance in the gas and newly formed stars. In a CBM there is relation between the residual mass of gas $M_{g}(Z)$ and the metallicity of either the gas or young stars $Z$; if we measure $Z$ we know the residual mass of gas $M_{g}(Z)$, but given that in a CBM $M_{\text{tot}}$ is constant, we know $M_{*}(Z)$, hence we know the total mass of stars with metallicity up to $Z$.
+\par If we want the average $Z$ (average metallicity of all stars, not just the youngest), we can invoke mass conservation because the system is closed 
+\begin{equation*}
+    \diff{M_{\text{tot}}} = \diff{M_{*}}+\diff{M_{g}} = 0
+\end{equation*}
+from which follows that
+\begin{align*}
+    M_{*}(Z<Z_{1}) &= M_{\text{tot}}-M_{g}(Z)\\
+    &= M_{\text{tot}}\left[1-\exp\left(-\frac{Z_{1}}{p}\right)\right]
+\end{align*}
+The derivative of this last equation gives 
+\begin{equation*}
+    \diff{M_{*}} = \frac{M_{\text{tot}}}{p}\exp\left(-\frac{Z}{p}\right)\diff{Z}
+\end{equation*}
+and the mean stellar abundance is 
+\begin{equation}
+    \langle Z_{*}\rangle = \frac{\int_{0}^{\infty} Z\diff{M_{*}(Z)}}{\int_{0}^{\infty}\diff{M_{*}(Z)}}
+    \label{eq:average_stellar_metallicity}
+\end{equation}
+It is possible to show that, whenn the metallicity of either the gas or the young stars skyrockets to infinity ($\mu \to 0$), the mean stellar abundance tends to the net yield $p$.
+\par In conclusion, the average abundance of all stars approaches the yield when the gas fraction becomes small. But, the yield depends on the IMF, that seems time independent. Following this line of thoughts, you'd conclude that all galaxies without gas should have the same average metallicity. Clearly, this is a problem. But why is it so?
+\par If that weren't a problem, then why don't the stellar halo, the disk populations ($\mu$ in the solar vicinity is about $0.1$), dwarf spheroidals galaxies, all of which have $\mu \sim 0$, have exactly the same metallicity distribution function?
+\par The average [Fe/H] in the halo is $\sim -1.6$, in the solar vicinity $\sim 0$ and in dwarf galaxies $\sim -1$. The obvious differences in the MDFs of the different stellar populations points to the fact that a "closed-box" treatment is not appropriate for each of these populations (considered separately).
+\par The MDF of a CBM is independent of the timescales for star formation, and only relies on the amount of gas consumed. By the equation relating $Z$ to gas mass (the latter in the form $\mu$), the mass of stars that have less than metallicity $Z_{1}$ is
+\begin{equation*}
+    M_{*}(Z<Z_{1}) = M_{g}(0)-M_{g}(Z_{1}) = M_{g}(0)\left[\-\exp\left(-\frac{Z_{1}}{p}\right)\right]
+\end{equation*}
+therefore the fraction of stars at time $t$ with $Z<\beta Z_{1}$ is given by 
+\begin{equation*}
+    \frac{M_{*}(Z<\beta Z_{1})}{M_{*}(Z<\beta Z_{1}} = \frac{1-\mu^{\beta}}{1-\mu}
+\end{equation*}
+You should also keep in mind that in a closed-box model, at any given epoch, stars cannot have a metallicity higher than the current gas metallicity, because each stellar generation inherits the gas metallicity at birth and the gas metallicity increases monotonically with time.
+\par For example, in the solar vicinity $\mu \sim 0.1$. The present day metallicity in the solar vicinity is about $0.7Z_{\odot}$, meaning that the predicted fraction of stellar mass with $\beta = 1/4$ ($Z<Z_{\text{today}}/4$) would be as high as 50\%, while observations suggest that it is set at about 2\%.
+\par This is the so-called \emph{G-dwarf problem}. This excess of metal-poor G-type dwarf stars predicted in the closed box model is known as the G dwarf problem. Because G-type dwarfs are long-lived, with typical lifetimes of $10\unit{Gyr}$, it is difficult to explain this problem by assuming that old, metal-poor stars have evolved to stellar remnants and subsequent work furthermore demonstrated that the metallicity distribution of K and M-type dwarfs has the same lack of metal-poor stars. Thus, the G dwarf problem is a true problem with the closed box model, not an observational effect.
+\par A number of solutions has been proposed:
+\begin{itemize}
+    \item The IMF changes with time (metallicity). For example, if we had bimodal star formation where the early, metal-poor IMF only made higher mass stars, then the G-dwarf problem could be solved within a closed-box context;
+    \item Infall of gas onto the disk (accreting box model);
+    \item A larger "closed-box" needs to be taken into account. That is, the disk gas started out pre-enriched. For example, the "closed box" may pertain to all of the disk (both the thin and the thick part) and maybe even include the halo. In short, the "closed box" may have to be enlarged to encompass the whole Milky Way;
+    \item Outfall of gas (leaky box model)
+\end{itemize}
+In the next section, we'll take a closer look to the leaky box model.
+
+\subsection{Leaky Box Model}
+
+Let's take a leaky box model where some mass is driven out from the system, say from supernovae. When a Type II SN explodes, it launches a powerful shock wave that sweeps up and accelerates whatever gas happens to be around it. Assume that the rate at which supernovae drive gas out of the system is a function of the star formation rate
+\begin{equation*}
+    \der{M_{t}}{t} = -\eta\Psi = -\eta\der{M_{*}}{t}
+\end{equation*}
+where 
+\begin{equation*}
+    M_{t}(t) = M_{t}(0)-\eta M_{*}(t) \quad M_{g}(t) = M_{t}(t)-M_{*}(t)
+\end{equation*}
+which implies
+\begin{equation*}
+    M_{g}(t) = M_{t}(0)-(1+\eta)M_{*}(t)
+\end{equation*}
+Under IRA and assuming gas expelled has same metallicity as the ISM
+\begin{align*}
+    &M_{g}\der{Z}{t} = \Psi(t)p\alpha\\
+    &\der{M_{*}}{t} = \Psi - E = \alpha\Psi(t)
+\end{align*}
+and their ratio is just 
+\begin{equation*}
+    \diff{Z} = \frac{p}{M_{g}(t)}\diff{M_{*}}
+\end{equation*}
+But differentiation of the equation for $M_{g}$ tells us that 
+\begin{equation*}
+    \diff{M_{g}} = -(1+\eta)\diff{M_{*}}
+\end{equation*}
+which we can plug in to find 
+\begin{equation}
+    \diff{Z} = -\frac{p}{(1+\eta)M_{g}}\diff{M_{g}}
+    \label{eq:metallicity_om}
+\end{equation}
+which has an extra $(1+\eta)$ factor respect to the CBM. This implies that when all gas is consumed and $\mu\to 0$, the metallicity tends to
+\begin{equation*}
+    \mu \to 0 \implies \langle Z \rangle \to \frac{p}{1+\eta}
+\end{equation*}
+Outflow simply reduces the yield to an \emph{effective yield} $p/1+\eta$. It's not really that surprising that a leaky-box lowers final metallicity and exacerbates the G-dwarf problem.
+\par In a leaky box model, knowing the initial/final metallicity and the initial/final gas fraction also allows you to know the effective yield.
+\par If a system loses no gas, $\eta = 0$ and the system "collapses" to the original configuration. At the other extreme, if supernovae are efficient in removing gas, $\eta \gg 1$ and the mean abundance becomes $p/\eta$. A leaky box model seems to be a good fit to the MW stellar halo. In fact, using an average yield $p \sim 0.02$, the metallicity distribution for the halo can be reasonably accommodated with a leaky box model that has an effective yield of
+\begin{equation*}
+    p_{\text{eff}} \approx \frac{p}{1+\eta} \approx 5.7\power{10}{-4}
+\end{equation*}
+meaning $\eta \approx 34$. This would mean that for every $1M_{\odot}$ of stars that is formed, the halo would have lost approximately $34M_{\odot}$ of gas. But if the Halo has lost gas, where has it gone?
+\par The leaky box model can explain the metallicity distribution of the halo. Where did all of that gas lost by the halo end up? The mass of bulge is close to estimated mass lost from halo; on top of that, the angular momentum distribution of the halo and bulge are more similar than are the halo and disk populations.
+\par Thes points suggest that the bulge, not the disk, may have received most of the relatively low angular momentum gas from the halo and/or halo object. The halo+disk system wouldn't form a "closed box", but the halo+bulge one would.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.5\textwidth]{img/metallicitystarmass.png}
+    \caption{Metallicity-stellar mass relation for 53000 nearby galaxies ($z\sim 0.1$) from SDSS spectra. We note that galaxy mass determines the gas-phase metallicity to within a factor of 2, while metallicity drops five-folds as stellar mass drops 100-folds. This means that gas escapes more easily in low mass galaxies.}
+    \label{fgr:metallicitystarmass}
+\end{figure}
+
+\subsection{Accreting Box Model}
+
+Let us now feed pristine, metal-free gas to the box, at the same rate at which gas is turned into stars
+\begin{equation*}
+    \der{M_{g}}{t} = 0 = -\Psi + E + f_{in}
+\end{equation*}
+Under IRA
+\begin{equation*}
+    -(1-R)\Psi +f_{in} = 0
+\end{equation*}
+From the metal equation we know that 
+\begin{align*}
+    \der{(M_{g}Z)}{t}= M_{g}\der{Z}{t} &= (Z_{in}-Z)f_{in}+\Psi(t)p\alpha\\
+    &=(Z_{in}-Z+p)f_{in}
+\end{align*}
+hence the ratio between the previous equation and $\dot{M}_{t} = f_{in}$ yields
+\begin{equation*}
+    M_{g}\der{Z}{M_{t}} = Z_{in}-Z+p
+\end{equation*}
+which can be integrated right away to produce 
+\begin{equation*}
+    \ln\left(\frac{Z_{in}-Z_{0}+p}{Z_{in}-Z+p}\right) = \frac{M_{t}-M_{0}}{M_{g}}
+\end{equation*}
+We can define $\nu = (M_{t}-M_{0})/M_{g}$ so that the last equation becomes
+\begin{equation*}
+    Z_{in}-Z_{0}+p = (Z_{in}-Z+p)e^{\nu}
+\end{equation*}
+which can be solved for $Z$
+\begin{equation}
+    Z = (p+Z_{in})(1-e^{-\nu})+Z_{0}e^{-\nu}
+    \label{eq:metallicity_inflow}
+\end{equation}
+If the gas starts with $Z_{0}\approx 0$ and $Z_{in}\approx 0$
+\begin{equation*}
+    Z = p(1-e^{-\nu}) = p\left[1-\exp\left(-\frac{M_{t}-M_{0}}{M_{0}}\right)\right] = p\left[1-\exp\left(-\frac{M_{t}-M_{0}}{M_{g}}\right)\right]
+\end{equation*}
+Making use of $M_{*}(Z) = M_{t}(Z)-M_{g}$
+\begin{equation*}
+    Z =  p\left[1-\exp\left(-\frac{M_{*}}{M_{g}}\right)\right]
+\end{equation*}
+which implies 
+\begin{equation}
+    M_{Z} = -M_{g}\ln\left(1-\frac{Z}{p}\right)
+\end{equation}
+The accreting model predicts that in the solar vicinity the fraction of stellar mass with $Z < Z_{\text{today}}/4$ is about 10\%, which is in much better agreement with the observations.
+
+\section{IRA failures: Iron}
+
+Let us start this section with an interesting chart.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/snyields.png}
+    \caption{}
+    \label{fgr:snyields}
+\end{figure}
+\par Consider SN rates from short-duration burst of star formation. The Type II SNe rate is proportional to the standard SFR, while Type Ia SNe follow after a delay of $\sim 10^{8}-10^{9}\unit{yr}$ (a broad distribution of precursor lifetimes). If the burst is short, only Mg-rich\footnote{Magnesium is just an example. You could have chosen any other element that is produced by $\alpha$-addiction in the late evolutionary stages of stars and our point would still be holding.} SNII products are incorporated into the stars, while SNIa ejecta just escape from the galaxy. This leads to an higher than usual [Mg/Fe].
+\par The idea is that in a galaxy, the star formation rate (SFR) before the first $100\unit{Myr}$ (that is before the explosion of the bulk of SNIa) produces stars with high [$\alpha$/Fe].  Higher is this SFR, higher is the iron abundance of these stars (and more metal-rich the knee). IMF with higher fraction of massive stars are likely to have higher [$\alpha$/Fe] for these stars.
+\par A prolonged SFR produce stars whose ISM is already "polluted" by Type Ia SNe (and the Iron they produce), so these stars will have a lower [$\alpha$/Fe]. In fact, it is most curious to see how the various components of the MW present different behaviors at the variation of the [Fe/H] ratio, an indicator of the past SFR and evolution of those regions.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.9\textwidth]{img/irafailures.png}
+    \caption{The general metallicity of the Galaxy, as measured by the abundance of Iron compared with Hydrogen, increases with time and so serves as a basis for comparing the relative abundance of two elements that are created on different timescales. A plot of these quantities reveals a plateau of metal-poor stars that drops at a knee as the relative proportion of Iron in the Galaxy increases.}
+    \label{fgr:irafailures}
+\end{figure}
+\begin{flushright}
+    \emph{The End?}
+\end{flushright}

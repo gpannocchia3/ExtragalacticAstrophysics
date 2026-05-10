@@ -458,7 +458,7 @@ The gravitational field (acceleration) due to the disk is approximately $2\pi G 
     P_{\text{ram}} = \rho_{\text{ICM}}v_{r}^{2} > 2\pi G \Sigma_{*}\Sigma_{\text{gas}}
     \label{eq:rps}
 \end{equation}
-\par According to tuned models and hydrodynamic simulations of ram pressure stripping (RPS), the process removes the various components of a galaxy’s ISM starting from its outer regions and progressing inward.
+\par According to tuned models and hydrodynamic simulations of \emph{ram pressure stripping} (RPS), the process removes the various components of a galaxy’s ISM starting from its outer regions and progressing inward.
 \par Whereas in dwarf systems the stripping is generally complete, in massive systems some gas can be retained in the inner region, where the gravitational potential well of the galaxy is the deepest. The activity of star formation is reduced by the lack of gas (strangulation). The perturbed galaxies thus migrate below the main sequence becoming quiescent, red objects without affecting their kinematic properties and the structure of old stellar populations.
 \par This quenching process is rapid ($<1\unit{Gyr}$), in particular in dwarf system where most of the gas is removed at the first infall of the galaxy within the ICM before the pericenter of their orbit.
 \par Only under particular configurations such as edge-on stripping, when the perturbed gas is pushed along the disc, there might be a short lived burst of the star formation activity of the perturbed galaxies. Star formation can be present in the tail of stripped material, but this does not occur in all RPS systems.
@@ -541,7 +541,7 @@ which we can subsitute into the second Jeans equation
     \label{eq:jeans_anisotropic}
 \end{equation}
 Here, $n\sigma_{ij}^{2}$ is the anisotropic pressure (stress) tensor. But since $\sigma_{ij}^{2}$ is symmetric, its matrix can be diagonalized. This produces the principal axes of the velocity ellipsoid. However, pressures in stellar systems can still be anisotropic $\sigma_{11}\neq \sigma_{22}\neq \sigma_{33}$.
-\par The incompressible stellar fluid experiences anisotropic pressure-like forces. If $\Phi$ and $n$ are known, the Jeans equations have 9 unknowns (3 streaming motions at least 3 terms of the random motion tensor). But we have only four equations, meaning this is not a closed set.
+\par The incompressible stellar fluid experiences anisotropic pressure forces. If $\Phi$ and $n$ are known, the Jeans equations have 9 unknowns (3 streaming motions at least 3 terms of the random motion tensor). But we have only four equations, meaning this is not a closed set.
 \par For comparison, in fluid dynamics there are only 4 unknowns (3 streaming motions and the pressure). The 3 Euler Equations combined with the Equation of State forms a closed set. Fluids are isotropic . This difference is due to the collisional nature of fluids, that are characterized by an isotropic velocity dispersion tensor (i.e. the velocity ellipsoid becomes a sphere).
 
 \subsubsection*{Applications}
@@ -637,4 +637,336 @@ thus the need to assume the presence of DM.
 
 \section{Elliptical Galaxies}
 
-Coming next week.
+If the subject is particularly of your liking, consider giving a read to \cite{Kormendy_2009}, for they have written a rather extensive review about the structure and formation of elliptical and spheroidal galaxies\footnote{Yeah, totally random choice of words on my side.}.
+
+\subsection{Generalities}
+
+Unlike disk galaxies, which we've briefly discussed in earlier chapters, elliptical galaxies have surface brightness profiles that are well described by a Sersic profile
+\begin{equation}
+    I(R) = I_{e}\exp\left[-b_{n}\left(\left(\frac{R}{R_{e}}\right)^{1/n}-1\right)\right]
+    \label{eq:sersicprofile}
+\end{equation}
+where within effective radius $R_{e}$ is contained half the light of the galaxy. For $n=4$ it is equivalent to the de Vaucouleurs profile (\ref{eq:devaucouleurs}) we've already encountered.
+\par Elliptical galaxies are broadly described by Sérsic profiles, but their innermost regions show a dichotomy. Massive ellipticals often have central light deficits, or cores, relative to the outer Sérsic profile. Lower-luminosity ellipticals are usually coreless/cuspy, with surface brightness profiles that continue rising steeply toward the center.
+\par Elliptical galaxies of different luminosity have different concentrations (i.e., different $n$-indices). Using the Sersic profile (\ref{eq:sersicprofile}) to fit for the $n$-index gives $n<4$ for low luminosity elliptical (which are less concentrated), while $n>4$ for higher luminosity ellipticals.
+\par Elliptical galaxies are broadly described by Sérsic profiles, but their innermost regions show a dichotomy. Massive ellipticals often have central light deficits, or \emph{cores}, with respect to the outer Sérsic profile. Lower-luminosity ellipticals are usually coreless or \emph{cuspy}, with surface brightness profiles that continue rising steeply toward the center. In particular, the more luminous ellipticals ($M_{V}\lesssim -21.7$) tend to present cores, inducing a flattening in the central region of the surface brightness profile. On the other hand, midsize ellipticals ($-21.5\lesssim M_{V}\lesssim -15.5$) are typically core-less systems where the SB profile steeply rises to center.
+
+\subsection{Faber-Jackson Relation}
+
+Just as for spiral galaxies, stars move faster in more luminous galaxies, following a trend roughly predicted by the Tully-Fisher relation (\ref{eq:tullyfisher}). At the centers of bright ellipticals, the dispersion can reach $500 \unit{km}\unit{s}^{-1}$ while $\sigma \sim 50\unit{km}\unit{s}^{-1}$ in the least luminous objects. In the V band, it has been found the following empirical relation
+\begin{equation}
+    \frac{L_{V}}{2\power{10}{10}L_{\odot}} \approx \left(\frac{\sigma}{200 \unit{km}\unit{s}^{-1}}\right)^{4}
+    \label{eq:faberjackson}
+\end{equation}
+which is often called the Faber-Jackson relation, and is essentially the equivalent of the Tully-Fisher relation for elliptical galaxies.
+
+\subsection{Tensor Virial Theorem}
+
+As we'll see in the following, when dealing with elliptical galaxies, a crucial distinction has to be made. Are ellipticals deformated because they're just strongly asymmetric or is it because they're strongly rotating?
+\par To find an answer to this question, we're going to need the \emph{tensor virial theorem}. For this, I'll just cover the definitions and then skip right to the final result.
+\par Consider the second Jeans equation (\ref{eq:jeans_2nd}) and multiply it by $x_{k}$ and integrate over the spatial coordinates. Doing so, you'd obtain 
+\begin{equation}
+    \int x_{k}\partial_{t}(n\langle v_{j}\rangle)\,\text{d}^{3}x = -\int x_{k}\partial^{i}(n\langle v_{i}v_{j}\rangle)\,\text{d}^{3}x - \int x_{k}\partial_{j}\Phi n\,\text{d}^{3}x
+    \label{eq:starting_tvt}
+\end{equation}
+We define Chandrasekhar's potential tensor from the last term of the former equation 
+\begin{equation}
+    W_{kj} = -\int x_{k}n\partial_{j}\Phi\,\text{d}^{3}x
+    \label{eq:chandrapot}
+\end{equation}
+Since by definition the gravitational potential (per unit mass) is given by 
+\begin{equation*}
+    \Phi(\vec{x}) = -G\int \frac{n(\vec{x}')}{|\vec{x}-\vec{x}'|}\,\text{d}^{3}x'
+\end{equation*}
+we can plug it into (\ref{eq:chandrapot}) and find, with some algebra that exploits the symmetry $x\longleftrightarrow x'$, the following expression 
+\begin{equation*}
+    W_{kj} = -\frac{G}{2}\left[\int\int n(\vec{x}')n(\vec{x})\frac{(x_{j}'-x_{j})(x_{k}'-x_{k})}{|\vec{x}'-\vec{x}|^{3}}\right]\,\text{d}^{3}x\,\text{d}^{3}x'
+\end{equation*} 
+which is also manifestly symmetric. Taking the trace $W^{k}_{\;\;k}$, we find out that it reduces to the scalar gravitational potential $W$
+\begin{equation*}
+    W^{k}_{\;\;k} = -\frac{G}{2}\left[\int\int n(\vec{x}')n(\vec{x})\frac{1}{|\vec{x}'-\vec{x}|}\right]\,\text{d}^{3}x\,\text{d}^{3}x' = \frac{1}{2}\int n\Phi\,\text{d}^{3}x = W
+\end{equation*}
+where we've simply subbed in the definition of $\Phi$.
+\par Moving to the second term of (\ref{eq:starting_tvt}), we can integrate per parts, apply the divergence theorem and find 
+\begin{equation*}
+    -\int x_{k}\partial^{i}(n\langle v_{i}v_{j}\rangle)\,\text{d}^{3}x = \int n\langle v_{i}v_{j}\rangle\,\text{d}^{3}x
+\end{equation*}
+We define the \emph{symmetric kinetic tensor}
+\begin{equation}
+    K_{jk} = \frac{1}{2}\int n \langle v_{i}v_{j}\rangle\,\text{d}^{3}x
+    \label{eq:skt}
+\end{equation}
+which we split into the contribution of ordered ($T_{jk}$) and random ($\Pi_{jk}$) motions in the following way\footnote{Recall that $\sigma_{jk}^{2} = \langle v_{j}v_{k}\rangle - \langle v_{j}\rangle \langle v_{k}\rangle$.}
+\begin{equation}
+    T_{jk} = \frac{1}{2}\int n \langle v_{j}\rangle\langle v_{k}\rangle\,\text{d}^{3}x \quad \Pi_{jk} = \int n \sigma^{2}_{jk}\,\text{d}^{3}x
+    \label{eq:kinetictensor_decomp}
+\end{equation}
+so that 
+\begin{equation*}
+    K_{jk} = T_{jk}+\frac{1}{2}\Pi_{jk}
+\end{equation*}
+Equation (\ref{eq:starting_tvt}) then becomes 
+\begin{equation*}
+    \int x_{k}\partial_{t}(n\langle v_{j}\rangle)\,\text{d}^{3}x = W_{jk}+2T_{jk}+\Pi_{jk}
+\end{equation*}
+This is symmetric (because everything on the right is symmetric), so exchanging the ($k$, $j$) and the ($j$, $k$) components and averaging
+\begin{equation*}
+    \frac{1}{2}\left[\int x_{j}\partial_{t}(n\langle v_{k}\rangle)\,\text{d}^{3}x + \int x_{k}\partial_{t}(n\langle v_{j}\rangle)\,\text{d}^{3}x \right] = W_{jk}+2T_{jk}+\Pi_{jk}
+\end{equation*}
+The partial time derivatives on the left-hand side can be pulled outside the integral and then changed into a complete derivative (because the spatial part is integrated out)
+\begin{equation*}
+    \frac{1}{2}\frac{\text{d}}{\text{d}t}\left[\int x_{j}(n\langle v_{k}\rangle)\,\text{d}^{3}x + \int x_{k}(n\langle v_{j}\rangle)\,\text{d}^{3}x \right] = W_{jk}+2T_{jk}+\Pi_{jk}
+\end{equation*}
+To define this expression, it is useful to define the symmetric moment of inertia tensor and its temporal derivative 
+\begin{equation}
+    I_{jk} = \int n x_{j}x_{k}\,\text{d}^{3}x \quad \der{I_{jk}}{t} = \int \parder{n}{t}x_{j}x_{k}\,\text{d}^{3}x
+    \label{eq:inertiatensor}
+\end{equation}
+Using the first Jeans equation (\ref{eq:jeans_1st}) and the divergence theorem, we obtain 
+\begin{equation*}
+    \der{I_{jk}}{t} = \int n(x_{j}\langle v_{k}\rangle+ x_{k}\langle v_{j}\rangle )\,\text{d}^{3}x
+\end{equation*}
+so that we can finally present the Tensor Virial Theorem
+\begin{equation}
+    \frac{1}{2}\dder{I_{jk}}{t} = W_{jk}+2T_{jk}+\Pi_{jk}
+    \label{eq:tensorvirialtheorem}
+\end{equation}
+If the system is in a steady-state the moment of inertia tensor is stationary, and the Tensor Virial Theorem reduces to
+\begin{equation*}
+    0 = W_{jk}+2K_{jk}
+\end{equation*}
+whose trace reduces to the familiar scalar virial theorem (\ref{eq:virial_theorem}).
+
+\subsection{Flattening of Elliptical Galaxies}
+
+Consider now the case of an axisymmetric galaxy that rotates around its symmetry axis (say, the $z$ axis) and is seen edge-on. The $x$ axis is taken to be parallel to the line of sight, so that the $yz$ plane is actually the sky plane. Symmetry imposes the death of all non-diagonal terms of $W_{jk}$, $T_{jk}$, $\Pi_{jk}$. Rotational invariance on the plane also requires $xx$ terms to be equal to $yy$ terms. We're then left with just two equations 
+\begin{align*}
+    2T_{xx}+\Pi_{xx} &= -W_{xx}\\
+    2T_{zz}+\Pi_{zz} &= -W_{zz}
+\end{align*}
+of which we can take the ratio
+\begin{equation*}
+    \frac{2T_{xx}+\Pi_{xx}}{2T_{zz}+\Pi_{zz}} = \frac{W_{xx}}{W_{zz}}
+\end{equation*}
+Note that the right hand side depends only on the geometry of the system. Let us consider for example an isotropic, oblate rotator. Isotropy requires $\Pi_{xx} = \Pi_{zz} = M\sigma^{2}$ and $T_{zz} = 0$, while the trace of the $T$ tensor is 
+\begin{equation*}
+    T^{i}_{\;\;i} = 2T_{xx} = \frac{1}{2}\int n(\vec{x})(\langle v_{\phi}\rangle^{2}\sin^{2}\phi + \langle v_{\phi}\rangle^{2}\cos^{2}\phi)\,\text{d}^{3}x := \frac{1}{2}Mv^{2}_{\text{rot}}
+\end{equation*}
+where $v_{\text{rot}}$ is the density weighted rotation speed.
+\par The ratio we've previously computed then becomes 
+\begin{equation*}
+    \frac{\frac{1}{2}Mv^{2}_{\text{rot}}+M\sigma^{2}}{M_{\sigma^{2}}} = \frac{W_{xx}}{W_{zz}}
+\end{equation*}
+It can be shown that the right hand side of the equation, the geometrical part, can be expressed as the ratio of the major axis of the ellipsoid or as a function of the ellipticity $\epsilon = 1-b/a$, finding 
+\begin{equation}
+    \frac{v_{\text{rot}}}{\sigma} \approx \sqrt{2\left[(1-\epsilon)^{-0.9}-1\right]} = \sqrt{2\left[\left(\frac{b}{a}\right)^{-0.9}-1\right]}
+    \label{eq:isoblator}
+\end{equation}
+This specifies the relation between the flattening of the spheroid and the ratio of streaming motion to random motion. Also, note that you need a rather large amount of rotation to achieve only modest flattening. In fact, according to this relation, even fairly round galaxies should rotate quite fast; for example
+\begin{equation*}
+    \frac{b}{a} = 0.7 \implies \frac{v_{\text{rot}}}{\sigma} \approx 0.9
+\end{equation*}
+which is an absurd value.
+\par Consider then a non-rotating, anisotropic, oblate system\footnote{The system is still axisymmetric, so the anisotropy is limited to the $z$ axis}. The velocity dispersion along the $x$ and $z$ axis will then be different, and repeating the calculations we'd find 
+\begin{equation}
+    \frac{\sigma_{zz}}{\sigma_{xx}} \approx \left(\frac{b}{a}\right)^{0.45}
+    \label{eq:anioblnonrot}
+\end{equation}
+Now, the same 0.7 flattening requires only a small anisotropy $\sigma_{zz}(\sigma_{xx})\approx 0.85$.
+\par Finally, let us consider a rotating, anisotropic, oblate system, for which the anisotropy is characterized by a $\delta$ parameter. We can write 
+\begin{align*}
+    &\Pi_{zz} = (1-\delta)\Pi_{xx} = (1-\delta)M_{\sigma}^{2}\\
+    & T_{zz} = 0 \quad 2T_{xx} = \frac{1}{2}Mv^{2}_{\text{rot}}
+\end{align*}
+from which 
+\begin{equation}
+    \frac{v_{\text{rot}}}{\sigma} \approx \sqrt{2\left[(1-\delta)(1-\epsilon)^{-0.9}-1\right]}
+    \label{eq:anisoblator}
+\end{equation}
+\par A potential problem is that we can not directly measure $v_[\text{rot}]$ nor $\sigma$. Rather, we measure properties that are projected along the line-of-sight. Furthermore, in general we don’t see a system edge-on but under some unknown inclination angle $i$ (so, we do not see the full major axis, but just their projection).
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.7\textwidth]{img/elligalaxiesrot.png}
+\end{figure}
+\par Elliptical galaxies can thus be split into two kinematic classes
+\begin{itemize}
+    \item \emph{Fast rotators}: kinematics consistent with oblate rotators, their shape is flattened by rotation;
+    \item \emph{Slow rotators}: they present very little rotation, and their shape is due to anisotropic pressure support.
+\end{itemize}
+\par The isophotes\footnote{"In geometry, an isophote is a curve on an illuminated surface that connects points of equal brightness."} of elliptical galaxies are elliptical, but not perfectly so. They show deviations that are typically either '\emph{disky}' or '\emph{boxy}', as shown in Fig.\ref{fgr:diskyboxy}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/diskyboxy.png}
+    \caption{On the left, a boxy galaxy; on the right, a disky galaxy.}
+    \label{fgr:diskyboxy}
+\end{figure}
+\par The angular variation in the radial coordinate can be expressed in terms of a Fourier series
+\begin{equation}
+    \Delta R(\phi) = R_{\text{isop}}(\phi) - R_{\text{best-ell}}(\phi) = \sum_{n=1}^{\infty}\left[a_{n}\cos(n\phi)+b_{n}\sin(n\phi)\right]
+\end{equation}
+Disky and boxy galaxies correspond, respectively, to FT expansions with $a_{4}>0$ and $a_{4}<0$. As much as 80\% of elliptical galaxies shows deviations from purely elliptical isophotes.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/disky.png}
+    \includegraphics[width=0.45\textwidth]{img/boxy.png}
+    \caption{On the left, R-image of NGC4660, an elliptical galaxy with a disk component of the isophotes; on the right, R-image of NGC5322, an elliptical galaxy with box-shaped isophotes.}
+    \label{fgr:disky_boxy}
+\end{figure}
+
+\subsection{Isophotal Twist}
+
+Some ellipticals reveal isophotal twists, with direction of major axis of isophote changing with isophotal level.
+\par The simplest explanation is that elliptical galaxies can be triaxial (rather than oblate or prolate), and have their intrinsic axis ratios change with radius. Such a system in projection will reveal an \emph{isophotal twist}.
+\par As a rule of thumb, you might want to remember that luminous ellipticals are usually more boxy and twisted.
+\par The disky ellipticals may form from mergers of gas-rich disk galaxies; the merger remnants will then contain a population of young stars that were formed in the process of merging, and depending n the relative orientation of the angular momentum vectors of the two galaxies, the merged galaxy may have a substantial contribution of rotational support.
+\par On top of that, core-less galaxies also reveal some "extra light" which might be the reuslt of nuclear starburst resulting from "wet mergers" (with gas), while galaxies with cores could be the result of dry mergers that created a more diffuse central nucleus.
+
+\subsection{Integrals of Motion: Jeans Theorem}
+
+Let’s consider a system in steady state, where $\Phi$ and the distribution function $f$ are not explicit functions of time. In this
+case, we may introduce the integrals of motion. An "integral of motion" is a function $I(\vec{r}, \vec{v})$ (not explicit function of time) which is constant along a star's orbit. Obvious examples of possible integrals of motion are the energy (in a static potential), the whole angular momentum (in a static potential with spherical symmetry), the off-plane component of the angular momentum (in an axisymmetric, static potential).
+\par Since $I$ is constant along an orbit, we can expand its time derivative
+\begin{equation*}
+    \der{I}{t} = \partial^{i}I\der{x_{i}}{t} + \parder{I}{v_{i}}\der{v_{i}}{t} = (\vec{v}\cdot \nabla)I-\nabla\Phi\parder{I}{\vec{v}} = 0 = \text{CBE}(I)
+\end{equation*}
+where the last two equalities hold if $I$ is really an integral of motion. What this implies is truly remarkable: $I$ is a solution of the collisionless Boltzmann equation (\ref{eq:vlasov}) and it's actually a valid distribution function.
+\par Jeans' theorem proves that any steady-state solution of the collisionless Boltzmann equation depends on the phase-space coordinates only through integrals of motion in the given potential, and any function of the integrals yields a steady-state solution of the collisionless Boltzmann equation. In short
+\begin{equation}
+    \der{f}{t}[I_{1}(\vec{r},\vec{v}),...,I_{n}(\vec{r},\vec{v})] = \parder{f}{I_{i}}\der{I_{i}}{t}
+    \label{eq:jeanstheorem}
+\end{equation}
+\par The Jeans theorem is extremely useful since it allows us to construct legitimate distribution functions $f$ using integrals of motion. In the special case of steady state spherical systems, it can be shown that:
+\begin{enumerate}
+    \item Distribution functions must be of the form $f(E, |L|)$;
+    \item Distribution functions of the form $f(E)$ must have an isotropic velocity dispersion $\sigma_{r} = \sigma_{\theta} = \sigma_{\phi}$;
+    \item Distribution functions of the form $f(E, |L|)$ must have an isotropic velocity dispersion $\sigma_{r} \neq \sigma_{\theta}=\sigma_{\phi}$.
+\end{enumerate}
+\par Clearly, an important step is to require that the distribution function also yields the potential $\Phi(r)$
+\begin{equation*}
+    4\pi G \int f(\vec{r},\vec{v})\,\text{d}^{3}v = 4\pi G n = \nabla^{2}\Phi
+\end{equation*}
+which in spherical coordinates becomes 
+\begin{equation*}
+    \frac{1}{r^{2}}\frac{\text{d}}{\text{d}r}\left(r^{2}\der{\Phi}{r}\right) = 4\pi G \int f\left(\frac{1}{2}v^{2}+\Phi, |\vec{r}\wedge\vec{v}|\right)\,\text{d}^{3}v
+\end{equation*}
+Solutions of this equation give self-consistent spherical stellar systems, provided the distribution function is non-negative and the resulting density and potential are physically acceptable.
+\par To make things easier we redefine the potential and the energy by adjusting the arbitrary constant and changing the sign
+\begin{align*}
+    \Psi &= -\Phi +\Phi_{0}\\
+    \epsilon &= -E +\Phi_{0} = \Psi -\frac{1}{2}v^{2}
+\end{align*}
+We choose $\Psi_{0}$ such that $f>0$ for $\epsilon>0$ (bound orbits) and $f=0$ for $\epsilon \leq 0$ (unbound orbits). The iter is for example the following 
+\begin{enumerate}
+    \item  Choose a distribution function which is a function of energy $f(\epsilon)$, from Jeans Theorem $f(E)$ is already a solution to the steady CBE;
+    \item Integrate the distribution function over $v$ to find $n\Psi$;
+    \item Solve Poisson’s equation to find $\Psi(r)$;
+    \item Plug $\Psi(r)$ into $n(\Psi)$ to find the mass distribution $n(r)$.
+\end{enumerate}
+Consider for example ani solated, self-gravitating, steady-state stellar system described by
+\begin{equation*}
+    \frac{1}{r^{2}}\frac{\text{d}}{\text{d}r}\left(r^{2}\der{\Psi}{r}\right) = -16\pi^{2} G \int f\left(\epsilon\right)\sqrt{2(\Psi.\epsilon)}\,\text{d}\epsilon
+\end{equation*}
+and take a polytropic sphere with a power law distribution function $f(\epsilon) = F\epsilon^{n-3/2}$ for $\epsilon > 0$.
+\par Following our charted iter
+\begin{align*}
+    n &= 4\pi \int_{0}^{\infty} f(\epsilon)v^{2}\diff{v}\\
+    &= 4\pi F\int_{0}^{\infty}\left(\Psi - \frac{1}{2}v^{2}\right)^{n-3/2}v^{2}\diff{v}
+\end{align*}
+which is solved by $n(\Psi) = c_{n}\Psi^{n}$. Subbing it in the spherical Poisson equation retrieves the Lane-Emden equation. Thus, we find that for a self-gravitating sphere, the density profile $\rho(r)$ is the same for stars with distribution function $\epsilon^{n-3/2}$ and gases with polytropic EoS.
+\par For $n<5$, the Lane-Emden equation admits solutions with vanishing density at a finite radius\footnote{Systems with $n>5$ have infinite mass at large $r$, while for systems with $n=\infty$ (isothermal equation) the analysis we've given breaks down.}, but the analitcal solutions are limited to only a few values of $n$, such as $n=5$ (Plummer Shpere).
+\par For $n=5$ the density profile is 
+\begin{equation*}
+    \rho \sim \left(1+\left(\frac{r}{b}\right)^{2}\right)^{-5/2}
+\end{equation*}
+which gives a finite mass, is well-behaved at $r=0$ and is a good match for the density profile of globular clusters and dwarf galaxies.
+\par Consider an isothermal sphere described by
+\begin{equation*}
+    f(\epsilon)\sim \frac{\rho_{1}}{(2\pi \sigma^{2})^{3/2}}e^{\epsilon/\sigma^{2}}
+\end{equation*}
+\par More positive $\epsilon$ means more bound. Also, note that $f(\epsilon) > 0$ for $\epsilon <0$, so the equation admits unbound stars. Following the usual procedure gives $\rho = \rho_{1}\exp(\Psi/\sigma^{2})$, and plugging into Poisson's equation we find a solution in the \emph{singular isothermal sphere} (SIS)
+\begin{equation*}
+    n = \frac{\sigma^{2}}{2\pi G r^{2}}
+\end{equation*}
+which has two rather nice properties (circular velocities and velocity dispersions independent of radius) and two not-so-nice properties (infinite density at $r=0$ and infinite mass for large radii).
+\par The general isothermal sphere takes as boundary conditions at $r=0$
+\begin{equation*}
+    n(0) = n_{0} \quad \der{n}{r}\Big|_{r=0} = 0
+\end{equation*}
+allowing us to find a constant near-nucleus density $n(0)$ within a radius 
+\begin{equation}
+    r_{0} = \frac{3\sigma}{(4\pi G n_{0})^{1/2}}
+    \label{eq:kingradius}
+\end{equation}
+which is known as King or core radius. At small radii ($r \lesssim r_{0}$) the density law resembles the (so-called Hubble) density law
+\begin{equation*}
+    n(r) = \frac{1}{\left(1+\left(\frac{r}{r_{0}}\right)^{2}\right)}^{3/2}
+\end{equation*}
+which fits decently the centers of many elliptical galaxies. At large radii ($r\gtrsim 15r_{0}$) the system resembles the SIS
+\begin{equation*}
+    n(r) \sim \left(\frac{r}{r_{0}}\right)^{-2}
+\end{equation*}
+which doesn't fit elliptical galaxies too well in the outer regions.
+\par There is an underlying problem with all isothermal models, they have infinite total mass and size. It is easy to see why the system has infinite size
+\begin{itemize}
+    \item at any given radius, stars have isotropic dispersion $\sigma$;
+    \item at this radius at least some star are therefore moving outwards, but further out the dispersion is still $\sigma$, and stars are moving outward the system must have infinite extent;
+    \item Ultimately, this arises because $f(\epsilon) > 0$ for negative $\epsilon$, meaning the model includes unbound stars. To rectify this problem, we attempt to modify things slightly by removing the unbound stars.
+\end{itemize}
+\par A viable alternative is the lowered isothermal (King) truncated exponential $f(\epsilon)$: It suppresses stars at large radius
+\begin{equation*}
+    f(\epsilon) = \left\{
+        \begin{array}{ll}
+            \frac{n_{1}}{(2\pi\sigma^{2})^{3/2}\left(\exp\left(\epsilon/\sigma^{2}\right)-1\right)} & \text{for}\; \epsilon > 0\\
+            0 & \text{for}\; \epsilon \leq 0
+        \end{array}
+    \right.
+\end{equation*}
+where $\sigma$ is a (dispersion like) parameter. Solve this by integration, choosing boundary conditions at $r = 0$
+\begin{equation*}
+    \Psi(0) = q\sigma^{2} \quad \der{\Psi}{r}(0) = 0
+\end{equation*}
+In the inner regions it behaves like an isothermal model, with a core Kindg radius $r_{0}$, in the outer regions density decreases to 0 at $r_{t}$, the tidal or truncation radius, that is the edge of the sphere for which $n(r) = 0$ for $r>r_{t}$. It is useful to define the concentration parameter $c = \log(r_{t}/r_{0})$.
+
+\subsubsection*{Isothermal Disk}
+
+Assume a disk that is stratified in layers parallel to its plane, so everything is a function of the vertical coordinate, $z$, only. In general the velocity dispersion may change with $z$, but let's consider the case where the velocity dispersion is constant. This is called an isothermal disk.
+\begin{equation*}
+    E_{z} = \Phi + \frac{1}{2}v_{z}^{2}
+\end{equation*}
+is an integral of motion. The associated distribution function is 
+\begin{equation*}
+    f(E_{z}) = \rho_{0}(2\pi\sigma_{z}^{2})^{-1/2}\exp(-E_{z}/\sigma_{z}^{2})
+\end{equation*}
+which can be integrated over velocity space to obtain 
+\begin{equation*}
+    \rho_{z} = \rho_{0}\exp(-\Phi/\sigma_{z}^{2})
+\end{equation*}
+Using Poisson's equation and the standard boundary conditions we obtain the density as a function of the vertical coordinate 
+\begin{equation*}
+    \rho(z) = \rho_{0}\text{sech}^{2}(z/h)
+\end{equation*}
+where we've defined the scaleheight
+\begin{equation*}
+    h = \frac{\sigma_{z}}{\sqrt{2\pi G \rho}}
+\end{equation*}
+For $z \gg h$ we retrieve an exponentially dropping profile.
+\par Is it possible in general to pass from $n$ (assuming we're able to measure it) to the distribution function $f$? No, not really. There's only a scant few of cases where that is actually possible. One is the case of spherically symmetric systems.
+\par It is possible to show that given a spherically symmetric density distribution, which can be written as $\rho = \rho(\Psi)$, Eddington’s formula\footnote{It is essentially the Abel integral equation we've already encountered somewhere in our previous discussions.} yields the corresponding distribution function\footnote{This method can be extended to rotating spherical systems with $f(E, |L|)$ as well as axisymmetric systems with $f(E, L_{z})$.} $f(\epsilon)$
+\begin{equation}
+    f(\epsilon) = \frac{1}{\sqrt{8}\pi^{2}}\frac{\text{d}}{\text{d}\epsilon}\int_{0}^{\epsilon}\der{n}{\Psi}\frac{1}{\sqrt{\epsilon - \Psi}}\diff{\Psi}
+\end{equation}
+
+\subsection{Schwarzschild’s Orbit Superposition Method}
+
+The method we're about to discuss is rather powerful, because no distribution funciton is needed for it to work.
+\par The observed surface brightness is used to build a mass model for the luminous component(s) of the galaxy. Because the surface brightness corresponds to the two-dimensional projection of the underlying, 3D luminosity density, assumptions about the underlying density have to be made in order to deproject it, and values for the orientation of the galaxy with respect to the line of sight need to be chose.
+\par You have to convert the luminosity to mass, which in general is done by assuming a constant mass-to-light ratio $M/L$; this conversion then gives a mass model for the luminous component. To this you can add dark components to obtain the full gravitational potential.
+\par Once you have a model for the full gravitational potential, it is then used to create an orbit library\footnote{Template bank, is this you?} that contains the building blocks (the orbits) of a Schwarzschild model. For a given set of orbits weights, one can then predict both the surface brightness and whatever kinematic information is available.
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[width=0.8\textwidth]{img/sosm1.png}
+    \includegraphics[width=0.8\textwidth]{img/sosm2.png}
+    \caption{Visual representation of the SOS method. In the lower cartoon, numerical integrations of a single orbit in the adopted gravitational potential is shown. After a sufficiently long time the density of regular orbits converges to a fixes distributions.}
+    \label{fgr:sosm}
+\end{figure}
+\par By running many instances of this basic Schwarzschild modeling procedure for different settings of teh assumed parameters (inclination, mass-to-light, mass of the SBH, properties of the DM halo, etc.) and comparing the objective function for the best-fit orbital-weight distribution for each model, one can determine the overall best model.
