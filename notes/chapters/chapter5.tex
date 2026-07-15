@@ -61,7 +61,7 @@ Information transport in the cloud occurs with a velocity equal $c_{s}$. In this
 \begin{equation*}
     c_{s}^{\text{ad}} = \sqrt{\frac{\gamma p }{\rho}} = \sqrt{\frac{\gamma kT}{\mu m_{\text{H}}}} \quad c_{s}^{\text{iso}} = \sqrt{\frac{kT}{\mu m_{\text{H}}}}
 \end{equation*}
-From which we infer that as the gas grows hotter only big regions can collapse. In terms of mass, we call Jeans mass 
+From which we infer that as the gas grows hotter, only larger and larger regions can collapse. In terms of mass, we call Jeans mass 
 \begin{equation}
     M_{J} \sim \frac{4\pi}{3}\rho r_{J}^{3} \propto \left(\frac{T^{3}}{G \rho_{0}}\right)^{1/2}
     \label{eq:jeansmass}
@@ -73,13 +73,14 @@ From which we infer that as the gas grows hotter only big regions can collapse. 
 with $\Sigma$ the surface density. In this case we notice that on large distance scales both terms are vanishing, while the system is unstable only at intermediate scales.
 
 \section{Star Formation Rate}
-So, a mass of gas (mainly molecular, since the temperature is lower) if larger than the Jeans mass should collapse in a free fall timescale. In principle the SFR (the solar masses per year of gas converted into stars) should be of order of $M_{\text{gas}}/\tau_{ff}$ with a corrective efficiency factor
+
+So, a mass of gas (mainly molecular, since the temperature is lower) if larger than the Jeans mass, should collapse in a free fall timescale. In principle the SFR (the solar masses of gas converted into stars per year) should be of order of $M_{\text{gas}}/\tau_{ff}$ with a corrective efficiency factor
 \begin{equation}
     \text{SFR} = \epsilon_{ff}\frac{M_{\text{gas}}}{\tau_{ff}}
 \end{equation}
 but it turns out that gas is converted into stars with an efficiency $\epsilon_{ff}\ll 1$ and we observe that GMCs do not seem to disappear in a free-fall time. First of all, let’s calculate the lifetime of a single GMC.
-\par Giant molecular clouds generally host O stars complexes, whether older and older complexes contains lower and lower molecular mass inside a fixed radius. The demise of GMCs must then be related to the age of the complex: After a few (dozen) Myr, no molecular Hydrogen is detected.
-\par Probably, the best determination of GMCs lifetimes comes from extragalactic studies. For the LMC (Large Magellanic Cloud) \cite{Kawamura_2009} and \cite{Fukui_2009} used NANTEN observations (single dish radio telescope, $\sim 4\unit{m}$\footnote{Ahem, the new PULSAR telescope of our Department is (technically) better. Let that settle.}) and catalogued the positions of all the molecular clouds, all the H$_{\text{II}}$ regions, and all the star clusters down to a reasonable completeness limit ($10^{4.5}M_{\odot}$ for the GMCs). They put the star clusters on HR diagrams, allowing them to make estimates of their ages, and they then broke them into different age bins. At that point they plotted the minimum projected distance between each cluster or HII region and the nearest GMC, and compare the distribution to what one would expect if the spatial distribution were random.
+\par Giant molecular clouds generally host O stars complexes, while older and older complexes contains lower and lower molecular mass inside a fixed radius. The demise of GMCs must then be related to the age of the complex: After a few (dozen) Myr, no molecular Hydrogen is detected.
+\par Probably, the best determination of GMCs lifetimes comes from extragalactic studies. For the LMC (Large Magellanic Cloud) \cite{Kawamura_2009} and \cite{Fukui_2009} used NANTEN observations (single dish radio telescope, $\sim 4\unit{m}$\footnote{Ahem, the new PULSAR telescope of our Department is (technically) better. Let that settle.}) and catalogued the positions of all the molecular clouds, all the H$_{\text{II}}$ regions, and all the star clusters down to a reasonable completeness limit ($10^{4.5}M_{\odot}$ for the GMCs). They put the star clusters on HR diagrams, allowing them to make estimates of their ages, and they then broke them into different age bins. At that point they plotted the minimum projected distance between each cluster or H$_{\text{II}}$ region and the nearest GMC, and compare the distribution to what one would expect if the spatial distribution were random.
 \begin{figure}[h!]
     \centering 
     \includegraphics[width=0.6\textwidth]{img/gmcsdistrib.png}
@@ -89,7 +90,7 @@ but it turns out that gas is converted into stars with an efficiency $\epsilon_{
 \par The results are very significative:
 \begin{itemize}
     \item There is an excess of H$_{\text{II}}$ regions and clusters in the class SWB0 at small separations from GMCs. This represents a physical association between GMCs and these objects. There is no comparable excess for the older clusters;
-    \item First, we note that roughly 66\% of the SWB0 clusters are in the excess spike at small separations. This implies that, on average, 66\% of their $<10\unit{Myr}$ lifetime must be spent near their parent GMC, i.e., the phase of a GMC’s evolution when it has a visible nearby cluster is $t_{\text{cluster} = 7\unit{Myr}}$;
+    \item First, we note that roughly 66\% of the SWB0 clusters are in the excess spike at small separations. This implies that, on average, 66\% of their $<10\unit{Myr}$ lifetime must be spent near their parent GMC, i.e., the phase of a GMC’s evolution when it has a visible nearby cluster is $t_{\text{cluster}} = 7\unit{Myr}$;
     \item To estimate the total GMC lifetime, \cite{Kawamura_2009} find:
     \begin{enumerate}
         \item 39 GMCs are associated with nearby young star clusters;
@@ -97,11 +98,11 @@ but it turns out that gas is converted into stars with an efficiency $\epsilon_{
         \item 44 GMCs are associated with neither (they are starless).
     \end{enumerate}
 \end{itemize}
-\par If we assume that we are seeing these clouds are random stages in their lifetimes, then the fraction associated with star clusters must represent the fraction of the total GMC lifetime for which this association lasts. Thus the lifetime of each phase is just proportional to the fraction of clouds in that phase, i.e.
+\par If we assume that we are seeing these clouds at random stages in their lifetimes, then the fraction associated with star clusters must represent the fraction of the total GMC lifetime for which this association lasts. Thus the lifetime of each phase is just proportional to the fraction of clouds in that phase, i.e.
 \begin{equation*}
     t_{\text{H}_{\text{II}}} = \frac{N_{\text{H}_{\text{II}}}}{N_{\text{cluster}}}t_{\text{cluster}}
 \end{equation*}
-and similarly for $t_{\text{starless}}$. Plugging in the number of clouds, and given that $t_{cluster} = 7\unit{Myr}$, we obtain $t_{\text{starless}} = 8\unit{Myr}$, $ t_{\text{H}_{\text{II}}} = 16\unit{Myr}$ and $t_{\text{life}} = t_{\text{starless}}+t_{cluster}+t_{\text{H}_{\text{II}}} = 31\unit{Myr}$.
+and similarly for $t_{\text{starless}}$ we can plug in the number of clouds, and given that $t_{cluster} = 7\unit{Myr}$, we obtain $t_{\text{starless}} = 8\unit{Myr}$, $ t_{\text{H}_{\text{II}}} = 16\unit{Myr}$ and $$t_{\text{life}} = t_{\text{starless}}+t_{cluster}+t_{\text{H}_{\text{II}}} = 31\unit{Myr}$$
 \par Hence, the average GMC lifetime is longer than $10\unit{Myr}$. For comparison, the free-fall time of GMCs is
 \begin{equation*}
     \tau_{ff} = \sqrt{\frac{3\pi}{32G \rho}} \approx 3.6\power{10}{6}\unit{yr}\left(\frac{n_{\text{H}}}{100\unit{cm}^{-3}}\right)^{-1/2}
@@ -141,12 +142,14 @@ Note that for low gas surface densities ($ \Sigma_{\text{gas}_{\text{tot}}} < 10
 \par SFR surface density is correlated with the H$_{\text{I}}$ surface density in the outer parts of galaxies, while is \emph{not} correlated with the H$_{\text{I}}$ surface density in the inner parts of galaxies.
 \subsection{On the SF inefficiency}
 From what we've been discussing so far, it appears that SF must be very inefficient. But why? There are three main "culprits" we'll be looking into: Rotation, Magnetic fields and Turbulence.
+
 \subsubsection*{Rotation}
+
 It is possible to show that for a rotating sphere the dispersion relation that determines the onset of instability is
 \begin{equation*}
     \omega^{2} = 4\Omega^{2}+c_{s}^{2}k^{2}-4\pi G\rho_{0}
 \end{equation*}
-where $\Omega$ is the angular velocity. Depending on $\Omega$, $\omega$ can be positive (stability) at all scales. But this holds only per perturbation ortogonal to the rotation axis: If a perturbation
+where $\Omega$ is the angular velocity. Depending on $\Omega$, $\omega$ can be positive (stability) at all scales. But this holds only for perturbations ortogonal to the rotation axis: If a perturbation
 is parallel to the rotation axis it can’t be stabilized by rotation, meaning that in general collapse won't be supported. What about a rotating "sheet"?
 \par The dispersion relation is, in this case, given by
 \begin{equation*}
@@ -174,14 +177,18 @@ the stability criterion becomes $Q \geq 1$ (stable). Note, however, that in gene
     Q = \frac{\Omega_{k} c_{s}}{\pi G \Sigma_{0}} < 1
 \end{equation}
 where $\Omega_{k}$ is the epicycle frequency, then turning the condition into a \emph{local} stability criterion. A radial perturbation in a differentially rotating disk does not remain a monotonic compression: The gas tends to execute radial oscillations (epicycle) around the local circular orbit, and this oscillatory motion provides a restoring effect that opposes self- gravity.
+
 \subsubsection*{Magnetic Fields}
+
 The matter here turns rather complex, so we'll consider only a simplicistic discussion. We can equate the gravitational energy of the cloud to its magnetic energy, thus yielding a characteristic mass
 \begin{equation*}
     M_{\Phi} = \frac{5^{3/2}}{48\pi^{2}}\frac{B^{3}}{G^{3/2}\rho^{2}} \approx 1.6\power{10}{5}M_{\odot}\left(\frac{n_{\text{H}_{2}}}{100\unit{cm}^{-3}}\right)^{-2}\left(\frac{B}{30\,\mu\text{G}}\right)^{3}
 \end{equation*}
-where the magnetic field is assumed to be uniform across the cloud. If $M > M_{\Phi}$,  the magnetic field cannot prevent gravitational collapse, and the cloud is said to be magnetically super-critical. Conversely, if $M > M_{\Phi}$, the cloud is prevented from collapsing by magnetic forces, and the cloud is said to be magnetically sub-critical.
+where the magnetic field is assumed to be uniform across the cloud. If $M > M_{\Phi}$,  the magnetic field cannot prevent gravitational collapse, and the cloud is said to be magnetically super-critical. Conversely, if $M < M_{\Phi}$, the cloud is prevented from collapsing by magnetic forces, and the cloud is said to be magnetically sub-critical.
 \par Observations, however, suggest that most clouds are magnetically super-critical, thus magnetic fields are not sufficient to prevent collapse.
+
 \subsubsection*{Turbulence}
+
 As you perhaps know, turbulence is a rather complex matter for which we do not yet have a full coverage nor understanding. Which is most unfortunate since turbulence appears to be popping out literally everywhere.
 \par For once, supersonic line widths in molecular clouds are evidence of turbulent motions within the clouds. For example, the predicted Doppler shift due to thermal motion alone for CO at $10\unit{K}$ is $\Delta v_{th} = 0.13\unit{km}\unit{s}^{-1}$, whether the observed one is $> 2\unit{km}\unit{s}^{-1}$.
 \par GMCs are then supported by supersonic turbulence. In presence of turbulence, the sound speed in the Jeans mass can simply be replaced by an effective sound speed
@@ -189,7 +196,7 @@ As you perhaps know, turbulence is a rather complex matter for which we do not y
     c_{s}^{\text{eff}} = \sqrt{c_{s}^{2}+\sigma_{v}^{2}}
 \end{equation*}
 so that upon using the Jeans criterion, we see that a GMC will be stable against gravitational collapse if $ \sigma_{v} > 6\unit{km}\unit{s}^{-1}$, which is roughly consistent with the observed line-widths of GMCs.
-\par Within the interiors of dense cores, the observed line widths are roughly constant at a value slightly higher than a purely thermal line width, while at the edges of the maps of the dense cores, it appears that the line width starts to increase. There is an apparent transition to this coherent regime from amore turbulent one, at about the size scale of $ 0.1\unit{pc}$.
+\par Within the interior of dense cores, the observed line widths are roughly constant at a value slightly higher than a purely thermal line width, while at the edges of the maps of the dense cores, it appears that the line width starts to increase. There is an apparent transition to this coherent regime from a more turbulent one, at about the size scale of $ 0.1\unit{pc}$.
 \par Now, with good approximation, atomic Hydrogen is distributed in a thin slab in hydrostatic equilibrium. Under the assumption of isothermal gas, it is possible to show that the density profile depends on the gravitational potential as
 \begin{equation*}
     \frac{\rho_{\text{H}_{\text{I}}}(z)}{\rho_{\text{H}_{\text{I}}}(0)} = \exp\left(\frac{\Phi(0)-\Phi(z)}{c_{\text{H}_{\text{I}}, \,\text{iso}}^{2}}\right)
@@ -208,12 +215,13 @@ that combined with our previous result yields
 \end{equation*}
 So the density profile is a Gaussian with scale height
 \begin{equation*}
-    h_{\text{H}_{\text{I}}} = \left[\frac{-2\pi G \rho_{\text{tot}}(0)}{c_{\text{H}_{\text{I}}, \,\text{iso}}^{2}}\right]^{-1/2}
+    h_{\text{H}_{\text{I}}} = \left[\frac{2\pi G \rho_{\text{tot}}(0)}{c_{\text{H}_{\text{I}}, \,\text{iso}}^{2}}\right]^{-1/2}
 \end{equation*}
 From measurements of the vertical distribution and velocity of stars of various masses, $\rho_{\text{tot}}(0)\approx \sim 0.18M_{\odot}\unit{pc}^{-3}$ in the solar neighborhood.
 \par If we then calculate $c_{\text{H}_{\text{I}}, \,\text{iso}}$ using a temperature of $80\unit{K}$, we find from previous equation that $h_{\text{H}_{\text{I}}}$ is $10\unit{pc}$, only 10 percent of the observed value. After all, $21\unit{cm}$ observations show that the cold gas actually consists of discrete clouds in seemingly random motion. A typical cloud velocity in the $z$ direction is $6\unit{km}\unit{s}^{-1}$. Substitution of this value for $c_{\text{H}_{\text{I}}, \,\text{iso}}$ in the last equation yields a scale height much closer to the observed one ($100\unit{pc}$).
 \par Can then turbulence stabilize clouds? To see that, we'd have to solve Navier Stokes equation in presence of viscosity (not funny). It's a lot simpler to perform a dimensional analysis and see where that brings us.
-\par If we are examining a molecular cloud, we might have $L \sim 10\unit{pc}$ and $v\sim\unit{km}\unit{s}^{-1}$ (you can think this as the non thermal velocity dispersion met before). The natural time scale for flows in the system is $L/V$, so we expect time derivative terms to be of order the thing being differentiated divided by $L/V$. \par Cancelling common factors from the butchering of NS equation, we obtained
+\par If we are examining a molecular cloud, we might have $L \sim 10\unit{pc}$ and $v\sim\unit{km}\unit{s}^{-1}$ (you can think this as the non thermal velocity dispersion met before). The natural timescale for flows in the system is $L/V$, so we expect time derivative terms to be of order the thing being differentiated divided by $L/V$.
+\par Cancelling common factors from the butchering of NS equation, we obtained
 \begin{equation*}
     1 \sim 1 +\frac{c_{s}^{2}}{V^{2}}+\frac{\nu}{VL}
 \end{equation*}
@@ -221,7 +229,7 @@ From this we can define two dimensionless numbers that are going to control the 
 \begin{equation*}
     \mathcal{M} \sim \frac{V}{c_{s}} \quad  \text{Re} \sim \frac{LV}{\nu}
 \end{equation*}
-If $\mathcal{M} \ll 1$, then $c_{s}^{2}/V^{2}\gg 1$, and this means that the pressure term is important in determining how the fluid evolves. In a GMC the Mach number is typically $\mathcal{M}\sim 20$, hence the pressure term is unimportant for the behavior of the fluid.
+If $\mathcal{M} \ll 1$, then $c_{s}^{2}/V^{2}\gg 1$, and this means that the pressure term is important in determining how the fluid evolves. In a GMC the Mach number is typically $\mathcal{M}\sim 20$, so the pressure term is usually not important to predict the behavior of the fluid.
 \par The Reynolds number is a measure of how important viscous forces are. Viscous forces are significant for $\text{Re} \sim 1$ or less, and are unimportant for $\text{Re} \gg 1$. We can think of the Reynolds number as describing a characteristic dissipation lengthscale $L_{\nu} \sim \nu/V$ in the flow.
 \par For a GMC it is typically $1000\unit{km}$, so much smaller than the average scales of clouds. In a GMC, the Reynolds number is approximately of order $10^{9}$. Hence molecular clouds must be highly turbulent.
 \par Since turbulence impact the (effective) sound speed of the gas and its density\footnote{This enters through the areas of compression, the density is boosted by the Mach number $\mathcal{M}$ squared.}, the Jeans mass in the presence of turbulence scales as
@@ -230,7 +238,9 @@ If $\mathcal{M} \ll 1$, then $c_{s}^{2}/V^{2}\gg 1$, and this means that the pre
 \end{equation*}
 and observations also seem to suggest $\sigma_{v}\propto R^{1/2}$. So on large scales, $\sigma_{v}\gg c_{s}$, and turbulent motions increase the effective pressure, preventing collapse (i.e., preventing star formation on the scale of the entire GMC), on the smaller scales, instead, $\sigma_{v}<c_{s}$, and turbulent compression now boosts the gas densities locally, pushing them "over the edge," causing them to collapse; on small scales turbulence promotes collapse.
 \par Turbulent shocks are the mechanism by which supersonic turbulence converts chaotic motions into localized dense compressions: They help to prevent the global collapse of the cloud, but they also create the compressed regions where local gravitational collapse and star formation can begin. Only a small fraction of the gas undergoes compressions that are strong enough, and long-lived enough, to become gravitationally unstable.
+
 \subsection{Cloud Fragmentation}
+
 During the free-fall collapse phase, the density within the cloud increases by many orders of magnitude. If the temperature remains approximately constant, then the Jeans mass criterion implies that the mass limit for instability decreases dramatically.
 \par Any initial density inhomogeneities which may have been present within the cloud will cause individual regions within the GMC to cross the instability threshold independently and collapse locally. This could lead to the formation of a large number of smaller objects.
 \par We can have a stab at estimating the lower mass limit of the fragmentation process as follows. We first calculate the energy radiated per second during the isothermal collapse. The total gravitational energy released in the collapse is $E_{g}\sim GM^{2}/R$ on a free fall timescale (\ref{eq:ff_timescale}), so that the luminosity is given by 
