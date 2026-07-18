@@ -1213,7 +1213,7 @@ the form
 From (\ref{eq:fluidequation}) we know that if $p = -\rho$, then necessarily $\dot{\rho} = 0$ and thus both $\rho$ and $H$ must be constant.
 \par In terms of $H_{0}$
 \begin{equation*}
-    \frac{\dot{a}^{2}(t_{0})}{a^{2}(t_{0})} = H_{0}^{2} = \frac{8\pi G \rho_{\Lambda}}{3c^{2}}a^{2} \implies \dot{a}^{2}(t) = H_{0}^{2}a^{2}(t)
+    \frac{\dot{a}^{2}(t_{0})}{a^{2}(t_{0})} = H_{0}^{2} = \frac{8\pi G \rho_{\Lambda}}{3c^{2}} \implies \dot{a}^{2}(t) = H_{0}^{2}a^{2}(t)
 \end{equation*}
 which is solved by 
 \begin{equation}
@@ -1225,7 +1225,7 @@ Recall the equation for the density parameter (\ref{eq:densityparam_eq}), which 
 \end{equation*}
 When the Universe was dominated by radiation and matter
 \begin{equation*}
-    \frac{H_{0}^{2}}{H^{2}(t)} = \frac{\Omega_{r,0}}{a^{4}}+\frac{\Omega_{m,0}}{a^{3}}+\frac{1-\Omega_{0}}{a^{2}}
+    \frac{H^{2}(t)}{H_{0}^{2}} = \frac{\Omega_{r,0}}{a^{4}}+\frac{\Omega_{m,0}}{a^{3}}+\frac{1-\Omega_{0}}{a^{2}}
 \end{equation*}
 \par Replacing it in the density parameter equation
 \begin{equation*}
@@ -1257,7 +1257,7 @@ If we take the modulus
 \begin{equation*}
     | 1-\Omega(t)| = \frac{1}{a^{2}H^{2}}
 \end{equation*}
-During the exponential expansion of the inflationary epoch $a(t)\propto \exp(H_{i}t)$ and $H(t) = H_{i} = \text{const.}$, therefore
+During the (alleged) exponential expansion of the inflationary epoch $a(t)\propto \exp(H_{i}t)$ and $H(t) = H_{i} = \text{const.}$, therefore
 \begin{equation*}
      | 1-\Omega(t)| \propto e^{-2H_{i}t}
 \end{equation*}
@@ -1277,7 +1277,7 @@ where $t_{i}$ and $t_{f}$ are respectively the beginning and end of the inflatio
     \frac{a(t_{f})}{a(t_{i})} = e^{N}
 \end{equation*}
 If the duration of inflation was long compared to the Hubble time during inflation $H_{i}^{-1}$, then $N$ was large, and the growth in scale factor was astronomical (see what I did there?)
-\par If we compare the density parameter at the beginning of exponential inflation ($t = t_{i}$)with the density parameter at the end of inflation($t = t_{f}$), we find
+\par If we compare the density parameter at the beginning of exponential inflation ($t = t_{i}$) with the density parameter at the end of inflation ($t = t_{f}$), we find
 \begin{equation*}
      | 1-\Omega(t_{f})| \propto e^{-2H_{i}t_{f}} \quad  | 1-\Omega(t_{i})| \propto e^{-2H_{i}t_{i}}
 \end{equation*}
@@ -1287,7 +1287,7 @@ so that
 \end{equation*}
 Suppose that prior to inflation, the Universe was actually strongly curved, with
 \begin{equation*}
-     1-\Omega(t_{i})|\sim 1 \implies  |1-\Omega(t_{f})|\sim e^{-2N}
+    |1-\Omega(t_{i})|\sim 1 \implies  |1-\Omega(t_{f})|\sim e^{-2N}
 \end{equation*}
 After inflation, during the following radiation-dominated and matter-dominated eras, the difference of $\Omega$ from unity would increase again. However, starting from the evidence $|1-\Omega_{0}|\leq 0.005$ today, we can use the Bechmark model
 \begin{equation*}
@@ -1310,7 +1310,7 @@ Using the present day estimate of the density parameter we infer
 \begin{equation*}
     |1-\Omega(t_{f})| \leq 2\cdot 10^{-54}(N+1)
 \end{equation*}
-But since $|1-\Omega(t_{f})|\sim e^{-2N}$, we can equate the two conditions to find the minum number $N$ of $e$-foldings 
+But since $|1-\Omega(t_{f})|\sim e^{-2N}$, we can equate the two conditions to find the minimum number $N$ of $e$-foldings 
 \begin{equation*}
     e^{-2N} \leq 2\cdot 10^{-54}(N+1) \implies N\approx 60
 \end{equation*}
@@ -1321,10 +1321,10 @@ The minimum required increase in the scale factor during inflation is thus
 \subsection{Horizon Problem}
 If matter and radiation are the only components, the particle horizon distance at time $t$ is
 \begin{align*}
-    d_{\text{causal}}(t) &= a(t)\int_{0}^{t}\frac{c,\text{d}t'}{a(t')} = a(t)\int_{0}^{a}\frac{c\,\text{d}(\ln a)}{aH}\\
+    d_{\text{causal}}(t) &= a(t)\int_{0}^{t}\frac{c\,\text{d}t'}{a(t')} = a(t)\int_{0}^{a}\frac{c\,\text{d}(\ln a)}{aH}\\
     &\sim cH^{-1}
 \end{align*}
-with $H^{-1}\propto a^{3/2}$ for matter, and $H^{-1}\propto a^{2}$ for radiation. In this case, particle horizon is of the same order of Hubble radius. The problem in Big Bang cosmology (without inflation) is that the particle horizon $d_{\text{causal}}\sim H^{-1}$ increases faster than a $\lambda \propto a$.
+with $H^{-1}\propto a^{3/2}$ for matter, and $H^{-1}\propto a^{2}$ for radiation. In this case, particle horizon is of the same order of Hubble radius. The problem in Big Bang cosmology (without inflation) is that the particle horizon $d_{\text{causal}}\sim H^{-1}$ increases faster than $\lambda \propto a$.
 \par As a result, many regions on the last-scattering surface were not in causal contact. They could not equilibrate later either—even if the horizon eventually encompassed them—because after last scattering the CMB photons free-streamed and no longer scattered.
 \begin{figure}[h!]
     \centering
@@ -1332,13 +1332,13 @@ with $H^{-1}\propto a^{3/2}$ for matter, and $H^{-1}\propto a^{2}$ for radiation
 \end{figure}
 \par Guess what? This problem too is mitigated by inflation. Let's compute
 \begin{equation*}
-    R(a) = \frac{d_{\text{causal}(a)}}{\lambda(a)} = \int_{0}^{a}\frac{c\,\text{d}(\ln a)}{aH}
+    R(a) = \frac{d_{\text{causal}}(a)}{\lambda(a)} = \int_{0}^{a}\frac{c\,\text{d}(\ln a)}{aH}
 \end{equation*}
-During the RDU and MDU epochs $R(a)\to 0$ as $a\to 0$. Pick any physical region whose size scales with the expansion ($\lambda \sim a$). In RDU/MDU, as $a\to 0$, the particle horizon shrinks faster than that region, so $d_{\text{causual}}/\lambda \to 0$: the regions contains many causally disconnected parts.
+During the RDU and MDU epochs $R(a)\to 0$ as $a\to 0$. Pick any physical region whose size scales with the expansion ($\lambda \sim a$). In RDU/MDU, as $a\to 0$, the particle horizon shrinks faster than that region, so $d_{\text{causal}}/\lambda \to 0$: The regions contain many causally disconnected parts.
 \par This problem can be solved if we postulate an early phase (Inflation) in which $R(a)$ increases as $a\to 0$. The only way to do this is to add a period with $1/aH$ that decreases (equivalently it grows toward the past as $a\to 0$).
 \begin{align*}
     &\frac{\text{d}}{\text{d}t}(aH)^{-1}<0\\
-    &\frac{\text{d}}{\text{d}t}(\dot{a})^{-1} = -\frac{\ddot{a}}{(\dot{a})^{2}}<0 \implies \ddot{a} > 0 \quad (\text{that requires}\; w<-1/3)
+    &\frac{\text{d}}{\text{d}t}(\dot{a})^{-1} = -\frac{\ddot{a}}{(\dot{a})^{2}}<0 \implies \ddot{a} > 0 \quad (\text{requires}\; w<-1/3)
 \end{align*}
 \begin{figure}[h!]
     \centering
@@ -1360,10 +1360,12 @@ Therefore $\lambda_{LS}(a_{LS}) = 2d_{A}(z_{LS})\sin(\theta/2)$. For antipodal p
 \end{figure}
 \par With reference to Fig.\ref{fgr:hubbleradius}, today the two points $P$ and $Q$ on the CMB are far apart and not in causal contact now, but they share a common causal ancestor from the pre/early-inflation epoch when the patch was small enough to communicate.
 \par Inflation takes tiny quantum fluctuations, stretches them to cosmological sizes, pushes them outside the Hubble radius (freeze), and later the expanding Universe makes them re-enter and seed the structures we observe.
+
 \section{Statistical Properties of Density Perturbations}
+
 \par A commonly used measure of clustering is the \emph{two-point correlation} function (hereafter called just the correlation function) $\xi(\vec{r},t)$. It is defined by counting the number of galaxies with a given separation $\vec{r}$.
-\par If we consider the contribution to this from two small volumes $\text{d}V_{1}$ around position $\vec{x}$ and $\text{d}V_{2}$ around position $\vec{x}+\vec{r}$. For a uniform distribution of galaxies (average density $\bar{n}$), the probability to pick a galaxy in $\text{d}V_{1}$ and a galaxy in $\text{d}V_{1}$, is $\text{d}P = \bar{n}^{2}\text{d}V_{1}\text{d}V_{2}$.
-\par If thedistribution is \emph{not} uniform we take the spatial average over all points separated by $\vec{r}$
+\par If we consider the contribution to this from two small volumes $\text{d}V_{1}$ around position $\vec{x}$ and $\text{d}V_{2}$ around position $\vec{x}+\vec{r}$ for a uniform distribution of galaxies (average density $\bar{n}$), the probability to pick a galaxy in $\text{d}V_{1}$ and a galaxy in $\text{d}V_{1}$, is $\text{d}P = \bar{n}^{2}\text{d}V_{1}\text{d}V_{2}$.
+\par If the distribution is \emph{not} uniform we take the spatial average over all points separated by $\vec{r}$
 \begin{equation*}
     \langle n(\vec{x}+\vec{r},t)n(\vec{x},t)\rangle
 \end{equation*}
@@ -1371,7 +1373,7 @@ which we can hastly cast in an equivalent form making use of the contrast $\Delt
 \begin{equation*}
     n(\vec{r},t) = \langle n(t)\Delta(\vec{r},t)\rangle + \langle n(t) \rangle = \langle n(t) \rangle(1+\Delta(\vec{r},t))
 \end{equation*}
-Skipping all the various intermediate algebric passages because they're a hussle, we're left with 
+Skipping all the various intermediate algebric passages because they're a hassle, we're left with 
 \begin{equation*}
     \langle n(\vec{x}+\vec{r},t)n(\vec{x},t)\rangle = \langle n(t) \rangle^{2}\langle (1+\Delta(\vec{x},t)\Delta(\vec{x}+\vec{r},t)) \rangle
 \end{equation*}
@@ -1386,7 +1388,9 @@ where we've defined the \emph{2-points correlation function}
     }
     \label{eq:twopointcorrelation}
 \end{equation}
+
 \subsubsection*{Example: Calculation of $\xi(r)$ for a sample of galaxies}
+
 \par Assume we have therefore two sets of points. One is the sample one, designated by the letter “D” (data). It contains $N_{D}$ points. In addition there is the Poisson point set “R”, with $N_{R}$ points randomly generated. Position yourself on each data point and count the number of data points you find in a spherical shell with radius $[r, r + \Delta r]$. The total sum of points counted is designated as $DD(r)$. One may also count, for the same number of points, the number of Poisson points in the same shells, $DR(r)$.
 Hence
 \begin{equation*}
@@ -1402,8 +1406,10 @@ with $\gamma \sim 1.7-1.9$ and $r_{0}\sim 5h^{-1}\,\text{Mpc}$. When $r<r_{0}$, 
     &\xi(r = 1h^{-1}\,\text{Mpc}) \approx 18 \implies i+\xi = 19\\
     &\xi(r = 10h^{-1}\,\text{Mpc}) \approx 0.29 \implies i+\xi = 1.29
 \end{align*}
-The former means that pairs at $h^{-1}\,\text{Mpc}$ are roughly 19 times the random points, whilst the latter tells us that pairs are only $29\%$ more probable than random points.
+The former means that pairs at $h^{-1}\,\text{Mpc}$ are roughly 19 times the random points, whilst the latter tells us that pairs are only $29\%$ more probable than random points
+
 \subsection{Power Spectrum}
+
 Because of the isotropy $\xi$ is only a function of the magnitude of the length vector, $r=|\vec{r}|$, $P(k,t)$ is similarly only a function of the magnitude of the wavenumber, $k=|\vec{k}|$. Using polar coordinates
 \begin{equation*}
     \xi(r,t) = \frac{1}{2\pi^{2}}\int_{0}^{\infty}P(k,t)\frac{\sin(kr)}{kr}k^{2}\,\text{d}k
@@ -1414,7 +1420,7 @@ The correlation function is more closely connected to observations, whereas theo
     \xi(0) = \frac{1}{2\pi^{2}}\int_{0}^{\infty}P(k,t)\lim_{r\to 0}\frac{\sin(kr)}{kr}k^{2}\,\text{d}k = \frac{1}{2\pi^{2}}\int_{0}^{\infty}P(k,t)k^{2}\,\text{d}k
 \end{equation*}
 which roughly translates into $\xi(0) = \Delta(\vec{x},t)\Delta(\vec{x}) := \sigma^{2}$. The correlation function evaluated at 0 is simply the variance of the field at a point (the mean-square fluctuation of $\Delta$).
-\par The product $P(k)/(2\pi)^{3}$ gives the power (i.e. the contribution to the variance of the field) per unit $k$-space volume due to the modes with wave vector $k$. In three-dimensional space, however, a thin spherical shell in $k$-space contains many different modes and has a $k$-space volume $4\pi k^{2}\text{d}k$.
+\par The product $P(k)/(2\pi)^{2}$ gives the power (i.e. the contribution to the variance of the field) per unit $k$-space volume due to the modes with wave vector $k$. In three-dimensional space, however, a thin spherical shell in $k$-space contains many different modes and has a $k$-space volume $4\pi k^{2}\text{d}k$.
 \par It is convenient to introduce a new quantity (which is often called the “dimensionless power spectrum”)
 \begin{equation}
     DP(k) = \frac{k^{3}}{2\pi^{2}}P(k)
@@ -1435,7 +1441,7 @@ A Gaussian random field is completely specified by either the two-point correlat
     \item Values at two positions are not independent; their covariance depends on the separation $r$. Across points the only “structure” you really need (to first approximation) is the 2-point correlation $\xi(r)$ or equivalently $P(k)$.
 \end{enumerate}
 \par Astronomical observations and $N$-body simulations sample the matter distribution with discrete tracers (galaxies or particles), while many theoretical calculations treat matter as a continuous fluid. For this reason we often smooth (average) the density contrast over a finite comoving scale $R$, turning the noisy, small-scale field into a well-defined, scale-dependent quantity that can be compared between data and theory.
-\par Crucially, smoothing also has a direct physical meaning: by averaging the overdensity inside a region of radius $R$, we measure the mean fractional mass excess of that patch. This allows us to define the typical fluctuation amplitude associated with a halo mass scale $M\sim \rho(4\pi R^{3}/3)$ through the variance $\sigma^{2}(R)$ (or equivalently $\sigma^{2}(M)$).
+\par Crucially, smoothing also has a direct physical meaning: By averaging the overdensity inside a region of radius $R$, we measure the mean fractional mass excess of that patch. This allows us to define the typical fluctuation amplitude associated with a halo mass scale $M\sim \rho(4\pi R^{3}/3)$ through the variance $\sigma^{2}(R)$ (or equivalently $\sigma^{2}(M)$).
 \par Studying the statistical properties of the smoothed fluctuation field as a function of $R$ is therefore essential for connecting the initial density field to the abundance and collapse of halos of different masses.
 \par We thus replace the density field $\Delta(\vec{x})$ with a smoothed field $\Delta_{R}(\vec{x})$
 \begin{equation*}
@@ -1452,7 +1458,7 @@ $\Delta_{R}(\vec{x})$ is the average fluctuation (centered on point $\vec{x}$) i
 \end{equation*}
 \par Note that filtering the density field by passing over it a box of some characteristic comoving size $R$ and averaging the density over the box corresponds to filter out waves with $k > 1/R$, so that only fluctuations with $k<R^{-1}$ contribute to the variance.
 \par Theoretically, the value of the power-law index for the power spectrum favored by inflation models is $n \approx 1$. A power spectrum with $n=1$ is often referred to as a \emph{Harrison-Zeldovich spectrum} \cite{PhysRevD.1.2726}, \cite{10.1093/mnras/160.1.1P}.
-\par Observationally, the value of the power-kaw index $n$ can be deduced from the temperature fluctuations of the CMB on large scales ($\theta > 1.1\text{°}$). The temperature correlation function measured by the Planck satellite is consistent wth $n = 0.97\pm 0.01$. Thus the observed inflationary power spectrum is only slightly tilted relative to a Harrison-Zeldovich spectrum. Hence
+\par Observationally, the value of the power-law index $n$ can be deduced from the temperature fluctuations of the CMB on large scales ($\theta > 1.1\text{°}$). The temperature correlation function measured by the Planck satellite is consistent wth $n = 0.97\pm 0.01$. Thus the observed inflationary power spectrum is only slightly tilted with respect to a Harrison-Zeldovich spectrum. Hence, assuming a spherical top-hat filter
 \begin{equation*}
     \sigma^{2}(R)\propto R^{-4} \implies \sigma^{2}_{M}\propto M^{-4/3}
 \end{equation*}
@@ -1471,8 +1477,10 @@ with $N$ number of point mass inside the sphere.
 \begin{equation*}
     \sigma \propto M^{-1/2}
 \end{equation*}
-The Harrison-Zeldovich spectrum, with $n=1$, will thus produce more poewr on small length scales than a Poisson distribution of points.
+The Harrison-Zeldovich spectrum, with $n=1$, will thus produce more power on small length scales than a Poisson distribution of points.
+
 \section{Hot\&Cold Dark Matter}
+
 The shape of the power spectrum at $t_{rm} \approx 50,000\,\text{yr}$\footnote{Note: this is the time of \emph{matter-radiation equality}.}, when density perturbations start to grow significantly in amplitude, depends on the properties of the dark matter. More specifically, it depends on whether the dark matter is predominantly \emph{cold} or \emph{hot}.
 \par In a RDU, the Hubble parameter is 
 \begin{equation*}
@@ -1497,7 +1505,7 @@ If this is the case, what was the time when $M_{H}$ was comparable to the mass o
 \end{equation}
 For a particle of mass $m_{h}>2.4\,\text{eV}$, the particles become non relativistic when the Universe is still radiation-dominated. In a RDU, the temperature (\ref{eq:nonrelativistictemp}) corresponds to a cosmic time
 \begin{equation*}
-    m_{h}c^{2}\sim T \sim \frac{1}{a}\sim t^{-1/2} \implies t\sim(m_{h}c^{2})^-2
+    m_{h}c^{2}\sim T \sim \frac{1}{a}\sim t^{-1/2} \implies t\sim(m_{h}c^{2})^{-2}
 \end{equation*}
 or, more precisely
 \begin{equation}
@@ -1505,7 +1513,8 @@ or, more precisely
     \label{eq:nonrelativisticepoch}
 \end{equation}
 In short: The lighter is a particle, the longer it stays relativistic.
-\par Prior to the time $t_{h}$, the relativistic dark matter particles move freely in random directions with a speed close to that of light. The net effect of free streaming is to wipe out any density fluctuations whose wavelength is smaller than the Hubble radius ($\sim ct_{h}$) at $t_{h}$.
+\par Prior to the time $t_{h}$, relativistic dark matter particles move freely in random directions with a speed close to that of light.
+\par The net effect of free streaming is to wipe out any density fluctuations whose wavelength is smaller than the Hubble radius ($\sim ct_{h}$) at $t_{h}$.
 \par When the dark matter particles become nonrelativistic, there will be no density fluctuations on scales smaller than the physical scale of order
 \begin{align}
     d_{\text{min}} &\approx ct_{h}\approx 13\,\text{kpc}\left(\frac{m_{h}c^{2}}{3\,\text{eV}}\right)^{-2}\\
@@ -1520,11 +1529,11 @@ where the former is the scale in comoving units (i.e., the size of the region \e
 \end{equation}
 We can sum up the effects DM would have depending on its mass:
 \begin{enumerate}
-    \item with $m_{h}c^{2}\sim 50\,\text{eV}$ DM would smear out fluctuations smaller than the Local Group;
-    \item with $m_{h}c^{2}\sim 8\,\text{eV}$ DM will rub out fluctuations smaller than the Coma cluster;
-    \item with $m_{h}c^{2}\sim 3\,\text{eV}$ DM will wipe away fluctuations smaller than superclusters.
+    \item With $m_{h}c^{2}\sim 50\,\text{eV}$ DM would smear out fluctuations smaller than the Local Group;
+    \item With $m_{h}c^{2}\sim 8\,\text{eV}$ DM will rub out fluctuations smaller than the Coma cluster;
+    \item With $m_{h}c^{2}\sim 3\,\text{eV}$ DM will wipe away fluctuations smaller than superclusters.
 \end{enumerate}
-We may then give the following definition: We call \emph{Hot Dark Matter} the DM with a large free- streaming cutoff, meaning its particles move fast for long enough that they erase density fluctuations on galaxy scales (and often larger).
+We may then give the following definition: We call \emph{Hot Dark Matter} the DM with a large free-streaming cutoff, meaning its particles move fast for long enough that they erase density fluctuations on galaxy scales (and often larger).
 
 \begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
   colback=blue!5!white,colframe=blue!75!black,colbacktitle=blue!80!black,
@@ -1542,7 +1551,7 @@ We may then give the following definition: We call \emph{Hot Dark Matter} the DM
 
 \par On the other hand, what if instead DM was \emph{cold}?
 \par Meet: WIMPs (Weakly interacting massive particle).
-\par WIMPs are predicted to have a mass $mc^{2}\sim 100\,\text{GeV}$ and to have decoupled between $10^-8-1\,\text{s}$ when the Universe had a mean particle energy of order $3\,\text{MeV}-10\,\text{GeV}$. With a thermal energy smaller than their rest energy at the time of decoupling, WIMPs were already nonrelativistic when they
+\par WIMPs are predicted to have a mass $mc^{2}\sim 100\,\text{GeV}$ and to have decoupled between $10^{-8}-1\,\text{s}$ when the Universe had a mean particle energy of order $3\,\text{MeV}-10\,\text{GeV}$. With a thermal energy smaller than their rest energy at the time of decoupling, WIMPs were already nonrelativistic when they
 decoupled, and thus qualify as cold dark matter.
 \begin{figure}[h!]
     \centering 
@@ -1552,10 +1561,10 @@ decoupled, and thus qualify as cold dark matter.
 \end{figure}
 \par If we lived in a Universe filled with HDM:
 \begin{enumerate}
-    \item the first structures to collapse are regions of mass $M\sim M_{\text{min}}$ with nearly uniform overdensity. These regions collapse to form superclusters; smaller structures, such as clusters and galaxies, then form by fragmentation of the superclusters. This scenario, in which the largest observable structures form first, is called the top-down scenario.
+    \item The first structures to collapse are regions of mass $M\sim M_{\text{min}}$ with nearly uniform overdensity. These regions collapse to form superclusters; smaller structures, such as clusters and galaxies, then form by fragmentation of superclusters. This scenario, in which the largest observable structures form first, is called the top-down scenario.
     \item If most of the dark matter in the Universe were hot dark matter with $m_{h}c^{2}\sim 3\,\text{eV}$, the oldest structures in the Universe would be superclusters, and galaxies would be relatively young. In fact, the opposite seems to be true in our Universe.
 \end{enumerate}
-Some observational facts: We're able to observe galaxies and QSOs (Quasi-Stellar Objects, a.k.a. Quasars) at $z>14$, so that small-scale structure is already present at times when the Universe had less than 2\% of its current age. On top of that Correlation function of galaxies, both in the local Universe and at higher redshift, suggests a lot of structure on small scale. Thus, most of the dark matter in the Universe must be cold dark matter, for which free streaming has been negligible.
+Some observational facts: We're able to observe galaxies and QSOs (Quasi-Stellar Objects, a.k.a. Quasars) at $z>14$, so that small-scale structure is already present at times when the Universe had less than 2\% of its current age. On top of that, the correlation function of galaxies, both in the local Universe and at higher redshift, suggests a lot of structure on small scale. Thus, most of the dark matter in the Universe must be cold dark matter, for which free streaming has been negligible.
 \begin{figure}[h!]
     \centering 
     \includegraphics[width=0.6\textwidth]{img/dmstructureform.png}
@@ -1568,10 +1577,12 @@ Some observational facts: We're able to observe galaxies and QSOs (Quasi-Stellar
     \item A structure of comoving size $r$ is stretched to the physical length $a(t)r$ due to cosmic expansion ($\propto t^{1/2}$ in a RDU, $\propto t^{2/3}$ in a MDU);
     \item If the size of the structure scales as $t^{1/2}$ (when radiation dominates) while the horizon grows as $t$, sooner or later the horizon will catch up to the structure and eventually overtake it!
 \end{enumerate}
+
 \section{Super-Horizon Evolution}
-\par To calculate the evolution of perturbations larger than horizon, we need GR. However, we can take a shortcut that gives the correct answer. Each region expands at a rate that depends on its density: Denser regions expand a bit more slowly, while sparser regions expand a bit more rapidly, almost as if the denser/sparser regions act like miniature closed/open Universes, each with their own expansion history.
+
+\par To calculate the evolution of perturbations larger than the horizon, we need GR. However, we can take a shortcut that gives the correct answer. Each region expands at a rate that depends on its density: Denser regions expand a bit more slowly, while sparser regions expand a bit more rapidly, almost as if the denser/sparser regions act like miniature closed/open Universes, each with their own expansion history.
 \par As time passes, therefore, the denser regions "lag" further behind the sparser regions, and the density contrast steadily increases.
-\par If a fluctuation has a scale larger than the horizon at that time (i.e. it is outside the horizon), it does not care about microphysical process like fluid pressure, but it simply evolves only according to General Relativity (Friedman equations).
+\par If a fluctuation has a scale larger than the horizon at that time (i.e. it is outside the horizon), it does not care about microphysical processes like fluid pressure, but it simply evolves according to General Relativity (Friedman equations).
 \par Assuming $\Omega_{\text{tot}} = 1$
 \begin{equation*}
     H^{2} = \frac{8\pi G}{3}\bar{\rho}
@@ -1584,10 +1595,10 @@ then
 \begin{equation*}
     \Delta = \frac{\rho -\bar{\rho}}{\bar{\rho}} = \frac{\frac{3k}{8\pi Ga^{2}}}{\bar{\rho}} \propto (a^{2}\bar{\rho})^{-1}
 \end{equation*}
-This implies that super-horizon fluctuations will be always growing 
+This implies that super-horizon fluctuations will always be growing:
 \begin{enumerate}
-    \item like $\Delta \propto a^{2}$ if RD ($\bar{\rho}\sim a^{-4}$);
-    \item like $\Delta \propto a$ if MD ($\bar{\rho}\sim a^{-3}$);
+    \item Like $\Delta \propto a^{2}$ if RD ($\bar{\rho}\sim a^{-4}$);
+    \item Like $\Delta \propto a$ if MD ($\bar{\rho}\sim a^{-3}$);
 \end{enumerate}
 \begin{table}[h!]
     \centering
@@ -1631,13 +1642,13 @@ Similarly, between $t_{eq}$ and $t_{\text{after}}$
 \begin{equation*}
     \Delta(t_{\text{after}}) = \frac{a(t_{\text{after}})}{a(t_{eq})}\Delta(t_{eq})
 \end{equation*}
-After $t_{eq}$ matter dominates, so it’s irrelevant if structures are super or sub-horizon: Fluctuations will always grow as $a$.
+After $t_{eq}$, matter dominates, so it’s irrelevant if structures are super or sub-horizon: Fluctuations will always grow as $a$.
 \par Combining the two expressions
 \begin{equation*}
     \Delta(t_{\text{after}}) = \frac{a(t_{\text{after}})a^{2}(t_{eq})}{a(t_{eq})a^{2}(t_{i})}\Delta(t_{i})
 \end{equation*}
 Note that the pre-factor doesn't depend on $k$, because that factor is built only out of background expansion numbers.
-\par For structures with comoving $k > k_{eq}$ which are smaller than the horizon at MR-equality, we know that they entered the horizon a $t_{\text{enter}}<t_{eq}$. So, we can repeat the same steps of before, but between $t_{i}$ and $t_{\text{enter}}$, and between $t_{\text{enter}}$ and $t_{\text{after}}$. There's a crucial difference now: Between $t_{\text{enter}}$ and $t_{eq}$ these structures \emph{do not grow}.
+\par For structures with comoving $k > k_{eq}$ which are smaller than the horizon at MR-equality, we know that they entered the horizon at $t_{\text{enter}}<t_{eq}$. So, we can repeat the same steps of before, but between $t_{i}$ and $t_{\text{enter}}$, and between $t_{\text{enter}}$ and $t_{\text{after}}$. There's a crucial difference now: Between $t_{\text{enter}}$ and $t_{eq}$ these structures \emph{do not grow}.
 \par Repeating the same steps as before (and assuming the logarithmic growth as approximately constant), we can thus write 
 \begin{equation*}
      \Delta(t_{\text{after}}) = \frac{a(t_{\text{after}})a^{2}(t_{eq})a^{2}(t_{\text{enter}})}{a^{3}(t_{eq})a^{2}(t_{i})}\Delta(t_{i})
@@ -1647,7 +1658,7 @@ where we recognize a similar pre-factor as per our previous expression, with the
     \frac{a^{2}(t_{\text{enter}})}{a^{2}(t_{eq})} \sim \frac{t_{\text{enter}}}{t_{eq}} \sim \left(\frac{k_{eq}}{k_{\text{enter}}}\right)^{2}\sim \left(\frac{1}{k}\right)^{2}
 \end{equation*}
 so now there's a dependence on the structure's size (when radiation dominates)!
-\par Combining what we've just found, we now learn that the poewr spectrum is modified by 
+\par Combining what we've just found, we now learn that the power spectrum is modified by 
 \begin{equation*}
     T^{2}(k) = 
     \left\{
