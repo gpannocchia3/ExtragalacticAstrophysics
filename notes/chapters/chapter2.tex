@@ -270,14 +270,14 @@ An immediate complication of our discussion comes if we try to take into account
 \section{Non-Geometric Methods (I): TRGB}
 
 Before launching ourselves into a detailed discussion of the distance estimation from the analysis of the \emph{Tip of the Red Giant Branch} (TRGB), it's worth mentioning another method, namely that of \emph{main sequence fitting}.
-\par Sampling quite a few stars in stellar clusters, and measuring their chemical composition (metallicity in particular), we can plot the apparent magnitude (or flux) versus the effective temperature. Then we can plot a model for the isochrone of the observed metallicity and compare the absolute magnitude of the result with the apparent magnitude of the actual cluster in a of the HR diagram where the age is not important. Result: you've found the distance\footnote{Note that this is essentially a direct application of the definition of \emph{distance module} (\ref{eq:absolutemagnitude}).}
+\par Sampling quite a few stars in stellar clusters, and measuring their chemical composition (metallicity in particular), we can plot the apparent magnitude (or flux) versus the effective temperature. Then we can plot a model for the isochrone of the observed metallicity and compare the absolute magnitude of the result with the apparent magnitude of the actual cluster in a region of the HR diagram where the age is not important. Result: you've found the distance\footnote{Note that this is essentially a direct application of the definition of \emph{distance module} (\ref{eq:absolutemagnitude}).}
 \begin{equation}
     d = 10^{1+\frac{m-M}{5}}\unit{pc}
     \label{eq:mainsequencefitting}
 \end{equation}
 \vspace{5pt}
 The method we're going to discuss now involves, as the name suggests, the usage of the tip of the Red Giant Branch, that is a particular stage of some stars.
-\par Because of electron degeneracy pressure, all red giant stars with masses $M<3M_{\odot}$ reach about same maximum magnitude (because they ignite Helium with the same core mass). So for old populations, the TRGB is independent of age. The maximum RGB magnitude also doesn’t depend on metal abundance (at least for abundances less than about half solar) Thus the RGB maximum magnitude is a standard candle.
+\par Because of electron degeneracy pressure, all red giant stars with masses $M<3M_{\odot}$ reach about same maximum magnitude (because they ignite Helium with the same core mass). So for old populations, the TRGB is independent of age. The maximum RGB magnitude also doesn’t depend on metal abundance (at least for abundances less than about half solar). Thus the RGB maximum magnitude is a standard candle.
 \par For our purposes, it may be useful to introduce the quantity $[\text{Fe}/\text{H}]$, the logarithmic Iron abundance relative to Hydrogen, compared to the Sun
 \begin{equation}
     [\text{Fe}/\text{H}] = \log\left(\frac{N_{\text{Fe}}}{N_{\text{H}}}\right)_{*}-\log\left(\frac{N_{\text{Fe}}}{N_{\text{H}}}\right)_{\odot}
@@ -310,8 +310,7 @@ The sound speed can be determined from the pressure and density of the stellar i
 \begin{equation*}
     c_{s}(r) = \sqrt{\frac{\gamma p(r)}{\rho}}
 \end{equation*}
-where $\gamma $ is ratio of specific heats for the
-stellar material. Assuming hydrostatic equilibrium
+where $\gamma $ is the ratio of specific heats for the stellar material. Assuming hydrostatic equilibrium
 \begin{equation*}
     \der{p}{r} = -\frac{GM_{r}\rho}{r^{2}} = -\frac{G}{r^{2}}\frac{4\pi}{3}r^{3}\rho \rho = -\frac{4\pi}{3}Gr\rho^{2}
 \end{equation*}
@@ -324,7 +323,7 @@ Hence the sound speed
     c_{s}(r) = \sqrt{\frac{2\pi}{3}G\gamma\rho(R^{2}-r^{2})}
     \label{eq:cepheidsroughsoundspeed}
 \end{equation}
-which we can intergrate to obtain the crossing time 
+which we can integrate to obtain the crossing time 
 \begin{equation}
     \Pi = 4\int_{0}^{R}\frac{\diff{r}}{c_{s}} = 2\sqrt{\frac{3\pi}{2\gamma G \rho}}
     \label{eq:periodmeandensityrelation}
@@ -361,6 +360,7 @@ Helium II partial ionization zone is a region deeper in the stellar interior wit
     \item Expanding layer cools, He or H ions recombine with electrons, opacity drops, and radiation escapes [open valve];
     \item Gas pressure is now too low to support the envelope, the star contracts and then begins to heat, starting again the process.
   \end{enumerate}
+  During the contraction, the external regions absorb the energy released from the compression and heat up just slightly, since most of the energy is used to ionize the material. Thus, more energy is retained thanks to the increased opacity, and a pressure able to bloat up the region is produced. Similarly, the temperature decreases only a little, since most of the energy needed for the expansion is obtained through the recombination of ions and electrons from the formerly ionized nuclei; inevitably, the electron density decreases $n_{e}\downarrow$ and the opacity decreases as well $\bar{\kappa}\downarrow$. The star is thus able to cool down, contract and repeat the cycle.
 \end{tcolorbox}
 The key aspect of this process is that \emph{pulsations are driven by the energy stolen from the star’s luminosity}.
 \par The main class of pulsating stars used for distance calibration are the \emph{Cepheids}, named after $\delta$-Cephei, the first recognized star of this class. 
@@ -383,7 +383,7 @@ As you probably know, Supernovae are the way some stars on the heavier side end 
     ^{56}\text{Ni}\to^{56}\text{Co}^{56}\to\text{Fe}
 \end{equation*}
 with a decay time for $^{56}\text{Ni}$ of $\sim 6\unit{d}$, making SNIa the major source of Fe-peak elements. Gamma rays are absorbed and thermalized in expanding debris. Some uncertainty still remains on the ignition source, that may be \emph{single degenerate} (one white dwarf accreting from normal companion) or \emph{double degenerate} (merger or collision of two white dwarfs).
-\par For Type Ia supernovae we define the “decline rate” as the number of magnitudes the object gets dimmer in the first 15 days after maximum light in the blue. Fast decliners are fainter objects. The relationship between the peak luminosity of a Type Ia Supernova and the speed of luminosity evolution after maximum light is called \emph{Phillip's relation} \cite{1993ApJ...413L.105P}.
+\par For Type Ia supernovae we define the “decline rate” as the number of magnitudes the object gets dimmer in the first 15 days after maximum light in the blue magnitude band. Fast decliners are fainter objects. The relationship between the peak luminosity of a Type Ia Supernova and the speed of luminosity evolution after maximum light is called \emph{Phillip's relation} \cite{1993ApJ...413L.105P}.
 \begin{figure}[h!]
     \centering 
     \includegraphics[width=0.7\textwidth]{img/philips.png}
@@ -406,9 +406,6 @@ with a decay time for $^{56}\text{Ni}$ of $\sim 6\unit{d}$, making SNIa the majo
 
 The SHOES program\footnote{In which, and I'm learning this as the moment I'm writing this section, the "O" is actually a zero.} sets to measure the local value of the Hubble Constant from the calibration of Type Ia Supernovae and Cepheid variables so to later determine the Equation of State for Dark Energy (i.e., the cosmological constant).
 \par In a famous paper of 2022, with the very telling name of "\emph{A Comprehensive Measurement of the Local Value of the Hubble Constant with $1\unit{km}\unit{s}^{-1}\unit{Mpc}^{-1}$ Uncertainty from the Hubble Space Telescope and the SH0ES Team}" \cite{Riess_2022}, the SHOES team managed to do what they promised.
-\begin{quote}
-    "We report observations from the Hubble Space Telescope (HST) of Cepheid variables in the host galaxies of 42 Type Ia supernovae used to calibrate the Hubble constant. These include the complete sample of all suitable SNe Ia discovered in the last four decades at redshift $z\leq 0.01$, collected and calibrated from $\geq 1000$ HST orbits, more than doubling the sample whose size limits the precision of the direct determination of $H_{0}$. The Cepheids are calibrated geometrically from Gaia EDR3 parallaxes, masers in NGC 4258 (here tripling that sample of Cepheids), and detached eclipsing binaries in the Large Magellanic Cloud. All Cepheids in these anchors and SN Ia hosts were measured with the same instrument (WFC3) and filters (F555W, F814W, F160W) to negate zeropoint errors."
-\end{quote}
 \par The main findings of the SH0ES collaboration is summarized in Fig.\ref{fgr:shoesspecs}.
 \begin{figure}[h!]
     \centering
@@ -451,14 +448,14 @@ There are, of course, a whole lot of other independent approaches, such as the H
 \end{equation*}
 where 
 \begin{equation*}
-    \tau(\theta,\beta) = \left[\frac{(\theta-\beta)^{2}}{2}-\phi(\theta)\right]
+    \tau(\theta,\beta) = \left[\frac{(\theta-\beta)^{2}}{2}-\psi(\theta)\right]
 \end{equation*}
 and $\phi(\theta)$ is the lens potential evaluated at the images.
 \par The procedure to then infer parameters of cosmological relevance is the following:
 \begin{enumerate}
     \item \emph{Measure the redshifts}: From spectroscopy we can determine the redshift $z_{L}$ of the lens and that of the background quasar $z_{S}$;
     \item \emph{Assume a cosmological model}: This way we can predict angular-diameter distances $D_{L}=D_{A}(0,z_{L})$, $D_{S}=D_{A}(0,z_{S})$, $D_{LS}=D_{A}(z_{L},z_{S})$;
-    \item \emph{Model the lens potential} $\phi$;
+    \item \emph{Model the lens potential} $\psi$;
     \item \emph{Measure the time difference} $\Delta t_{AB}$
 \end{enumerate}
 and the cool thing that all this apparently convoluted machination actually works.
@@ -537,7 +534,7 @@ In spirals, we're observing a typical luminosity $L\sim v_{\text{max}}^{\alpha}$
 \par Each spiral galaxy has its own characteristic rotation curve, each with a characteristic $v_{\text{max}}$ at large distances from the GC.
 \par An heuristic explanation of the Tully-Fisher relation follows below.
 \par We start by deriving the scaling observed between the maximum rotation velocity of the disks of spiral galaxies, $v_{\text{max}}$, and their luminosity $L$. Observations of rotation curves $v_{\text{rot}}(r)$ of spiral galaxies reveal that they rise sharply from $r = 0$, reach a maximum value $v_{\text{max}}$ and remain roughly flat in their outer parts.
-\par Assuming that a star at the outer edge of the spiral is on a stable circular orbit around the centre of the galaxy, we can say that
+\par Assuming that a star at the outer edge of the spiral is on a stable circular orbit around the centre of the galaxy, we can say that (assuming a spherically symmetric mass distribution)
 \begin{equation*}
 \frac{v_{\text{max}}^{2}}{R} = \frac{GM_{R}}{R^{2}}
 \end{equation*}

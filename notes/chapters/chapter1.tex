@@ -547,11 +547,11 @@ where $g_{i}$ is the statistical weight of particle $i$. This expression applies
 \end{equation}
 and set $m_{\text{H}}/m_{p} \sim 1$ and identify $\chi_{j,\,j+1}$ with the ionization potential for Hydrogen $\chi_{j,\,j+1} = Q \approx 13.6\,\text{eV}$, then Saha's equation can be written as
 \begin{equation*}
-    \frac{n_{\text{H}}}{n_{e}n_{p}} = \left(\frac{m_{e}kT}{2\pi\hbar^{2}}\right)^{2}\exp\left(\frac{Q}{kT}\right)
+    \frac{n_{\text{H}}}{n_{e}n_{p}} = \left(\frac{m_{e}kT}{2\pi\hbar^{2}}\right)^{-3/2}\exp\left(\frac{Q}{kT}\right)
 \end{equation*}
 \par We can make the useful sostitution $Xn_{\text{H}} = (1-X)n_{p}$ and exploit the global neutrality of the Universe $n_{p} = n_{e}$
 \begin{equation*}
-    \frac{1-X}{X} = n_{p}\left(\frac{m_{e}kT}{2\pi\hbar^{2}}\right)^{2}\exp\left(\frac{Q}{kT}\right)
+    \frac{1-X}{X} = n_{p}\left(\frac{m_{e}kT}{2\pi\hbar^{2}}\right)^{-3/2}\exp\left(\frac{Q}{kT}\right)
 \end{equation*}
 \par To eliminate $n_{p}$ from the equation above, we use the baryon-to-photon ratio $\eta = n_{\text{Baryon}}/n_{\gamma}$ which is experimentally proved to be constant.
 
@@ -568,7 +568,7 @@ and set $m_{\text{H}}/m_{p} \sim 1$ and identify $\chi_{j,\,j+1}$ with the ioniz
 \end{equation}
 We can thus substitute in the Saha's equation that we've written earlier
 \begin{equation*}
-    \frac{1-X}{X} = \eta n_{\gamma}X\left(\frac{m_{e}kT}{2\pi\hbar^{2}}\right)^{2}\exp\left(\frac{Q}{kT}\right)
+    \frac{1-X}{X} = \eta n_{\gamma}X\left(\frac{m_{e}kT}{2\pi\hbar^{2}}\right)^{-3/2}\exp\left(\frac{Q}{kT}\right)
 \end{equation*}
 \par Since the photons will follow the blackbody distribution, the photon number density will be given by (\ref{eq:blackbody_totnum}). Therefore we will be able to write
 \begin{equation}
@@ -732,7 +732,7 @@ with $c_{s}$ the sound speed. Now we can take the comoving divergence of (\ref{e
 so that we can finally write
 \begin{equation}
     \boxed{
-    2\frac{\dot{a}(t)}{a(t)}\dot{\Delta}+\ddot{\Delta} = -\frac{1}{\rho_{0}}\frac{c_{s}^{2}}{a^{2}(t)}\nabla_{c}^{2}\delta\rho +4\pi G\delta\rho
+    2\frac{\dot{a}(t)}{a(t)}\dot{\Delta}+\ddot{\Delta} = +\frac{1}{\rho_{0}}\frac{c_{s}^{2}}{a^{2}(t)}\nabla_{c}^{2}\delta\rho +4\pi G\delta\rho
     }
     \label{eq:comovingcontrast_eq}
 \end{equation}
@@ -1106,7 +1106,7 @@ At the time of last scattering, nothing could have been in causal contact if sep
 \begin{equation*}
     \theta_{H}(t_{\text{LS}}) = \frac{d_{\text{causal}}(t_{LS})}{d_{A}} \approx 0.020\,\text{rad} = 1.1\text{°}
 \end{equation*}
-and corresponds to a multipole $l_{\text{Hor}}\approx 160$. This means that only regions slightly before the major peak in Fig.\ref{fgr:cmbtempcont} are in causal connection.
+and corresponds to a multipole $l_{\text{Hor}}\approx 160$. This means that only regions from slightly before the major peak in Fig.\ref{fgr:cmbtempcont} are in causal connection.
 \begin{figure}[h!]
     \centering 
     \includegraphics[width=0.8\textwidth]{img/peakmismatch.png}
@@ -1268,7 +1268,7 @@ The difference between $\Omega$ and unity grows exponentially with time. For sim
     \begin{array}{ll}
         a_{i}\left(\frac{t}{t_{i}}\right)^{1/2} & \iff t<t_{i}\\
         a_{i}\exp(H_{i}(t-t_{i})) & \iff t_{i}<t<t_{f}\\
-        a_{i}\exp(H_{i}(t_{f}-t_{i}))\left(\frac{t}{t_{i}}\right)^{1/2} & \iff t>t_{f}
+        a_{i}\exp(H_{i}(t_{f}-t_{i}))\left(\frac{t}{t_{f}}\right)^{1/2} & \iff t>t_{f}
     \end{array}
     \right.
 \end{equation*}
@@ -1364,7 +1364,7 @@ Therefore $\lambda_{LS}(a_{LS}) = 2d_{A}(z_{LS})\sin(\theta/2)$. For antipodal p
 \section{Statistical Properties of Density Perturbations}
 
 \par A commonly used measure of clustering is the \emph{two-point correlation} function (hereafter called just the correlation function) $\xi(\vec{r},t)$. It is defined by counting the number of galaxies with a given separation $\vec{r}$.
-\par If we consider the contribution to this from two small volumes $\text{d}V_{1}$ around position $\vec{x}$ and $\text{d}V_{2}$ around position $\vec{x}+\vec{r}$ for a uniform distribution of galaxies (average density $\bar{n}$), the probability to pick a galaxy in $\text{d}V_{1}$ and a galaxy in $\text{d}V_{1}$, is $\text{d}P = \bar{n}^{2}\text{d}V_{1}\text{d}V_{2}$.
+\par If we consider the contribution to this from two small volumes $\text{d}V_{1}$ around position $\vec{x}$ and $\text{d}V_{2}$ around position $\vec{x}+\vec{r}$ for a uniform distribution of galaxies (average density $\bar{n}$), the probability to pick a galaxy in $\text{d}V_{1}$ and a galaxy in $\text{d}V_{2}$, is $\text{d}P = \bar{n}^{2}\text{d}V_{1}\text{d}V_{2}$.
 \par If the distribution is \emph{not} uniform we take the spatial average over all points separated by $\vec{r}$
 \begin{equation*}
     \langle n(\vec{x}+\vec{r},t)n(\vec{x},t)\rangle
@@ -1391,7 +1391,7 @@ where we've defined the \emph{2-points correlation function}
 
 \subsubsection*{Example: Calculation of $\xi(r)$ for a sample of galaxies}
 
-\par Assume we have therefore two sets of points. One is the sample one, designated by the letter “D” (data). It contains $N_{D}$ points. In addition there is the Poisson point set “R”, with $N_{R}$ points randomly generated. Position yourself on each data point and count the number of data points you find in a spherical shell with radius $[r, r + \Delta r]$. The total sum of points counted is designated as $DD(r)$. One may also count, for the same number of points, the number of Poisson points in the same shells, $DR(r)$.
+\par Assume we have two sets of points. One is the sample one, designated by the letter “D” (data). It contains $N_{D}$ points. In addition there is the Poisson point set “R”, with $N_{R}$ points randomly generated. Position yourself on each data point and count the number of data points you find in a spherical shell with radius $[r, r + \Delta r]$. The total sum of points counted is designated as $DD(r)$. One may also count, for the same number of points, the number of Poisson points in the same shells, $DR(r)$.
 Hence
 \begin{equation*}
     \xi(r) = \frac{N_{R}}{N_{D}}\frac{DD(r)}{DR(r)}-1
@@ -1495,7 +1495,7 @@ where $c/H$ is the physical distance over which particle can communicate at a sp
 \begin{equation*}
     M_{H} = \frac{4\pi}{3}\left(\frac{ca^{2}}{H_{0}\sqrt{\Omega_{r,0}}}\right)^{3}\frac{\rho^{(m)}_{m,0}}{a^{3}} = 1.6\cdot 10^{28}M_{\odot}a^{3}
 \end{equation*}
-If this is the case, what was the time when $M_{H}$ was comparable to the mass of a present galaxy? Turns out, it is when $a \approx 4\cdot 10^{-6}$ ($t\approx 12\,\text{yr}$). As the time goes, or as the factor a increases, the mass inside the Hubble radius increases as $M \propto a^{3}$.
+If this is the case, what was the time when $M_{H}$ was comparable to the mass of a present galaxy? Turns out, it is when $a \approx 4\cdot 10^{-6}$ ($t\approx 12\,\text{yr}$). As the time goes, or as the factor $a$ increases, the mass inside the Hubble radius increases as $M \propto a^{3}$.
 \par This presents a problem. Consider what would happen if DM were made of relativistic particles. If a DM particle is relativistic when it decouples, it moves freely in random directions with a speed close to that of light. This motion, called \emph{free streaming}, acts to wipe out any density fluctuations within the Hubble radius. The initially relativistic dark matter particles cool as the Universe expands. In fact, the temperature drops as $a^{-1}$, so particles may be relativistic at their decoupling, and become non relativistic at a later time.
 \par Suppose our Universe is filled with relativistic dark matter particles with mass $m_{h}$. The initially relativistic dark matter particles cool as the Universe expands, until their thermal velocities drop below $c$ when $3kT\approx m_{h}c^{2}$ ($3kT$ is the average energy of a relativistic particle).
 \par This happens at a temperature
@@ -1521,7 +1521,7 @@ In short: The lighter is a particle, the longer it stays relativistic.
     r_{\text{min}} &=\frac{d_{\text{min}}}{a(t_{h})}\approx 55\,\text{Mpc}\,\left(\frac{m_{h}c^{2}}{3\,\text{eV}}\right)
     \label{eq:nrdimensions}
 \end{align}
-where the former is the scale in comoving units (i.e., the size of the region \emph{today}) below which fluctuations are erased.
+where the latter is the scale in comoving units (i.e., the size of the region \emph{today}) below which fluctuations are erased.
 \par The total amount of matter within a sphere of said comoving radius $r_{\text{min}}$ is 
 \begin{equation}
     M_{\text{min}} = \frac{4\pi}{3}r^{3}_{\text{min}}\rho^{(m)}_{m,0}\approx 2.7\cdot 10^{16}M_{\odot}\left(\frac{m_{h}c^{2}}{3\,\text{eV}}\right)^{-3}
@@ -1581,9 +1581,9 @@ Some observational facts: We're able to observe galaxies and QSOs (Quasi-Stellar
 \section{Super-Horizon Evolution}
 
 \par To calculate the evolution of perturbations larger than the horizon, we need GR. However, we can take a shortcut that gives the correct answer. Each region expands at a rate that depends on its density: Denser regions expand a bit more slowly, while sparser regions expand a bit more rapidly, almost as if the denser/sparser regions act like miniature closed/open Universes, each with their own expansion history.
-\par As time passes, therefore, the denser regions "lag" further behind the sparser regions, and the density contrast steadily increases.
+\par As time passes, the denser regions "lag" further behind the sparser regions, and the density contrast steadily increases.
 \par If a fluctuation has a scale larger than the horizon at that time (i.e. it is outside the horizon), it does not care about microphysical processes like fluid pressure, but it simply evolves according to General Relativity (Friedman equations).
-\par Assuming $\Omega_{\text{tot}} = 1$
+\par Assuming $\Omega_{\text{tot}} = 1$ (flat Universe)
 \begin{equation*}
     H^{2} = \frac{8\pi G}{3}\bar{\rho}
 \end{equation*}

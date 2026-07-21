@@ -12,7 +12,7 @@ Before we begin, let us point this out once and for all. With \emph{linear regim
 
 \section{Galaxy Formation}
 
-The observed luminosity function for galaxies, $\Phi(L)$, is defined so that $\Phi(L)\text{d}L$ is the number density of galaxies in the luminosity range $L\to L+\text{d}K$. It is found that the luminosity function is well fitted by the function
+The observed luminosity function for galaxies, $\Phi(L)$, is defined so that $\Phi(L)\text{d}L$ is the number density of galaxies in the luminosity range $L\to L+\text{d}L$. It is found that the luminosity function is well fitted by the function
 \begin{equation}
     \Phi(L)\,\text{d}L = \Phi_{*}\left(\frac{L}{L_{*}}\right)^{\alpha}\exp\left(-\frac{L}{L_{*}}\right)\frac{\text{d}L}{L_{*}}
     \label{eq:Schechterluminosityfunction}
@@ -358,7 +358,7 @@ In general, if the continuum of 3C273 contains photons with initial energy $h\nu
 \begin{equation*}
     \tau_{\nu} = \int_{0}^{s}n_{\text{H}}\sigma_{lu}(\nu)\diff{s}
 \end{equation*}
-with $\nu$ the observed frequency at $z=0$, $n_{\text{H}}$ is numerical density of Hydrogen in the fundamental state, and $\sigma_{lu}(\nu)$ is the cross section for Lyman-$\alpha$ absorption. In terms of redshift
+with $\nu$ the observed frequency at $z=0$, $n_{\text{H}}$ is the numerical density of Hydrogen in the fundamental state, and $\sigma_{lu}(\nu)$ is the cross section for Lyman-$\alpha$ absorption. In terms of redshift
 \begin{equation*}
     \tau_{\nu} = \int_{0}^{z_{e}}n_{\text{H}}\sigma_{ul}(\nu)\der{s}{z}\diff{z} = \int_{0}^{z_{e}}n_{\text{H}}\sigma_{lu}(\nu)\left[\frac{c}{(1+z)H(z)}\right]\diff{z}
 \end{equation*}
@@ -407,7 +407,7 @@ Inverting the equation to find $X_{\text{H}_{\text{I}}}$ is only an order of mag
 \subsection{Gunn-Peterson effect}
 
 In 1965 Gunn and Peterson \cite{1965ApJ...142.1633G} pointed out that any generally distributed neutral Hydrogen would produce a broad depression in the spectrum of high-redshift quasars at wavelengths shortward of $1216\unit{Å}$.
-\par They postulated a future test whereby the spectra of QSOs (Quas Stellar Objects, or just quasars) of successively higher redshift would be scrutinized to locate that epoch when the IGM was neutral.
+\par They postulated a future test whereby the spectra of QSOs (Quasi Stellar Objects, or just quasars) of successively higher redshift would be scrutinized to locate that epoch when the IGM was neutral.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{img/gunnpetersonspectrum.png}
@@ -425,7 +425,7 @@ This is the \emph{Lyman Limit Systems} (LLSs) threshold. They are called Lyman L
     \caption{Continuum drop in a Lyman Limit System.}
     \label{fgr:lls}
 \end{figure}
-An LLS produces a drop in the continuum at $\lambda_{LL,obs}=912\unit{nm}(1+z_{abs})$, as shown in Fig.\ref{fgr:lls}.
+An LLS produces a drop in the continuum at $\lambda_{LL,obs}=121.6\unit{nm}(1+z_{abs})$, as shown in Fig.\ref{fgr:lls}.
 \par The shape of an absorption Ly$\alpha$ line as a function of frequency is not a $\delta$-function line, but rather produces a Lorentzian line profile with long tails
 \begin{equation*}
     \phi_{L}(\nu) = \frac{\Gamma}{4\pi^{2}}\frac{1}{(\nu-\nu_{\alpha})^{2}+\left(\frac{\Gamma}{4\pi}\right)^{2}}
