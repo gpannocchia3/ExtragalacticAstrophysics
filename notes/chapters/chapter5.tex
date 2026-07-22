@@ -56,7 +56,7 @@ Therefore, we can write the instability criterion as
 \begin{equation*}
     r \gtrsim r_{J} \propto \frac{c_{s}}{\sqrt{G\rho_{0}}} \iff \frac{r}{c_{s}} = \tau_{\text{sound}} \gtrsim \frac{1}{\sqrt{G\rho_{0}}} = \tau_{ff}
 \end{equation*}
-Information transport in the cloud occurs with a velocity equal $c_{s}$. In this picture, the criterion means that instability occurs if sound waves do not have the time to traverse the cloud over a free-fall (dynamical) timescale. This means that the pressure has not the time to react, and cannot increase in time to counterbalance the gravity, as e.g. the center of the cloud does not yet know what is going on at the surface.
+Information transport in the cloud occurs with a velocity equal to $c_{s}$. In this picture, the criterion means that an instability occurs if sound waves do not have the time to traverse the cloud over a free-fall (dynamical) timescale. This means that the pressure has not the time to react, and cannot increase in time to counterbalance the gravity, as, e.g., the center of the cloud does not yet know what is going on at the surface.
 \par Consider for example the adiabatic sound speed and the isothermal sound speed
 \begin{equation*}
     c_{s}^{\text{ad}} = \sqrt{\frac{\gamma p }{\rho}} = \sqrt{\frac{\gamma kT}{\mu m_{\text{H}}}} \quad c_{s}^{\text{iso}} = \sqrt{\frac{kT}{\mu m_{\text{H}}}}
@@ -205,7 +205,7 @@ Using Poisson equation $\nabla^{2}\Phi = 4\pi G \rho_{\text{tot}}$ and ignoring 
 \begin{equation*}
     \parparder{\Phi}{z} = 4\pi G \rho_{\text{tot}}
 \end{equation*}
-Integrating two times (and assuming that the total density is very close to the plain and $\partial_{z}\Phi = 0$ at $z=0$ due to simmetry), we find that
+Integrating two times (and assuming that the total density is very close to the plane's and $\partial_{z}\Phi = 0$ at $z=0$ due to simmetry), we find that
 \begin{equation*}
     \Phi(z) = \Phi(0)+2\pi G \rho_{\text{tot}}(0)z^{2}
 \end{equation*}
@@ -221,7 +221,7 @@ From measurements of the vertical distribution and velocity of stars of various 
 \par If we then calculate $c_{\text{H}_{\text{I}}, \,\text{iso}}$ using a temperature of $80\unit{K}$, we find from previous equation that $h_{\text{H}_{\text{I}}}$ is $10\unit{pc}$, only 10 percent of the observed value. After all, $21\unit{cm}$ observations show that the cold gas actually consists of discrete clouds in seemingly random motion. A typical cloud velocity in the $z$ direction is $6\unit{km}\unit{s}^{-1}$. Substitution of this value for $c_{\text{H}_{\text{I}}, \,\text{iso}}$ in the last equation yields a scale height much closer to the observed one ($100\unit{pc}$).
 \par Can then turbulence stabilize clouds? To see that, we'd have to solve Navier Stokes equation in presence of viscosity (not funny). It's a lot simpler to perform a dimensional analysis and see where that brings us.
 \par If we are examining a molecular cloud, we might have $L \sim 10\unit{pc}$ and $v\sim\unit{km}\unit{s}^{-1}$ (you can think this as the non thermal velocity dispersion met before). The natural timescale for flows in the system is $L/V$, so we expect time derivative terms to be of order the thing being differentiated divided by $L/V$.
-\par Cancelling common factors from the butchering of NS equation, we obtained
+\par Cancelling common factors from the butchering of NS equation, we obtain
 \begin{equation*}
     1 \sim 1 +\frac{c_{s}^{2}}{V^{2}}+\frac{\nu}{VL}
 \end{equation*}
