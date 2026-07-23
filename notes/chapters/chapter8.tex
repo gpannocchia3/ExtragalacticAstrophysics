@@ -94,7 +94,9 @@ We can expand master equation number 3, plug in master equation number 4 and app
 \end{align*}
 which has to be equal to $-Z\Psi + E_{Z}+Z_{f}f$. Hence, after cross-eliminating some terms and replacing $E_{Z}$ with its value (\ref{eq:metals_mer_ira}), the equation becomes
 \begin{equation}
+    \boxed{
     M_{g}\der{Z}{t} = (Z_{f}-Z)f + \Psi(t)p\alpha
+    }
     \label{eq:metallicity_eq}
 \end{equation}
 
@@ -117,9 +119,10 @@ where we've substituted the definition of $\alpha$ (\ref{eq:lockup_fraction}). T
     Z = -p\ln\left(\frac{M_{g}(Z)}{M_{g}(Z=0)}\right)
 \end{equation}
 If we define $\mu = M_{g}/M_{\text{tot}}$ as the gas fraction, we have no stars at the beginning $M_{g}(0) = M_{\text{tot}}$
-\begin{equation*}
+\begin{equation}
     Z = -p\ln\mu
-\end{equation*}
+    \label{eq:mu_def}
+\end{equation}
 where $Z$ is the abundance in the gas and newly formed stars. In a CBM there is then a relation between the residual mass of gas $M_{g}(Z)$ and the metallicity $Z$ of either the gas or young stars; if we measure $Z$ we know the residual mass of gas $M_{g}(Z)$, but given that in a CBM $M_{\text{tot}}$ is constant, we know $M_{*}(Z)$, hence we know the total mass of stars with metallicity up to $Z$.
 \par If we want the average $Z$ (average metallicity of all stars, not just the youngest), we can invoke mass conservation because the system is closed 
 \begin{equation*}
@@ -145,20 +148,21 @@ It is possible to show that, when the metallicity of either the gas or the young
 \par The average [Fe/H] in the halo is $\sim -1.6$, in the solar vicinity $\sim 0$ and in dwarf galaxies $\sim -1$. The obvious differences in the MDFs of the different stellar populations points to the fact that a "closed-box" treatment is not appropriate for each of these populations (considered separately).
 \par The MDF of a CBM is independent of the timescales for star formation, and only relies on the amount of gas consumed. By the equation relating $Z$ to gas mass (the latter in the form $\mu$), the mass of stars that have less than metallicity $Z_{1}$ is
 \begin{equation*}
-    M_{*}(Z<Z_{1}) = M_{g}(0)-M_{g}(Z_{1}) = M_{g}(0)\left[\-\exp\left(-\frac{Z_{1}}{p}\right)\right]
+    M_{*}(Z<Z_{1}) = M_{g}(0)-M_{g}(Z_{1}) = M_{g}(0)\left[1-\exp\left(-\frac{Z_{1}}{p}\right)\right]
 \end{equation*}
-therefore the fraction of stars at time $t$ with $Z<\beta Z_{1}$ is given by 
+therefore the fraction of stars at time $t$ with $Z<\beta Z_{1}$ is given by
 \begin{equation*}
     \frac{M_{*}(Z<\beta Z_{1})}{M_{*}(Z<Z_{1})} = \frac{1-\mu^{\beta}}{1-\mu}
 \end{equation*}
-You should also keep in mind that in a closed-box model, at any given epoch, stars cannot have a metallicity higher than the current gas metallicity, because each stellar generation inherits the gas metallicity at birth and the gas metallicity increases monotonically with time.
+as follows from (\ref{eq:mu_def}).
+\par You should also keep in mind that in a closed-box model, at any given epoch, stars cannot have a metallicity higher than the current gas metallicity, because each stellar generation inherits the gas metallicity at birth and the gas metallicity increases monotonically with time.
 \par For example, in the solar vicinity $\mu \sim 0.1$. The present day metallicity in the solar vicinity is about $0.7Z_{\odot}$, meaning that the predicted fraction of stellar mass with $\beta = 1/4$ ($Z<Z_{\text{today}}/4$) would be as high as 50\%, while observations suggest that it is set at about 2\%.
 \par This is the so-called \emph{G-dwarf problem}, an excess of metal-poor G-type dwarf stars predicted by the closed box model. Because G-type dwarfs are long-lived, with typical lifetimes of $10\unit{Gyr}$, it is difficult to explain this problem by assuming that old, metal-poor stars have evolved to stellar remnants. On top of that, subsequent work furthermore demonstrated that the metallicity distribution of K and M-type dwarfs has the same lack of metal-poor stars. Thus, the G dwarf problem is a true problem with the closed box model, not an observational effect.
 \par A number of solutions has been proposed:
 \begin{itemize}
-    \item The IMF changes with time (metallicity). For example, if we had bimodal star formation where the early, metal-poor IMF only made higher mass stars, then the G-dwarf problem could be solved within a closed-box context;
+    \item The IMF changes with time (through metallicity): For example, if we had bimodal star formation where the early, metal-poor IMF only made higher mass stars, then the G-dwarf problem could be solved within a closed-box context;
     \item Infall of gas onto the disk (accreting box model);
-    \item A larger "closed-box" needs to be taken into account. That is, the disk gas started out pre-enriched. For example, the "closed box" may pertain to all of the disk (both the thin and the thick part) and maybe even include the halo. In short, the "closed box" may have to be enlarged to encompass the whole Milky Way;
+    \item A larger "closed-box" needs to be taken into account: That is, the disk gas started out pre-enriched. For example, the "closed box" may pertain to all of the disk (both the thin and the thick part) and maybe even include the halo. In short, the "closed box" may have to be enlarged to encompass the whole Milky Way;
     \item Outfall of gas (leaky box model)
 \end{itemize}
 In the next section, we'll take a closer look to the leaky box model.
@@ -177,7 +181,7 @@ which implies
 \begin{equation*}
     M_{g}(t) = M_{t}(0)-(1+\eta)M_{*}(t)
 \end{equation*}
-Under IRA and assuming the gas expelled has the same metallicity as the ISM
+Under IRA and assuming the gas expelled has the same metallicity as the ISM in (\ref{eq:mu_def})
 \begin{align*}
     &M_{g}\der{Z}{t} = \Psi(t)p\alpha\\
     &\der{M_{*}}{t} = \Psi - E = \alpha\Psi(t)
@@ -236,9 +240,9 @@ hence the ratio between the previous equation and $\dot{M}_{t} = f_{in}$ yields
 \end{equation*}
 which can be integrated right away to produce 
 \begin{equation*}
-    \ln\left(\frac{Z_{in}-Z_{0}+p}{Z_{in}-Z+p}\right) = \frac{M_{t}-M_{0}}{M_{g}}
+    \ln\left(\frac{Z_{in}-Z_{0}+p}{Z_{in}-Z+p}\right) = \frac{M_{t}-M_{t}(0)}{M_{g}}
 \end{equation*}
-We can define $\nu = (M_{t}-M_{0})/M_{g}$ so that the last equation becomes
+We can define $\nu = (M_{t}-M_{t}(0))/M_{g}$ so that the last equation becomes
 \begin{equation*}
     Z_{in}-Z_{0}+p = (Z_{in}-Z+p)e^{\nu}
 \end{equation*}
@@ -248,16 +252,17 @@ which can be solved for $Z$
     \label{eq:metallicity_inflow}
 \end{equation}
 If the gas starts with $Z_{0}\approx 0$ and $Z_{in}\approx 0$
-\begin{equation*}
-    Z = p(1-e^{-\nu}) = p\left[1-\exp\left(-\frac{M_{t}-M_{0}}{M_{0}}\right)\right] = p\left[1-\exp\left(-\frac{M_{t}-M_{0}}{M_{g}}\right)\right]
-\end{equation*}
+\begin{align*}
+    Z = p(1-e^{-\nu}) &= p\left[1-\exp\left(-\frac{M_{t}-M_{t}(0)}{M_{0}}\right)\right]\\
+    &= p\left[1-\exp\left(-\frac{M_{t}-M_{g}}{M_{g}}\right)\right]
+\end{align*}
 Making use of $M_{*}(Z) = M_{t}(Z)-M_{g}$
 \begin{equation*}
     Z =  p\left[1-\exp\left(-\frac{M_{*}}{M_{g}}\right)\right]
 \end{equation*}
 which implies 
 \begin{equation}
-    M_{Z} = -M_{g}\ln\left(1-\frac{Z}{p}\right)
+    M_{*}(Z) = -M_{g}\ln\left(1-\frac{Z}{p}\right)
 \end{equation}
 The accreting model predicts that in the solar vicinity the fraction of stellar mass with $Z < Z_{\text{today}}/4$ is about 10\%, which is in much better agreement with the observations.
 
