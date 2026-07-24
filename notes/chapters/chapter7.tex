@@ -10,13 +10,12 @@ In a large stellar system, gravitational force at any point due to all the other
     G\frac{m^{2}}{r} \approx \frac{1}{2}\mu V^{2} \implies r_{s}\approx \frac{4Gm}{V^{2}}
 \end{equation*}
 with $V$ the initial speed. What's the timescale associated with a strong encounter?
-\par In a time $t$ a strong encounter will occur if any other star intrudes on a cylinder of radius $r_{s}$ being swept out of the orbit. Such cylinder has volume $\mathcal{V} = \pi r_{s}^{2}Vt$, so, provided a stellar density $n$ is given, the typical timescale between encounters is 
-\begin{align*}
-    \tau_{SE} &= \frac{1}{\pi r_{s}^{2}V n} = \frac{V^{3}}{4\pi G^{2}m^{2}n}\\
-    & \approx 4\power{10}{12}\left(\frac{V}{10\unit{km}\unit{s}^{-1}}\right)^{3}\left(\frac{m}{M_{\odot}}\right)^{-2}\left(\frac{n}{1\unit{pc}^{-3}}\right)^{-1}\unit{yr}
+\par In a time $t$ a strong encounter will occur if any other star intrudes on a cylinder of radius $r_{s}$ being swept out of the orbit. Such cylinder has volume $\mathcal{V} = \pi r_{s}^{2}Vt$, so, provided a stellar density $n$ is given, the typical timescale between encounters is (recall $\tau = 1/\pi r_{s}^{2}Vn$) 
+\begin{equation*}
+    \tau_{SE} = \frac{V^{3}}{4\pi G^{2}m^{2}n} \approx 4\power{10}{12}\left(\frac{V}{10\unit{km}\unit{s}^{-1}}\right)^{3}\left(\frac{m}{M_{\odot}}\right)^{-2}\left(\frac{n}{1\unit{pc}^{-3}}\right)^{-1}\unit{yr}
     \label{eq:setimescale}
-\end{align*}
-This means that stars in the disks of galaxies ($V \sim 30 \unit{km}\unit{s}^{-1}$, $n \sim 0.1 \unit{pc}^{-3}$ near the Sun), never physically collide, and are extremely unlikely to pass close enough to deflect their orbits substantially. On the other hand, in a globular cluster ($V \sim 10 \unit{km}\unit{s}^{-1}$, $n \sim 1000 \unit{pc}^{-3}$ or more), strong encounters will be common (i.e. one or more per star in the lifetime of the cluster).
+\end{equation*}
+This means that stars in the disk of galaxies ($V \sim 30 \unit{km}\unit{s}^{-1}$, $n \sim 0.1 \unit{pc}^{-3}$ near the Sun), never physically collide, and are extremely unlikely to pass close enough to deflect their orbits substantially. On the other hand, in a globular cluster ($V \sim 10 \unit{km}\unit{s}^{-1}$, $n \sim 1000 \unit{pc}^{-3}$ or more), strong encounters will be common (i.e. one or more per star in the lifetime of the cluster).
 \par Note that for the purposes of the present discussion, we can consider the stars as \emph{point masses} (since their sizes are small compared to their separations) and the gravitational potential of a galaxy to be the sum of a smooth component (the average over a region containing many stars) and a very deep potential around each individual star. The motion of stars within the galaxy will therefore be determined almost entirely by the smooth part of the force.
 
 \section{Dynamical Friction}
@@ -91,8 +90,7 @@ Switching back to the lab reference frame, we find for the mass $M$ that
     |\Delta V_{\perp}| &= \frac{2mbV_{0}^{3}}{G(M+m)^{2}}\left[1+\frac{b^{2}V_{0}^{4}}{G^{2}(M+m)^{2}}\right]^{-1}\\
     |\Delta V_{\parallel}| &= \frac{2mV_{0}}{M+m}\left[1+\frac{b^{2}V_{0}^{4}}{G^{2}(M+m)^{2}}\right]^{-1}
 \end{align*}
-Note that if we integrate over all possible impact parameters $b$, the average variation of the orthogonal velocity is vanishing, since its expression is odd in $b$.
-\par If $M$ is traveling through an homogeneus sea of stars, the average variation of the orthogonal velocity will be zero, whilst the parallel variation will be non-zero, since all of these vectors point in the same direction. The mass $M$ suffers a steady deceleration, known as \emph{dynamical friction}.
+If $M$ is traveling through an homogeneus sea of stars, the average variation of the orthogonal velocity will be zero, since its expression is odd in $b$, whilst the parallel variation will be non-zero, since all of these vectors point in the same direction. The mass $M$ suffers a steady deceleration, known as \emph{dynamical friction}.
 \par If the distribution function $f(\vec{v}_{m})$ gives the number of stars encountered with speed between $\vec{v}_{m}$ and $\vec{v}_{m}+\delta\vec{v}_{m}$ per unit volume, then the rate that $M$ encounters these stars is
 \begin{equation*}
     2\pi b V_{0}f(\vec{v}_{m})\,\text{d}^{3}v_{m}\diff{b}
@@ -100,7 +98,7 @@ Note that if we integrate over all possible impact parameters $b$, the average v
 The variation over time of velocity $\vec{v}_{M}$ is 
 \begin{align*}
     \der{\vec{v}_{M}}{t}\Big|_{v_{m}} &= \int_{0}^{b_{\text{max}}} \Delta v_{M\,\parallel}\,2\pi b V_{0}f(\vec{v}_{m})\,\text{d}^{3}v_{m}\diff{b}\\
-    &=\vec{V}_{0}f(\vec{v}_{m})\,\text{d}^{3}\int_{0}^{b_{\text{max}}}\frac{2mV_{0}}{M+m}\left[1+\frac{b^{2}V_{0}^{4}}{G^{2}(M+m)^{2}}\right]^{-1}2\pi b\diff{b}
+    &=\vec{V}_{0}f(\vec{v}_{m})\,\text{d}^{3}v_{m}\int_{0}^{b_{\text{max}}}\frac{2mV_{0}}{M+m}\left[1+\frac{b^{2}V_{0}^{4}}{G^{2}(M+m)^{2}}\right]^{-1}2\pi b\diff{b}
 \end{align*}
 The integral is solved by 
 \begin{equation*}
@@ -109,7 +107,7 @@ The integral is solved by
 Note that the quantity $G(m+M)/V_{0}^{2}$ is the impact parameter corresponding to a 90° deviation, hence we might call it $b_{90}$. The Coulombian parameter $\Lambda$ is then $\Lambda = b_{\text{max}}/b_{90}$. Putting everything back together
 \begin{align*}
     \der{\vec{v}_{M}}{t}\Big|_{v_{m}} &= \frac{2mV_{0}}{M+m}\vec{V}_{0}f(\vec{v}_{m})\,\text{d}^{3}v_{m}\frac{1}{2}\frac{G^{2}(M+m)^{2}}{V_{0}^{4}}\ln(1+\Lambda^{2})\cdot 2\pi \\
-    &\approx 4\pi G^{2}m(M+m)\ln(\Lambda)\frac{\vec{V}_{0}}{V_{0}^{4}}f(\vec{v}_{m})\,\text{d}^{3}v_{m}
+    &\approx 4\pi G^{2}m(M+m)\ln(\Lambda)\frac{\vec{V}_{0}}{V_{0}^{3}}f(\vec{v}_{m})\,\text{d}^{3}v_{m}
 \end{align*}
 where we've assumed $\Lambda \gg 1$. We can now recall the definition of $V_{0} = |\vec{V}_{M}-\vec{V}_{m}|$ and integrate over the velocity distribution (assuming $\Lambda$ to be weakly dependent on the velocity)
 \begin{equation}
@@ -185,9 +183,9 @@ The average speed will be 0 at any time, but there will be higher and lower spee
 \begin{equation*}
     |\Delta V_{\perp}| = V_{0}\sin\theta_{d} \approx V_{0}\theta_{d} \quad |\Delta V_{\parallel}| = V_{0}(2-\cos\theta_{d})\approx \frac{1}{2}V_{0}\theta_{d}^{2}
 \end{equation*}
-Hence for small angles $|\Delta V_{\perp}| \gg |\Delta V_{\parallel}|$. A system is "relaxed" when during its lifetime a typical star lose memory of its initial kinetic energy.
+Hence for small angles $|\Delta V_{\perp}| \gg |\Delta V_{\parallel}|$. A system is "relaxed" when during its lifetime a typical star loses memory of its initial kinetic energy.
 \input{chapters/impactparamter.tex}
-\par Given this setup, depicted in Fig.\ref{fig:star_impact}, we're now going to show that stars in clusters can reach equilibrium through mutual interactions in a process named \emph{two-body relaxation}, which is essentially analogous to thermalization. Therefore, a very important timescale in collisional dynamics in clusters is the time for a star to completely lose memory of its initial velocity by means of gravitational encounters.
+\par Given this setup, depicted in Fig.\ref{fig:star_impact}, we're now going to show that stars in clusters can reach equilibrium through mutual interactions in a process named \emph{two-body relaxation}, which is essentially analogous to thermalization. Therefore, a very important timescale in collisional dynamics in clusters is the time for a star to completely lose memory of its initial velocity by means of (weak) gravitational encounters.
 \par The gravitational force is 
 \begin{equation*}
     \vec{F} = -\frac{Gm^{2}}{r^{3}}\vec{r} = \vec{F}_{\parallel}+\vec{F}_{\perp}
@@ -208,7 +206,7 @@ Defining $\delta v^{2}_{\text{tot}} = \int \delta v^{2}_{\perp}\,\delta n$, wher
 \begin{equation*}
     \delta v^{2}_{\text{tot}} = 8N\left(\frac{Gm}{b_{\text{max}}v}\right)^{2}\log\left(\frac{b_{\text{max}}}{b_{\text{min}}}\right)
 \end{equation*}
-The integration limit $b_{\text{max}}$ is of the order of the size of the system, while $b_{\text{min}}$ corresponds to the smallest $b$ to avoid stellar collisons, which can be shown to be equal to 
+The integration limit $b_{\text{max}}$ is of the order of the size of the system, while $b_{\text{min}}$ corresponds to the smallest $b$ to avoid stellar collisions, which is equal to 
 \begin{equation*}
     b_{\text{min}} = \frac{2Gm}{v^{2}} = b_{90}
 \end{equation*}
@@ -224,7 +222,7 @@ Replacing for $v$ in the equation for $\delta v_{\text{tot}}$ we get
 \begin{equation*}
     \delta v^{2}_{\text{tot}} = \frac{8}{N}v^{2}\log\left(\frac{N}{2}\right)
 \end{equation*}
-The number of crossings for which $\delta v^{2}_{\text{tot}}/v^{2} \approx 1$ (that is the number of crossings after which the star has changed its initial velocity completely and lost memory of its initial conditions) is given by\footnote{Consider a change of $\delta v_{\text{tot}}^{2}$ for each crossing to $v^{2}$.}
+The number of crossings for which $\delta v^{2}_{\text{tot}}/v^{2} \approx 1$ (that is the number of crossings after which the star has changed its initial velocity completely and lost memory of its initial conditions) is given by
 \begin{equation*}
     n_{\text{cross}}\approx\frac{N}{8}\frac{1}{\log(N/2)}
 \end{equation*}
@@ -241,15 +239,14 @@ For globular clusters, dense young star clusters, nuclear star clusters (far fro
 
 \subsection{Effects of two-body relaxation: Mass Segregation}
 
-Because of two-body relaxation there is a transfer of kinetic energy (equipartition). If all stars have the same mass, this implies that at equilibrium the velocity distribution tends toward an approximately Maxwellian distribution. Given that $\bar{v}^{2} = 3kT/m$, this implies $\bar{v}^{2} \approx \text{const.}$ For different masses, a Maxwellian distribution is reached for each mass type, but the same temperature will be shared among all masses. In this case, $\bar{v}^{2}_{i} = 3kT/m_{i}$, meaning $m_{i}\bar{v}^{2}_{i}\approx \text{const.}$ If $m_{i}>m_{j}$, then $\bar{v}^{2}_{i} < \bar{v}^{2}_{j}$, and so massive stars slow down, light stars move to higher velocities. We achieve what is commonly known as \emph{mass segregation}.
-\par A nice criterion for the determination of mass segregation was given by Spitzer, but we won't discuss it here\footnote{But you can see my Astrophysical Processes Notes if you're really that interested, or the original article by Spitzer.}. Just know that usually mass segregation occurs after about $\sim 1 \tau_{\text{rlx}}$ and it's actually observed in objects like the Pleiades star cluster, see Fig.\ref{fgr:pleiades_massseg}.
+\par Because of two-body relaxation there is a transfer of kinetic energy (equipartition). If all stars have the same mass, this implies that at equilibrium the velocity distribution tends toward an approximately Maxwellian distribution. Given that $\bar{v}^{2} = 3kT/m$, this implies $\bar{v}^{2} \approx \text{const.}$ For different masses, a Maxwellian distribution is reached for each mass type, but the same temperature will be shared among all masses. In this case, $\bar{v}^{2}_{i} = 3kT/m_{i}$, meaning $m_{i}\bar{v}^{2}_{i}\approx \text{const.}$ If $m_{i}>m_{j}$, then $\bar{v}^{2}_{i} < \bar{v}^{2}_{j}$, and so massive stars slow down, light stars move to higher velocities. We achieve what is commonly known as \emph{mass segregation}. A nice criterion for the determination of mass segregation was given by Spitzer, but we won't discuss it here. Just know that usually mass segregation occurs after about $\sim 1 \tau_{\text{rlx}}$ and it's actually observed in objects like the Pleiades star cluster, see Fig.\ref{fgr:pleiades_massseg}.
 \begin{figure}[h!]
     \centering 
     \includegraphics[width=0.7\textwidth]{img/pleiades_massseg.png}
-    \caption{Mass segregation in the Pleiades star cluster. Note how massive stars concentrated at center, while lower mass stars populate outskirts.}
+    \caption{Mass segregation in the Pleiades star cluster. Note how massive stars are concentrated at the center, while lower mass stars populate the outskirts.}
     \label{fgr:pleiades_massseg}
 \end{figure}
-\par Note that all of these applies if the age of the system is larger than the relaxation timescale.
+\par Note that this applies if the age of the system is larger than the relaxation timescale.
 
 \subsection{Effects of two-body relaxation: Evaporation}
 
@@ -273,7 +270,7 @@ Therefore, stars with velocities exceeding twice the root-mean-square (RMS) velo
 \end{equation}
 Note that the evaporation timescale is much greater than the relaxation timescale. Consider again the Pleiades star cluster. The relaxation timescale for the Pleiades is about $160\unit{Myr}$ while the evaporation timescale is roughly $\sim 20\unit{Gyr}$. Compare it now with the age of the cluster, which is estimated to be about $125 \unit{Myr}$. Clearly, we can expect it to be decently mass-segregated, but the cluster has not yet lost much mass due to evaporation.
 \par Now, evaporation is not only mechanism for clusters to lose mass. For example, external gravitational perturbations to star clusters (from GMCs, disk of Milky Way, etc) also pump energy into stellar orbits (tidal heating) or directly strip them (tidal stripping), hastening the mass loss. Star clusters with mass like Pleiades that formed early in galaxy's history with age $\sim 10\unit{Gyr}$ have already dissolved through evaporation and/or tidal heating.
-\par Lower mass clusters dissolve even more rapidly than Pleiades. The only star clusters surviving from the formation time of the galaxy are massive star clusters ($N > 10^{5}$ stars), i.e. globular clusters.
+\par Lower mass clusters dissolve even more rapidly than the Pleiades. The only star clusters surviving from the formation time of the galaxy are massive star clusters ($N > 10^{5}$ stars), i.e. globular clusters.
 \par Another effect of two-body relaxation (which is not relevant in galaxies) is \emph{core collapse}: Relaxation is more effective in the more dense parts of a system (core). Since the core is more collisional, more evaporation is due, and hence more energy is removed from the system. If you remove energy (heat), stars fall deeper in the gravitational well (so the system contracts getting denser), they therefore speed up, and that part of the system gets hotter, thus leading to more evaporation.
 \par Mass loss due to evaporation then leads to collapse, a runaway process called \emph{gravothermal instability}. If the system contracts, it becomes denser and the two-body encounter rate increases along with the evaporation rate. As a consequence, the core of the cluster loses energy (the kinetic energy of the evaporated stars) to the halo, and $\text{d}E_{\text{core}}<0$. Since for any bound, ﬁnite system in which the dominant force is gravity we have
 \begin{equation*}
@@ -281,12 +278,10 @@ Note that the evaporation timescale is much greater than the relaxation timescal
 \end{equation*}
 the temperature of the core must increase. Therefore, stars exchange more energy and become dynamically hotter, and faster stars tend to evaporate at a higher rate. This runaway process leads to the unphysical situation of star clusters with inﬁnite core density.
 \par To avoid this catastrophic scenario, we consider the possibility that the core collapse is reversed by an external source injecting kinetic energy into the core ($\text{d}E_{\text{core}} > 0)$, thus cooling it ($\text{d}T_{\text{core}} < 0$) until the temperature gradient declines to zero, thus halting the collapse. There are multiple ways this can happen: Mass loss by stellar winds and/or SNs; formation of binaries; three-body encounters between single stars and binaries extracting kinetic energy from the internal energy of the binary system and so on.
-\par It turns out that core collapse is eventually halted by binary stars. In most clusters these will be primordial, but even if no primordial binaries are present, binaries are formed by encounters of three stars in dense cores. The so-called \emph{hard binaries}, i.e. those with binding energies larger than the average kinetic energy of stars in the cluster, tend to lose energy in such encounters. They become ever more bound and are more likely to provide energy to the next star that passes by.
-\par A single hard binary can have a binding energy equal to that of the cluster as a whole! Binaries can serve as energy sources that stabilize globular-cluster cores against collapse.
+\par It turns out that core collapse is eventually halted by binary stars. In most clusters these will be primordial, but even if no primordial binaries are present, binaries are formed by encounters of three stars in dense cores. The so-called \emph{hard binaries}, i.e. those with binding energies larger than the average kinetic energy of stars in the cluster, tend to lose energy in such encounters. They become ever more bound and are more likely to provide energy to the next star that passes by. A single hard binary might even have a binding energy equal to that of the cluster as a whole!
 \par This is all nice and dandy, but it's not actually that helpful to explain why most galaxy we observe are "relaxed." Clearly it can't be because of the two-body relaxation.
 \begin{quote}
-    \emph{Galaxy changes are by revolution rather
-than by evolution.}
+    \emph{Galaxy changes are by revolution rather than by evolution.}
 \end{quote}
 \par Consider a star that is at rest at the center of a collapsing spherical protogalaxy. As the protogalaxy collapses, the potential well at its center becomes deeper. On the other hand, the velocity of the central star remains zero. Therefore the energy of this star decreases.
 \par Other stars in the collapsing protogalaxy will gain energy. For example, consider a star that is initially located outside the half-mass radius of the system and is moving slowly radially outward. This star will be slow to respond to the overall collapse of the system, and by the time it is falling rapidly to the center, the system as a whole will be approaching its most compact configuration. Hence the star will acquire a lot of kinetic energy as it falls into the deep potential well at the center of the system.
@@ -297,14 +292,14 @@ than by evolution.}
 During the collapse of large cold systems, the gravitational potential changes rapidly. As a consequence, stars gain and lose energy, which broadens the energy distribution. Energy is then redistributed via collective interactions: This acts like a relaxation process.
 \par Note that the total energy remains constant: This is a non-dissipational process. Energy is not radiated away, as with dissipational (gaseous) collapse. If the total energy is initially zero (e.g. diffuse system at rest), then following collapse some stars will be strongly bound, but some must also have been ejected.
 \par Since the acceleration of a particle in the mean gravitational field is independent of its mass, the equilibrium configuration is also independent of mass. No segregation by mass will occur. Moreover, violent relaxation is fast: The timescale is the dynamical timescale (\ref{eq:ff_timescale}) $\propto 1/\sqrt{G\rho}$.
-\par Numerical simulations show that the density distribution becomes smooth before scattering is complete, hence relaxation ceases and is incomplete (only partially phase-mixed in velocity/energy space).
-\par Why does relaxation cease prematurely? Violent relaxation depends on the time-dependent potential to shuffle energies. When that time dependence becomes small (the bulk of the mass is in a more stable configuration), there is no further “violent” driver to continue randomizing orbits. This effectively freezes the system in a partially relaxed state.
+\par Numerical simulations, such as that in Fig.\ref{fgr:violentrelaxation}, show that the density distribution becomes smooth before scattering is complete, hence relaxation ceases and is incomplete (only partially phase-mixed in velocity/energy space).
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{img/violentrelaxation.png}
+    \includegraphics[width=0.6\textwidth]{img/violentrelaxation.png}
     \caption{Four stages of a collapse simulation. Credits: Unknown.}
     \label{fgr:violentrelaxation}
 \end{figure}
+\par Why does relaxation cease prematurely? Violent relaxation depends on the time-dependent potential to shuffle energies. When that time dependence becomes small (the bulk of the mass is in a more stable configuration), there is no further “violent” driver to continue randomizing orbits. This effectively freezes the system in a partially relaxed state.
 
 \subsection{Scalar Virial Theorem}
 
@@ -330,8 +325,8 @@ The conditions to use this equation are simple: The system must be gravitational
 
 \section{Galaxy Encounters}
 
-During a tidal encounter, the orbits of many stars are significantly affected. However, some orbits are not greatly affected, namely those for which $t_{\text{orbit}}\ll t_\text{encounter}$. As the tidal field slowly changes, the orbit responds approximately reversibly. This type of response is called \emph{adiabatic}. Stars on rapid orbits near galaxy centers are not greatly affected by tidal encounters (unless, of course, the encounter proceeds to become a merger).
-\par The opposite extreme occurs when $t_{\text{orbit}}\gg t_\text{encounter}$, this occurs when $v_{\text{internal}}\ll v_{\text{encounter}}$. In this case, stars don't move much during the encounter, hence there's no change in potential energy. However, they do feel an impulse, and thus the kinetic energy will have to change accordingly. If this happens, we say that the system has experienced a \emph{tidal shock}.
+During a tidal encounter, the orbits of many stars are significantly affected. However, some orbits are not greatly affected, those for which $t_{\text{orbit}}\ll t_\text{enc}$. As the tidal field slowly changes, the orbit responds approximately reversibly. This type of response is called \emph{adiabatic}. Stars on rapid orbits near galaxy centers are not greatly affected by tidal encounters (unless, of course, the encounter proceeds to become a merger).
+\par The opposite extreme occurs when $t_{\text{orbit}}\gg t_\text{enc}$, this occurs when $v_{\text{int}}\ll v_{\text{enc}}$. In this case, stars don't move much during the encounter, hence there's no change in potential energy. However, they do feel an impulse, and thus the kinetic energy will have to change accordingly. If this happens, we say that the system has experienced a \emph{tidal shock}.
 
 \subsection{High Speed Encounter}
 
@@ -371,7 +366,7 @@ while post the final relaxation
 \begin{equation*}
     E_{f} = E_{i} \implies -K_{f} = -K_{o}+\Delta K \implies K_{f} = K_{o}-\Delta K
 \end{equation*}
-What we gather from this is that from the original to the final configuration, the system has indeed cooled, by an amount $\Delta K$. Since the shock heats the original system by $\Delta K$, then during relaxation (i to f) the system cools by $-2\Delta K$, and in fact $K_{i}=K_{o}+\Delta K$. As a consequence of the virial theorem the gravitational energy is now "less" negative (i.e., the system expands).
+What we gather from this is that from the original to the final configuration, the system has indeed cooled, by an amount $2\Delta K$. Since the shock heats the original system by $\Delta K$, then during relaxation (i to f) the system cools by $-2\Delta K$, and in fact $K_{i}=K_{o}+\Delta K$. As a consequence of the virial theorem the gravitational energy is now "less" negative (i.e., the system expands).
 \par Before virialization, since the stars receive energy, some may become unbound ($E > 0$). These stars evaporate and are lost from the system. If there are repeated tidal shocks, a star cluster (for example) may be disrupted and disintegrate. On a conclusive note, ring galaxies are said to be formed from the tidal shocks we've just discussed.
 
 \section{Tides}
@@ -400,7 +395,7 @@ where $\vec{r_{1}}$, $\vec{r_{2}}$ are the position vectors of the centres of th
 \begin{figure}[h!]
     \centering 
     \includegraphics[width=0.7\textwidth]{img/roche_sol.png}
-    \caption{Equipotential surfaces for the Roche potential $\phi_{\text{eff}}$ for various values of $q$.}
+    \caption{Equipotential surfaces for the Roche potential $\phi_{\text{eff}}$ for decreasing values of $q$.}
 \end{figure}
 \par In the limit $q \ll 1$ it's possible to derive the position of the Lagrange point $L_{1}$. We know that for this in particular $y = 0$ and $x_{2}<x< x_{1}$ (the Lagrange points all lie in the $xy$ plane because of angular momentum conservation). Hence
 \begin{equation*}
@@ -470,11 +465,12 @@ The gravitational field (acceleration) due to the disk is approximately $2\pi G 
     \caption{D100, a barred spiral galaxy close to the centre of the Coma cluster. Jellyfish galaxies represent an extreme example of ram-pressure stripping, where the stripped gas streams out in a long tail behind the galaxy, giving them their distinctive look. The HST observations found 37 bright patches, and analysis of their colors showed 10 of them to be clumps of star formation, all of which are found in the tail of gas. The 27 other sources are mostly background sources, such as distant galaxies. Credits: \cite{Cramer_2019}.}
 \end{figure}
 
+\newpage
 \section{Collisionless Dynamics}
 
 If star-star collisions are negligible, stars move in the smooth gravitational field $\Phi(x,t)$ of the galaxy. In this case a galaxy may be described by a probability density in phase-space called \emph{distribution function}. We define a distribution function $f = f(\vec{x}, \vec{v}, t)$ so that the number of particles in range $[\vec{x}, \vec{x}+\text{d}\vec{x}\,]$ and $[\vec{v}, \vec{v}+\text{d}\vec{v}\,]$ is given by 
 \begin{equation}
-    \text{d}n(t) = f(\vec{x}, \vec{v}, t)\,{d}\vec{x}\,\text{d}\vec{v}
+    \text{d}N(t) = f(\vec{x}, \vec{v}, t)\,{d}\vec{x}\,\text{d}\vec{v}
 \end{equation}
 To be properly defined, $f$ must meet the usual requirements for distribution functions
 \begin{equation}
@@ -493,7 +489,7 @@ as well as the concept of \emph{averaged quantities}, for example the average ve
     \text{d}N_{0} &= f(\vec{x}_{0}, \vec{v}_{0}, t)\,\text{d}^{3}x_{0}\text{d}^{3}v_{0}\\
     \text{d}N &= f(\vec{x}, \vec{v}, t)\,\text{d}^{3}x\text{d}^{3}v
 \end{align*}
-Requesting the number of particles to be conserved $\text{d}N_{0} = \text{d}N$, we end up with 
+Requiring the number of particles to be conserved $\text{d}N_{0} = \text{d}N$, we end up with 
 \begin{equation*}
     f(\vec{x}_{0}, \vec{v}_{0}, t) = f(\vec{x}_{0}+\vec{u}_{0}\,\text{d}t, \vec{v}_{0}+\vec{a}_{0}\,\text{d}t, t) \approx f(\vec{x}_{0}, \vec{v}_{0}, t) +\frac{\text{d}f}{\text{d}t}
 \end{equation*}
@@ -508,21 +504,21 @@ Note that sometimes it might be useful to express the $i$-th component of the ac
 This is called \emph{Collision-less Boltzmann equation} (CBE). Please, don't bother to ask why of the weird indices placement. Whichever way you put the indices is (here) absolutely irrelevant.
 \par The flow of stellar phase points through phase space is incompressible; if you follow a star along its orbit, the density in the phase space (6D) around the star is constant.
 \par If there are close encounters between stars, these can alter the position and velocity much faster than a smoothed potential. In this case, the effects are given as an extra “collisional” term on the right side.
-\par So far we've been ignoring the possibility of Liouville's theorem being violated, that is new states would be popping out or some would be disappearing. To address this possibility, we have to add a formation rate (i.e., the SFR) and a "death rate" fir stars, thus modifying the CBE as such
+\par So far we've been ignoring the possibility of Liouville's theorem being violated, that is new states could be popping out or some could be disappearing. To address this possibility, we have to add a formation rate (i.e., the SFR) and a "death rate" for stars, thus modifying the CBE as such
 \begin{equation*}
     \partial_{t}f + v^{i}\partial_{x^{i}}f+a^{i}\partial_{v^{i}}f = \text{SFR}-\text{D}
 \end{equation*}
 The CBE would be vaild only if
 \begin{equation*}
-    \text{SFR}-\text{D} \ll \frac{f}{   tau_{\text{cross}}}
+    \text{SFR}-\text{D} \ll \frac{f}{\tau_{\text{cross}}}
 \end{equation*}
-which is a condition that is generally satisfied in all elliptical galaxies: SFR$\approx 0$ and D$\approx 0$, for there are only slow evolving galaxies. For star forming galaxies, on the other hand, the CBE stars to be not so accurate.
+which is a condition that is generally satisfied in all elliptical galaxies: $\text{SFR}\approx 0$ and $\text{D}\approx 0$, for there are only slow evolving galaxies. For star forming galaxies, on the other hand, the CBE starts to be not so accurate.
 
 \subsection{Jeans Equations}
 
 The collisionless Boltzmann equation is rather useless\footnote{Poor Boltzmann.}, as it is not only a function of 7 variables (many of which are not easily observable), but of their derivatives as well. Even if $f$ were measurable, there would be large uncertainties due to Poisson noise. Fortunately, more tractable equations can be found by finding the momenta of the equation. Such momenta produce the Jeans Equations.
 \par I'm going to skip explicit calculations because they're somewhat long, tedius, and there's not much really to learn from making that much algebra. The only things you have to remember are the definitions of the star density $n$ as the integral of the distribution function over velocities, the definition of averaged quantity (still over velocities) and the fact that position and speed are independent (since they're conjugate variables).
-\par This leads to the first Jeans equation
+\par Integration with respect to velocities leads to the first Jeans equation
 \begin{equation}
     \dot{n}+\partial^{i}(n\langle v_{i}\rangle) = 0
     \label{eq:jeans_1st}
@@ -543,7 +539,7 @@ which we can subsitute into the second Jeans equation
     \label{eq:jeans_anisotropic}
 \end{equation}
 Here, $n\sigma_{ij}^{2}$ is the anisotropic pressure (stress) tensor. But since $\sigma_{ij}^{2}$ is symmetric, its matrix can be diagonalized. This produces the principal axes of the velocity ellipsoid. However, pressures in stellar systems can still be anisotropic $\sigma_{11}\neq \sigma_{22}\neq \sigma_{33}$.
-\par The incompressible stellar fluid experiences anisotropic pressure forces. If $\Phi$ and $n$ are known, the Jeans equations have 9 unknowns (3 streaming motions at least 3 terms of the random motion tensor). But we have only four equations, meaning this is not a closed set.
+\par The incompressible stellar fluid experiences anisotropic pressure forces. If $\Phi$ and $n$ are known, the Jeans equations have 9 unknowns (3 streaming motions and at least 3 terms of the random motion tensor). But we have only four equations, meaning this is not a closed set.
 \par For comparison, in fluid dynamics there are only 4 unknowns (3 streaming motions and the pressure). The 3 Euler Equations combined with the Equation of State forms a closed set. Fluids are isotropic . This difference is due to the collisional nature of fluids, that are characterized by an isotropic velocity dispersion tensor (i.e. the velocity ellipsoid becomes a sphere).
 
 \subsubsection*{Applications}
@@ -731,10 +727,12 @@ Using the first Jeans equation (\ref{eq:jeans_1st}) and the divergence theorem, 
 \end{equation*}
 so that we can finally present the Tensor Virial Theorem
 \begin{equation}
+    \boxed{
     \frac{1}{2}\dder{I_{jk}}{t} = W_{jk}+2T_{jk}+\Pi_{jk}
+    }
     \label{eq:tensorvirialtheorem}
 \end{equation}
-If the system is in a steady-state the moment of inertia tensor is stationary, and the Tensor Virial Theorem reduces to
+If the system is in a steady-state, then the moment of inertia tensor is stationary, and the Tensor Virial Theorem reduces to
 \begin{equation*}
     0 = W_{jk}+2K_{jk}
 \end{equation*}
@@ -758,7 +756,7 @@ Note that the right hand side depends only on the geometry of the system. Let us
 where $v_{\text{rot}}$ is the density weighted rotation speed.
 \par The ratio we've previously computed then becomes 
 \begin{equation*}
-    \frac{\frac{1}{2}Mv^{2}_{\text{rot}}+M\sigma^{2}}{M_{\sigma^{2}}} = \frac{W_{xx}}{W_{zz}}
+    \frac{\frac{1}{2}Mv^{2}_{\text{rot}}+M\sigma^{2}}{M\sigma^{2}} = \frac{W_{xx}}{W_{zz}}
 \end{equation*}
 It can be shown that the right hand side of the equation, the geometrical part, can be expressed as the ratio of the major axis of the ellipsoid or as a function of the ellipticity $\epsilon = 1-b/a$, finding 
 \begin{equation}
@@ -770,15 +768,15 @@ This specifies the relation between the flattening of the spheroid and the ratio
     \frac{b}{a} = 0.7 \implies \frac{v_{\text{rot}}}{\sigma} \approx 0.9
 \end{equation*}
 which is an absurd value.
-\par Consider then a non-rotating, anisotropic, oblate system\footnote{The system is still axisymmetric, so the anisotropy is limited to the $z$ axis}. The velocity dispersion along the $x$ and $z$ axis will then be different, and repeating the calculations we'd find 
+\par Consider then a non-rotating, anisotropic, oblate system\footnote{The system is still axisymmetric, the anisotropy is limited to the velocity fluctuations along the $z$ axis.}. The velocity dispersion along the $x$ and $z$ axis will then be different, and repeating the calculations we'd find 
 \begin{equation}
     \frac{\sigma_{zz}}{\sigma_{xx}} \approx \left(\frac{b}{a}\right)^{0.45}
     \label{eq:anioblnonrot}
 \end{equation}
-Now, the same 0.7 flattening requires only a small anisotropy $\sigma_{zz}(\sigma_{xx})\approx 0.85$.
+Now, the same 0.7 flattening requires only a small anisotropy $\sigma_{zz}/\sigma_{xx}\approx 0.85$.
 \par Finally, let us consider a rotating, anisotropic, oblate system, for which the anisotropy is characterized by a $\delta$ parameter. We can write 
 \begin{align*}
-    &\Pi_{zz} = (1-\delta)\Pi_{xx} = (1-\delta)M_{\sigma}^{2}\\
+    &\Pi_{zz} = (1-\delta)\Pi_{xx} = (1-\delta)M\sigma^{2}\\
     & T_{zz} = 0 \quad 2T_{xx} = \frac{1}{2}Mv^{2}_{\text{rot}}
 \end{align*}
 from which 
@@ -858,9 +856,9 @@ Solutions of this equation give self-consistent spherical stellar systems, provi
     \Psi &= -\Phi +\Phi_{0}\\
     \epsilon &= -E +\Phi_{0} = \Psi -\frac{1}{2}v^{2}
 \end{align*}
-We choose $\Psi_{0}$ such that $f>0$ for $\epsilon>0$ (bound orbits) and $f=0$ for $\epsilon \leq 0$ (unbound orbits). The iter is for example the following:
+We choose $\Phi_{0}$ such that $f>0$ for $\epsilon>0$ (bound orbits) and $f=0$ for $\epsilon \leq 0$ (unbound orbits). The iter is for example the following:
 \begin{enumerate}
-    \item  Choose a distribution function which is a function of energy $f(\epsilon)$, from Jeans Theorem $f(E)$ is already a solution to the steady CBE;
+    \item  Choose a distribution function which is a function of energy $f(\epsilon)$. Because of Jeans Theorem, $f(E)$ is already a valid solution to the steady-state CBE;
     \item Integrate the distribution function over $v$ to find $n(\Psi)$;
     \item Solve Poisson’s equation to find $\Psi(r)$;
     \item Plug $\Psi(r)$ into $n(\Psi)$ to find the mass distribution $n(r)$.
@@ -902,7 +900,7 @@ allowing us to find a constant near-nucleus density $n(0)$ within a radius
 \end{equation}
 which is known as King or core radius. At small radii ($r \lesssim r_{0}$) the density law resembles the (so-called Hubble) density law
 \begin{equation*}
-    n(r) = \frac{1}{\left(1+\left(\frac{r}{r_{0}}\right)^{2}\right)}^{3/2}
+    n(r) = \frac{1}{\left(1+\left(\frac{r}{r_{0}}\right)^{2}\right)^{3/2}}
 \end{equation*}
 which fits decently the centers of many elliptical galaxies. At large radii ($r\gtrsim 15r_{0}$) the system resembles the SIS
 \begin{equation*}
@@ -913,9 +911,9 @@ which doesn't fit elliptical galaxies too well in the outer regions.
 \begin{itemize}
     \item At any given radius, stars have isotropic dispersion $\sigma$;
     \item At this radius at least some stars are moving outwards, but further out the dispersion is still $\sigma$, and stars which are moving outward the system must have infinite extent;
-    \item Ultimately, this arises because $f(\epsilon) > 0$ for negative $\epsilon$, meaning the model includes unbound stars. To rectify this problem, we attempt to modify things slightly by removing the unbound stars.
+    \item Ultimately, this arises because $f(\epsilon) > 0$ for negative $\epsilon$, meaning the model includes unbound stars.
 \end{itemize}
-\par A viable alternative is the lowered isothermal (King) truncated exponential $f(\epsilon)$: It suppresses stars at large radius
+\par To rectify this problem, we may attempt to modify things slightly by removing the unbound stars. A viable alternative would then be the lowered isothermal (King) truncated exponential $f(\epsilon)$: It suppresses stars at large radius
 \begin{equation*}
     f(\epsilon) = \left\{
         \begin{array}{ll}
@@ -924,7 +922,7 @@ which doesn't fit elliptical galaxies too well in the outer regions.
         \end{array}
     \right.
 \end{equation*}
-where $\sigma$ is a (dispersion like) parameter. Solve this by integration, choosing boundary conditions at $r = 0$
+where $\sigma$ is a (dispersion like) parameter. We can solve this through integration, choosing boundary conditions at $r = 0$
 \begin{equation*}
     \Psi(0) = q\sigma^{2} \quad \der{\Psi}{r}(0) = 0
 \end{equation*}
@@ -961,10 +959,10 @@ For $z \gg h$ we retrieve an exponentially dropping profile.
 
 \subsection{Schwarzschild’s Orbit Superposition Method}
 
-The method we're about to discuss is rather powerful, because no distribution funciton is needed for it to work.
+The method we're about to discuss is rather powerful, because no distribution function is needed for it to work.
 \par The observed surface brightness is used to build a mass model for the luminous component(s) of the galaxy. Because the surface brightness corresponds to the two-dimensional projection of the underlying, 3D luminosity density, assumptions about the underlying density have to be made in order to deproject it, and values for the orientation of the galaxy with respect to the line of sight need to be chosen.
 \par You have to convert the luminosity to mass, which in general is done by assuming a constant mass-to-light ratio $M/L$; this conversion then gives a mass model for the luminous component. To this you can add dark components to obtain the full gravitational potential.
-\par Once you have a model for the full gravitational potential, it is then used to create an orbit library\footnote{Template bank, is this you?} that contains the building blocks (the orbits) of a Schwarzschild model. For a given set of orbits weights, one can then predict both the surface brightness and whatever kinematic information is available.
+\par Once you have a model for the full gravitational potential, you can use it then to create an orbit library\footnote{Template bank, is this you?} that contains the building blocks (the orbits) of a Schwarzschild model. For a given set of orbits weights, one can then predict both the surface brightness and whatever kinematic information is available.
 \begin{figure}[h!]
     \centering 
     \includegraphics[width=0.8\textwidth]{img/sosm1.png}
